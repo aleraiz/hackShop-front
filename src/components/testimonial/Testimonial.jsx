@@ -1,11 +1,11 @@
+import TestimonialItem from "./TestimonialItem";
+import "./testimonialStyle.css";
+
 export const Testimonial = () => {
   return (
     <div className="testimonial-area section-space-top-90 section-space-bottom-95">
       <div className="container-fluid">
-        <div
-          className="testimonial-bg"
-          data-bg-image="assets/images/testimonial/bg/1-1-1820x443.jpg"
-        >
+        <div className="testimonial-bg testimonial-bg1">
           <div className="section-title-wrap">
             <h2 className="section-title">What Say Client</h2>
             <p className="section-desc mb-0">
@@ -17,66 +17,9 @@ export const Testimonial = () => {
         <div className="container custom-space">
           <div className="swiper-container testimonial-slider with-bg">
             <div className="swiper-wrapper">
-              <div className="swiper-slide testimonial-item">
-                <div className="user-info mb-3">
-                  <div className="user-shape-wrap">
-                    <div className="user-img">
-                      <img
-                        src="assets/images/testimonial/user/1.png"
-                        alt="User Image"
-                      />
-                    </div>
-                  </div>
-                  <div className="user-content text-charcoal">
-                    <h4 className="user-name mb-1">Phoenix Baker</h4>
-                    <span className="user-occupation">Client</span>
-                  </div>
-                </div>
-                <p className="user-comment mb-6">
-                  Lorem ipsum dolor sit amet, conse adipisic elit, sed do
-                  eiusmod tempo incididunt ut labore et dolore. magna
-                </p>
-              </div>
-              <div className="swiper-slide testimonial-item">
-                <div className="user-info mb-3">
-                  <div className="user-shape-wrap">
-                    <div className="user-img">
-                      <img
-                        src="assets/images/testimonial/user/2.png"
-                        alt="User Image"
-                      />
-                    </div>
-                  </div>
-                  <div className="user-content text-charcoal">
-                    <h4 className="user-name mb-1">Phoenix Baker</h4>
-                    <span className="user-occupation">Client</span>
-                  </div>
-                </div>
-                <p className="user-comment mb-6">
-                  Lorem ipsum dolor sit amet, conse adipisic elit, sed do
-                  eiusmod tempo incididunt ut labore et dolore. magna
-                </p>
-              </div>
-              <div className="swiper-slide testimonial-item">
-                <div className="user-info mb-3">
-                  <div className="user-shape-wrap">
-                    <div className="user-img">
-                      <img
-                        src="assets/images/testimonial/user/3.png"
-                        alt="User Image"
-                      />
-                    </div>
-                  </div>
-                  <div className="user-content text-charcoal">
-                    <h4 className="user-name mb-1">Phoenix Baker</h4>
-                    <span className="user-occupation">Client</span>
-                  </div>
-                </div>
-                <p className="user-comment mb-6">
-                  Lorem ipsum dolor sit amet, conse adipisic elit, sed do
-                  eiusmod tempo incididunt ut labore et dolore. magna
-                </p>
-              </div>
+              <TestimonialItem img={"../testimonial/user1.png"} />
+              <TestimonialItem img={"../testimonial/user2.png"} />
+              <TestimonialItem img={"../testimonial/user3.png"} />
             </div>
 
             <div className="swiper-pagination without-absolute"></div>
