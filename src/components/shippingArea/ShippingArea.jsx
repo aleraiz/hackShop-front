@@ -1,91 +1,44 @@
 export const ShippingArea = () => {
   return (
-    <div className="slider-area">
-      <div className="swiper-container main-slider swiper-arrow with-bg_white">
-        <div className="swiper-wrapper">
-          <div className="swiper-slide animation-style-01">
-            <div
-              className="slide-inner style-1 bg-height"
-              data-bg-image="assets/images/slider/bg/1-1.jpg"
-            >
-              <div className="container">
-                <div className="row">
-                  <div className="col-lg-6 order-2 order-lg-1 align-self-center">
-                    <div className="slide-content text-black">
-                      <span className="offer">65% Off</span>
-                      <h2 className="title">New Plant</h2>
-                      <p className="short-desc">
-                        Pronia, With 100% Natural, Organic & Plant Shop.
-                      </p>
-                      <div className="btn-wrap">
-                        <a
-                          className="btn btn-custom-size xl-size btn-pronia-primary"
-                          href="shop.html"
-                        >
-                          Discover Now
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-8 offset-md-2 offset-lg-0 order-1 order-lg-2">
-                    <div className="inner-img">
-                      <div className="scene fill">
-                        <div className="expand-width" data-depth="0.2">
-                          <img src="../../1-1-524x617.png" alt="Inner Image" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+    <div className="shipping-area section-space-top-100">
+      <div className="container">
+        <div className="shipping-bg">
+          <div className="row shipping-wrap">
+            <div className="col-lg-4 col-md-6">
+              <div className="shipping-item">
+                <div className="shipping-img">
+                  <img src="../../car.png" alt="Shipping Icon" />
+                </div>
+                <div className="shipping-content">
+                  <h2 className="title">Free Shipping</h2>
+                  <p className="short-desc mb-0">Capped at $319 per order</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="swiper-slide animation-style-01">
-            <div
-              className="slide-inner style-1 bg-height"
-              data-bg-image="assets/images/slider/bg/1-1.jpg"
-            >
-              <div className="container">
-                <div className="row">
-                  <div className="col-lg-6 order-2 order-lg-1 align-self-center">
-                    <div className="slide-content text-black">
-                      <span className="offer">65% Off</span>
-                      <h2 className="title">New Plant</h2>
-                      <p className="short-desc">
-                        Pronia, With 100% Natural, Organic & Plant Shop.
-                      </p>
-                      <div className="btn-wrap">
-                        <a
-                          className="btn btn-custom-size xl-size btn-pronia-primary"
-                          href="shop.html"
-                        >
-                          Discover Now
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-8 offset-md-2 offset-lg-0 order-1 order-lg-2">
-                    <div className="inner-img">
-                      <div className="scene fill">
-                        <div className="expand-width" data-depth="0.2">
-                          <img
-                            src="assets/images/slider/inner-img/1-2-524x617.png"
-                            alt="Inner Image"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            <div className="col-lg-4 col-md-6 mt-4 mt-md-0">
+              <div className="shipping-item">
+                <div className="shipping-img">
+                  <img src="../../card.png" alt="Shipping Icon" />
+                </div>
+                <div className="shipping-content">
+                  <h2 className="title">Safe Payment</h2>
+                  <p className="short-desc mb-0">With our payment gateway</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6 mt-4 mt-lg-0">
+              <div className="shipping-item">
+                <div className="shipping-img">
+                  <img src="../../service.png" alt="Shipping Icon" />
+                </div>
+                <div className="shipping-content">
+                  <h2 className="title">Best Services</h2>
+                  <p className="short-desc mb-0">Friendly & Supper Services</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="swiper-pagination d-md-none"></div>
-
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
       </div>
     </div>
   );

@@ -12,8 +12,8 @@ import { Footer } from "./footer/Footer";
 export const Home = () => {
   return (
     <>
-      <Navbar />
       <div className="main-wrapper">
+        <Navbar />
         <Carousel />
         <ShippingArea />
         <OurProducts />
