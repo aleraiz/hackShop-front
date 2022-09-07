@@ -11,19 +11,18 @@ import { Footer } from "./footer/Footer";
 
 export const Home = () => {
   return (
-    <>
-      <div className="main-wrapper">
-        <Navbar />
-        <Carousel />
-        <ShippingArea />
-        <OurProducts />
-        <Collection />
-        <NewProducts />
-        <Testimonial />
-        <BrandArea />
-        <LatestBlog />
-        <Footer />
-        {/* <div
+    <div className="main-wrapper">
+      <Navbar />
+      <Carousel />
+      <ShippingArea />
+      <OurProducts />
+      <Collection />
+      <NewProducts />
+      <Testimonial />
+      <BrandArea />
+      <LatestBlog />
+      <Footer />
+      {/* <div
           className="modal quick-view-modal fade"
           id="quickModal"
           data-bs-backdrop="static"
@@ -227,11 +226,10 @@ export const Home = () => {
               </div>
             </div>
           </div>
-        </div> */}
-        <a className="scroll-to-top" href="">
-          <i className="fa fa-angle-double-up"></i>
-        </a>
-      </div>
-    </>
+        </div>  */}
+      <a className="scroll-to-top" href="">
+        <i className="fa fa-angle-double-up"></i>
+      </a>
+    </div>
   );
 };

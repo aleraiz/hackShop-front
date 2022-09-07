@@ -1,0 +1,27 @@
+.modal-dialog {
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+.modal-fullscreen {
+  width: 100%;
+}
+
+.modal-header {
+  border: none;
+}
+
+.search-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.pe-7s-search {
+  font-size: 23px;
+  vertical-align: middle;
+}

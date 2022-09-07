@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { SearchModal } from "./SearchModal";
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
 
 export const Navbar = () => {
+  const [openModalSearch, setOpenModalSearch] = useState(false);
+
   return (
     <header className="main-header-area">
       <div className="header-top bg-pronia-primary d-none d-lg-block">
@@ -27,21 +32,6 @@ export const Navbar = () => {
                     >
                       USD
                     </button>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="currencyButton"
-                    >
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          GBP
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          ISO
-                        </a>
-                      </li>
-                    </ul>
                   </li>
                   <li className="dropdown">
                     <button
@@ -52,28 +42,8 @@ export const Navbar = () => {
                       aria-label="language"
                       aria-expanded="false"
                     >
-                      English
+                      Español
                     </button>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="languageButton"
-                    >
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          French
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Italian
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Spanish
-                        </a>
-                      </li>
-                    </ul>
                   </li>
                 </ul>
               </div>
@@ -88,24 +58,25 @@ export const Navbar = () => {
               <div className="header-middle-wrap position-relative">
                 <div className="header-contact d-none d-lg-flex">
                   <i className="pe-7s-call"></i>
-                  <a href="tel://+00-123-456-789">+00 123 456 789</a>
+                  <Link to="tel://+00-123-456-789">+00 123 456 789</Link>
                 </div>
 
-                <a href="index.html" className="header-logo">
+                <Link to="index.html" className="header-logo">
                   <img src="../../dark.png" alt="Header Logo" />
-                </a>
-
+                </Link>
                 <div className="header-right">
                   <ul>
                     <li>
-                      <a
-                        href="#exampleModal"
+                      <button
                         className="search-btn bt"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
+                        type="button"
+                        onClick={() => {
+                          setOpenModalSearch(!openModalSearch);
+                        }}
                       >
                         <i className="pe-7s-search"></i>
-                      </a>
+                      </button>
+                      {openModalSearch ? <SearchModal /> : null}
                     </li>
                     <li className="dropdown d-none d-lg-block">
                       <button
@@ -123,38 +94,33 @@ export const Navbar = () => {
                         aria-labelledby="settingButton"
                       >
                         <li>
-                          <a className="dropdown-item" href="my-account.html">
-                            My account
-                          </a>
-                        </li>
-                        <li>
-                          <a
+                          <Link
                             className="dropdown-item"
-                            href="login-register.html"
+                            to="login-register.html"
                           >
                             Login | Register
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </li>
                     <li className="d-none d-lg-block">
-                      <a href="wishlist.html">
+                      <Link to="wishlist.html">
                         <i className="pe-7s-like"></i>
-                      </a>
+                      </Link>
                     </li>
                     <li className="minicart-wrap me-3 me-lg-0">
-                      <a href="#miniCart" className="minicart-btn toolbar-btn">
+                      <Link to="#miniCart" className="minicart-btn toolbar-btn">
                         <i className="pe-7s-shopbag"></i>
                         <span className="quantity">3</span>
-                      </a>
+                      </Link>
                     </li>
                     <li className="mobile-menu_wrap d-block d-lg-none">
-                      <a
-                        href="#mobileMenu"
+                      <Link
+                        to="#mobileMenu"
                         className="mobile-menu_btn toolbar-btn pl-0"
                       >
                         <i className="pe-7s-menu"></i>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -171,49 +137,41 @@ export const Navbar = () => {
                 <nav className="main-nav">
                   <ul>
                     <li className="drop-holder">
-                      <a href="index.html">Home</a>
-                      <ul className="drop-menu">
-                        <li>
-                          <a href="index.html">Home One</a>
-                        </li>
-                        <li>
-                          <a href="index-2.html">Home Two</a>
-                        </li>
-                      </ul>
+                      <Link to="index.html">Home</Link>
                     </li>
                     <li className="megamenu-holder">
-                      <a href="shop.html">Shop</a>
+                      <Link to="shop.html">Shop</Link>
                       <ul className="drop-menu megamenu">
                         <li>
                           <span className="title">Shop Layout</span>
                           <ul>
                             <li>
-                              <a href="shop.html">Shop Default</a>
+                              <Link to="shop.html">Shop Default</Link>
                             </li>
                             <li>
-                              <a href="shop-grid-fullwidth.html">
+                              <Link to="shop-grid-fullwidth.html">
                                 Shop Grid Fullwidth
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="shop-right-sidebar.html">
+                              <Link to="shop-right-sidebar.html">
                                 Shop Right Sidebar
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="shop-list-fullwidth.html">
+                              <Link to="shop-list-fullwidth.html">
                                 Shop List Fullwidth
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="shop-list-left-sidebar.html">
+                              <Link to="shop-list-left-sidebar.html">
                                 Shop List Left Sidebar
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="shop-list-right-sidebar.html">
+                              <Link to="shop-list-right-sidebar.html">
                                 Shop List Right Sidebar
-                              </a>
+                              </Link>
                             </li>
                           </ul>
                         </li>
@@ -221,34 +179,34 @@ export const Navbar = () => {
                           <span className="title">Product Style</span>
                           <ul>
                             <li>
-                              <a href="single-product-variable.html">
+                              <Link to="single-product-variable.html">
                                 Single Product Variable
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="single-product-group.html">
+                              <Link to="single-product-group.html">
                                 Single Product Group
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="single-product.html">
+                              <Link to="single-product.html">
                                 Single Product Default
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="single-product-affiliate.html">
+                              <Link to="single-product-affiliate.html">
                                 Single Product Affiliate
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="single-product-sale.html">
+                              <Link to="single-product-sale.html">
                                 Single Product Sale
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="single-product-sticky.html">
+                              <Link to="single-product-sticky.html">
                                 Single Product Sticky
-                              </a>
+                              </Link>
                             </li>
                           </ul>
                         </li>
@@ -256,54 +214,34 @@ export const Navbar = () => {
                           <span className="title">Product Related</span>
                           <ul>
                             <li>
-                              <a href="my-account.html">My Account</a>
+                              <Link to="my-account.html">My Account</Link>
                             </li>
                             <li>
-                              <a href="login-register.html">Login | Register</a>
+                              <Link to="login-register.html">
+                                Login | Register
+                              </Link>
                             </li>
                             <li>
-                              <a href="cart.html">Shopping Cart</a>
+                              <Link to="cart.html">Shopping Cart</Link>
                             </li>
                             <li>
-                              <a href="wishlist.html">Wishlist</a>
+                              <Link to="wishlist.html">Wishlist</Link>
                             </li>
                             <li>
-                              <a href="compare.html">Compare</a>
+                              <Link to="compare.html">Compare</Link>
                             </li>
                             <li>
-                              <a href="checkout.html">Checkout</a>
+                              <Link to="checkout.html">Checkout</Link>
                             </li>
                           </ul>
                         </li>
                       </ul>
                     </li>
-                    <li className="drop-holder">
-                      <a href="blog.html">Blog</a>
-                      <ul className="drop-menu">
-                        <li>
-                          <a href="blog-listview.html">Blog List View</a>
-                        </li>
-                        <li>
-                          <a href="blog-detail.html">Blog Detail</a>
-                        </li>
-                      </ul>
+                    <li>
+                      <Link to="about.html">About Us</Link>
                     </li>
                     <li>
-                      <a href="about.html">About Us</a>
-                    </li>
-                    <li className="drop-holder">
-                      <a href="#">Pages</a>
-                      <ul className="drop-menu">
-                        <li>
-                          <a href="faq.html">FAQ</a>
-                        </li>
-                        <li>
-                          <a href="404.html">Error 404</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="contact.html">Contact Us</a>
+                      <Link to="contact.html">Contact Us</Link>
                     </li>
                   </ul>
                 </nav>
@@ -317,58 +255,50 @@ export const Navbar = () => {
           <div className="header-nav position-relative">
             <div className="row align-items-center">
               <div className="col-lg-3 col-6">
-                <a href="index.html" className="header-logo">
+                <Link to="index.html" className="header-logo">
                   <img src="assets/images/logo/dark.png" alt="Header Logo" />
-                </a>
+                </Link>
               </div>
               <div className="col-lg-6 d-none d-lg-block">
                 <div className="main-menu">
                   <nav className="main-nav">
                     <ul>
                       <li className="drop-holder">
-                        <a href="index.html">Home</a>
-                        <ul className="drop-menu">
-                          <li>
-                            <a href="index.html">Home One</a>
-                          </li>
-                          <li>
-                            <a href="index-2.html">Home Two</a>
-                          </li>
-                        </ul>
+                        <Link to="index.html">Home</Link>
                       </li>
                       <li className="megamenu-holder">
-                        <a href="shop.html">Shop</a>
+                        <Link to="shop.html">Shop</Link>
                         <ul className="drop-menu megamenu">
                           <li>
                             <span className="title">Shop Layout</span>
                             <ul>
                               <li>
-                                <a href="shop.html">Shop Default</a>
+                                <Link to="shop.html">Shop Default</Link>
                               </li>
                               <li>
-                                <a href="shop-grid-fullwidth.html">
+                                <Link to="shop-grid-fullwidth.html">
                                   Shop Grid Fullwidth
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="shop-right-sidebar.html">
+                                <Link to="shop-right-sidebar.html">
                                   Shop Right Sidebar
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="shop-list-fullwidth.html">
+                                <Link to="shop-list-fullwidth.html">
                                   Shop List Fullwidth
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="shop-list-left-sidebar.html">
+                                <Link to="shop-list-left-sidebar.html">
                                   Shop List Left Sidebar
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="shop-list-right-sidebar.html">
+                                <Link to="shop-list-right-sidebar.html">
                                   Shop List Right Sidebar
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                           </li>
@@ -376,34 +306,34 @@ export const Navbar = () => {
                             <span className="title">Product Style</span>
                             <ul>
                               <li>
-                                <a href="single-product-variable.html">
+                                <Link to="single-product-variable.html">
                                   Single Product Variable
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="single-product-group.html">
+                                <Link to="single-product-group.html">
                                   Single Product Group
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="single-product.html">
+                                <Link to="single-product.html">
                                   Single Product Default
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="single-product-affiliate.html">
+                                <Link to="single-product-affiliate.html">
                                   Single Product Affiliate
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="single-product-sale.html">
+                                <Link to="single-product-sale.html">
                                   Single Product Sale
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="single-product-sticky.html">
+                                <Link to="single-product-sticky.html">
                                   Single Product Sticky
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                           </li>
@@ -411,74 +341,75 @@ export const Navbar = () => {
                             <span className="title">Product Related</span>
                             <ul>
                               <li>
-                                <a href="my-account.html">My Account</a>
+                                <Link to="my-account.html">My Account</Link>
                               </li>
                               <li>
-                                <a href="login-register.html">
+                                <Link to="login-register.html">
                                   Login | Register
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a href="cart.html">Shopping Cart</a>
+                                <Link to="cart.html">Shopping Cart</Link>
                               </li>
                               <li>
-                                <a href="wishlist.html">Wishlist</a>
+                                <Link to="wishlist.html">Wishlist</Link>
                               </li>
                               <li>
-                                <a href="compare.html">Compare</a>
+                                <Link to="compare.html">Compare</Link>
                               </li>
                               <li>
-                                <a href="checkout.html">Checkout</a>
+                                <Link to="checkout.html">Checkout</Link>
                               </li>
                             </ul>
                           </li>
                         </ul>
                       </li>
                       <li className="drop-holder">
-                        <a href="blog.html">Blog</a>
+                        <Link to="blog.html">Blog</Link>
                         <ul className="drop-menu">
                           <li>
-                            <a href="blog-listview.html">Blog List View</a>
+                            <Link to="blog-listview.html">Blog List View</Link>
                           </li>
                           <li>
-                            <a href="blog-detail.html">Blog Detail</a>
+                            <Link to="blog-detail.html">Blog Detail</Link>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <a href="about.html">About Us</a>
+                        <Link to="about.html">About Us</Link>
                       </li>
                       <li className="drop-holder">
-                        <a href="#">Pages</a>
+                        <Link to="#">Pages</Link>
                         <ul className="drop-menu">
                           <li>
-                            <a href="faq.html">FAQ</a>
+                            <Link to="faq.html">FAQ</Link>
                           </li>
                           <li>
-                            <a href="404.html">Error 404</a>
+                            <Link to="404.html">Error 404</Link>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <a href="contact.html">Contact Us</a>
+                        <Link to="contact.html">Contact Us</Link>
                       </li>
                     </ul>
                   </nav>
                 </div>
               </div>
               <div className="col-lg-3 col-6">
-                <div className="header-right">
+                {/* <div className="header-right">
                   <ul>
                     <li>
-                      <a
-                        href="#exampleModal"
+                      <Button
                         className="search-btn bt"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
+                        // onClick={() => {
+                        //   setOpenModalSearch(!openModalSearch);
+                        // }}
                       >
                         <i className="pe-7s-search"></i>
-                      </a>
-                    </li>
+                      </Button>
+                      {/* {openModalSearch ? <SearchModal /> : null} */}
+                {/* </li>
                     <li className="dropdown d-none d-lg-block">
                       <button
                         className="btn btn-link dropdown-toggle ht-btn p-0"
@@ -495,57 +426,57 @@ export const Navbar = () => {
                         aria-labelledby="stickysettingButton"
                       >
                         <li>
-                          <a className="dropdown-item" href="my-account.html">
+                          <Link className="dropdown-item" to="my-account.html">
                             My account
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
+                          <Link
                             className="dropdown-item"
-                            href="login-register.html"
+                            to="login-register.html"
                           >
                             Login | Register
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </li>
                     <li className="d-none d-lg-block">
-                      <a href="wishlist.html">
+                      <Link to="wishlist.html">
                         <i className="pe-7s-like"></i>
-                      </a>
+                      </Link>
                     </li>
                     <li className="minicart-wrap me-3 me-lg-0">
-                      <a href="#miniCart" className="minicart-btn toolbar-btn">
+                      <Link to="#miniCart" className="minicart-btn toolbar-btn">
                         <i className="pe-7s-shopbag"></i>
                         <span className="quantity">3</span>
-                      </a>
+                      </Link>
                     </li>
                     <li className="mobile-menu_wrap d-block d-lg-none">
-                      <a
-                        href="#mobileMenu"
+                      <Link
+                        to="#mobileMenu"
                         className="mobile-menu_btn toolbar-btn pl-0"
                       >
                         <i className="pe-7s-menu"></i>
-                      </a>
+                      </Link>
                     </li>
-                  </ul>
-                </div>
+                  </ul> */}
+                {/* </div> */}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="mobile-menu_wrapper" id="mobileMenu">
+      {/* <div className="mobile-menu_wrapper" id="mobileMenu">
         <div className="offcanvas-body">
           <div className="inner-body">
             <div className="offcanvas-top">
-              <a href="#" className="button-close">
+              <Link to="#" className="button-close">
                 <i className="pe-7s-close"></i>
-              </a>
+              </Link>
             </div>
             <div className="header-contact offcanvas-contact">
               <i className="pe-7s-call"></i>
-              <a href="tel://+00-123-456-789">+00 123 456 789</a>
+              <Link to="tel://+00-123-456-789">+00 123 456 789</Link>
             </div>
             <div className="offcanvas-user-info">
               <ul className="dropdown-wrap">
@@ -564,19 +495,19 @@ export const Navbar = () => {
                     aria-labelledby="languageButtonTwo"
                   >
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" to="#">
                         French
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" to="#">
                         Italian
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" to="#">
                         Spanish
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -595,14 +526,14 @@ export const Navbar = () => {
                     aria-labelledby="currencyButtonTwo"
                   >
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" to="#">
                         GBP
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" to="#">
                         ISO
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -621,21 +552,21 @@ export const Navbar = () => {
                     aria-labelledby="settingButtonTwo"
                   >
                     <li>
-                      <a className="dropdown-item" href="my-account.html">
+                      <Link className="dropdown-item" to="my-account.html">
                         My account
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="login-register.html">
+                      <Link className="dropdown-item" to="login-register.html">
                         Login | Register
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="wishlist.html">
+                  <Link to="wishlist.html">
                     <i className="pe-7s-like"></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -643,248 +574,248 @@ export const Navbar = () => {
               <nav className="offcanvas-navigation">
                 <ul className="mobile-menu">
                   <li className="menu-item-has-children">
-                    <a href="#">
+                    <Link to="#">
                       <span className="mm-text">
                         Home
                         <i className="pe-7s-angle-down"></i>
                       </span>
-                    </a>
+                    </Link>
                     <ul className="sub-menu">
                       <li>
-                        <a href="index.html">
+                        <Link to="index.html">
                           <span className="mm-text">Home One</span>
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="index-2.html">
+                        <Link to="index-2.html">
                           <span className="mm-text">Home Two</span>
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children">
-                    <a href="#">
+                    <Link to="#">
                       <span className="mm-text">
                         Shop
                         <i className="pe-7s-angle-down"></i>
                       </span>
-                    </a>
+                    </Link>
                     <ul className="sub-menu">
                       <li className="menu-item-has-children">
-                        <a href="#">
+                        <Link to="#">
                           <span className="mm-text">
                             Shop Layout
                             <i className="pe-7s-angle-down"></i>
                           </span>
-                        </a>
+                        </Link>
                         <ul className="sub-menu">
                           <li>
-                            <a href="shop.html">
+                            <Link to="shop.html">
                               <span className="mm-text">Shop Default</span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="shop-grid-fullwidth.html">
+                            <Link to="shop-grid-fullwidth.html">
                               <span className="mm-text">
                                 Shop Grid Fullwidth
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="shop-right-sidebar.html">
+                            <Link to="shop-right-sidebar.html">
                               <span className="mm-text">
                                 Shop Right Sidebar
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="shop-list-fullwidth.html">
+                            <Link to="shop-list-fullwidth.html">
                               <span className="mm-text">
                                 Shop List Fullwidth
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="shop-list-left-sidebar.html">
+                            <Link to="shop-list-left-sidebar.html">
                               <span className="mm-text">
                                 Shop List Left Sidebar
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="shop-list-right-sidebar.html">
+                            <Link to="shop-list-right-sidebar.html">
                               <span className="mm-text">
                                 Shop List Right Sidebar
                               </span>
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
                       <li className="menu-item-has-children">
-                        <a href="#">
+                        <Link to="#">
                           <span className="mm-text">
                             Product Style
                             <i className="pe-7s-angle-down"></i>
                           </span>
-                        </a>
+                        </Link>
                         <ul className="sub-menu">
                           <li>
-                            <a href="single-product.html">
+                            <Link to="single-product.html">
                               <span className="mm-text">
                                 Single Product Default
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="single-product-group.html">
+                            <Link to="single-product-group.html">
                               <span className="mm-text">
                                 Single Product Group
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="single-product-variable.html">
+                            <Link to="single-product-variable.html">
                               <span className="mm-text">
                                 Single Product Variable
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="single-product-sale.html">
+                            <Link to="single-product-sale.html">
                               <span className="mm-text">
                                 Single Product Sale
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="single-product-sticky.html">
+                            <Link to="single-product-sticky.html">
                               <span className="mm-text">
                                 Single Product Sticky
                               </span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="single-product-affiliate.html">
+                            <Link to="single-product-affiliate.html">
                               <span className="mm-text">
                                 Single Product Affiliate
                               </span>
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
                       <li className="menu-item-has-children">
-                        <a href="#">
+                        <Link to="#">
                           <span className="mm-text">
                             Product Related
                             <i className="pe-7s-angle-down"></i>
                           </span>
-                        </a>
+                        </Link>
                         <ul className="sub-menu">
                           <li>
-                            <a href="my-account.html">
+                            <Link to="my-account.html">
                               <span className="mm-text">My Account</span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="login-register.html">
+                            <Link to="login-register.html">
                               <span className="mm-text">Login | Register</span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="cart.html">
+                            <Link to="cart.html">
                               <span className="mm-text">Shopping Cart</span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="wishlist.html">
+                            <Link to="wishlist.html">
                               <span className="mm-text">Wishlist</span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="compare.html">
+                            <Link to="compare.html">
                               <span className="mm-text">Compare</span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="checkout.html">
+                            <Link to="checkout.html">
                               <span className="mm-text">Checkout</span>
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </li>
                     </ul>
                   </li>
                   <li className="menu-item-has-children">
-                    <a href="#">
+                    <Link to="#">
                       <span className="mm-text">
                         Blog
                         <i className="pe-7s-angle-down"></i>
                       </span>
-                    </a>
+                    </Link>
                     <ul className="sub-menu">
                       <li className="menu-item-has-children">
-                        <a href="#">
+                        <Link to="#">
                           <span className="mm-text">
                             Blog Holder
                             <i className="pe-7s-angle-down"></i>
                           </span>
-                        </a>
+                        </Link>
                         <ul className="sub-menu">
                           <li>
-                            <a href="blog.html">
+                            <Link to="blog.html">
                               <span className="mm-text">Blog Default</span>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="blog-listview.html">Blog List View</a>
+                            <Link to="blog-listview.html">Blog List View</Link>
                           </li>
                           <li>
-                            <a href="blog-detail.html">Blog Detail</a>
+                            <Link to="blog-detail.html">Blog Detail</Link>
                           </li>
                         </ul>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <a href="about.html">
+                    <Link to="about.html">
                       <span className="mm-text">About Us</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="menu-item-has-children">
-                    <a href="#">
+                    <Link to="#">
                       <span className="mm-text">
                         Pages
                         <i className="pe-7s-angle-down"></i>
                       </span>
-                    </a>
+                    </Link>
                     <ul className="sub-menu">
                       <li>
-                        <a href="faq.html">
+                        <Link to="faq.html">
                           <span className="mm-text">Frequently Questions</span>
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="404.html">
+                        <Link to="404.html">
                           <span className="mm-text">Error 404</span>
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <a href="contact.html">
+                    <Link to="contact.html">
                       <span className="mm-text">Contact</span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
         </div>
-      </div>
-      <div
+      </div> */}
+      {/* <div
         className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModal"
         aria-hidden="true"
       >
@@ -913,10 +844,10 @@ export const Navbar = () => {
                   <input
                     type="text"
                     name="Search..."
-                    value="Search..."
-                    onblur="if(this.value==''){this.value='Search...'}"
-                    onfocus="if(this.value=='Search...'){this.value=''}"
-                    autocomplete="off"
+                    // value="Search..."
+                    // onblur="if(this.value==''){this.value='Search...'}"
+                    // onfocus="if(this.value=='Search...'){this.value=''}"
+                    autoComplete="off"
                   />
                   <button
                     className="search-btn"
@@ -930,13 +861,13 @@ export const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="offcanvas-minicart_wrapper" id="miniCart">
         <div className="offcanvas-body">
           <div className="minicart-content">
             <div className="minicart-heading">
               <h4 className="mb-0">Shopping Cart</h4>
-              <a href="#" className="button-close">
+              <Link to="#" className="button-close">
                 <i
                   className="pe-7s-close"
                   data-tippy="Close"
@@ -946,11 +877,11 @@ export const Navbar = () => {
                   data-tippy-arrow="true"
                   data-tippy-theme="sharpborder"
                 ></i>
-              </a>
+              </Link>
             </div>
             <ul className="minicart-list">
               <li className="minicart-product">
-                <a className="product-item_remove" href="#">
+                <Link className="product-item_remove" to="#">
                   <i
                     className="pe-7s-close"
                     data-tippy="Remove"
@@ -960,9 +891,9 @@ export const Navbar = () => {
                     data-tippy-arrow="true"
                     data-tippy-theme="sharpborder"
                   ></i>
-                </a>
-                <a
-                  href="single-product-variable.html"
+                </Link>
+                <Link
+                  to="single-product-variable.html"
                   className="product-item_img"
                 >
                   <img
@@ -970,19 +901,19 @@ export const Navbar = () => {
                     src="../assets/images/product/large-size/1-1-570x633.jpg"
                     alt="Product Image"
                   />
-                </a>
+                </Link>
                 <div className="product-item_content">
-                  <a
+                  <Link
                     className="product-item_title"
-                    href="single-product-variable.html"
+                    to="single-product-variable.html"
                   >
                     American Marigold
-                  </a>
+                  </Link>
                   <span className="product-item_quantity">1 x $23.45</span>
                 </div>
               </li>
               <li className="minicart-product">
-                <a className="product-item_remove" href="#">
+                <Link className="product-item_remove" to="#">
                   <i
                     className="pe-7s-close"
                     data-tippy="Remove"
@@ -992,9 +923,9 @@ export const Navbar = () => {
                     data-tippy-arrow="true"
                     data-tippy-theme="sharpborder"
                   ></i>
-                </a>
-                <a
-                  href="single-product-variable.html"
+                </Link>
+                <Link
+                  to="single-product-variable.html"
                   className="product-item_img"
                 >
                   <img
@@ -1002,19 +933,19 @@ export const Navbar = () => {
                     src="assets/images/product/small-size/2-2-70x78.png"
                     alt="Product Image"
                   />
-                </a>
+                </Link>
                 <div className="product-item_content">
-                  <a
+                  <Link
                     className="product-item_title"
-                    href="single-product-variable.html"
+                    to="single-product-variable.html"
                   >
                     Black Eyed Susan
-                  </a>
+                  </Link>
                   <span className="product-item_quantity">1 x $25.45</span>
                 </div>
               </li>
               <li className="minicart-product">
-                <a className="product-item_remove" href="#">
+                <Link className="product-item_remove" to="#">
                   <i
                     className="pe-7s-close"
                     data-tippy="Remove"
@@ -1024,9 +955,9 @@ export const Navbar = () => {
                     data-tippy-arrow="true"
                     data-tippy-theme="sharpborder"
                   ></i>
-                </a>
-                <a
-                  href="single-product-variable.html"
+                </Link>
+                <Link
+                  to="single-product-variable.html"
                   className="product-item_img"
                 >
                   <img
@@ -1034,14 +965,14 @@ export const Navbar = () => {
                     src="assets/images/product/small-size/2-3-70x78.png"
                     alt="Product Image"
                   />
-                </a>
+                </Link>
                 <div className="product-item_content">
-                  <a
+                  <Link
                     className="product-item_title"
-                    href="single-product-variable.html"
+                    to="single-product-variable.html"
                   >
                     Bleeding Heart
-                  </a>
+                  </Link>
                   <span className="product-item_quantity">1 x $30.45</span>
                 </div>
               </li>
@@ -1052,12 +983,12 @@ export const Navbar = () => {
             <span className="ammount">$79.35</span>
           </div>
           <div className="group-btn_wrap d-grid gap-2">
-            <a href="cart.html" className="btn btn-dark">
+            <Link to="cart.html" className="btn btn-dark">
               View Cart
-            </a>
-            <a href="checkout.html" className="btn btn-dark">
+            </Link>
+            <Link to="checkout.html" className="btn btn-dark">
               Checkout
-            </a>
+            </Link>
           </div>
         </div>
       </div>

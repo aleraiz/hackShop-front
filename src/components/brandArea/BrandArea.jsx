@@ -1,19 +1,37 @@
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 export const BrandArea = () => {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 3, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
+
   return (
     <div className="brand-area section-space-bottom-100">
       <div className="container">
-        <div
-          className="brand-bg"
-          data-bg-image="assets/images/brand/bg/1-1170x300.jpg"
-        >
+        <div className="brand-bg">
           <div className="row">
             <div className="col-lg-12">
               <div className="swiper-container brand-slider">
-                <div className="swiper-wrapper">
+                <Carousel responsive={responsive} infinite={true}>
                   <div className="swiper-slide">
                     <a className="brand-item" href="#">
                       <img
-                        src="assets/images/brand/1-1.png"
+                        src="../../images/brandArea/1-1.webp"
                         alt="Brand Image"
                       />
                     </a>
@@ -21,7 +39,7 @@ export const BrandArea = () => {
                   <div className="swiper-slide">
                     <a className="brand-item" href="#">
                       <img
-                        src="assets/images/brand/1-2.png"
+                        src="../../images/brandArea/1-2.webp"
                         alt="Brand Image"
                       />
                     </a>
@@ -29,7 +47,7 @@ export const BrandArea = () => {
                   <div className="swiper-slide">
                     <a className="brand-item" href="#">
                       <img
-                        src="assets/images/brand/1-3.png"
+                        src="../../images/brandArea/1-3.webp"
                         alt="Brand Image"
                       />
                     </a>
@@ -37,7 +55,7 @@ export const BrandArea = () => {
                   <div className="swiper-slide">
                     <a className="brand-item" href="#">
                       <img
-                        src="assets/images/brand/1-4.png"
+                        src="../../images/brandArea/1-4.webp"
                         alt="Brand Image"
                       />
                     </a>
@@ -45,12 +63,12 @@ export const BrandArea = () => {
                   <div className="swiper-slide">
                     <a className="brand-item" href="#">
                       <img
-                        src="assets/images/brand/1-5.png"
+                        src="../../images/brandArea/1-5.webp"
                         alt="Brand Image"
                       />
                     </a>
                   </div>
-                </div>
+                </Carousel>
               </div>
             </div>
           </div>
