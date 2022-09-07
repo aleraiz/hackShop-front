@@ -3458,7 +3458,7 @@ blockquote p {
 
 .modal-search .hm-searchbox .search-btn {
   position: absolute;
-  font-size: 30px;
+  font-size: 30px !important;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -5424,6 +5424,7 @@ blockquote p {
 .brand-bg {
   border-radius: 10px;
   padding: 90px;
+  background-image: url("../images/brand/bg/1-1170x300.jpg");
 }
 
 @media (max-width: 767px) {
