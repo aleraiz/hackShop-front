@@ -1,9 +1,7 @@
+import "./style.css";
 export const Footer = () => {
   return (
-    <div
-      className="footer-area"
-      data-bg-image="assets/images/footer/bg/1-1920x465.jpg"
-    >
+    <div className="footer-area">
       <div className="footer-top section-space-top-100 pb-60">
         <div className="container">
           <div className="row">
@@ -11,7 +9,7 @@ export const Footer = () => {
               <div className="footer-widget-item">
                 <div className="footer-widget-logo">
                   <a href="index.html">
-                    <img src="assets/images/logo/dark.png" alt="Logo" />
+                    <img src="../../dark.png" alt="Logo" />
                   </a>
                 </div>
                 <p className="footer-widget-desc">
@@ -158,7 +156,10 @@ export const Footer = () => {
               </div>
               <div className="payment-method">
                 <a href="#">
-                  <img src="assets/images/payment/1.png" alt="Payment Method" />
+                  <img
+                    src="../../../image/formas-de-pago-footer.jpg"
+                    alt="Payment Method"
+                  />
                 </a>
               </div>
             </div>
@@ -171,14 +172,14 @@ export const Footer = () => {
             <div className="col-lg-12">
               <div className="copyright">
                 <span className="copyright-text">
-                  © 2021 Pronia Made with{" "}
-                  <i className="fa fa-heart text-danger"></i> by
+                  © 2022 Hack academy{" "}
+                  {/* <i className="fa fa-heart text-danger"></i> by */}
                   <a
                     href="https://hasthemes.com/"
                     rel="noopener"
                     target="_blank"
                   >
-                    HasThemes
+                    -Equipo 5
                   </a>{" "}
                 </span>
               </div>

@@ -5,7 +5,14 @@
 .modal-content {
   background-color: transparent;
   border: none;
-  width: 800px;
+  width: 100%;
+}
+.modal-fullscreen {
+  width: 100%;
+}
+
+.modal-header {
+  border: none;
 }
 
 .search-btn {

@@ -5,14 +5,7 @@ import "./css/searchModal.css";
 
 export const SearchModal = () => {
   const [show, setShow] = useState(true);
-  const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
-  const [fullscreen, setFullscreen] = useState(true);
   const [value, setValue] = useState("");
-
-  function handleShow(breakpoint) {
-    setFullscreen(breakpoint);
-    setShow(true);
-  }
 
   return (
     <Modal
@@ -21,7 +14,7 @@ export const SearchModal = () => {
       centered
       tabIndex="1"
       className="modal-bg-dark"
-      fullscreen={fullscreen}
+      fullscreen
     >
       <Modal.Header>
         <button

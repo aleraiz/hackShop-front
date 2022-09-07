@@ -57,8 +57,8 @@ body {
 }
 
 a {
-  color: #525252;
-  text-decoration: none;
+  text-decoration: none !important;
+  color: #000000;
 }
 
 a:hover {
@@ -817,61 +817,6 @@ img {
   transition: all 0.3s ease 0s;
 }
 
-/* ---Social Link--- */
-.social-link {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.social-link .title {
-  font-size: 16px;
-  display: block;
-}
-
-.social-link ul li {
-  display: inline-block;
-}
-
-.social-link ul li:not(:last-child) {
-  padding-right: 25px;
-}
-
-.social-link ul li a {
-  font-size: 14px;
-  display: block;
-}
-
-.social-link.with-border ul li:not(:last-child) {
-  padding-right: 15px;
-}
-
-@media (max-width: 1199px) {
-  .social-link.with-border ul li:not(:last-child) {
-    padding-right: 10px;
-  }
-}
-
-.social-link.with-border ul li a {
-  border: 1px solid #abd373;
-  color: #abd373;
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-}
-
-.social-link.with-border ul li a:hover {
-  background-color: #abd373;
-  border-color: #abd373;
-}
-
-.social-link.with-border ul li a:hover i {
-  color: #ffffff;
-}
-
 /* ---Custom Button--- */
 .btn-custom-size {
   padding: 0;
@@ -1355,6 +1300,26 @@ blockquote p {
   opacity: 1;
 }
 
+.offer {
+  font-weight: 300;
+  font-size: 47px;
+  line-height: 65px;
+  display: block;
+}
+.title {
+  animation-name: fadeInUp;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.short-desc {
+  animation-name: fadeInUp;
+  font-weight: 600;
+  animation-delay: 1.5s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
 /* ---Slider Animation--- */
 .animation-style-01.swiper-slide-active .slide-content .offer {
   -webkit-animation-name: fadeInUp;
@@ -2107,6 +2072,13 @@ blockquote p {
   }
 }
 
+.slide-inner {
+  background-image: url("../../../public/image/fondoCarousel.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+}
 @media (max-width: 991px) {
   .slide-inner.style-1 .slide-content {
     text-align: center;
@@ -3592,87 +3564,6 @@ blockquote p {
 
 .mailchimp-error {
   color: red;
-}
-
-/*----------------------------------------*/
-/*  11. Footer
-/*----------------------------------------*/
-.footer-widget-item .social-link ul li a {
-  border-color: #000000;
-  color: #000000;
-  border-radius: 0;
-}
-
-.footer-widget-logo {
-  padding-bottom: 35px;
-}
-
-.footer-widget-title {
-  color: #000000;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  margin-bottom: 30px;
-}
-
-.footer-widget-desc {
-  margin-bottom: 35px;
-  line-height: 27px;
-  color: #000000;
-}
-
-.footer-widget-list-item > li:not(:last-child) {
-  padding-bottom: 5px;
-}
-
-.footer-widget-list-item > li i {
-  margin-right: 20px;
-  color: #df414b;
-}
-
-.footer-widget-list-item > li a {
-  color: #000000;
-}
-
-.footer-widget-list-item > li a:hover {
-  color: #abd373;
-}
-
-.footer-contact-info .footer-widget-title {
-  margin-bottom: 5px;
-}
-
-.footer-contact-info .number {
-  color: #000000;
-  font-size: 24px;
-  line-height: 40px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.footer-contact-info .number:hover {
-  color: #abd373;
-}
-
-.footer-contact-info .address ul li {
-  margin-bottom: 30px;
-  color: black;
-}
-
-/* ---Copyright--- */
-.copyright {
-  border-top: 1px solid #a7cca2;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: center;
-}
-
-.copyright * {
-  color: #8dba87;
-}
-
-.copyright-text {
-  text-transform: capitalize;
 }
 
 /*----------------------------------------*/

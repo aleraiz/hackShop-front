@@ -1,0 +1,16 @@
+.btn-collection{
+    background: #abd373;
+    border-color: #abd373;
+    color: #ffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 0;
+}
+
+.btn-custom-size{
+    width: 160px;
+    height: 47px;
+    line-height: 47px;
+    text-transform: uppercase;
+    overflow: hidden;
+}
