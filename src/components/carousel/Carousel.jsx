@@ -6,12 +6,12 @@ export const Carousel = () => {
           <div className="swiper-slide animation-style-01">
             <div
               className="slide-inner style-1 bg-height"
-              data-bg-image="assets/images/slider/bg/1-1.jpg"
+              data-bg-image="../../../public/image/carouselImgUno.jpg"
             >
               <div className="container">
-                <div className="row">
+                <div className="row prueba">
                   <div className="col-lg-6 order-2 order-lg-1 align-self-center">
-                    <div className="slide-content text-black">
+                    <div className=" text-black">
                       <span className="offer">65% Off</span>
                       <h2 className="title">New Plant</h2>
                       <p className="short-desc">
@@ -31,7 +31,10 @@ export const Carousel = () => {
                     <div className="inner-img">
                       <div className="scene fill">
                         <div className="expand-width" data-depth="0.2">
-                          <img src="../../1-1-524x617.png" alt="Inner Image" />
+                          <img
+                            src="../../../image/carouselImgDos.jpg"
+                            alt="Inner Image"
+                          />
                         </div>
                       </div>
                     </div>
@@ -40,7 +43,7 @@ export const Carousel = () => {
               </div>
             </div>
           </div>
-          <div className="swiper-slide animation-style-01">
+          {/* <div className="swiper-slide animation-style-01">
             <div
               className="slide-inner style-1 bg-height"
               data-bg-image="assets/images/slider/bg/1-1.jpg"
@@ -79,7 +82,7 @@ export const Carousel = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="swiper-pagination d-md-none"></div>
