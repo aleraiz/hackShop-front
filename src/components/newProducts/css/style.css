@@ -1,0 +1,12 @@
+.product-img {
+  width: 250px;
+}
+
+.single-product-slider {
+  border: 1px solid #dee2e6;
+  margin-bottom: 20px;
+}
+
+.single-product-slider .single-img {
+  display: block;
+}

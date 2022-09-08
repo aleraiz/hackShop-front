@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import "./css/newProducts.css";
+import "./css/style.css";
 
 export const NewProducts = () => {
   const responsive = {
