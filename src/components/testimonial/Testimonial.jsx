@@ -16,7 +16,7 @@ export const Testimonial = () => {
         </div>
         <div className="container custom-space">
           <div className="swiper-container testimonial-slider with-bg">
-            <div className="swiper-wrapper">
+            <div className="swiper-wrapper justify-content-center">
               <TestimonialItem img={"../testimonial/user1.png"} />
               <TestimonialItem img={"../testimonial/user2.png"} />
               <TestimonialItem img={"../testimonial/user3.png"} />

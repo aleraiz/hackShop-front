@@ -14,7 +14,7 @@ export const LatestBlog = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="swiper-container blog-slider">
-              <div className="swiper-wrapper">
+              <div className="swiper-wrapper justify-content-center">
                 <div className="swiper-slide latest-item">
                   <div className="blog-item">
                     <div className="blog-content">
