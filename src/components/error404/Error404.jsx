@@ -1,7 +1,7 @@
 import React from "react";
 import "./errorStyle.css";
 
-const Error404 = () => {
+export const Error404 = () => {
   return (
     <>
       <div
@@ -32,5 +32,3 @@ const Error404 = () => {
     </>
   );
 };
-
-export default Error404;

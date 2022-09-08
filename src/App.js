@@ -12,6 +12,8 @@ import "./assets/css/swiper-bundle.min.css";
 import { Routes, Route, Link } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Cart } from "./components/cart/Cart";
+import { ProductDetail } from "./components/productDetail.jsx/ProductDetail";
+import { Error404 } from "./components/error404/Error404";
 function App() {
   return (
     <>
@@ -19,6 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/productDetail" element={<ProductDetail />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
     </>
