@@ -32,10 +32,7 @@ const Error404 = () => {
             <div className="col-lg-12 align-self-center">
               <div className="error-404-content">
                 <div className="error-404-img">
-                  <img
-                    src="assets/images/error-404/404.png"
-                    alt="Error Image"
-                  />
+                  <img src="assets/images/error-404/404.png" alt="Error Image" />
                 </div>
                 <h2 className="title">
                   <span>Oops,</span> page not found!

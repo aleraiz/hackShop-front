@@ -1,0 +1,46 @@
+.brand-bg {
+  border-radius: 10px;
+  padding: 90px;
+  background-image: url("../../../../public/images/brandArea/1-1170x300.webp");
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .brand-bg {
+    padding: 30px;
+  }
+}
+
+.brand-slider .swiper-wrapper {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.brand-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.brand-item:hover {
+  opacity: 1;
+}
+
+.brand-nav {
+  background-color: #f4f4f4;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
+}

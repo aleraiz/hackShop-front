@@ -12,7 +12,7 @@ export const Carousel = () => {
                 <div className="row prueba">
                   <div className="col-lg-6 order-2 order-lg-1 align-self-center">
                     <div className=" text-black">
-                      <span className="offer">65% Off</span>
+                      <span className="offer animate__bounce">25% OFF</span>
                       <h2 className="title">New Plant</h2>
                       <p className="short-desc">
                         Pronia, With 100% Natural, Organic & Plant Shop.
