@@ -9,8 +9,7 @@ import "./assets/css/Pe-icon-7-stroke.css";
 import "./assets/css/plugins.min.css";
 import "./assets/css/swiper-bundle.min.css";
 import { Footer } from "./components/footer/Footer";
-import { Navbar } from "./components/navbar/Navbar";
-
+import { NavbarPrincipal } from "./components/navbar/NavbarPrincipal";
 import { Routes, Route, Link } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Cart } from "./components/cart/Cart";
@@ -20,7 +19,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <Navbar />
+        <NavbarPrincipal />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />

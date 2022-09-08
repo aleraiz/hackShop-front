@@ -11,7 +11,7 @@ export const ShippingArea = () => {
                 </div>
                 <div className="shipping-content">
                   <h2 className="title">Free Shipping</h2>
-                  <p className="short-desc mb-0">Capped at $319 per order</p>
+                  <p className="short-desc mb-0 shippingText">Capped at $319 per order</p>
                 </div>
               </div>
             </div>
@@ -22,7 +22,7 @@ export const ShippingArea = () => {
                 </div>
                 <div className="shipping-content">
                   <h2 className="title">Safe Payment</h2>
-                  <p className="short-desc mb-0">With our payment gateway</p>
+                  <p className="short-desc mb-0 shippingText">With our payment gateway</p>
                 </div>
               </div>
             </div>
@@ -33,7 +33,7 @@ export const ShippingArea = () => {
                 </div>
                 <div className="shipping-content">
                   <h2 className="title">Best Services</h2>
-                  <p className="short-desc mb-0">Friendly & Supper Services</p>
+                  <p className="short-desc mb-0 shippingText">Friendly & Supper Services</p>
                 </div>
               </div>
             </div>

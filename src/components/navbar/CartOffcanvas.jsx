@@ -5,17 +5,10 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 
 export const CartOffCanvas = () => {
   const [show, setShow] = useState(true);
-
   const handleClose = () => setShow(false);
+
   return (
-    <Offcanvas
-      show={show}
-      onHide={handleClose}
-      backdrop={true}
-      placement="end"
-      id="miniCart"
-      scroll={true}
-    >
+    <Offcanvas show={show} onHide={handleClose} placement="end" id="miniCart" scroll={true}>
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
       </Offcanvas.Header>
