@@ -1,7 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CarouselProducts } from "../carouselProducts/CarouselProducts";
-import "./css/newProducts.css";
+import "./style.css";
 
 export const NewProducts = () => {
   return (
