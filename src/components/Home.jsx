@@ -9,6 +9,7 @@ import { BrandArea } from "./brandArea/BrandArea";
 import { LatestBlog } from "./latestBlog/LatestBlog";
 import { Footer } from "./footer/Footer";
 import { ProductDetail } from "./productDetail.jsx/ProductDetail";
+import Error404 from "./error404/Error404";
 
 export const Home = () => {
   return (
@@ -23,6 +24,7 @@ export const Home = () => {
       <BrandArea />
       <LatestBlog />
       <ProductDetail />
+      <Error404 />
       <Footer />
       {/* <div
           className="modal quick-view-modal fade"
