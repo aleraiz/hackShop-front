@@ -1,0 +1,18 @@
+.error404-bg{
+    background-image: url('../../../public/error/error404.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-error {
+    background-color: #abd373;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 0;
+    width: 208px;
+    height: 63px;
+    line-height: 63px;
+}
