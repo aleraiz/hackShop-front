@@ -8,6 +8,8 @@ import "./assets/css/nice-select.css";
 import "./assets/css/Pe-icon-7-stroke.css";
 import "./assets/css/plugins.min.css";
 import "./assets/css/swiper-bundle.min.css";
+import { Footer } from "./components/footer/Footer";
+import { Navbar } from "./components/navbar/Navbar";
 
 import { Routes, Route, Link } from "react-router-dom";
 import { Home } from "./components/Home";
@@ -16,10 +18,12 @@ function App() {
   return (
     <>
       <div className="app">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );

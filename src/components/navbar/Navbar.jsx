@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { SearchModal } from "./SearchModal";
 import React, { useState } from "react";
+import { CartOffCanvas } from "./CartOffcanvas";
 import "./css/style.css";
 
 export const Navbar = () => {
   const [openModalSearch, setOpenModalSearch] = useState(false);
+  const [openOffcanvas, setOpenOffcanvas] = useState(false);
 
   return (
     <header className="main-header-area">
@@ -13,9 +15,7 @@ export const Navbar = () => {
           <div className="row align-items-center">
             <div className="col-6">
               <div className="header-top-left">
-                <span className="pronia-offer">
-                  HELLO EVERYONE! 25% Off All Products
-                </span>
+                <span className="pronia-offer">HELLO EVERYONE! 25% Off All Products</span>
               </div>
             </div>
             <div className="col-6">
@@ -89,15 +89,9 @@ export const Navbar = () => {
                       >
                         <i className="pe-7s-users"></i>
                       </button>
-                      <ul
-                        className="dropdown-menu"
-                        aria-labelledby="settingButton"
-                      >
+                      <ul className="dropdown-menu" aria-labelledby="settingButton">
                         <li>
-                          <Link
-                            className="dropdown-item"
-                            to="login-register.html"
-                          >
+                          <Link className="dropdown-item" to="login-register.html">
                             Login | Register
                           </Link>
                         </li>
@@ -112,16 +106,17 @@ export const Navbar = () => {
                       <button
                         className="minicart-btn toolbar-btn"
                         type="button"
+                        onClick={() => {
+                          setOpenOffcanvas(!openOffcanvas);
+                        }}
                       >
                         <i className="pe-7s-shopbag"></i>
                         <span className="quantity">3</span>
                       </button>
+                      {openOffcanvas ? <CartOffCanvas /> : null}
                     </li>
                     <li className="mobile-menu_wrap d-block d-lg-none">
-                      <Link
-                        to="#mobileMenu"
-                        className="mobile-menu_btn toolbar-btn pl-0"
-                      >
+                      <Link to="#mobileMenu" className="mobile-menu_btn toolbar-btn pl-0">
                         <i className="pe-7s-menu"></i>
                       </Link>
                     </li>
@@ -152,29 +147,19 @@ export const Navbar = () => {
                               <Link to="shop.html">Shop Default</Link>
                             </li>
                             <li>
-                              <Link to="shop-grid-fullwidth.html">
-                                Shop Grid Fullwidth
-                              </Link>
+                              <Link to="shop-grid-fullwidth.html">Shop Grid Fullwidth</Link>
                             </li>
                             <li>
-                              <Link to="shop-right-sidebar.html">
-                                Shop Right Sidebar
-                              </Link>
+                              <Link to="shop-right-sidebar.html">Shop Right Sidebar</Link>
                             </li>
                             <li>
-                              <Link to="shop-list-fullwidth.html">
-                                Shop List Fullwidth
-                              </Link>
+                              <Link to="shop-list-fullwidth.html">Shop List Fullwidth</Link>
                             </li>
                             <li>
-                              <Link to="shop-list-left-sidebar.html">
-                                Shop List Left Sidebar
-                              </Link>
+                              <Link to="shop-list-left-sidebar.html">Shop List Left Sidebar</Link>
                             </li>
                             <li>
-                              <Link to="shop-list-right-sidebar.html">
-                                Shop List Right Sidebar
-                              </Link>
+                              <Link to="shop-list-right-sidebar.html">Shop List Right Sidebar</Link>
                             </li>
                           </ul>
                         </li>
@@ -182,19 +167,13 @@ export const Navbar = () => {
                           <span className="title">Product Style</span>
                           <ul>
                             <li>
-                              <Link to="single-product-variable.html">
-                                Single Product Variable
-                              </Link>
+                              <Link to="single-product-variable.html">Single Product Variable</Link>
                             </li>
                             <li>
-                              <Link to="single-product-group.html">
-                                Single Product Group
-                              </Link>
+                              <Link to="single-product-group.html">Single Product Group</Link>
                             </li>
                             <li>
-                              <Link to="single-product.html">
-                                Single Product Default
-                              </Link>
+                              <Link to="single-product.html">Single Product Default</Link>
                             </li>
                             <li>
                               <Link to="single-product-affiliate.html">
@@ -202,14 +181,10 @@ export const Navbar = () => {
                               </Link>
                             </li>
                             <li>
-                              <Link to="single-product-sale.html">
-                                Single Product Sale
-                              </Link>
+                              <Link to="single-product-sale.html">Single Product Sale</Link>
                             </li>
                             <li>
-                              <Link to="single-product-sticky.html">
-                                Single Product Sticky
-                              </Link>
+                              <Link to="single-product-sticky.html">Single Product Sticky</Link>
                             </li>
                           </ul>
                         </li>
@@ -220,9 +195,7 @@ export const Navbar = () => {
                               <Link to="my-account.html">My Account</Link>
                             </li>
                             <li>
-                              <Link to="login-register.html">
-                                Login | Register
-                              </Link>
+                              <Link to="login-register.html">Login | Register</Link>
                             </li>
                             <li>
                               <Link to="cart.html">Shopping Cart</Link>
@@ -279,24 +252,16 @@ export const Navbar = () => {
                                 <Link to="shop.html">Shop Default</Link>
                               </li>
                               <li>
-                                <Link to="shop-grid-fullwidth.html">
-                                  Shop Grid Fullwidth
-                                </Link>
+                                <Link to="shop-grid-fullwidth.html">Shop Grid Fullwidth</Link>
                               </li>
                               <li>
-                                <Link to="shop-right-sidebar.html">
-                                  Shop Right Sidebar
-                                </Link>
+                                <Link to="shop-right-sidebar.html">Shop Right Sidebar</Link>
                               </li>
                               <li>
-                                <Link to="shop-list-fullwidth.html">
-                                  Shop List Fullwidth
-                                </Link>
+                                <Link to="shop-list-fullwidth.html">Shop List Fullwidth</Link>
                               </li>
                               <li>
-                                <Link to="shop-list-left-sidebar.html">
-                                  Shop List Left Sidebar
-                                </Link>
+                                <Link to="shop-list-left-sidebar.html">Shop List Left Sidebar</Link>
                               </li>
                               <li>
                                 <Link to="shop-list-right-sidebar.html">
@@ -314,14 +279,10 @@ export const Navbar = () => {
                                 </Link>
                               </li>
                               <li>
-                                <Link to="single-product-group.html">
-                                  Single Product Group
-                                </Link>
+                                <Link to="single-product-group.html">Single Product Group</Link>
                               </li>
                               <li>
-                                <Link to="single-product.html">
-                                  Single Product Default
-                                </Link>
+                                <Link to="single-product.html">Single Product Default</Link>
                               </li>
                               <li>
                                 <Link to="single-product-affiliate.html">
@@ -329,14 +290,10 @@ export const Navbar = () => {
                                 </Link>
                               </li>
                               <li>
-                                <Link to="single-product-sale.html">
-                                  Single Product Sale
-                                </Link>
+                                <Link to="single-product-sale.html">Single Product Sale</Link>
                               </li>
                               <li>
-                                <Link to="single-product-sticky.html">
-                                  Single Product Sticky
-                                </Link>
+                                <Link to="single-product-sticky.html">Single Product Sticky</Link>
                               </li>
                             </ul>
                           </li>
@@ -347,9 +304,7 @@ export const Navbar = () => {
                                 <Link to="my-account.html">My Account</Link>
                               </li>
                               <li>
-                                <Link to="login-register.html">
-                                  Login | Register
-                                </Link>
+                                <Link to="login-register.html">Login | Register</Link>
                               </li>
                               <li>
                                 <Link to="cart.html">Shopping Cart</Link>

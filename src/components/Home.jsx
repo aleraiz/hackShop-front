@@ -1,5 +1,4 @@
 import { Carousel } from "./carousel/Carousel";
-import { Navbar } from "./navbar/Navbar";
 import { ShippingArea } from "./shippingArea/ShippingArea";
 import { OurProducts } from "./ourProducts/OurProducts";
 import { Collection } from "./collection/Collection";
@@ -7,13 +6,11 @@ import { NewProducts } from "./newProducts/NewProducts";
 import { Testimonial } from "./testimonial/Testimonial";
 import { BrandArea } from "./brandArea/BrandArea";
 import { LatestBlog } from "./latestBlog/LatestBlog";
-import { Footer } from "./footer/Footer";
 import { ProductDetail } from "./productDetail.jsx/ProductDetail";
 
 export const Home = () => {
   return (
     <div className="main-wrapper">
-      <Navbar />
       <Carousel />
       <ShippingArea />
       <OurProducts />
@@ -23,7 +20,6 @@ export const Home = () => {
       <BrandArea />
       <LatestBlog />
       <ProductDetail />
-      <Footer />
       {/* <div
           className="modal quick-view-modal fade"
           id="quickModal"
