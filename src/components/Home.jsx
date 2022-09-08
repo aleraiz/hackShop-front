@@ -22,7 +22,6 @@ export const Home = () => {
       <Testimonial />
       <BrandArea />
       <LatestBlog />
-      <ProductDetail />
       <Footer />
       {/* <div
           className="modal quick-view-modal fade"
