@@ -6,7 +6,6 @@ import { NewProducts } from "./newProducts/NewProducts";
 import { Testimonial } from "./testimonial/Testimonial";
 import { BrandArea } from "./brandArea/BrandArea";
 import { LatestBlog } from "./latestBlog/LatestBlog";
-import { Footer } from "./footer/Footer";
 
 export const Home = () => {
   return (
@@ -19,7 +18,6 @@ export const Home = () => {
       <Testimonial />
       <BrandArea />
       <LatestBlog />
-      <Footer />
       {/* <div
           className="modal quick-view-modal fade"
           id="quickModal"
