@@ -15,13 +15,13 @@ export const NavbarPrincipal = () => {
           <div className="row align-items-center">
             <div className="col-lg-12">
               <div className="header-middle-wrap position-relative">
-                <Link to="index.html" className="header-logo">
+                <Link to="/" className="header-logo">
                   <img src="../../dark.png" alt="Header Logo" />
                 </Link>
                 <nav className="main-nav">
                   <ul>
                     <li className="drop-holder">
-                      <Link to="index.html">Home</Link>
+                      <Link to="/">Home</Link>
                     </li>
                     <li className="megamenu-holder">
                       <Link to="shop.html">Shop</Link>
@@ -140,9 +140,14 @@ export const NavbarPrincipal = () => {
                         </li>
                       </ul>
                     </li>
+                    <li className="d-none d-lg-block">
+                      <Link to="wishlist.html" style={{ color: "#212529" }}>
+                        <i className="pe-7s-like"></i>
+                      </Link>
+                    </li>
                     <li className="minicart-wrap me-3 me-lg-0">
                       <button
-                        className="minicart-btn toolbar-btn"
+                        className="minicart-btn toolbar-btn btnOffcanvas"
                         type="button"
                         onClick={() => {
                           setOpenOffcanvas(!openOffcanvas);
