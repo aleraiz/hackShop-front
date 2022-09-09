@@ -2,12 +2,18 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-export const CartOffCanvas = () => {
-  const [show, setShow] = useState(true);
-  const handleClose = () => setShow(false);
+export const CartOffCanvas = ({ setOpenOffcanvas }) => {
+  const handleClose = () => setOpenOffcanvas(false);
 
   return (
-    <Offcanvas show={show} onHide={handleClose} placement="end" id="miniCart" scroll={true}>
+    <Offcanvas
+      show={true}
+      onHide={handleClose}
+      placement="end"
+      id="miniCart"
+      scroll={true}
+      backdrop={true}
+    >
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
       </Offcanvas.Header>

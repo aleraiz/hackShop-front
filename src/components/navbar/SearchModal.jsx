@@ -3,14 +3,13 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import "./css/searchModal.css";
 
-export const SearchModal = () => {
-  const [show, setShow] = useState(true);
-  const [value, setValue] = useState("");
+export const SearchModal = ({ setOpenModalSearch }) => {
+  const handleClose = () => setOpenModalSearch(false);
 
   return (
     <Modal
-      show={show}
-      onHide={setShow}
+      show={true}
+      onHide={handleClose}
       centered
       tabIndex="1"
       className="modal-bg-dark"
@@ -28,7 +27,7 @@ export const SearchModal = () => {
           data-tippy-arrow="true"
           data-tippy-theme="sharpborder"
           onClick={() => {
-            setShow(false);
+            handleClose();
           }}
         ></button>
       </Modal.Header>

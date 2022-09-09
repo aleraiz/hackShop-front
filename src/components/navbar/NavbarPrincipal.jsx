@@ -8,6 +8,14 @@ export const NavbarPrincipal = () => {
   const [openModalSearch, setOpenModalSearch] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
 
+  const options = [
+    {
+      name: "Enable both scrolling & backdrop",
+      scroll: true,
+      backdrop: true,
+    },
+  ];
+
   return (
     <header className="main-header-area sticky-top navbarPrincipal">
       <div className="header-middle">
@@ -114,12 +122,14 @@ export const NavbarPrincipal = () => {
                         className="search-btn bt"
                         type="button"
                         onClick={() => {
-                          setOpenModalSearch(!openModalSearch);
+                          setOpenModalSearch(true);
                         }}
                       >
                         <i className="pe-7s-search"></i>
                       </button>
-                      {openModalSearch ? <SearchModal /> : null}
+                      {openModalSearch ? (
+                        <SearchModal setOpenModalSearch={setOpenModalSearch} />
+                      ) : null}
                     </li>
                     <li className="dropdown d-none d-lg-block">
                       <button
@@ -150,13 +160,13 @@ export const NavbarPrincipal = () => {
                         className="minicart-btn toolbar-btn btnOffcanvas"
                         type="button"
                         onClick={() => {
-                          setOpenOffcanvas(!openOffcanvas);
+                          setOpenOffcanvas(true);
                         }}
                       >
                         <i className="pe-7s-shopbag"></i>
                         <span className="quantity">3</span>
                       </button>
-                      {openOffcanvas ? <CartOffCanvas /> : null}
+                      {openOffcanvas ? <CartOffCanvas setOpenOffcanvas={setOpenOffcanvas} /> : null}
                     </li>
                     <li className="mobile-menu_wrap d-block d-lg-none">
                       <Link to="#mobileMenu" className="mobile-menu_btn toolbar-btn pl-0">
