@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { SearchModal } from "./SearchModal";
 import React, { useState } from "react";
 import { CartOffCanvas } from "./CartOffcanvas";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import "./css/style.css";
 
 export const NavbarPrincipal = () => {
@@ -131,7 +133,7 @@ export const NavbarPrincipal = () => {
                         <SearchModal setOpenModalSearch={setOpenModalSearch} />
                       ) : null}
                     </li>
-                    <li className="dropdown d-none d-lg-block">
+                    <li>
                       <button
                         className="btn btn-link dropdown-toggle ht-btn p-0"
                         type="button"
