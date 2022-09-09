@@ -20,7 +20,7 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
       <Offcanvas.Body>
         <div className="minicart-content">
           <ul className="minicart-list">
-            <li className="minicart-product">
+            <li className="minicart-product minicart-flex">
               <Link className="product-item_remove" to="#">
                 <i
                   className="pe-7s-close"
@@ -34,8 +34,8 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
               </Link>
               <Link to="single-product-variable.html" className="product-item_img">
                 <img
-                  className="img-full"
-                  src="../assets/images/product/large-size/1-1-570x633.jpg"
+                  className="img-full img-cartOffCanvas"
+                  src="../../../cartOffCanvas/2-1-70x78.jpg"
                   alt="Product Image"
                 />
               </Link>
@@ -46,7 +46,7 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
                 <span className="product-item_quantity">1 x $23.45</span>
               </div>
             </li>
-            <li className="minicart-product">
+            <li className="minicart-product minicart-flex">
               <Link className="product-item_remove" to="#">
                 <i
                   className="pe-7s-close"
@@ -60,8 +60,8 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
               </Link>
               <Link to="single-product-variable.html" className="product-item_img">
                 <img
-                  className="img-full"
-                  src="assets/images/product/small-size/2-2-70x78.png"
+                  className="img-full img-cartOffCanvas"
+                  src="../../../cartOffCanvas/2-2-70x78.jpg"
                   alt="Product Image"
                 />
               </Link>
@@ -72,7 +72,7 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
                 <span className="product-item_quantity">1 x $25.45</span>
               </div>
             </li>
-            <li className="minicart-product">
+            <li className="minicart-product minicart-flex">
               <Link className="product-item_remove" to="#">
                 <i
                   className="pe-7s-close"
@@ -86,8 +86,8 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
               </Link>
               <Link to="single-product-variable.html" className="product-item_img">
                 <img
-                  className="img-full"
-                  src="assets/images/product/small-size/2-3-70x78.png"
+                  className="img-full img-cartOffCanvas"
+                  src="../../../cartOffCanvas/2-3-70x78.jpg"
                   alt="Product Image"
                 />
               </Link>

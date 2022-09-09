@@ -7,6 +7,13 @@
     padding: 0;
 }
 
+.btn-collection:hover{
+    background-color: #74b816;
+    border-color: #74b816;
+    color: #ffff;
+}
+
+
 .btn-custom-size{
     width: 160px;
     height: 47px;
