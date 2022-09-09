@@ -1230,6 +1230,7 @@ blockquote p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 0;
 }
 
 .rating-box ul li:not(:last-child) {
@@ -2172,16 +2173,8 @@ blockquote p {
 }
 
 .mobile-menu_wrapper .offcanvas-body .inner-body .offcanvas-top .button-close,
-.offcanvas-minicart_wrapper
-  .offcanvas-body
-  .inner-body
-  .offcanvas-top
-  .button-close,
-.offcanvas-search_wrapper
-  .offcanvas-body
-  .inner-body
-  .offcanvas-top
-  .button-close {
+.offcanvas-minicart_wrapper .offcanvas-body .inner-body .offcanvas-top .button-close,
+.offcanvas-search_wrapper .offcanvas-body .inner-body .offcanvas-top .button-close {
   font-size: 24px;
   color: #ffffff;
 }
@@ -2687,10 +2680,7 @@ blockquote p {
   }
 }
 
-.offcanvas-minicart_wrapper
-  .offcanvas-body
-  .minicart-content
-  .minicart-heading {
+.offcanvas-minicart_wrapper .offcanvas-body .minicart-content .minicart-heading {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2702,11 +2692,7 @@ blockquote p {
   padding-bottom: 25px;
 }
 
-.offcanvas-minicart_wrapper
-  .offcanvas-body
-  .minicart-content
-  .minicart-heading
-  .button-close {
+.offcanvas-minicart_wrapper .offcanvas-body .minicart-content .minicart-heading .button-close {
   font-size: 32px;
   line-height: 1;
   color: #383838;
@@ -2735,21 +2721,13 @@ blockquote p {
   overflow: auto;
 }
 
-.offcanvas-minicart_wrapper
-  .offcanvas-body
-  .minicart-content
-  .minicart-list
-  li:not(:last-child) {
+.offcanvas-minicart_wrapper .offcanvas-body .minicart-content .minicart-list li:not(:last-child) {
   border-bottom: 1px solid #dee2e6;
   padding-bottom: 30px;
   margin-bottom: 30px;
 }
 
-.offcanvas-minicart_wrapper
-  .offcanvas-body
-  .minicart-content
-  .minicart-list
-  li.minicart-product {
+.offcanvas-minicart_wrapper .offcanvas-body .minicart-content .minicart-list li.minicart-product {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3140,6 +3118,7 @@ blockquote p {
 .shipping-content .title {
   color: #1f2226;
   font-size: 20px;
+  font-weight: 500;
 }
 
 .shipping-content .short-desc {
@@ -3180,6 +3159,10 @@ blockquote p {
   padding-bottom: 20px;
   padding-left: 0;
   width: 100%;
+}
+.shippingText {
+  font-size: 16px;
+  font-weight: 400;
 }
 
 /*----------------------------------------*/
@@ -3589,11 +3572,7 @@ blockquote p {
 }
 
 @media (max-width: 479px) {
-  .single-product-content
-    .quantity-with-btn
-    li
-    .cart-plus-minus
-    .cart-plus-minus-box {
+  .single-product-content .quantity-with-btn li .cart-plus-minus .cart-plus-minus-box {
     width: 100%;
   }
 }
@@ -5933,11 +5912,7 @@ blockquote p {
 }
 
 .myaccount-form .myaccount-form-inner .single-input .checkbox-input label,
-.myaccount-form-boxed
-  .myaccount-form-inner
-  .single-input
-  .checkbox-input
-  label {
+.myaccount-form-boxed .myaccount-form-inner .single-input .checkbox-input label {
   display: inline-block;
 }
 
@@ -6285,18 +6260,8 @@ blockquote p {
   display: block;
 }
 
-.coupon-accordion
-  .coupon-content
-  .coupon-info
-  p.form-row-first
-  label
-  span.required,
-.coupon-accordion
-  .coupon-content
-  .coupon-info
-  p.form-row-last
-  label
-  span.required {
+.coupon-accordion .coupon-content .coupon-info p.form-row-first label span.required,
+.coupon-accordion .coupon-content .coupon-info p.form-row-last label span.required {
   color: #ff0000;
 }
 
@@ -6335,11 +6300,7 @@ blockquote p {
   width: inherit;
 }
 
-.coupon-accordion
-  .coupon-content
-  .coupon-info
-  p.form-row
-  input[type="checkbox"] {
+.coupon-accordion .coupon-content .coupon-info p.form-row input[type="checkbox"] {
   height: inherit;
   position: relative;
   top: 0;

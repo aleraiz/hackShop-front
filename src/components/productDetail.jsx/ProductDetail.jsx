@@ -103,11 +103,7 @@ export const ProductDetail = () => {
                       </div>
                     </div>
                     <div class="swiper-container single-product-thumbs">
-                      <Carousel
-                        responsive={responsive}
-                        infinite={true}
-                        arrows={true}
-                      >
+                      <Carousel responsive={responsive} infinite={true} arrows={true}>
                         <div class="swiper-slide">
                           <img
                             class="img-full"
@@ -171,18 +167,14 @@ export const ProductDetail = () => {
                       </div>
                     </div>
                     <p class="short-desc">
-                      Lorem ipsum dolor sit amet, consectetur adipisic elit, sed
-                      do eiusmod tempo incid ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostru exercitation ullamco
-                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                      irure dolor in reprehenderit in voluptate
+                      Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempo
+                      incid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru
+                      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                      aute irure dolor in reprehenderit in voluptate
                     </p>
                     <ul class="quantity-with-btn pb-4">
                       <li class="affiliate-btn-wrap">
-                        <a
-                          class="btn btn-custom-size xl-size btn-pronia-primary"
-                          href="#"
-                        >
+                        <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#">
                           Buy Now
                         </a>
                       </li>
@@ -280,10 +272,7 @@ export const ProductDetail = () => {
             <div class="container">
               <div class="row">
                 <div class="col-lg-12">
-                  <ul
-                    class="nav product-tab-nav tab-style-2 pt-0"
-                    role="tablist"
-                  >
+                  <ul class="nav product-tab-nav tab-style-2 pt-0" role="tablist">
                     <li class="nav-item" role="presentation">
                       <a
                         class="tab-btn"
@@ -334,26 +323,22 @@ export const ProductDetail = () => {
                       <div class="product-information-body">
                         <h4 class="title">Shipping</h4>
                         <p class="short-desc mb-4">
-                          The item will be shipped from China. So it need 15-20
-                          days to deliver. Our product is good with reasonable
-                          price and we believe you will worth it. So please wait
-                          for it patiently! Thanks.Any question please kindly to
-                          contact us and we promise to work hard to help you to
-                          solve the problem
+                          The item will be shipped from China. So it need 15-20 days to deliver. Our
+                          product is good with reasonable price and we believe you will worth it. So
+                          please wait for it patiently! Thanks.Any question please kindly to contact
+                          us and we promise to work hard to help you to solve the problem
                         </p>
                         <h4 class="title">About return request</h4>
                         <p class="short-desc mb-4">
-                          If you don't need the item with worry, you can contact
-                          us then we will help you to solve the problem, so
-                          please close the return request! Thanks
+                          If you don't need the item with worry, you can contact us then we will
+                          help you to solve the problem, so please close the return request! Thanks
                         </p>
                         <h4 class="title">Guarantee</h4>
                         <p class="short-desc mb-0">
-                          If it is the quality question, we will resend or
-                          refund to you; If you receive damaged or wrong items,
-                          please contact us and attach some pictures about
-                          product, we will exchange a new correct item to you
-                          after the confirmation.
+                          If it is the quality question, we will resend or refund to you; If you
+                          receive damaged or wrong items, please contact us and attach some pictures
+                          about product, we will exchange a new correct item to you after the
+                          confirmation.
                         </p>
                       </div>
                     </div>
@@ -365,24 +350,19 @@ export const ProductDetail = () => {
                     >
                       <div class="product-description-body">
                         <p class="short-desc mb-0">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit, sed do eiusmod tempor incidid ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu
-                          fugiat nulla pariatur. Excepteur sint occaecat
-                          cupidatat non proident, sunt in culpa qui officia
-                          deserunt mollit anim id est laborum. Sed ut
-                          perspiciatis unde omnis iste natus error sit
-                          voluptatem accusantium doloremque laudantium, totam
-                          rem aperiam, eaque ipsa quae ab illo inventore
-                          veritatis et quasi architecto beatae vitae dicta sunt
-                          explicabo. Nemo enim ipsam voluptatem quia voluptas
-                          sit aspernatur aut odit aut fugit, sed quia
-                          consequuntur magni dolores eos qui ratione voluptatem
-                          sequi nesciunt. Neque porro quisquam est, qui dolorem
-                          ipsum quia dolor sit amet,
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                          non proident, sunt in culpa qui officia deserunt mollit anim id est
+                          laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+                          illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+                          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                          voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
+                          quia dolor sit amet,
                         </p>
                       </div>
                     </div>
@@ -408,16 +388,12 @@ export const ProductDetail = () => {
                                 <span class="date">21 July 2021</span>
                               </div>
                               <p class="user-comment">
-                                Lorem ipsum dolor sit amet, consectetur adipisi
-                                elit, sed do eiusmod tempor incidid ut labore
-                                etl dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitati ullamco laboris
-                                nisi ut aliquiex ea commodo consequat.
+                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
+                                tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea
+                                commodo consequat.
                               </p>
-                              <a
-                                class="btn btn-custom-size comment-btn"
-                                href="#"
-                              >
+                              <a class="btn btn-custom-size comment-btn" href="#">
                                 Reply
                               </a>
                             </div>
@@ -435,16 +411,11 @@ export const ProductDetail = () => {
                                 <span class="date">21 July 2021</span>
                               </div>
                               <p class="user-comment">
-                                Lorem ipsum dolor sit amet, consectetur adipisi
-                                elit, sed do eiusmod tempr incidid ut labore etl
-                                dolore magna aliqua. Ut enim ad minim veniam,
-                                quisnos exercitati ullamco laboris nisi ut
-                                aliquiex.
+                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
+                                tempr incidid ut labore etl dolore magna aliqua. Ut enim ad minim
+                                veniam, quisnos exercitati ullamco laboris nisi ut aliquiex.
                               </p>
-                              <a
-                                class="btn btn-custom-size comment-btn style-2"
-                                href="#"
-                              >
+                              <a class="btn btn-custom-size comment-btn style-2" href="#">
                                 Reply
                               </a>
                             </div>
@@ -462,16 +433,12 @@ export const ProductDetail = () => {
                                 <span class="date">21 July 2021</span>
                               </div>
                               <p class="user-comment">
-                                Lorem ipsum dolor sit amet, consectetur adipisi
-                                elit, sed do eiusmod tempor incidid ut labore
-                                etl dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitati ullamco laboris
-                                nisi ut aliquiex ea commodo consequat.
+                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
+                                tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea
+                                commodo consequat.
                               </p>
-                              <a
-                                class="btn btn-custom-size comment-btn"
-                                href="#"
-                              >
+                              <a class="btn btn-custom-size comment-btn" href="#">
                                 Reply
                               </a>
                             </div>
@@ -539,8 +506,8 @@ export const ProductDetail = () => {
                 <div class="section-title-wrap without-tab">
                   <h2 class="section-title">Related Products</h2>
                   <p class="section-desc">
-                    Contrary to popular belief, Lorem Ipsum is not simply random
-                    text. It has roots in a piece of classical Latin literature
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
+                    in a piece of classical Latin literature
                   </p>
                 </div>
                 <div class="col-lg-12">
@@ -550,197 +517,6 @@ export const ProductDetail = () => {
             </div>
           </div>
         </main>
-
-        <div
-          class="footer-area"
-          data-bg-image="assets/images/footer/bg/1-1920x465.jpg"
-        >
-          <div class="footer-top section-space-top-100 pb-60">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-3">
-                  <div class="footer-widget-item">
-                    <div class="footer-widget-logo">
-                      <a href="index.html">
-                        <img src="assets/images/logo/dark.png" alt="Logo" />
-                      </a>
-                    </div>
-                    <p class="footer-widget-desc">
-                      Lorem ipsum dolor sit amet, consec adipisl elit, sed do
-                      eiusmod tempor
-                      <br />
-                      incidio ut labore et dolore magna.
-                    </p>
-                    <div class="social-link with-border">
-                      <ul>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Facebook"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Twitter"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Dribbble"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-dribbble"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-2 col-md-4 pt-40">
-                  <div class="footer-widget-item">
-                    <h3 class="footer-widget-title">Useful Links</h3>
-                    <ul class="footer-widget-list-item">
-                      <li>
-                        <a href="#">About Pronia</a>
-                      </li>
-                      <li>
-                        <a href="#">How to shop</a>
-                      </li>
-                      <li>
-                        <a href="#">FAQ</a>
-                      </li>
-                      <li>
-                        <a href="#">Contact us</a>
-                      </li>
-                      <li>
-                        <a href="#">Log in</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-lg-2 col-md-4 pt-40">
-                  <div class="footer-widget-item">
-                    <h3 class="footer-widget-title">My Account</h3>
-                    <ul class="footer-widget-list-item">
-                      <li>
-                        <a href="#">Sign In</a>
-                      </li>
-                      <li>
-                        <a href="#">View Cart</a>
-                      </li>
-                      <li>
-                        <a href="#">My Wishlist</a>
-                      </li>
-                      <li>
-                        <a href="#">Track My Order</a>
-                      </li>
-                      <li>
-                        <a href="#">Help</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-lg-2 col-md-4 pt-40">
-                  <div class="footer-widget-item">
-                    <h3 class="footer-widget-title">Our Service</h3>
-                    <ul class="footer-widget-list-item">
-                      <li>
-                        <a href="#">Payment Methods</a>
-                      </li>
-                      <li>
-                        <a href="#">Money Guarantee!</a>
-                      </li>
-                      <li>
-                        <a href="#">Returns</a>
-                      </li>
-                      <li>
-                        <a href="#">Shipping</a>
-                      </li>
-                      <li>
-                        <a href="#">Privacy Policy</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-lg-3 pt-40">
-                  <div class="footer-contact-info">
-                    <h3 class="footer-widget-title">Got Question? Call Us</h3>
-                    <a class="number" href="tel://123-456-789">
-                      123 456 789
-                    </a>
-                    <div class="address">
-                      <ul>
-                        <li>Your Address Goes Here</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="payment-method">
-                    <a href="#">
-                      <img
-                        src="assets/images/payment/1.png"
-                        alt="Payment Method"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="copyright">
-                    <span class="copyright-text">
-                      © 2021 Pronia Made with
-                      <i class="fa fa-heart text-danger"></i> by
-                      <a
-                        href="https://hasthemes.com/"
-                        rel="noopener"
-                        target="_blank"
-                      >
-                        HasThemes
-                      </a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div
           class="modal quick-view-modal fade"
           id="quickModal"
@@ -843,9 +619,7 @@ export const ProductDetail = () => {
                         </div>
                       </div>
                       <div class="selector-wrap color-option">
-                        <span class="selector-title border-bottom-0">
-                          Color
-                        </span>
+                        <span class="selector-title border-bottom-0">Color</span>
                         <select class="nice-select wide border-bottom-0 rounded-0">
                           <option value="default">Black & White</option>
                           <option value="blue">Blue</option>
@@ -862,21 +636,15 @@ export const ProductDetail = () => {
                         </select>
                       </div>
                       <p class="short-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisic elit,
-                        sed do eiusmod tempo incid ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostru
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate
+                        Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempo
+                        incid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                        aute irure dolor in reprehenderit in voluptate
                       </p>
                       <ul class="quantity-with-btn">
                         <li class="quantity">
                           <div class="cart-plus-minus">
-                            <input
-                              class="cart-plus-minus-box"
-                              value="1"
-                              type="text"
-                            />
+                            <input class="cart-plus-minus-box" value="1" type="text" />
                           </div>
                         </li>
                         <li class="add-to-cart">
@@ -901,10 +669,7 @@ export const ProductDetail = () => {
                       <ul class="service-item-wrap pb-0">
                         <li class="service-item">
                           <div class="service-img">
-                            <img
-                              src="assets/images/shipping/icon/car.png"
-                              alt="Shipping Icon"
-                            />
+                            <img src="assets/images/shipping/icon/car.png" alt="Shipping Icon" />
                           </div>
                           <div class="service-content">
                             <span class="title">
@@ -915,10 +680,7 @@ export const ProductDetail = () => {
                         </li>
                         <li class="service-item">
                           <div class="service-img">
-                            <img
-                              src="assets/images/shipping/icon/card.png"
-                              alt="Shipping Icon"
-                            />
+                            <img src="assets/images/shipping/icon/card.png" alt="Shipping Icon" />
                           </div>
                           <div class="service-content">
                             <span class="title">
