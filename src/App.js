@@ -10,7 +10,7 @@ import "./assets/css/plugins.min.css";
 import "./assets/css/swiper-bundle.min.css";
 import { Footer } from "./components/footer/Footer";
 import { NavbarPrincipal } from "./components/navbar/NavbarPrincipal";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Cart } from "./components/cart/Cart";
 import { ProductDetail } from "./components/productDetail.jsx/ProductDetail";
