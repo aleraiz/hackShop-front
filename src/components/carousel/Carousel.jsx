@@ -14,12 +14,10 @@ export const Carousel = () => {
                     <div className=" text-black">
                       <span className="offer animate__bounce">25% OFF</span>
                       <h2 className="title">New Plant</h2>
-                      <p className="short-desc">
-                        Pronia, With 100% Natural, Organic & Plant Shop.
-                      </p>
+                      <p className="short-desc">Pronia, With 100% Natural, Organic & Plant Shop.</p>
                       <div className="btn-wrap">
                         <a
-                          className="btn btn-custom-size xl-size btn-pronia-primary"
+                          className="btn btn-custom-size xl-size btn-pronia-primary btn-collection rounded-pill"
                           href="shop.html"
                         >
                           Discover Now
@@ -31,10 +29,7 @@ export const Carousel = () => {
                     <div className="inner-img">
                       <div className="scene fill">
                         <div className="expand-width" data-depth="0.2">
-                          <img
-                            src="../../../image/carouselImgDos.jpg"
-                            alt="Inner Image"
-                          />
+                          <img src="../../../image/carouselImgDos.jpg" alt="Inner Image" />
                         </div>
                       </div>
                     </div>

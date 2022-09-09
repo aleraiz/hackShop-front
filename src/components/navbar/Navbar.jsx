@@ -10,7 +10,7 @@ export const Navbar = () => {
 
   return (
     <header className="main-header-area">
-      <div className="header-top bg-pronia-primary d-none d-lg-block">
+      {/* <div className="header-top bg-pronia-primary d-none d-lg-block">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-6">
@@ -50,7 +50,7 @@ export const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="header-middle py-30">
         <div className="container">
           <div className="row align-items-center">
