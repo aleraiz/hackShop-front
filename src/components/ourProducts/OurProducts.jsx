@@ -7,11 +7,7 @@ export const OurProducts = () => {
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <ul
-              className="nav product-tab-nav tab-style-1"
-              id="myTab"
-              role="tablist"
-            >
+            <ul className="nav product-tab-nav tab-style-1" id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <a
                   className="active"

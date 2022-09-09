@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 export const CartOffCanvas = () => {
@@ -100,7 +99,7 @@ export const CartOffCanvas = () => {
           <span className="ammount">$79.35</span>
         </div>
         <div className="group-btn_wrap d-grid gap-2">
-          <Link to="cart.html" className="btn btn-dark">
+          <Link to="/cart" className="btn btn-dark">
             View Cart
           </Link>
           <Link to="checkout.html" className="btn btn-dark">

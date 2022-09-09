@@ -73,6 +73,10 @@
   margin-bottom: 30px;
 }
 
+.footer-widget-list-item {
+  padding-left: 0;
+}
+
 .footer-widget-list-item > li:not(:last-child) {
   padding-bottom: 5px;
 }

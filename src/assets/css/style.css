@@ -1230,6 +1230,7 @@ blockquote p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 0;
 }
 
 .rating-box ul li:not(:last-child) {
