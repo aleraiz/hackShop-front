@@ -1,0 +1,18 @@
+.paragraphError {
+  color: #fff;
+  background-color: #f03e3e;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.paragraphError p {
+  display: inline;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.paragraphError svg {
+  font-size: 25px;
+}

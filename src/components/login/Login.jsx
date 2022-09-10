@@ -1,6 +1,30 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
+
+import "./style.css";
+
 export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userError, setUserError] = useState("");
+
+  async function loginUser() {
+    try {
+      const response = await axios({
+        method: "post",
+        url: "http://localhost:8000/token",
+        data: {
+          email,
+          password,
+        },
+      });
+    } catch (error) {
+      setUserError(error.response.data.error);
+    }
+  }
+
   return (
     <main className="main-content">
       <div
@@ -29,22 +53,46 @@ export const Login = () => {
         <div className="container">
           <div className="row d-flex justify-content-center">
             <div className="col-lg-6">
-              <form action="#">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
+              >
                 <div className="login-form">
                   <h4 className="login-title">Login</h4>
                   <div className="row">
                     <div className="col-lg-12">
-                      <label>Email Address*</label>
-                      <input type="email" placeholder="Email Address" />
+                      <label>Email</label>
+                      <input
+                        type="email"
+                        placeholder="Email Address"
+                        name="email"
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
+                        onFocus={() => {
+                          setUserError();
+                        }}
+                      />
                     </div>
                     <div className="col-lg-12">
-                      <label>Password</label>
-                      <input type="password" placeholder="Password" />
+                      <label>Contraseña</label>
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        onChange={(e) => {
+                          setPassword(e.target.value);
+                        }}
+                        onFocus={() => {
+                          setUserError();
+                        }}
+                      />
                     </div>
                     <div className="col-md-8">
                       <div className="check-box">
                         <input type="checkbox" id="remember_me" />
-                        <label for="remember_me">Remember me</label>
+                        <label htmlFor="remember_me">Remember me</label>
                       </div>
                     </div>
                     <div className="col-md-4 pt-1 mt-md-0">
@@ -54,8 +102,19 @@ export const Login = () => {
                         </Link>
                       </div>
                     </div>
+                    {userError && (
+                      <div className="paragraphError">
+                        <AiOutlineExclamationCircle />
+                        <p>{userError}</p>
+                      </div>
+                    )}
                     <div className="col-lg-12 pt-5">
-                      <button className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill">
+                      <button
+                        className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill"
+                        onClick={() => {
+                          loginUser();
+                        }}
+                      >
                         Login
                       </button>
                     </div>

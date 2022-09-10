@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 export const Register = () => {
   const [firstname, setFirstname] = useState("");
@@ -12,19 +13,22 @@ export const Register = () => {
   const [userError, setUserError] = useState("");
 
   async function registerClient() {
-    const createdUser = await axios({
-      method: "post",
-      url: "http://localhost:8000/register",
-      data: {
-        firstname,
-        lastname,
-        email,
-        password,
-        address,
-        phoneNumber,
-      },
-    });
-    console.log(createdUser.data);
+    try {
+      const response = await axios({
+        method: "post",
+        url: "http://localhost:8000/register",
+        data: {
+          firstname,
+          lastname,
+          email,
+          password,
+          address,
+          phoneNumber,
+        },
+      });
+    } catch (error) {
+      setUserError(error.response.data.error);
+    }
   }
 
   return (
@@ -116,6 +120,9 @@ export const Register = () => {
                         onChange={(e) => {
                           setEmail(e.target.value);
                         }}
+                        onFocus={() => {
+                          setUserError();
+                        }}
                       />
                     </div>
                     <div className="col-md-12">
@@ -129,6 +136,12 @@ export const Register = () => {
                         }}
                       />
                     </div>
+                    {userError && (
+                      <div className="paragraphError">
+                        <AiOutlineExclamationCircle />
+                        <p>{userError}</p>
+                      </div>
+                    )}
                     <div className="col-12">
                       <button
                         className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill"
