@@ -10,6 +10,29 @@
   text-decoration: none;
 }
 
+.img-cartOffCanvas{
+  width: auto;
+}
+
+.minicart-flex{
+  display: flex;
+}
+.minicart-flex .product-item_content .product-item_title {
+  color: black;
+  display: block;
+  margin-bottom: 10px;
+}
+.minicart-flex .product-item_content .product-item_title:hover {
+  color: #abd373;
+}
+
+.minicart-flex .product-item_content {
+  padding-left: 20px;
+  padding-right: 10px;
+
+}
+
+
 .dropdown-wrap {
   display: -webkit-box;
   display: -webkit-flex;
