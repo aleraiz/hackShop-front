@@ -24,24 +24,22 @@ import { AboutUs } from "./components/aboutUs/AboutUs";
 
 function App() {
   return (
-    <>
-      <div className="app">
-        <NavbarPrincipal />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="*" element={<Error404 />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-        </Routes>
-        <Footer />
-      </div>
-    </>
+    <div className="app">
+      <NavbarPrincipal />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/contactUs" element={<ContactUs />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 

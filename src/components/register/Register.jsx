@@ -1,20 +1,48 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 
 export const Register = () => {
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userError, setUserError] = useState("");
+
+  async function registerClient() {
+    const createdUser = await axios({
+      method: "post",
+      url: "http://localhost:8000/register",
+      data: {
+        firstname,
+        lastname,
+        email,
+        password,
+        address,
+        phoneNumber,
+      },
+    });
+    console.log(createdUser.data);
+  }
+
   return (
-    <main class="main-content">
+    <main className="main-content">
       <div
-        class="breadcrumb-area breadcrumb-height"
+        className="breadcrumb-area breadcrumb-height"
         data-bg-image="assets/images/breadcrumb/bg/1-1-1919x388.jpg"
       >
-        <div class="container h-100">
-          <div class="row h-100">
-            <div class="col-lg-12">
-              <div class="breadcrumb-item">
-                <h2 class="breadcrumb-heading">Register Page</h2>
-                <ul>
+        <div className="container h-100">
+          <div className="row h-100">
+            <div className="col-lg-12">
+              <div className="breadcrumb-item">
+                <h2 className="breadcrumb-heading">Register Page</h2>
+                <ul className="p-0">
                   <li>
-                    <a href="index.html">Home</a>
+                    <Link to="/" className="text-dark">
+                      Home
+                    </Link>
                   </li>
                   <li>Register</li>
                 </ul>
@@ -23,36 +51,91 @@ export const Register = () => {
           </div>
         </div>
       </div>
-      <div class="login-register-area section-space-y-axis-100">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 pt-5 pt-lg-0">
-              <form action="#">
-                <div class="login-form">
-                  <h4 class="login-title">Register</h4>
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <label>First Name</label>
-                      <input type="text" placeholder="First Name" />
+      <div className="login-register-area section-space-y-axis-100">
+        <div className="container">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-6 pt-5 pt-lg-0">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                <div className="login-form">
+                  <h4 className="login-title">Register</h4>
+                  <div className="row">
+                    <div className="col-md-6 col-12">
+                      <label>Nombre</label>
+                      <input
+                        type="text"
+                        placeholder="Firstname"
+                        name="firstname"
+                        onChange={(e) => {
+                          setFirstname(e.target.value);
+                        }}
+                      />
                     </div>
-                    <div class="col-md-6 col-12">
-                      <label>Last Name</label>
-                      <input type="text" placeholder="Last Name" />
+                    <div className="col-md-6 col-12">
+                      <label>Apellido</label>
+                      <input
+                        type="text"
+                        placeholder="Lastname"
+                        name="lastname"
+                        onChange={(e) => {
+                          setLastname(e.target.value);
+                        }}
+                      />
                     </div>
-                    <div class="col-md-12">
-                      <label>Email Address*</label>
-                      <input type="email" placeholder="Email Address" />
+                    <div className="col-md-6 col-12">
+                      <label>Dirección</label>
+                      <input
+                        type="text"
+                        placeholder="Lastname"
+                        name="address"
+                        onChange={(e) => {
+                          setAddress(e.target.value);
+                        }}
+                      />
                     </div>
-                    <div class="col-md-6">
-                      <label>Password</label>
-                      <input type="password" placeholder="Password" />
+                    <div className="col-md-6 col-12">
+                      <label>Numero de teléfono</label>
+                      <input
+                        type="text"
+                        placeholder="Lastname"
+                        name="phoneNumber"
+                        onChange={(e) => {
+                          setPhoneNumber(e.target.value);
+                        }}
+                      />
                     </div>
-                    <div class="col-md-6">
-                      <label>Confirm Password</label>
-                      <input type="password" placeholder="Confirm Password" />
+                    <div className="col-md-12">
+                      <label>Email</label>
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
+                      />
                     </div>
-                    <div class="col-12">
-                      <button class="btn btn-custom-size lg-size btn-pronia-primary">
+                    <div className="col-md-12">
+                      <label>Contraseña</label>
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        onChange={(e) => {
+                          setPassword(e.target.value);
+                        }}
+                      />
+                    </div>
+                    <div className="col-12">
+                      <button
+                        className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill"
+                        onClick={() => {
+                          registerClient();
+                        }}
+                      >
                         Register
                       </button>
                     </div>

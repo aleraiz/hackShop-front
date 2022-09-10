@@ -12,7 +12,7 @@ export const Login = () => {
             <div className="col-lg-12">
               <div className="breadcrumb-item">
                 <h2 className="breadcrumb-heading">Login</h2>
-                <ul>
+                <ul className="p-0">
                   <li>
                     <Link className="text-dark" to="/">
                       Home

@@ -133,7 +133,7 @@ export const NavbarPrincipal = () => {
                         <SearchModal setOpenModalSearch={setOpenModalSearch} />
                       ) : null}
                     </li>
-                    <li>
+                    <li className="dropdown d-none d-lg-block">
                       <button
                         className="btn btn-link dropdown-toggle ht-btn p-0"
                         type="button"
