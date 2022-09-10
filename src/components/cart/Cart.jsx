@@ -54,10 +54,7 @@ export const Cart = () => {
                           </td>
                           <td className="product-thumbnail">
                             <a href="#">
-                              <img
-                                src="../../small-size/1-1-112x124.webp"
-                                alt="Cart Thumbnail"
-                              />
+                              <img src="../../small-size/1-1-112x124.webp" alt="Cart Thumbnail" />
                             </a>
                           </td>
                           <td className="product-name">
@@ -101,10 +98,7 @@ export const Cart = () => {
                           </td>
                           <td className="product-thumbnail">
                             <a href="#">
-                              <img
-                                src="../../small-size/1-2-112x124.webp"
-                                alt="Cart Thumbnail"
-                              />
+                              <img src="../../small-size/1-2-112x124.webp" alt="Cart Thumbnail" />
                             </a>
                           </td>
                           <td className="product-name">
@@ -148,10 +142,7 @@ export const Cart = () => {
                           </td>
                           <td className="product-thumbnail">
                             <a href="#">
-                              <img
-                                src="../../small-size/1-3-112x124.webp"
-                                alt="Cart Thumbnail"
-                              />
+                              <img src="../../small-size/1-3-112x124.webp" alt="Cart Thumbnail" />
                             </a>
                           </td>
                           <td className="product-name">
@@ -234,9 +225,6 @@ export const Cart = () => {
           </div>
         </div>
       </main>
-      <a className="scroll-to-top" href="">
-        <i className="fa fa-angle-double-up"></i>
-      </a>
     </>
   );
 };

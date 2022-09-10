@@ -10,20 +10,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export const Home = () => {
-  const [plantsDetails, setPlantsDetails] = useState([]);
-
-  async function products() {
-    const response = await axios({
-      method: "get",
-      url: "http://localhost:8000/products",
-    });
-    setPlantsDetails(response.data);
-  }
-
-  useEffect(() => {
-    products();
-  }, []);
-
   console.log(plantsDetails);
   return (
     <div className="main-wrapper">
