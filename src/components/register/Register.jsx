@@ -144,7 +144,7 @@ export const Register = () => {
                     )}
                     <div className="col-12">
                       <button
-                        className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill"
+                        className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill mt-4"
                         onClick={() => {
                           registerClient();
                         }}

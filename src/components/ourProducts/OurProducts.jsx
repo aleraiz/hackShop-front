@@ -1,4 +1,4 @@
-export const OurProducts = () => {
+export const OurProducts = ({ plant }) => {
   return (
     <div className="product-area section-space-top-100">
       <div className="container">
