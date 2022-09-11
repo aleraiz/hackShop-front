@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { deleteProductCart } from "../../redux/slices/cartSlice";
-import { useDispatch } from "react-redux";
 
 export const CartOffCanvas = ({ setOpenOffcanvas }) => {
   const dispatch = useDispatch();

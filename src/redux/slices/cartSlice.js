@@ -30,11 +30,27 @@ const cartSlice = createSlice({
       });
       state.cart = filteredProduct;
     },
-    modifyProductCart: (state, action) => {},
+    incrementQuantity: (state, action) => {
+      // const searchProduct = state.cart.find((productCart) => {
+      //   return productCart.id === action.payload.productId;
+      // });      // searchProduct.quantity = action.payload.quantityProduct;
+      // state.cart = [state.cart, searchProduct];
+      // const searchProduct = state.cart.findIndex((product) => {
+      //   return product.id === action.payload.productId;
+      // });
+      // console.log(searchProduct);
+    },
+    decrementQuantity: (state, action) => {
+      // const searchProduct = state.cart.find((productCart) => {
+      //   return productCart.id === action.payload.productId;
+      // });
+      // searchProduct.quantity = action.payload.removeProduct;
+      // state.cart = [searchProduct];
+    },
   },
 });
 
 const { actions, reducer } = cartSlice;
 
-export const { addProductCart, deleteProductCart, modifyProductCart } = actions;
+export const { addProductCart, deleteProductCart, incrementQuantity, decrementQuantity } = actions;
 export default reducer;

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../redux/slices/userSlice";
 
 import "./style.css";
 
@@ -9,8 +11,9 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userError, setUserError] = useState("");
+  const dispatch = useDispatch();
 
-  async function loginUser() {
+  async function loginClient() {
     try {
       const response = await axios({
         method: "post",
@@ -20,6 +23,7 @@ export const Login = () => {
           password,
         },
       });
+      dispatch(loginUser(response.data.id));
     } catch (error) {
       setUserError(error.response.data.error);
     }
@@ -112,7 +116,7 @@ export const Login = () => {
                       <button
                         className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill"
                         onClick={() => {
-                          loginUser();
+                          loginClient();
                         }}
                       >
                         Login

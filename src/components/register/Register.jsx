@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../redux/slices/userSlice";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 export const Register = () => {
@@ -11,6 +13,7 @@ export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userError, setUserError] = useState("");
+  const dispatch = useDispatch();
 
   async function registerClient() {
     try {
@@ -26,6 +29,7 @@ export const Register = () => {
           phoneNumber,
         },
       });
+      dispatch(registerUser(response.data.id));
     } catch (error) {
       setUserError(error.response.data.error);
     }

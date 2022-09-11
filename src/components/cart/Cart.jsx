@@ -1,5 +1,25 @@
 import "./css/style.css";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
+import { useState } from "react";
+
 export const Cart = () => {
+  const cart = useSelector((state) => state.cart.cart);
+  const dispatch = useDispatch();
+  const [quantityProduct, setQuantityProduct] = useState(1);
+  const [removeProduct, setRemoveProduct] = useState(quantityProduct);
+
+  function handlerIncrementProduct(productId) {
+    setQuantityProduct(quantityProduct + 1);
+    dispatch(incrementQuantity({ productId, quantityProduct }));
+  }
+
+  function handlerDecrementProduct(productId) {
+    setQuantityProduct(removeProduct - 1);
+    dispatch(decrementQuantity({ productId, removeProduct }));
+  }
+
   return (
     <>
       <main className="main-content">
@@ -38,138 +58,68 @@ export const Cart = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td className="product_remove">
-                            <a href="#">
-                              <i
-                                className="pe-7s-close"
-                                data-tippy="Remove"
-                                data-tippy-inertia="true"
-                                data-tippy-animation="shift-away"
-                                data-tippy-delay="50"
-                                data-tippy-arrow="true"
-                                data-tippy-theme="sharpborder"
-                              ></i>
-                            </a>
-                          </td>
-                          <td className="product-thumbnail">
-                            <a href="#">
-                              <img src="../../small-size/1-1-112x124.webp" alt="Cart Thumbnail" />
-                            </a>
-                          </td>
-                          <td className="product-name">
-                            <a href="#">American Marigold</a>
-                          </td>
-                          <td className="product-price">
-                            <span className="amount">$23.45</span>
-                          </td>
-                          <td className="quantity">
-                            <div className="cart-plus-minus">
-                              <input
-                                className="cart-plus-minus-box"
-                                // value="1"
-                                type="text"
-                              />
-                              <div className="dec qtybutton">
-                                <i className="fa fa-minus"></i>
-                              </div>
-                              <div className="inc qtybutton">
-                                <i className="fa fa-plus"></i>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="product-subtotal">
-                            <span className="amount">$23.45</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="product_remove">
-                            <a href="#">
-                              <i
-                                className="pe-7s-close"
-                                data-tippy="Remove"
-                                data-tippy-inertia="true"
-                                data-tippy-animation="shift-away"
-                                data-tippy-delay="50"
-                                data-tippy-arrow="true"
-                                data-tippy-theme="sharpborder"
-                              ></i>
-                            </a>
-                          </td>
-                          <td className="product-thumbnail">
-                            <a href="#">
-                              <img src="../../small-size/1-2-112x124.webp" alt="Cart Thumbnail" />
-                            </a>
-                          </td>
-                          <td className="product-name">
-                            <a href="#">Black Eyed Susan</a>
-                          </td>
-                          <td className="product-price">
-                            <span className="amount">$25.45</span>
-                          </td>
-                          <td className="quantity">
-                            <div className="cart-plus-minus">
-                              <input
-                                className="cart-plus-minus-box"
-                                // value="1"
-                                type="text"
-                              />
-                              <div className="dec qtybutton">
-                                <i className="fa fa-minus"></i>
-                              </div>
-                              <div className="inc qtybutton">
-                                <i className="fa fa-plus"></i>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="product-subtotal">
-                            <span className="amount">$25.45</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="product_remove">
-                            <a href="#">
-                              <i
-                                className="pe-7s-close"
-                                data-tippy="Remove"
-                                data-tippy-inertia="true"
-                                data-tippy-animation="shift-away"
-                                data-tippy-delay="50"
-                                data-tippy-arrow="true"
-                                data-tippy-theme="sharpborder"
-                              ></i>
-                            </a>
-                          </td>
-                          <td className="product-thumbnail">
-                            <a href="#">
-                              <img src="../../small-size/1-3-112x124.webp" alt="Cart Thumbnail" />
-                            </a>
-                          </td>
-                          <td className="product-name">
-                            <a href="#">Bleeding Heart</a>
-                          </td>
-                          <td className="product-price">
-                            <span className="amount">$30.45</span>
-                          </td>
-                          <td className="quantity">
-                            <div className="cart-plus-minus">
-                              <input
-                                className="cart-plus-minus-box"
-                                // value="1"
-                                type="text"
-                              />
-                              <div className="dec qtybutton">
-                                <i className="fa fa-minus"></i>
-                              </div>
-                              <div className="inc qtybutton">
-                                <i className="fa fa-plus"></i>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="product-subtotal">
-                            <span className="amount">$30.45</span>
-                          </td>
-                        </tr>
+                        {cart.map((product) => {
+                          return (
+                            <tr>
+                              <td className="product_remove">
+                                <a href="#">
+                                  <i
+                                    className="pe-7s-close"
+                                    data-tippy="Remove"
+                                    data-tippy-inertia="true"
+                                    data-tippy-animation="shift-away"
+                                    data-tippy-delay="50"
+                                    data-tippy-arrow="true"
+                                    data-tippy-theme="sharpborder"
+                                  ></i>
+                                </a>
+                              </td>
+                              <td className="product-thumbnail">
+                                <a href="#">
+                                  <img src={product.image} alt="Cart Thumbnail" />
+                                </a>
+                              </td>
+                              <td className="product-name">
+                                <Link to="#">{product.productName}</Link>
+                              </td>
+                              <td className="product-price">
+                                <span className="amount">${product.price}</span>
+                              </td>
+                              <td className="quantity">
+                                <div className="cart-plus-minus">
+                                  <button
+                                    className="cart-plus-minus-box"
+                                    type="submit"
+                                    onClick={() => {
+                                      handlerDecrementProduct(product.id);
+                                    }}
+                                  >
+                                    <div className="dec qtybutton">
+                                      <i className="fa fa-minus"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                                {product.quantity}
+                                <div className="cart-plus-minus">
+                                  <button
+                                    className="cart-plus-minus-box"
+                                    type="submit"
+                                    onClick={() => {
+                                      handlerIncrementProduct(product.id);
+                                    }}
+                                  >
+                                    <div className="inc qtybutton">
+                                      <i className="fa fa-plus"></i>
+                                    </div>
+                                  </button>
+                                </div>
+                              </td>
+                              <td className="product-subtotal">
+                                <span className="amount">$23.45</span>
+                              </td>
+                            </tr>
+                          );
+                        })}
                       </tbody>
                     </table>
                   </div>
