@@ -1,25 +1,25 @@
 export const NavbarFilter = () => {
   return (
-    <div class="product-topbar">
+    <div className="product-topbar">
       <ul>
-        <li class="page-count">
+        <li className="page-count">
           <span>12</span> Product Found of <span>30</span>
         </li>
-        <li class="product-view-wrap">
-          <ul class="nav" role="tablist">
-            <li class="grid-view" role="presentation">
+        <li className="product-view-wrap">
+          <ul className="nav" role="tablist">
+            <li className="grid-view" role="presentation">
               <a
-                class="active"
+                className="active"
                 id="grid-view-tab"
                 data-bs-toggle="tab"
                 href="#grid-view"
                 role="tab"
                 aria-selected="true"
               >
-                <i class="fa fa-th"></i>
+                <i className="fa fa-th"></i>
               </a>
             </li>
-            <li class="list-view" role="presentation">
+            <li className="list-view" role="presentation">
               <a
                 id="list-view-tab"
                 data-bs-toggle="tab"
@@ -27,13 +27,13 @@ export const NavbarFilter = () => {
                 role="tab"
                 aria-selected="true"
               >
-                <i class="fa fa-th-list"></i>
+                <i className="fa fa-th-list"></i>
               </a>
             </li>
           </ul>
         </li>
-        <li class="short">
-          <select class="nice-select">
+        <li className="short">
+          <select className="nice-select">
             <option value="1">Sort by Default</option>
             <option value="2">Sort by Popularity</option>
             <option value="3">Sort by Rated</option>
