@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
@@ -12,6 +12,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [userError, setUserError] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   async function loginClient() {
     try {
@@ -24,6 +25,7 @@ export const Login = () => {
         },
       });
       dispatch(loginUser({ data: response.data.buyer.id, token: response.data.token }));
+      navigate("/");
     } catch (error) {
       console.log(error);
       setUserError(error.response.data.error);

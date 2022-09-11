@@ -23,6 +23,7 @@ import { ContactUs } from "./components/contactUs/ContactUs";
 import { AboutUs } from "./components/aboutUs/AboutUs";
 import React, { useEffect } from "react";
 import { TbArrowBigUpLines } from "react-icons/tb";
+import { MyAccount } from "./components/navbar/MyAccount";
 
 function App() {
   useEffect(() => {
@@ -35,7 +36,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/cuenta" element={<MyAccount />} />
+        <Route path="/registro" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />

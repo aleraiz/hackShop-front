@@ -31,21 +31,20 @@ const cartSlice = createSlice({
       state.cart = filteredProduct;
     },
     incrementQuantity: (state, action) => {
-      // const searchProduct = state.cart.find((productCart) => {
-      //   return productCart.id === action.payload.productId;
-      // });      // searchProduct.quantity = action.payload.quantityProduct;
-      // state.cart = [state.cart, searchProduct];
-      // const searchProduct = state.cart.findIndex((product) => {
-      //   return product.id === action.payload.productId;
-      // });
-      // console.log(searchProduct);
+      const searchProduct = state.cart.findIndex((product) => {
+        return product.id === action.payload.productId;
+      });
+      state.cart[searchProduct].quantity++;
+      console.log(searchProduct);
     },
     decrementQuantity: (state, action) => {
-      // const searchProduct = state.cart.find((productCart) => {
-      //   return productCart.id === action.payload.productId;
-      // });
-      // searchProduct.quantity = action.payload.removeProduct;
-      // state.cart = [searchProduct];
+      const searchProduct = state.cart.findIndex((product) => {
+        return product.id === action.payload.productId;
+      });
+      if (state.cart[searchProduct].quantity > 1) {
+        state.cart[searchProduct].quantity--;
+      }
+      console.log(searchProduct);
     },
   },
 });
