@@ -4,10 +4,15 @@ import "react-multi-carousel/lib/styles.css";
 import { useParams } from "react-router-dom";
 import { CarouselProducts } from "../carouselProducts/CarouselProducts";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProductCart } from "../../redux/slices/cartSlice";
+import { useSelector } from "react-redux";
 
 export const ProductDetail = () => {
+  const dispatch = useDispatch();
   const [productDetail, setProductDetail] = useState([]);
   const { id } = useParams();
+
   useEffect(() => {
     const productDetail = async () => {
       const response = await axios.get(`http://localhost:8000/product/${id}`);
@@ -16,37 +21,41 @@ export const ProductDetail = () => {
     productDetail();
   }, []);
 
+  function handleAddCart() {
+    dispatch(addProductCart(productDetail));
+  }
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 4,
-      slidesToSlide: 3, // optional, default to 1.
+      slidesToSlide: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
-      slidesToSlide: 2, // optional, default to 1.
+      slidesToSlide: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
-      slidesToSlide: 1, // optional, default to 1.
+      slidesToSlide: 1,
     },
   };
 
   return (
     <>
-      <div class="main-wrapper">
-        <main class="main-content">
+      <div className="main-wrapper">
+        <main className="main-content">
           <div
-            class="breadcrumb-area breadcrumb-height"
+            className="breadcrumb-area breadcrumb-height"
             data-bg-image="assets/images/breadcrumb/bg/1-1-1919x388.jpg"
           >
-            <div class="container h-100">
-              <div class="row h-100">
-                <div class="col-lg-12">
-                  <div class="breadcrumb-item">
-                    <h2 class="breadcrumb-heading">Single Product</h2>
+            <div className="container h-100">
+              <div className="row h-100">
+                <div className="col-lg-12">
+                  <div className="breadcrumb-item">
+                    <h2 className="breadcrumb-heading">Single Product</h2>
                     <ul>
                       <li>
                         <a href="index.html">Home</a>
@@ -58,21 +67,21 @@ export const ProductDetail = () => {
               </div>
             </div>
           </div>
-          <div class="single-product-area section-space-top-100">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="single-product-img">
-                    <div class="swiper-container single-product-slider">
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+          <div className="single-product-area section-space-top-100">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-6">
+                  <div className="single-product-img">
+                    <div className="swiper-container single-product-slider">
+                      <div className="swiper-wrapper">
+                        <div className="swiper-slide">
                           <a
                             // href={productDetail.image[0].imageOne}
-                            class="single-img gallery-popup"
+                            className="single-img gallery-popup"
                           >
                             {productDetail.image ? (
                               <img
-                                class="img-full"
+                                className="img-full"
                                 src={productDetail?.image[0].imageOne}
                                 alt="Product Image"
                               />
@@ -81,37 +90,37 @@ export const ProductDetail = () => {
                             )}
                           </a>
                         </div>
-                        <div class="swiper-slide">
+                        <div className="swiper-slide">
                           <a
                             href="assets/images/product/large-size/1-2-570x633.jpg"
-                            class="single-img gallery-popup"
+                            className="single-img gallery-popup"
                           >
                             <img
-                              class="img-full"
+                              className="img-full"
                               src="../../../image/imageDetail3.jpg"
                               alt="Product Image"
                             />
                           </a>
                         </div>
-                        <div class="swiper-slide">
+                        <div className="swiper-slide">
                           <a
                             href="assets/images/product/large-size/1-3-570x633.jpg"
-                            class="single-img gallery-popup"
+                            className="single-img gallery-popup"
                           >
                             <img
-                              class="img-full"
+                              className="img-full"
                               src="assets/images/product/large-size/1-3-570x633.jpg"
                               alt="Product Image"
                             />
                           </a>
                         </div>
-                        <div class="swiper-slide">
+                        <div className="swiper-slide">
                           <a
                             href="assets/images/product/large-size/1-4-570x633.jpg"
-                            class="single-img gallery-popup"
+                            className="single-img gallery-popup"
                           >
                             <img
-                              class="img-full"
+                              className="img-full"
                               src="assets/images/product/large-size/1-4-570x633.jpg"
                               alt="Product Image"
                             />
@@ -119,32 +128,32 @@ export const ProductDetail = () => {
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-container single-product-thumbs">
+                    <div className="swiper-container single-product-thumbs">
                       <Carousel responsive={responsive} infinite={true} arrows={true}>
-                        <div class="swiper-slide">
+                        <div className="swiper-slide">
                           <img
-                            class="img-full"
+                            className="img-full"
                             src="../../../image/macetaUno.jpg"
                             alt="Product Thumnail"
                           />
                         </div>
-                        <div class="swiper-slide">
+                        <div className="swiper-slide">
                           <img
-                            class="img-full"
+                            className="img-full"
                             src="../../../image/macetaDos.jpg"
                             alt="Product Thumnail"
                           />
                         </div>
-                        <div class="swiper-slide">
+                        <div className="swiper-slide">
                           <img
-                            class="img-full"
+                            className="img-full"
                             src="../../../image/macetaTres.jpg"
                             alt="Product Thumnail"
                           />
                         </div>
-                        <div class="swiper-slide">
+                        <div className="swiper-slide">
                           <img
-                            class="img-full"
+                            className="img-full"
                             src="../../../image/macetaSiete.jpg"
                             alt="Product Thumnail"
                           />
@@ -153,59 +162,65 @@ export const ProductDetail = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 pt-5 pt-lg-0">
-                  <div class="single-product-content">
-                    <h2 class="title">{productDetail.productName}</h2>
-                    <div class="price-box">
-                      <span class="new-price">${productDetail.price}</span>
+                <div className="col-lg-6 pt-5 pt-lg-0">
+                  <div className="single-product-content">
+                    <h2 className="title">{productDetail.productName}</h2>
+                    <div className="price-box">
+                      <span className="new-price">${productDetail.price}</span>
                     </div>
-                    <div class="rating-box-wrap pb-4">
-                      <div class="rating-box">
+                    <div className="rating-box-wrap pb-4">
+                      <div className="rating-box">
                         <ul>
                           <li>
-                            <i class="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
                           </li>
                           <li>
-                            <i class="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
                           </li>
                           <li>
-                            <i class="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
                           </li>
                           <li>
-                            <i class="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
                           </li>
                           <li>
-                            <i class="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
                           </li>
                         </ul>
                       </div>
-                      <div class="review-status">
+                      <div className="review-status">
                         <a href="#">( 1 Review )</a>
                       </div>
                     </div>
-                    <p class="short-desc">
+                    <p className="short-desc">
                       Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempo
                       incid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru
                       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
                       aute irure dolor in reprehenderit in voluptate
                     </p>
-                    <ul class="quantity-with-btn pb-4">
-                      <li class="affiliate-btn-wrap">
-                        <a class="btn btn-custom-size xl-size btn-pronia-primary" href="#">
+                    <ul className="quantity-with-btn pb-4">
+                      <li className="affiliate-btn-wrap">
+                        <button
+                          className="btn btn-custom-size xl-size btn-pronia-primary"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleAddCart();
+                          }}
+                        >
                           Buy Now
-                        </a>
+                        </button>
                       </li>
                     </ul>
-                    <div class="product-category">
-                      <span class="title">SKU:</span>
+                    <div className="product-category">
+                      <span className="title">SKU:</span>
                       <ul>
                         <li>
                           <a href="#">Ch-256xl</a>
                         </li>
                       </ul>
                     </div>
-                    <div class="product-category">
-                      <span class="title">Categories :</span>
+                    <div className="product-category">
+                      <span className="title">Categories :</span>
                       <ul>
                         <li>
                           <a href="#">Office,</a>
@@ -215,16 +230,16 @@ export const ProductDetail = () => {
                         </li>
                       </ul>
                     </div>
-                    <div class="product-category product-tags">
-                      <span class="title">Tags :</span>
+                    <div className="product-category product-tags">
+                      <span className="title">Tags :</span>
                       <ul>
                         <li>
                           <a href="#">Furniture</a>
                         </li>
                       </ul>
                     </div>
-                    <div class="product-category social-link align-items-center pb-0">
-                      <span class="title pe-3">Share:</span>
+                    <div className="product-category social-link align-items-center pb-0">
+                      <span className="title pe-3">Share:</span>
                       <ul>
                         <li>
                           <a
@@ -236,7 +251,7 @@ export const ProductDetail = () => {
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
                           >
-                            <i class="fa fa-pinterest-p"></i>
+                            <i className="fa fa-pinterest-p"></i>
                           </a>
                         </li>
                         <li>
@@ -249,7 +264,7 @@ export const ProductDetail = () => {
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
                           >
-                            <i class="fa fa-twitter"></i>
+                            <i className="fa fa-twitter"></i>
                           </a>
                         </li>
                         <li>
@@ -262,7 +277,7 @@ export const ProductDetail = () => {
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
                           >
-                            <i class="fa fa-tumblr"></i>
+                            <i className="fa fa-tumblr"></i>
                           </a>
                         </li>
                         <li>
@@ -275,7 +290,7 @@ export const ProductDetail = () => {
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
                           >
-                            <i class="fa fa-dribbble"></i>
+                            <i className="fa fa-dribbble"></i>
                           </a>
                         </li>
                       </ul>
@@ -285,14 +300,14 @@ export const ProductDetail = () => {
               </div>
             </div>
           </div>
-          <div class="product-tab-area section-space-top-100">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <ul class="nav product-tab-nav tab-style-2 pt-0" role="tablist">
-                    <li class="nav-item" role="presentation">
+          <div className="product-tab-area section-space-top-100">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <ul className="nav product-tab-nav tab-style-2 pt-0" role="tablist">
+                    <li className="nav-item" role="presentation">
                       <a
-                        class="tab-btn"
+                        className="tab-btn"
                         id="information-tab"
                         data-bs-toggle="tab"
                         href="#information"
@@ -303,9 +318,9 @@ export const ProductDetail = () => {
                         Information
                       </a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <li className="nav-item" role="presentation">
                       <a
-                        class="active tab-btn"
+                        className="active tab-btn"
                         id="description-tab"
                         data-bs-toggle="tab"
                         href="#description"
@@ -316,9 +331,9 @@ export const ProductDetail = () => {
                         Description
                       </a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <li className="nav-item" role="presentation">
                       <a
-                        class="tab-btn"
+                        className="tab-btn"
                         id="reviews-tab"
                         data-bs-toggle="tab"
                         href="#reviews"
@@ -330,28 +345,28 @@ export const ProductDetail = () => {
                       </a>
                     </li>
                   </ul>
-                  <div class="tab-content product-tab-content">
+                  <div className="tab-content product-tab-content">
                     <div
-                      class="tab-pane fade"
+                      className="tab-pane fade"
                       id="information"
                       role="tabpanel"
                       aria-labelledby="information-tab"
                     >
-                      <div class="product-information-body">
-                        <h4 class="title">Shipping</h4>
-                        <p class="short-desc mb-4">
+                      <div className="product-information-body">
+                        <h4 className="title">Shipping</h4>
+                        <p className="short-desc mb-4">
                           The item will be shipped from China. So it need 15-20 days to deliver. Our
                           product is good with reasonable price and we believe you will worth it. So
                           please wait for it patiently! Thanks.Any question please kindly to contact
                           us and we promise to work hard to help you to solve the problem
                         </p>
-                        <h4 class="title">About return request</h4>
-                        <p class="short-desc mb-4">
+                        <h4 className="title">About return request</h4>
+                        <p className="short-desc mb-4">
                           If you don't need the item with worry, you can contact us then we will
                           help you to solve the problem, so please close the return request! Thanks
                         </p>
-                        <h4 class="title">Guarantee</h4>
-                        <p class="short-desc mb-0">
+                        <h4 className="title">Guarantee</h4>
+                        <p className="short-desc mb-0">
                           If it is the quality question, we will resend or refund to you; If you
                           receive damaged or wrong items, please contact us and attach some pictures
                           about product, we will exchange a new correct item to you after the
@@ -360,134 +375,134 @@ export const ProductDetail = () => {
                       </div>
                     </div>
                     <div
-                      class="tab-pane fade show active"
+                      className="tab-pane fade show active"
                       id="description"
                       role="tabpanel"
                       aria-labelledby="description-tab"
                     >
-                      <div class="product-description-body">
-                        <p class="short-desc mb-0">{productDetail.description}</p>
+                      <div className="product-description-body">
+                        <p className="short-desc mb-0">{productDetail.description}</p>
                       </div>
                     </div>
                     <div
-                      class="tab-pane fade"
+                      className="tab-pane fade"
                       id="reviews"
                       role="tabpanel"
                       aria-labelledby="reviews-tab"
                     >
-                      <div class="product-review-body">
-                        <div class="blog-comment mt-0">
-                          <h4 class="heading">Comments (03)</h4>
-                          <div class="blog-comment-item">
-                            <div class="blog-comment-img">
+                      <div className="product-review-body">
+                        <div className="blog-comment mt-0">
+                          <h4 className="heading">Comments (03)</h4>
+                          <div className="blog-comment-item">
+                            <div className="blog-comment-img">
                               <img
                                 src="assets/images/blog/avatar/1-1-120x120.png"
                                 alt="User Image"
                               />
                             </div>
-                            <div class="blog-comment-content">
-                              <div class="user-meta">
-                                <h2 class="user-name">Donald Chavez</h2>
-                                <span class="date">21 July 2021</span>
+                            <div className="blog-comment-content">
+                              <div className="user-meta">
+                                <h2 className="user-name">Donald Chavez</h2>
+                                <span className="date">21 July 2021</span>
                               </div>
-                              <p class="user-comment">
+                              <p className="user-comment">
                                 Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
                                 tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
                                 veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea
                                 commodo consequat.
                               </p>
-                              <a class="btn btn-custom-size comment-btn" href="#">
+                              <a className="btn btn-custom-size comment-btn" href="#">
                                 Reply
                               </a>
                             </div>
                           </div>
-                          <div class="blog-comment-item relpy-item">
-                            <div class="blog-comment-img">
+                          <div className="blog-comment-item relpy-item">
+                            <div className="blog-comment-img">
                               <img
                                 src="assets/images/blog/avatar/1-2-120x120.png"
                                 alt="User Image"
                               />
                             </div>
-                            <div class="blog-comment-content">
-                              <div class="user-meta">
-                                <h2 class="user-name">Marissa Swan</h2>
-                                <span class="date">21 July 2021</span>
+                            <div className="blog-comment-content">
+                              <div className="user-meta">
+                                <h2 className="user-name">Marissa Swan</h2>
+                                <span className="date">21 July 2021</span>
                               </div>
-                              <p class="user-comment">
+                              <p className="user-comment">
                                 Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
                                 tempr incidid ut labore etl dolore magna aliqua. Ut enim ad minim
                                 veniam, quisnos exercitati ullamco laboris nisi ut aliquiex.
                               </p>
-                              <a class="btn btn-custom-size comment-btn style-2" href="#">
+                              <a className="btn btn-custom-size comment-btn style-2" href="#">
                                 Reply
                               </a>
                             </div>
                           </div>
-                          <div class="blog-comment-item">
-                            <div class="blog-comment-img">
+                          <div className="blog-comment-item">
+                            <div className="blog-comment-img">
                               <img
                                 src="assets/images/blog/avatar/1-3-120x120.png"
                                 alt="User Image"
                               />
                             </div>
-                            <div class="blog-comment-content">
-                              <div class="user-meta">
-                                <h2 class="user-name">Donald Chavez</h2>
-                                <span class="date">21 July 2021</span>
+                            <div className="blog-comment-content">
+                              <div className="user-meta">
+                                <h2 className="user-name">Donald Chavez</h2>
+                                <span className="date">21 July 2021</span>
                               </div>
-                              <p class="user-comment">
+                              <p className="user-comment">
                                 Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
                                 tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
                                 veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea
                                 commodo consequat.
                               </p>
-                              <a class="btn btn-custom-size comment-btn" href="#">
+                              <a className="btn btn-custom-size comment-btn" href="#">
                                 Reply
                               </a>
                             </div>
                           </div>
                         </div>
-                        <div class="feedback-area">
-                          <h2 class="heading">Leave a comment</h2>
-                          <form class="feedback-form" action="#">
-                            <div class="group-input">
-                              <div class="form-field me-md-30 mb-30 mb-md-0">
+                        <div className="feedback-area">
+                          <h2 className="heading">Leave a comment</h2>
+                          <form className="feedback-form" action="#">
+                            <div className="group-input">
+                              <div className="form-field me-md-30 mb-30 mb-md-0">
                                 <input
                                   type="text"
                                   name="name"
                                   placeholder="Your Name*"
-                                  class="input-field"
+                                  className="input-field"
                                 />
                               </div>
-                              <div class="form-field">
+                              <div className="form-field">
                                 <input
                                   type="text"
                                   name="email"
                                   placeholder="Your Email*"
-                                  class="input-field"
+                                  className="input-field"
                                 />
                               </div>
                             </div>
-                            <div class="form-field mt-30">
+                            <div className="form-field mt-30">
                               <input
                                 type="text"
                                 name="subject"
                                 placeholder="Subject (Optinal)"
-                                class="input-field"
+                                className="input-field"
                               />
                             </div>
-                            <div class="form-field mt-30">
+                            <div className="form-field mt-30">
                               <textarea
                                 name="message"
                                 placeholder="Message"
-                                class="textarea-field"
+                                className="textarea-field"
                               ></textarea>
                             </div>
-                            <div class="button-wrap pt-5">
+                            <div className="button-wrap pt-5">
                               <button
                                 type="submit"
                                 value="submit"
-                                class="btn btn-custom-size xl-size btn-pronia-primary"
+                                className="btn btn-custom-size xl-size btn-pronia-primary"
                                 name="submit"
                               >
                                 Post Comment
@@ -503,17 +518,17 @@ export const ProductDetail = () => {
             </div>
           </div>
 
-          <div class="product-area section-space-y-axis-90">
-            <div class="container">
-              <div class="row">
-                <div class="section-title-wrap without-tab">
-                  <h2 class="section-title">Related Products</h2>
-                  <p class="section-desc">
+          <div className="product-area section-space-y-axis-90">
+            <div className="container">
+              <div className="row">
+                <div className="section-title-wrap without-tab">
+                  <h2 className="section-title">Related Products</h2>
+                  <p className="section-desc">
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                    in a piece of classical Latin literature
+                    in a piece of classNameical Latin literature
                   </p>
                 </div>
-                <div class="col-lg-12">
+                <div className="col-lg-12">
                   <CarouselProducts />
                 </div>
               </div>
@@ -521,20 +536,20 @@ export const ProductDetail = () => {
           </div>
         </main>
         <div
-          class="modal quick-view-modal fade"
+          className="modal quick-view-modal fade"
           id="quickModal"
           data-bs-backdrop="static"
           data-bs-keyboard="false"
-          tabindex="-1"
+          tabIndex="-1"
           aria-labelledby="quickModal"
           aria-hidden="true"
         >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
                 <button
                   type="button"
-                  class="btn-close"
+                  className="btn-close"
                   data-bs-dismiss="modal"
                   aria-label="Close"
                   data-tippy="Close"
@@ -545,43 +560,43 @@ export const ProductDetail = () => {
                   data-tippy-theme="sharpborder"
                 ></button>
               </div>
-              <div class="modal-body">
-                <div class="modal-wrap row">
-                  <div class="col-lg-6">
-                    <div class="modal-img">
-                      <div class="swiper-container modal-slider">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <a href="#" class="single-img">
+              <div className="modal-body">
+                <div className="modal-wrap row">
+                  <div className="col-lg-6">
+                    <div className="modal-img">
+                      <div className="swiper-container modal-slider">
+                        <div className="swiper-wrapper">
+                          <div className="swiper-slide">
+                            <a href="#" className="single-img">
                               <img
-                                class="img-full"
+                                className="img-full"
                                 src="assets/images/product/large-size/1-1-570x633.jpg"
                                 alt="Product Image"
                               />
                             </a>
                           </div>
-                          <div class="swiper-slide">
-                            <a href="#" class="single-img">
+                          <div className="swiper-slide">
+                            <a href="#" className="single-img">
                               <img
-                                class="img-full"
+                                className="img-full"
                                 src="assets/images/product/large-size/1-2-570x633.jpg"
                                 alt="Product Image"
                               />
                             </a>
                           </div>
-                          <div class="swiper-slide">
-                            <a href="#" class="single-img">
+                          <div className="swiper-slide">
+                            <a href="#" className="single-img">
                               <img
-                                class="img-full"
+                                className="img-full"
                                 src="assets/images/product/large-size/1-3-570x633.jpg"
                                 alt="Product Image"
                               />
                             </a>
                           </div>
-                          <div class="swiper-slide">
-                            <a href="#" class="single-img">
+                          <div className="swiper-slide">
+                            <a href="#" className="single-img">
                               <img
-                                class="img-full"
+                                className="img-full"
                                 src="assets/images/product/large-size/1-4-570x633.jpg"
                                 alt="Product Image"
                               />
@@ -591,116 +606,116 @@ export const ProductDetail = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-6 pt-5 pt-lg-0">
-                    <div class="single-product-content">
-                      <h2 class="title">American Marigold</h2>
-                      <div class="price-box">
-                        <span class="new-price">$23.45</span>
+                  <div className="col-lg-6 pt-5 pt-lg-0">
+                    <div className="single-product-content">
+                      <h2 className="title">American Marigold</h2>
+                      <div className="price-box">
+                        <span className="new-price">$23.45</span>
                       </div>
-                      <div class="rating-box-wrap">
-                        <div class="rating-box">
+                      <div className="rating-box-wrap">
+                        <div className="rating-box">
                           <ul>
                             <li>
-                              <i class="fa fa-star"></i>
+                              <i className="fa fa-star"></i>
                             </li>
                             <li>
-                              <i class="fa fa-star"></i>
+                              <i className="fa fa-star"></i>
                             </li>
                             <li>
-                              <i class="fa fa-star"></i>
+                              <i className="fa fa-star"></i>
                             </li>
                             <li>
-                              <i class="fa fa-star"></i>
+                              <i className="fa fa-star"></i>
                             </li>
                             <li>
-                              <i class="fa fa-star"></i>
+                              <i className="fa fa-star"></i>
                             </li>
                           </ul>
                         </div>
-                        <div class="review-status">
+                        <div className="review-status">
                           <a href="#">( 1 Review )</a>
                         </div>
                       </div>
-                      <div class="selector-wrap color-option">
-                        <span class="selector-title border-bottom-0">Color</span>
-                        <select class="nice-select wide border-bottom-0 rounded-0">
+                      <div className="selector-wrap color-option">
+                        <span className="selector-title border-bottom-0">Color</span>
+                        <select className="nice-select wide border-bottom-0 rounded-0">
                           <option value="default">Black & White</option>
                           <option value="blue">Blue</option>
                           <option value="green">Green</option>
                           <option value="red">Red</option>
                         </select>
                       </div>
-                      <div class="selector-wrap size-option">
-                        <span class="selector-title">Size</span>
-                        <select class="nice-select wide rounded-0">
+                      <div className="selector-wrap size-option">
+                        <span className="selector-title">Size</span>
+                        <select className="nice-select wide rounded-0">
                           <option value="medium">Medium Size & Poot</option>
                           <option value="large">Large Size With Poot</option>
                           <option value="small">Small Size With Poot</option>
                         </select>
                       </div>
-                      <p class="short-desc">
+                      <p className="short-desc">
                         Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempo
                         incid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru
                         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
                         aute irure dolor in reprehenderit in voluptate
                       </p>
-                      <ul class="quantity-with-btn">
-                        <li class="quantity">
-                          <div class="cart-plus-minus">
-                            <input class="cart-plus-minus-box" value="1" type="text" />
+                      <ul className="quantity-with-btn">
+                        <li className="quantity">
+                          <div className="cart-plus-minus">
+                            <input className="cart-plus-minus-box" type="text" />
                           </div>
                         </li>
-                        <li class="add-to-cart">
+                        <li className="add-to-cart">
                           <a
-                            class="btn btn-custom-size lg-size btn-pronia-primary"
+                            className="btn btn-custom-size lg-size btn-pronia-primary"
                             href="cart.html"
                           >
                             Add to cart
                           </a>
                         </li>
-                        <li class="wishlist-btn-wrap">
-                          <a class="custom-circle-btn" href="wishlist.html">
-                            <i class="pe-7s-like"></i>
+                        <li className="wishlist-btn-wrap">
+                          <a className="custom-circle-btn" href="wishlist.html">
+                            <i className="pe-7s-like"></i>
                           </a>
                         </li>
-                        <li class="compare-btn-wrap">
-                          <a class="custom-circle-btn" href="compare.html">
-                            <i class="pe-7s-refresh-2"></i>
+                        <li className="compare-btn-wrap">
+                          <a className="custom-circle-btn" href="compare.html">
+                            <i className="pe-7s-refresh-2"></i>
                           </a>
                         </li>
                       </ul>
-                      <ul class="service-item-wrap pb-0">
-                        <li class="service-item">
-                          <div class="service-img">
+                      <ul className="service-item-wrap pb-0">
+                        <li className="service-item">
+                          <div className="service-img">
                             <img src="assets/images/shipping/icon/car.png" alt="Shipping Icon" />
                           </div>
-                          <div class="service-content">
-                            <span class="title">
+                          <div className="service-content">
+                            <span className="title">
                               Free <br />
                               Shipping
                             </span>
                           </div>
                         </li>
-                        <li class="service-item">
-                          <div class="service-img">
+                        <li className="service-item">
+                          <div className="service-img">
                             <img src="assets/images/shipping/icon/card.png" alt="Shipping Icon" />
                           </div>
-                          <div class="service-content">
-                            <span class="title">
+                          <div className="service-content">
+                            <span className="title">
                               Safe <br />
                               Payment
                             </span>
                           </div>
                         </li>
-                        <li class="service-item">
-                          <div class="service-img">
+                        <li className="service-item">
+                          <div className="service-img">
                             <img
                               src="assets/images/shipping/icon/service.png"
                               alt="Shipping Icon"
                             />
                           </div>
-                          <div class="service-content">
-                            <span class="title">
+                          <div className="service-content">
+                            <span className="title">
                               Safe <br />
                               Payment
                             </span>
@@ -715,8 +730,8 @@ export const ProductDetail = () => {
           </div>
         </div>
 
-        <a class="scroll-to-top" href="">
-          <i class="fa fa-angle-double-up"></i>
+        <a className="scroll-to-top" href="">
+          <i className="fa fa-angle-double-up"></i>
         </a>
       </div>
     </>

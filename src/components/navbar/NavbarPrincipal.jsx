@@ -1,22 +1,14 @@
 import { Link } from "react-router-dom";
 import { SearchModal } from "./SearchModal";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { CartOffCanvas } from "./CartOffcanvas";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import "./css/style.css";
 
 export const NavbarPrincipal = () => {
   const [openModalSearch, setOpenModalSearch] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
-
-  const options = [
-    {
-      name: "Enable both scrolling & backdrop",
-      scroll: true,
-      backdrop: true,
-    },
-  ];
+  const cart = useSelector((state) => state.cart.cart);
 
   return (
     <header className="main-header-area sticky-top navbarPrincipal">
@@ -166,7 +158,7 @@ export const NavbarPrincipal = () => {
                         }}
                       >
                         <i className="pe-7s-shopbag"></i>
-                        <span className="quantity">3</span>
+                        <span className="quantity">{cart.length}</span>
                       </button>
                       {openOffcanvas ? <CartOffCanvas setOpenOffcanvas={setOpenOffcanvas} /> : null}
                     </li>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export const OurProducts = () => {
@@ -7,12 +8,10 @@ export const OurProducts = () => {
   useEffect(() => {
     const listProducts = async () => {
       const response = await axios.get(`http://localhost:8000/products`);
-      console.log(response.data);
       setOurProducts(response.data);
     };
     listProducts();
   }, []);
-
   return (
     <div className="product-area section-space-top-100">
       <div className="container">
@@ -73,7 +72,7 @@ export const OurProducts = () => {
                       <div className="col-xl-3 col-md-4 col-sm-6">
                         <div className="product-item" key={index}>
                           <div className="product-img">
-                            <a href="shop.html">
+                            <Link to={`/product/${product.id}`}>
                               <img
                                 className="primary-img"
                                 src={product.image[3].imageDetailOne}
@@ -84,7 +83,7 @@ export const OurProducts = () => {
                                 src={product.image[4].imageDetailTwo}
                                 alt="Product Images"
                               />
-                            </a>
+                            </Link>
                             <div className="product-add-action">
                               <ul>
                                 <li>

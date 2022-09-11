@@ -10,11 +10,11 @@
   text-decoration: none;
 }
 
-.img-cartOffCanvas{
+.img-cartOffCanvas {
   width: auto;
 }
 
-.minicart-flex{
+.minicart-flex {
   display: flex;
 }
 .minicart-flex .product-item_content .product-item_title {
@@ -29,9 +29,7 @@
 .minicart-flex .product-item_content {
   padding-left: 20px;
   padding-right: 10px;
-
 }
-
 
 .dropdown-wrap {
   display: -webkit-box;

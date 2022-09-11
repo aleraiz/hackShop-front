@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { deleteProductCart } from "../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 export const CartOffCanvas = ({ setOpenOffcanvas }) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
+
   const handleClose = () => setOpenOffcanvas(false);
+
+  function handlerDeleteProductFromCart(productId) {
+    dispatch(deleteProductCart(productId));
+  }
 
   return (
     <Offcanvas
@@ -20,84 +30,44 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
       <Offcanvas.Body>
         <div className="minicart-content">
           <ul className="minicart-list">
-            <li className="minicart-product minicart-flex">
-              <Link className="product-item_remove" to="#">
-                <i
-                  className="pe-7s-close"
-                  data-tippy="Remove"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                ></i>
-              </Link>
-              <Link to="single-product-variable.html" className="product-item_img">
-                <img
-                  className="img-full img-cartOffCanvas"
-                  src="../../../cartOffCanvas/2-1-70x78.jpg"
-                  alt="Product Image"
-                />
-              </Link>
-              <div className="product-item_content">
-                <Link className="product-item_title" to="single-product-variable.html">
-                  American Marigold
-                </Link>
-                <span className="product-item_quantity">1 x $23.45</span>
-              </div>
-            </li>
-            <li className="minicart-product minicart-flex">
-              <Link className="product-item_remove" to="#">
-                <i
-                  className="pe-7s-close"
-                  data-tippy="Remove"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                ></i>
-              </Link>
-              <Link to="single-product-variable.html" className="product-item_img">
-                <img
-                  className="img-full img-cartOffCanvas"
-                  src="../../../cartOffCanvas/2-2-70x78.jpg"
-                  alt="Product Image"
-                />
-              </Link>
-              <div className="product-item_content">
-                <Link className="product-item_title" to="single-product-variable.html">
-                  Black Eyed Susan
-                </Link>
-                <span className="product-item_quantity">1 x $25.45</span>
-              </div>
-            </li>
-            <li className="minicart-product minicart-flex">
-              <Link className="product-item_remove" to="#">
-                <i
-                  className="pe-7s-close"
-                  data-tippy="Remove"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                ></i>
-              </Link>
-              <Link to="single-product-variable.html" className="product-item_img">
-                <img
-                  className="img-full img-cartOffCanvas"
-                  src="../../../cartOffCanvas/2-3-70x78.jpg"
-                  alt="Product Image"
-                />
-              </Link>
-              <div className="product-item_content">
-                <Link className="product-item_title" to="single-product-variable.html">
-                  Bleeding Heart
-                </Link>
-                <span className="product-item_quantity">1 x $30.45</span>
-              </div>
-            </li>
+            {cart.map((product) => {
+              return (
+                <li className="minicart-product minicart-flex" key={product.id}>
+                  <button
+                    className="product-item_remove"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handlerDeleteProductFromCart(product.id);
+                    }}
+                  >
+                    <i
+                      className="pe-7s-close"
+                      data-tippy="Remove"
+                      data-tippy-inertia="true"
+                      data-tippy-animation="shift-away"
+                      data-tippy-delay="50"
+                      data-tippy-arrow="true"
+                      data-tippy-theme="sharpborder"
+                    ></i>
+                  </button>
+                  <Link to="single-product-variable.html" className="product-item_img">
+                    <img
+                      className="img-full img-cartOffCanvas"
+                      src={product.image}
+                      alt="Product Image"
+                    />
+                  </Link>
+                  <div className="product-item_content">
+                    <Link className="product-item_title" to="single-product-variable.html">
+                      {product.productName}
+                    </Link>
+                    <span className="product-item_quantity">
+                      {product.quantity}x${product.price}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="minicart-item_total">
