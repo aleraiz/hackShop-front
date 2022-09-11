@@ -8,7 +8,7 @@ export const OurProducts = () => {
     const listProducts = async () => {
       const response = await axios.get(`http://localhost:8000/products`);
       console.log(response.data);
-      setOurProducts(response.data);
+      setOurProducts(response.data.slice(0, 8));
     };
     listProducts();
   }, []);
