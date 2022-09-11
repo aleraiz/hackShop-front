@@ -7,10 +7,10 @@ const userSlice = createSlice({
   },
   reducers: {
     loginUser: (state, action) => {
-      state.user.push(action.payload);
+      state.user = action.payload;
     },
     registerUser: (state, action) => {
-      state.user.push(action.payload);
+      state.user = action.payload;
     },
   },
 });

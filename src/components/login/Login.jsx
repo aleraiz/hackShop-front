@@ -23,8 +23,9 @@ export const Login = () => {
           password,
         },
       });
-      dispatch(loginUser(response.data.id));
+      dispatch(loginUser({ data: response.data.buyer.id, token: response.data.token }));
     } catch (error) {
+      console.log(error);
       setUserError(error.response.data.error);
     }
   }
