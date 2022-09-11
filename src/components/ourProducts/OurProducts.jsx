@@ -8,7 +8,8 @@ export const OurProducts = () => {
   useEffect(() => {
     const listProducts = async () => {
       const response = await axios.get(`http://localhost:8000/products`);
-      setOurProducts(response.data);
+      console.log(response.data);
+      setOurProducts(response.data.slice(0, 8));
     };
     listProducts();
   }, []);
