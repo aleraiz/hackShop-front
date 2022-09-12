@@ -38,7 +38,7 @@ export const Cart = () => {
                   <h2 className="breadcrumb-heading">Cart Page</h2>
                   <ul>
                     <li>
-                      <a href="index.html">Home</a>
+                      <Link to="index.html">Home</Link>
                     </li>
                     <li>Cart Page</li>
                   </ul>
@@ -69,7 +69,7 @@ export const Cart = () => {
                           return (
                             <tr>
                               <td className="product_remove">
-                                <a href="#">
+                                <Link to="#">
                                   <i
                                     className="pe-7s-close"
                                     data-tippy="Remove"
@@ -79,12 +79,12 @@ export const Cart = () => {
                                     data-tippy-arrow="true"
                                     data-tippy-theme="sharpborder"
                                   ></i>
-                                </a>
+                                </Link>
                               </td>
                               <td className="product-thumbnail">
-                                <a href="#">
+                                <Link to="#">
                                   <img src={product.image} alt="Cart Thumbnail" />
-                                </a>
+                                </Link>
                               </td>
                               <td className="product-name">
                                 <Link to="#">{product.productName}</Link>
@@ -190,7 +190,7 @@ export const Cart = () => {
                             </span>
                           </li>
                         </ul>
-                        <a href="#">Proceed to checkout</a>
+                        <Link to="#">Proceed to checkout</Link>
                       </div>
                     </div>
                   </div>

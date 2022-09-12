@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import "./style.css";
+
 export const Footer = () => {
   return (
     <div className="footer-area">
@@ -8,21 +10,20 @@ export const Footer = () => {
             <div className="col-lg-3">
               <div className="footer-widget-item">
                 <div className="footer-widget-logo">
-                  <a href="index.html">
+                  <Link to="index.html">
                     <img src="../../dark.png" alt="Logo" />
-                  </a>
+                  </Link>
                 </div>
                 <p className="footer-widget-desc">
-                  Lorem ipsum dolor sit amet, consec adipisl elit, sed do
-                  eiusmod tempor
+                  Lorem ipsum dolor sit amet, consec adipisl elit, sed do eiusmod tempor
                   <br />
                   incidio ut labore et dolore magna.
                 </p>
                 <div className="social-link with-border">
                   <ul>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         data-tippy="Facebook"
                         data-tippy-inertia="true"
                         data-tippy-animation="shift-away"
@@ -31,11 +32,11 @@ export const Footer = () => {
                         data-tippy-theme="sharpborder"
                       >
                         <i className="fa fa-facebook"></i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         data-tippy="Twitter"
                         data-tippy-inertia="true"
                         data-tippy-animation="shift-away"
@@ -44,11 +45,11 @@ export const Footer = () => {
                         data-tippy-theme="sharpborder"
                       >
                         <i className="fa fa-twitter"></i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         data-tippy="Pinterest"
                         data-tippy-inertia="true"
                         data-tippy-animation="shift-away"
@@ -57,11 +58,11 @@ export const Footer = () => {
                         data-tippy-theme="sharpborder"
                       >
                         <i className="fa fa-pinterest"></i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         data-tippy="Dribbble"
                         data-tippy-inertia="true"
                         data-tippy-animation="shift-away"
@@ -70,7 +71,7 @@ export const Footer = () => {
                         data-tippy-theme="sharpborder"
                       >
                         <i className="fa fa-dribbble"></i>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -81,19 +82,19 @@ export const Footer = () => {
                 <h3 className="footer-widget-title">Useful Links</h3>
                 <ul className="footer-widget-list-item">
                   <li>
-                    <a href="#">About Pronia</a>
+                    <Link to="#">About Pronia</Link>
                   </li>
                   <li>
-                    <a href="#">How to shop</a>
+                    <Link to="#">How to shop</Link>
                   </li>
                   <li>
-                    <a href="#">FAQ</a>
+                    <Link to="#">FAQ</Link>
                   </li>
                   <li>
-                    <a href="#">Contact us</a>
+                    <Link to="#">Contact us</Link>
                   </li>
                   <li>
-                    <a href="#">Log in</a>
+                    <Link to="#">Log in</Link>
                   </li>
                 </ul>
               </div>
@@ -103,19 +104,19 @@ export const Footer = () => {
                 <h3 className="footer-widget-title">My Account</h3>
                 <ul className="footer-widget-list-item">
                   <li>
-                    <a href="#">Sign In</a>
+                    <Link to="#">Sign In</Link>
                   </li>
                   <li>
-                    <a href="#">View Cart</a>
+                    <Link to="#">View Cart</Link>
                   </li>
                   <li>
-                    <a href="#">My Wishlist</a>
+                    <Link to="#">My Wishlist</Link>
                   </li>
                   <li>
-                    <a href="#">Track My Order</a>
+                    <Link to="#">Track My Order</Link>
                   </li>
                   <li>
-                    <a href="#">Help</a>
+                    <Link to="#">Help</Link>
                   </li>
                 </ul>
               </div>
@@ -125,19 +126,19 @@ export const Footer = () => {
                 <h3 className="footer-widget-title">Our Service</h3>
                 <ul className="footer-widget-list-item">
                   <li>
-                    <a href="#">Payment Methods</a>
+                    <Link to="#">Payment Methods</Link>
                   </li>
                   <li>
-                    <a href="#">Money Guarantee!</a>
+                    <Link to="#">Money Guarantee!</Link>
                   </li>
                   <li>
-                    <a href="#">Returns</a>
+                    <Link to="#">Returns</Link>
                   </li>
                   <li>
-                    <a href="#">Shipping</a>
+                    <Link to="#">Shipping</Link>
                   </li>
                   <li>
-                    <a href="#">Privacy Policy</a>
+                    <Link to="#">Privacy Policy</Link>
                   </li>
                 </ul>
               </div>
@@ -145,9 +146,9 @@ export const Footer = () => {
             <div className="col-lg-3 pt-40">
               <div className="footer-contact-info">
                 <h3 className="footer-widget-title">Got Question? Call Us</h3>
-                <a className="number" href="tel://123-456-789">
+                <Link className="number" to="tel://123-456-789">
                   123 456 789
-                </a>
+                </Link>
                 <div className="address">
                   <ul>
                     <li>Your Address Goes Here</li>
@@ -155,12 +156,9 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="payment-method">
-                <a href="#">
-                  <img
-                    src="../../../image/formas-de-pago-footer.jpg"
-                    alt="Payment Method"
-                  />
-                </a>
+                <Link to="#">
+                  <img src="../../../image/formas-de-pago-footer.jpg" alt="Payment Method" />
+                </Link>
               </div>
             </div>
           </div>
@@ -172,15 +170,10 @@ export const Footer = () => {
             <div className="col-lg-12">
               <div className="copyright">
                 <span className="copyright-text">
-                  © 2022 Hack academy{" "}
-                  {/* <i className="fa fa-heart text-danger"></i> by */}
-                  <a
-                    href="https://hasthemes.com/"
-                    rel="noopener"
-                    target="_blank"
-                  >
+                  © 2022 Hack academy {/* <i className="fa fa-heart text-danger"></i> by */}
+                  <Link to="https://hasthemes.com/" rel="noopener" target="_blank">
                     -Equipo 5
-                  </a>{" "}
+                  </Link>{" "}
                 </span>
               </div>
             </div>

@@ -61,7 +61,7 @@ export const ProductDetail = () => {
                     <h2 className="breadcrumb-heading">Single Product</h2>
                     <ul>
                       <li>
-                        <a href="index.html">Home</a>
+                        <Link to="index.html">Home</Link>
                       </li>
                       <li>Single Product Affiliate</li>
                     </ul>
@@ -78,8 +78,8 @@ export const ProductDetail = () => {
                     <div className="swiper-container single-product-slider">
                       <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                          <a
-                            // href={productDetail.image[0].imageOne}
+                          <Link
+                            // to={productDetail.image[0].imageOne}
                             className="single-img gallery-popup"
                           >
                             {productDetail.image ? (
@@ -91,11 +91,11 @@ export const ProductDetail = () => {
                             ) : (
                               <h1>Hola</h1>
                             )}
-                          </a>
+                          </Link>
                         </div>
                         <div className="swiper-slide">
-                          <a
-                            href="assets/images/product/large-size/1-2-570x633.jpg"
+                          <Link
+                            to="assets/images/product/large-size/1-2-570x633.jpg"
                             className="single-img gallery-popup"
                           >
                             <img
@@ -103,11 +103,11 @@ export const ProductDetail = () => {
                               src="../../../image/imageDetail3.jpg"
                               alt="Product Image"
                             />
-                          </a>
+                          </Link>
                         </div>
                         <div className="swiper-slide">
-                          <a
-                            href="assets/images/product/large-size/1-3-570x633.jpg"
+                          <Link
+                            to="assets/images/product/large-size/1-3-570x633.jpg"
                             className="single-img gallery-popup"
                           >
                             <img
@@ -115,11 +115,11 @@ export const ProductDetail = () => {
                               src="assets/images/product/large-size/1-3-570x633.jpg"
                               alt="Product Image"
                             />
-                          </a>
+                          </Link>
                         </div>
                         <div className="swiper-slide">
-                          <a
-                            href="assets/images/product/large-size/1-4-570x633.jpg"
+                          <Link
+                            to="assets/images/product/large-size/1-4-570x633.jpg"
                             className="single-img gallery-popup"
                           >
                             <img
@@ -127,7 +127,7 @@ export const ProductDetail = () => {
                               src="assets/images/product/large-size/1-4-570x633.jpg"
                               alt="Product Image"
                             />
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -192,7 +192,7 @@ export const ProductDetail = () => {
                         </ul>
                       </div>
                       <div className="review-status">
-                        <a href="#">( 1 Review )</a>
+                        <Link to="#">( 1 Review )</Link>
                       </div>
                     </div>
                     <p className="short-desc">
@@ -218,7 +218,7 @@ export const ProductDetail = () => {
                       <span className="title">SKU:</span>
                       <ul>
                         <li>
-                          <a href="#">Ch-256xl</a>
+                          <Link to="#">Ch-256xl</Link>
                         </li>
                       </ul>
                     </div>
@@ -226,10 +226,10 @@ export const ProductDetail = () => {
                       <span className="title">Categories :</span>
                       <ul>
                         <li>
-                          <a href="#">Office,</a>
+                          <Link to="#">Office,</Link>
                         </li>
                         <li>
-                          <a href="#">Home</a>
+                          <Link to="#">Home</Link>
                         </li>
                       </ul>
                     </div>
@@ -237,7 +237,7 @@ export const ProductDetail = () => {
                       <span className="title">Tags :</span>
                       <ul>
                         <li>
-                          <a href="#">Furniture</a>
+                          <Link to="#">Furniture</Link>
                         </li>
                       </ul>
                     </div>
@@ -245,8 +245,8 @@ export const ProductDetail = () => {
                       <span className="title pe-3">Share:</span>
                       <ul>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to="#"
                             data-tippy="Pinterest"
                             data-tippy-inertia="true"
                             data-tippy-animation="shift-away"
@@ -255,11 +255,11 @@ export const ProductDetail = () => {
                             data-tippy-theme="sharpborder"
                           >
                             <i className="fa fa-pinterest-p"></i>
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to="#"
                             data-tippy="Twitter"
                             data-tippy-inertia="true"
                             data-tippy-animation="shift-away"
@@ -268,11 +268,11 @@ export const ProductDetail = () => {
                             data-tippy-theme="sharpborder"
                           >
                             <i className="fa fa-twitter"></i>
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to="#"
                             data-tippy="Tumblr"
                             data-tippy-inertia="true"
                             data-tippy-animation="shift-away"
@@ -281,11 +281,11 @@ export const ProductDetail = () => {
                             data-tippy-theme="sharpborder"
                           >
                             <i className="fa fa-tumblr"></i>
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to="#"
                             data-tippy="Dribbble"
                             data-tippy-inertia="true"
                             data-tippy-animation="shift-away"
@@ -294,7 +294,7 @@ export const ProductDetail = () => {
                             data-tippy-theme="sharpborder"
                           >
                             <i className="fa fa-dribbble"></i>
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -309,43 +309,43 @@ export const ProductDetail = () => {
                 <div className="col-lg-12">
                   <ul className="nav product-tab-nav tab-style-2 pt-0" role="tablist">
                     <li className="nav-item" role="presentation">
-                      <a
+                      <Link
                         className="tab-btn"
                         id="information-tab"
                         data-bs-toggle="tab"
-                        href="#information"
+                        to="#information"
                         role="tab"
                         aria-controls="information"
                         aria-selected="false"
                       >
                         Information
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item" role="presentation">
-                      <a
+                      <Link
                         className="active tab-btn"
                         id="description-tab"
                         data-bs-toggle="tab"
-                        href="#description"
+                        to="#description"
                         role="tab"
                         aria-controls="description"
                         aria-selected="true"
                       >
                         Description
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item" role="presentation">
-                      <a
+                      <Link
                         className="tab-btn"
                         id="reviews-tab"
                         data-bs-toggle="tab"
-                        href="#reviews"
+                        to="#reviews"
                         role="tab"
                         aria-controls="reviews"
                         aria-selected="false"
                       >
                         Reviews(3)
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                   <div className="tab-content product-tab-content">
@@ -414,9 +414,9 @@ export const ProductDetail = () => {
                                 veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea
                                 commodo consequat.
                               </p>
-                              <a className="btn btn-custom-size comment-btn" href="#">
+                              <Link className="btn btn-custom-size comment-btn" to="#">
                                 Reply
-                              </a>
+                              </Link>
                             </div>
                           </div>
                           <div className="blog-comment-item relpy-item">
@@ -436,9 +436,9 @@ export const ProductDetail = () => {
                                 tempr incidid ut labore etl dolore magna aliqua. Ut enim ad minim
                                 veniam, quisnos exercitati ullamco laboris nisi ut aliquiex.
                               </p>
-                              <a className="btn btn-custom-size comment-btn style-2" href="#">
+                              <Link className="btn btn-custom-size comment-btn style-2" to="#">
                                 Reply
-                              </a>
+                              </Link>
                             </div>
                           </div>
                           <div className="blog-comment-item">
@@ -459,9 +459,9 @@ export const ProductDetail = () => {
                                 veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea
                                 commodo consequat.
                               </p>
-                              <a className="btn btn-custom-size comment-btn" href="#">
+                              <Link className="btn btn-custom-size comment-btn" to="#">
                                 Reply
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -588,22 +588,22 @@ export const ProductDetail = () => {
                             </Link>
                           </div>
                           <div className="swiper-slide">
-                            <a href="#" className="single-img">
+                            <Link to="#" className="single-img">
                               <img
                                 className="img-full"
                                 src="assets/images/product/large-size/1-3-570x633.jpg"
                                 alt="Product Image"
                               />
-                            </a>
+                            </Link>
                           </div>
                           <div className="swiper-slide">
-                            <a href="#" className="single-img">
+                            <Link to="#" className="single-img">
                               <img
                                 className="img-full"
                                 src="assets/images/product/large-size/1-4-570x633.jpg"
                                 alt="Product Image"
                               />
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -636,7 +636,7 @@ export const ProductDetail = () => {
                           </ul>
                         </div>
                         <div className="review-status">
-                          <a href="#">( 1 Review )</a>
+                          <Link to="#">( 1 Review )</Link>
                         </div>
                       </div>
                       <div className="selector-wrap color-option">
@@ -669,22 +669,22 @@ export const ProductDetail = () => {
                           </div>
                         </li>
                         <li className="add-to-cart">
-                          <a
+                          <Link
                             className="btn btn-custom-size lg-size btn-pronia-primary"
-                            href="cart.html"
+                            to="cart.html"
                           >
                             Add to cart
-                          </a>
+                          </Link>
                         </li>
                         <li className="wishlist-btn-wrap">
-                          <a className="custom-circle-btn" href="wishlist.html">
+                          <Link className="custom-circle-btn" to="wishlist.html">
                             <i className="pe-7s-like"></i>
-                          </a>
+                          </Link>
                         </li>
                         <li className="compare-btn-wrap">
-                          <a className="custom-circle-btn" href="compare.html">
+                          <Link className="custom-circle-btn" to="compare.html">
                             <i className="pe-7s-refresh-2"></i>
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <ul className="service-item-wrap pb-0">
@@ -733,9 +733,9 @@ export const ProductDetail = () => {
           </div>
         </div>
 
-        <a className="scroll-to-top" href="">
+        <Link className="scroll-to-top" to="">
           <i className="fa fa-angle-double-up"></i>
-        </a>
+        </Link>
       </div>
     </>
   );

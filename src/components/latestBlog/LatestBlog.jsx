@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./latestBlogStyle.css";
 
 export const LatestBlog = () => {
@@ -7,8 +8,8 @@ export const LatestBlog = () => {
         <div className="section-title-wrap">
           <h2 className="section-title mb-7">Latest Blog</h2>
           <p className="section-desc">
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classNameical Latin literature
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+            piece of classNameical Latin literature
           </p>
         </div>
         <div className="row">
@@ -21,39 +22,35 @@ export const LatestBlog = () => {
                       <div className="blog-meta">
                         <ul>
                           <li className="author">
-                            <a className="text-decoration-none" href="#">
+                            <Link className="text-decoration-none" to="#">
                               By: Admin
-                            </a>
+                            </Link>
                           </li>
                           <li className="date">24 April 2021</li>
                         </ul>
                       </div>
                       <h2 className="title">
-                        <a className="text-decoration-none" href="blog.html">
+                        <Link className="text-decoration-none" to="blog.html">
                           There Many Variations
-                        </a>
+                        </Link>
                       </h2>
                       <p className="short-desc mb-7">
-                        Lorem ipsum dolor sit amet, consecteturl adipisl elit,
-                        sed do eiusmod tempor incidio ut labore et dolore magna
-                        aliqua.
+                        Lorem ipsum dolor sit amet, consecteturl adipisl elit, sed do eiusmod tempor
+                        incidio ut labore et dolore magna aliqua.
                       </p>
                     </div>
                     <div className="blog-img img-hover-effect">
-                      <a href="blog.html">
+                      <Link to="blog.html">
                         <img
                           className="img-full"
                           src="../latestBlog/latestBlog1.jpg"
                           alt="Blog Image"
                         />
-                      </a>
+                      </Link>
                       <div className="inner-btn-wrap">
-                        <a
-                          className="inner-btn text-decoration-none"
-                          href="blog.html"
-                        >
+                        <Link className="inner-btn text-decoration-none" to="blog.html">
                           <i className="pe-7s-link"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -64,39 +61,35 @@ export const LatestBlog = () => {
                       <div className="blog-meta">
                         <ul>
                           <li className="author">
-                            <a className="text-decoration-none" href="#">
+                            <Link className="text-decoration-none" to="#">
                               By: Admin
-                            </a>
+                            </Link>
                           </li>
                           <li className="date">24 April 2021</li>
                         </ul>
                       </div>
                       <h2 className="title">
-                        <a className="text-decoration-none" href="blog.html">
+                        <Link className="text-decoration-none" to="blog.html">
                           Maecenas Laoreet Massa
-                        </a>
+                        </Link>
                       </h2>
                       <p className="short-desc mb-7">
-                        Lorem ipsum dolor sit amet, consecteturl adipisl elit,
-                        sed do eiusmod tempor incidio ut labore et dolore magna
-                        aliqua.
+                        Lorem ipsum dolor sit amet, consecteturl adipisl elit, sed do eiusmod tempor
+                        incidio ut labore et dolore magna aliqua.
                       </p>
                     </div>
                     <div className="blog-img img-hover-effect">
-                      <a className="text-decoration-none" href="blog.html">
+                      <Link className="text-decoration-none" to="blog.html">
                         <img
                           className="img-full"
                           src="../latestBlog/latestBlog2.jpg"
                           alt="Blog Image"
                         />
-                      </a>
+                      </Link>
                       <div className="inner-btn-wrap">
-                        <a
-                          className="inner-btn text-decoration-none"
-                          href="blog.html"
-                        >
+                        <Link className="inner-btn text-decoration-none" to="blog.html">
                           <i className="pe-7s-link"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -107,39 +100,35 @@ export const LatestBlog = () => {
                       <div className="blog-meta">
                         <ul>
                           <li className="author">
-                            <a className="text-decoration-none" href="#">
+                            <Link className="text-decoration-none" to="#">
                               By: Admin
-                            </a>
+                            </Link>
                           </li>
                           <li className="date">24 April 2021</li>
                         </ul>
                       </div>
                       <h2 className="title">
-                        <a className="text-decoration-none" href="blog.html">
+                        <Link className="text-decoration-none" to="blog.html">
                           Aenean Vulputate Lorem
-                        </a>
+                        </Link>
                       </h2>
                       <p className="short-desc mb-7">
-                        Lorem ipsum dolor sit amet, consecteturl adipisl elit,
-                        sed do eiusmod tempor incidio ut labore et dolore magna
-                        aliqua.
+                        Lorem ipsum dolor sit amet, consecteturl adipisl elit, sed do eiusmod tempor
+                        incidio ut labore et dolore magna aliqua.
                       </p>
                     </div>
                     <div className="blog-img img-hover-effect">
-                      <a href="blog.html">
+                      <Link to="blog.html">
                         <img
                           className="img-full"
                           src="../latestBlog/latestBlog3.jpg"
                           alt="Blog Image"
                         />
-                      </a>
+                      </Link>
                       <div className="inner-btn-wrap">
-                        <a
-                          className="inner-btn text-decoration-none"
-                          href="blog.html"
-                        >
+                        <Link className="inner-btn text-decoration-none" to="blog.html">
                           <i className="pe-7s-link"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

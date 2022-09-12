@@ -1,4 +1,5 @@
 import Carousel from "react-multi-carousel";
+import { Link } from "react-router-dom";
 import "react-multi-carousel/lib/styles.css";
 import "./css/style.css";
 
@@ -30,44 +31,29 @@ export const BrandArea = () => {
               <div className="swiper-container brand-slider">
                 <Carousel responsive={responsive} infinite={true}>
                   <div className="swiper-slide">
-                    <a className="brand-item" href="#">
-                      <img
-                        src="../../images/brandArea/1-1.webp"
-                        alt="Brand Image"
-                      />
-                    </a>
+                    <Link className="brand-item" to="#">
+                      <img src="../../images/brandArea/1-1.webp" alt="Brand Image" />
+                    </Link>
                   </div>
                   <div className="swiper-slide">
-                    <a className="brand-item" href="#">
-                      <img
-                        src="../../images/brandArea/1-2.webp"
-                        alt="Brand Image"
-                      />
-                    </a>
+                    <Link className="brand-item" to="#">
+                      <img src="../../images/brandArea/1-2.webp" alt="Brand Image" />
+                    </Link>
                   </div>
                   <div className="swiper-slide">
-                    <a className="brand-item" href="#">
-                      <img
-                        src="../../images/brandArea/1-3.webp"
-                        alt="Brand Image"
-                      />
-                    </a>
+                    <Link className="brand-item" to="#">
+                      <img src="../../images/brandArea/1-3.webp" alt="Brand Image" />
+                    </Link>
                   </div>
                   <div className="swiper-slide">
-                    <a className="brand-item" href="#">
-                      <img
-                        src="../../images/brandArea/1-4.webp"
-                        alt="Brand Image"
-                      />
-                    </a>
+                    <Link className="brand-item" to="#">
+                      <img src="../../images/brandArea/1-4.webp" alt="Brand Image" />
+                    </Link>
                   </div>
                   <div className="swiper-slide">
-                    <a className="brand-item" href="#">
-                      <img
-                        src="../../images/brandArea/1-5.webp"
-                        alt="Brand Image"
-                      />
-                    </a>
+                    <Link className="brand-item" to="#">
+                      <img src="../../images/brandArea/1-5.webp" alt="Brand Image" />
+                    </Link>
                   </div>
                 </Carousel>
               </div>

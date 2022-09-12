@@ -39,8 +39,8 @@ export const CarouselProducts = () => {
           <div className="product-add-action">
             <ul>
               <li>
-                <a
-                  href="wishlist.html"
+                <Link
+                  to="wishlist.html"
                   data-tippy="Add to wishlist"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -49,11 +49,11 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-like"></i>
-                </a>
+                </Link>
               </li>
               <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   data-tippy="Quickview"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -62,11 +62,11 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-look"></i>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="cart.html"
+                <Link
+                  to="cart.html"
                   data-tippy="Add to cart"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -75,15 +75,15 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-cart"></i>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="product-content">
-          <a className="product-name" href="shop.html">
+          <Link className="product-name" to="shop.html">
             American Marigold
-          </a>
+          </Link>
           <div className="price-box pb-1">
             <span className="new-price">$23.45</span>
           </div>
@@ -110,7 +110,7 @@ export const CarouselProducts = () => {
       </div>
       <div className="swiper-slide product-item">
         <div className="product-img">
-          <a href="shop.html">
+          <Link to="shop.html">
             <img
               className="primary-img"
               src="../../images/newProducts/1-10-270x300.jpg"
@@ -121,12 +121,12 @@ export const CarouselProducts = () => {
               src="../../images/newProducts/1-11-270x300.jpg"
               alt="Product Images"
             />
-          </a>
+          </Link>
           <div className="product-add-action">
             <ul>
               <li>
-                <a
-                  href="wishlist.html"
+                <Link
+                  to="wishlist.html"
                   data-tippy="Add to wishlist"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -135,11 +135,11 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-like"></i>
-                </a>
+                </Link>
               </li>
               <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   data-tippy="Quickview"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -148,11 +148,11 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-look"></i>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="cart.html"
+                <Link
+                  to="cart.html"
                   data-tippy="Add to cart"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -161,15 +161,15 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-cart"></i>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="product-content">
-          <a className="product-name" href="shop.html">
+          <Link className="product-name" to="shop.html">
             Black Eyed Susan
-          </a>
+          </Link>
           <div className="price-box pb-1">
             <span className="new-price">$25.45</span>
           </div>
@@ -196,7 +196,7 @@ export const CarouselProducts = () => {
       </div>
       <div className="swiper-slide product-item">
         <div className="product-img">
-          <a href="shop.html">
+          <Link to="shop.html">
             <img
               className="primary-img"
               src="../../images/newProducts/1-11-270x300.jpg"
@@ -207,12 +207,12 @@ export const CarouselProducts = () => {
               src="../../images/newProducts/1-4-270x300.jpg"
               alt="Product Images"
             />
-          </a>
+          </Link>
           <div className="product-add-action">
             <ul>
               <li>
-                <a
-                  href="wishlist.html"
+                <Link
+                  to="wishlist.html"
                   data-tippy="Add to wishlist"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -221,11 +221,11 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-like"></i>
-                </a>
+                </Link>
               </li>
               <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   data-tippy="Quickview"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -234,11 +234,11 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-look"></i>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="cart.html"
+                <Link
+                  to="cart.html"
                   data-tippy="Add to cart"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -247,15 +247,15 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-cart"></i>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="product-content">
-          <a className="product-name" href="shop.html">
+          <Link className="product-name" to="shop.html">
             Bleeding Heart
-          </a>
+          </Link>
           <div className="price-box pb-1">
             <span className="new-price">$30.45</span>
           </div>
@@ -282,7 +282,7 @@ export const CarouselProducts = () => {
       </div>
       <div className="swiper-slide product-item">
         <div className="product-img">
-          <a href="shop.html">
+          <Link to="shop.html">
             <img
               className="primary-img"
               src="../../images/newProducts/1-7-270x300.jpg"
@@ -293,12 +293,12 @@ export const CarouselProducts = () => {
               src="../../images/newProducts/1-8-270x300.jpg"
               alt="Product Images"
             />
-          </a>
+          </Link>
           <div className="product-add-action">
             <ul>
               <li>
-                <a
-                  href="wishlist.html"
+                <Link
+                  to="wishlist.html"
                   data-tippy="Add to wishlist"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -307,11 +307,11 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-like"></i>
-                </a>
+                </Link>
               </li>
               <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   data-tippy="Quickview"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -320,11 +320,11 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-look"></i>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="cart.html"
+                <Link
+                  to="cart.html"
                   data-tippy="Add to cart"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
@@ -333,15 +333,15 @@ export const CarouselProducts = () => {
                   data-tippy-theme="sharpborder"
                 >
                   <i className="pe-7s-cart"></i>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="product-content">
-          <a className="product-name" href="shop.html">
+          <Link className="product-name" to="shop.html">
             Bloody Cranesbill
-          </a>
+          </Link>
           <div className="price-box pb-1">
             <span className="new-price">$45.00</span>
           </div>

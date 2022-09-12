@@ -56,56 +56,56 @@ export const MyAccount = () => {
               <div className="col-lg-3">
                 <ul className="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="nav-link active"
                       id="account-dashboard-tab"
                       data-bs-toggle="tab"
-                      href="#account-dashboard"
+                      to="#account-dashboard"
                       role="tab"
                       aria-controls="account-dashboard"
                       aria-selected="true"
                     >
                       Dashboard
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="nav-link"
                       id="account-orders-tab"
                       data-bs-toggle="tab"
-                      href="#account-orders"
+                      to="#account-orders"
                       role="tab"
                       aria-controls="account-orders"
                       aria-selected="false"
                     >
                       Orders
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="nav-link"
                       id="account-address-tab"
                       data-bs-toggle="tab"
-                      href="#account-address"
+                      to="#account-address"
                       role="tab"
                       aria-controls="account-address"
                       aria-selected="false"
                     >
                       Addresses
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="nav-link"
                       id="account-details-tab"
                       data-bs-toggle="tab"
-                      href="#account-details"
+                      to="#account-details"
                       role="tab"
                       aria-controls="account-details"
                       aria-selected="false"
                     >
                       Account Details
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <button
@@ -132,12 +132,13 @@ export const MyAccount = () => {
                   >
                     <div className="myaccount-dashboard">
                       <p>
-                        Hello <b>Pronia</b> (not Pronia? <a href="login-register.html">Sign out</a>)
+                        Hello <b>Pronia</b> (not Pronia?{" "}
+                        <Link to="login-register.html">Sign out</Link>)
                       </p>
                       <p>
                         From your account dashboard you can view your recent orders, manage your
                         shipping and billing addresses and{" "}
-                        <a href="#">edit your password and account details</a>.
+                        <Link to="#">edit your password and account details</Link>.
                       </p>
                     </div>
                   </div>
@@ -161,32 +162,32 @@ export const MyAccount = () => {
                             </tr>
                             <tr>
                               <td>
-                                <a className="account-order-id" href="#">
+                                <Link className="account-order-id" to="#">
                                   #5364
-                                </a>
+                                </Link>
                               </td>
                               <td>Mar 27, 2019</td>
                               <td>On Hold</td>
                               <td>$162.00 for 2 items</td>
                               <td>
-                                <a href="#" className="btn btn-dark">
+                                <Link to="#" className="btn btn-dark">
                                   <span>View</span>
-                                </a>
+                                </Link>
                               </td>
                             </tr>
                             <tr>
                               <td>
-                                <a className="account-order-id" href="#">
+                                <Link className="account-order-id" to="#">
                                   #5356
-                                </a>
+                                </Link>
                               </td>
                               <td>Mar 27, 2019</td>
                               <td>On Hold</td>
                               <td>$162.00 for 2 items</td>
                               <td>
-                                <a href="#" className="btn btn-dark">
+                                <Link to="#" className="btn btn-dark">
                                   <span>View</span>
-                                </a>
+                                </Link>
                               </td>
                             </tr>
                           </tbody>

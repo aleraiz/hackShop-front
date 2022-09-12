@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { NavbarFilter } from "./FiltersProducts";
 
 export const Products = () => {
@@ -29,7 +30,7 @@ export const Products = () => {
                     <h2 className="breadcrumb-heading">Shop</h2>
                     <ul>
                       <li>
-                        <a href="index.html">Home</a>
+                        <Link to="index.html">Home</Link>
                       </li>
                       <li>Shop Grid Fullwidth</li>
                     </ul>
@@ -56,7 +57,7 @@ export const Products = () => {
                             <div className="col-lg-3 col-md-4 col-sm-6">
                               <div className="product-item">
                                 <div className="product-img">
-                                  <a href="single-product-variable.html">
+                                  <Link to="single-product-variable.html">
                                     <img
                                       className="primary-img"
                                       src={product.image[3].imageDetailOne}
@@ -67,12 +68,12 @@ export const Products = () => {
                                       src={product.image[4].imageDetailTwo}
                                       alt="Product Images"
                                     />
-                                  </a>
+                                  </Link>
                                   <div className="product-add-action">
                                     <ul>
                                       <li>
-                                        <a
-                                          href="wishlist.html"
+                                        <Link
+                                          to="wishlist.html"
                                           data-tippy="Add to wishlist"
                                           data-tippy-inertia="true"
                                           data-tippy-animation="shift-away"
@@ -81,15 +82,15 @@ export const Products = () => {
                                           data-tippy-theme="sharpborder"
                                         >
                                           <i className="pe-7s-like"></i>
-                                        </a>
+                                        </Link>
                                       </li>
                                       <li
                                         className="quuickview-btn"
                                         data-bs-toggle="modal"
                                         data-bs-target="#quickModal"
                                       >
-                                        <a
-                                          href="#"
+                                        <Link
+                                          to="#"
                                           data-tippy="Quickview"
                                           data-tippy-inertia="true"
                                           data-tippy-animation="shift-away"
@@ -98,11 +99,11 @@ export const Products = () => {
                                           data-tippy-theme="sharpborder"
                                         >
                                           <i className="pe-7s-look"></i>
-                                        </a>
+                                        </Link>
                                       </li>
                                       <li>
-                                        <a
-                                          href="cart.html"
+                                        <Link
+                                          to="cart.html"
                                           data-tippy="Add to cart"
                                           data-tippy-inertia="true"
                                           data-tippy-animation="shift-away"
@@ -111,15 +112,15 @@ export const Products = () => {
                                           data-tippy-theme="sharpborder"
                                         >
                                           <i className="pe-7s-cart"></i>
-                                        </a>
+                                        </Link>
                                       </li>
                                     </ul>
                                   </div>
                                 </div>
                                 <div className="product-content">
-                                  <a className="product-name" href="single-product-variable.html">
+                                  <Link className="product-name" to="single-product-variable.html">
                                     {product.productName}
-                                  </a>
+                                  </Link>
                                   <div className="price-box pb-1">
                                     <span className="new-price">${product.price}</span>
                                   </div>
@@ -154,24 +155,24 @@ export const Products = () => {
                     <nav aria-label="Page navigation example">
                       <ul class="pagination justify-content-center">
                         <li class="page-item active">
-                          <a class="page-link" href="#">
+                          <Link class="page-link" to="#">
                             1
-                          </a>
+                          </Link>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" href="#">
+                          <Link class="page-link" to="#">
                             2
-                          </a>
+                          </Link>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" href="#">
+                          <Link class="page-link" to="#">
                             3
-                          </a>
+                          </Link>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
+                          <Link class="page-link" to="#" aria-label="Next">
                             &raquo;
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </nav>

@@ -1,4 +1,6 @@
 import "./collectionStyle.css";
+import { Link } from "react-router-dom";
+
 export const Collection = () => {
   return (
     <div className="banner-area section-space-top-90">
@@ -15,12 +17,12 @@ export const Collection = () => {
                   Pottery Pots & <br /> Plant
                 </h3>
                 <div className="button-wrap">
-                  <a
+                  <Link
                     className="btn btn-custom-size btn-pronia-primary rounded-pill btn-collection"
-                    href="shop.html"
+                    to="shop.html"
                   >
                     Shop Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -34,12 +36,12 @@ export const Collection = () => {
                 <span className="collection">New Collection</span>
                 <h3 className="title">Plant Port</h3>
                 <div className="button-wrap">
-                  <a
+                  <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
-                    href="shop.html"
+                    to="shop.html"
                   >
                     Shop Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -53,12 +55,12 @@ export const Collection = () => {
                 <span className="collection">New Collection</span>
                 <h3 className="title">Plant Port</h3>
                 <div className="button-wrap">
-                  <a
+                  <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
-                    href="shop.html"
+                    to="shop.html"
                   >
                     Shop Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -74,12 +76,12 @@ export const Collection = () => {
                   Hanging Pots & <br /> Plant
                 </h3>
                 <div className="button-wrap">
-                  <a
+                  <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
-                    href="shop.html"
+                    to="shop.html"
                   >
                     Shop Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
