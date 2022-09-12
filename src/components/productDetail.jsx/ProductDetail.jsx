@@ -61,7 +61,7 @@ export const ProductDetail = () => {
                     <h2 className="breadcrumb-heading">Single Product</h2>
                     <ul>
                       <li>
-                        <Link to="index.html">Home</Link>
+                        <Link to="/">Home</Link>
                       </li>
                       <li>Single Product Affiliate</li>
                     </ul>
@@ -79,6 +79,7 @@ export const ProductDetail = () => {
                       <div className="swiper-wrapper">
                         <div className="swiper-slide">
                           <Link
+                            to="/"
                             // to={productDetail.image[0].imageOne}
                             className="single-img gallery-popup"
                           >
@@ -95,8 +96,9 @@ export const ProductDetail = () => {
                         </div>
                         <div className="swiper-slide">
                           <Link
-                            to="assets/images/product/large-size/1-2-570x633.jpg"
+                            src="assets/images/product/large-size/1-2-570x633.jpg"
                             className="single-img gallery-popup"
+                            to="/"
                           >
                             <img
                               className="img-full"
@@ -107,8 +109,9 @@ export const ProductDetail = () => {
                         </div>
                         <div className="swiper-slide">
                           <Link
-                            to="assets/images/product/large-size/1-3-570x633.jpg"
+                            src="assets/images/product/large-size/1-3-570x633.jpg"
                             className="single-img gallery-popup"
+                            to="/"
                           >
                             <img
                               className="img-full"
@@ -119,8 +122,9 @@ export const ProductDetail = () => {
                         </div>
                         <div className="swiper-slide">
                           <Link
-                            to="assets/images/product/large-size/1-4-570x633.jpg"
+                            src="assets/images/product/large-size/1-4-570x633.jpg"
                             className="single-img gallery-popup"
+                            to="/"
                           >
                             <img
                               className="img-full"
@@ -732,10 +736,6 @@ export const ProductDetail = () => {
             </div>
           </div>
         </div>
-
-        <Link className="scroll-to-top" to="">
-          <i className="fa fa-angle-double-up"></i>
-        </Link>
       </div>
     </>
   );
