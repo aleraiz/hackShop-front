@@ -15,7 +15,7 @@ export const MyAccount = () => {
     try {
       const response = await axios({
         method: "post",
-        url: `http://localhost:8000/logout`,
+        url: `${process.env.REACT_APP_DB_HOST}/logout`,
         headers: { Authorization: `Bearer ${user.token}` },
       });
       dispatch(logoutUser());

@@ -142,3 +142,7 @@
 .product-name .product-name-link{
   color: #303030; 
 }
+.addProductsToCart {
+  font-size: 20px;
+  font-weight: 600;
+}

@@ -24,6 +24,7 @@ import { AboutUs } from "./components/aboutUs/AboutUs";
 import React, { useEffect } from "react";
 import { TbArrowBigUpLines } from "react-icons/tb";
 import { MyAccount } from "./components/navbar/MyAccount";
+import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 
 function App() {
   useEffect(() => {
@@ -41,7 +42,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/admin" element={<Admin />} />
+        </Route>
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<Error404 />} />
