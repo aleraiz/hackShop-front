@@ -26,41 +26,41 @@ export const OurProducts = () => {
           <div className="col-lg-12">
             <ul className="nav product-tab-nav tab-style-1" id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
-                <a
+                <Link
                   className="active"
                   id="featured-tab"
                   data-bs-toggle="tab"
-                  href="#featured"
+                  to="#featured"
                   role="tab"
                   aria-controls="featured"
                   aria-selected="true"
                 >
                   Featured
-                </a>
+                </Link>
               </li>
               <li className="nav-item" role="presentation">
-                <a
+                <Link
                   id="bestseller-tab"
                   data-bs-toggle="tab"
-                  href="#bestseller"
+                  to="#bestseller"
                   role="tab"
                   aria-controls="bestseller"
                   aria-selected="false"
                 >
                   Bestseller
-                </a>
+                </Link>
               </li>
               <li className="nav-item" role="presentation">
-                <a
+                <Link
                   id="latest-tab"
                   data-bs-toggle="tab"
-                  href="#latest"
+                  to="#latest"
                   role="tab"
                   aria-controls="latest"
                   aria-selected="false"
                 >
                   Latest
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="tab-content" id="myTabContent">
@@ -91,8 +91,8 @@ export const OurProducts = () => {
                             <div className="product-add-action">
                               <ul>
                                 <li>
-                                  <a
-                                    href="wishlist.html"
+                                  <Link
+                                    to="wishlist.html"
                                     data-tippy="Add to wishlist"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
@@ -101,15 +101,15 @@ export const OurProducts = () => {
                                     data-tippy-theme="sharpborder"
                                   >
                                     <i className="pe-7s-like"></i>
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li
                                   className="quuickview-btn"
                                   data-bs-toggle="modal"
                                   data-bs-target="#quickModal"
                                 >
-                                  <a
-                                    href="#"
+                                  <Link
+                                    to="#"
                                     data-tippy="Quickview"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
@@ -118,11 +118,11 @@ export const OurProducts = () => {
                                     data-tippy-theme="sharpborder"
                                   >
                                     <i className="pe-7s-look"></i>
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li>
-                                  <a
-                                    href="cart.html"
+                                  <Link
+                                    to="cart.html"
                                     data-tippy="Add to cart"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
@@ -131,15 +131,15 @@ export const OurProducts = () => {
                                     data-tippy-theme="sharpborder"
                                   >
                                     <i className="pe-7s-cart"></i>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
                           </div>
                           <div className="product-content">
-                            <a className="product-name" href="shop.html">
+                            <Link className="product-name" to="shop.html">
                               {product.productName}
-                            </a>
+                            </Link>
                             <div className="price-box pb-1">
                               <span className="new-price">${product.price}</span>
                             </div>

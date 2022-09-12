@@ -38,7 +38,7 @@ export const Cart = () => {
                   <h2 className="breadcrumb-heading">Cart Page</h2>
                   <ul>
                     <li>
-                      <a href="index.html">Home</a>
+                      <Link to="index.html">Home</Link>
                     </li>
                     <li>Cart Page</li>
                   </ul>
@@ -199,7 +199,7 @@ export const Cart = () => {
                             </span>
                           </li>
                         </ul>
-                        <a href="#">Proceed to checkout</a>
+                        <Link to="#">Proceed to checkout</Link>
                       </div>
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./errorStyle.css";
 
 export const Error404 = () => {
@@ -19,10 +20,10 @@ export const Error404 = () => {
                   <span>Oops,</span> page not found!
                 </h2>
                 <div className="button-wrap">
-                  <a className="btn btn-error" href="index.html">
+                  <Link className="btn btn-error" to="/">
                     Back to home
                     <i className="pe-7s-home"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

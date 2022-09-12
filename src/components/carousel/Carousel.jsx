@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Carousel = () => {
   return (
     <div className="slider-area">
@@ -16,12 +18,12 @@ export const Carousel = () => {
                       <h2 className="title">New Plant</h2>
                       <p className="short-desc">Pronia, With 100% Natural, Organic & Plant Shop.</p>
                       <div className="btn-wrap">
-                        <a
+                        <Link
                           className="btn btn-custom-size xl-size btn-pronia-primary btn-collection rounded-pill"
-                          href="shop.html"
+                          to="shop.html"
                         >
                           Discover Now
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -53,12 +55,12 @@ export const Carousel = () => {
                         Pronia, With 100% Natural, Organic & Plant Shop.
                       </p>
                       <div className="btn-wrap">
-                        <a
+                        <Link
                           className="btn btn-custom-size xl-size btn-pronia-primary"
                           href="shop.html"
                         >
                           Discover Now
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

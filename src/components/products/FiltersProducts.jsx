@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const NavbarFilter = () => {
   return (
     <div className="product-topbar">
@@ -8,27 +10,27 @@ export const NavbarFilter = () => {
         <li className="product-view-wrap">
           <ul className="nav" role="tablist">
             <li className="grid-view" role="presentation">
-              <a
+              <Link
                 className="active"
                 id="grid-view-tab"
                 data-bs-toggle="tab"
-                href="#grid-view"
+                to="#grid-view"
                 role="tab"
                 aria-selected="true"
               >
                 <i className="fa fa-th"></i>
-              </a>
+              </Link>
             </li>
             <li className="list-view" role="presentation">
-              <a
+              <Link
                 id="list-view-tab"
                 data-bs-toggle="tab"
-                href="#list-view"
+                to="#list-view"
                 role="tab"
                 aria-selected="true"
               >
                 <i className="fa fa-th-list"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </li>

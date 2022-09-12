@@ -31,9 +31,9 @@ export const Register = () => {
       });
       dispatch(
         registerUser({
-          id: response.data.buyer.id,
+          id: response.data.client.id,
           token: response.data.token,
-          firstname: response.data.buyer.firstname,
+          firstname: response.data.client.firstname,
         }),
       );
     } catch (error) {
