@@ -78,7 +78,7 @@ export const Register = () => {
                   <h4 className="login-title">Register</h4>
                   <div className="row">
                     <div className="col-md-6 col-12">
-                      <label>Nombre</label>
+                      <label>Firstname</label>
                       <input
                         type="text"
                         placeholder="Firstname"
@@ -89,7 +89,7 @@ export const Register = () => {
                       />
                     </div>
                     <div className="col-md-6 col-12">
-                      <label>Apellido</label>
+                      <label>Lastname</label>
                       <input
                         type="text"
                         placeholder="Lastname"
@@ -100,7 +100,7 @@ export const Register = () => {
                       />
                     </div>
                     <div className="col-md-6 col-12">
-                      <label>Dirección</label>
+                      <label>Address</label>
                       <input
                         type="text"
                         placeholder="Lastname"
@@ -111,7 +111,7 @@ export const Register = () => {
                       />
                     </div>
                     <div className="col-md-6 col-12">
-                      <label>Numero de teléfono</label>
+                      <label>Phone</label>
                       <input
                         type="text"
                         placeholder="Lastname"
@@ -136,7 +136,7 @@ export const Register = () => {
                       />
                     </div>
                     <div className="col-md-12">
-                      <label>Contraseña</label>
+                      <label>Password</label>
                       <input
                         type="password"
                         placeholder="Password"

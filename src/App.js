@@ -24,6 +24,7 @@ import { AboutUs } from "./components/aboutUs/AboutUs";
 import React, { useEffect } from "react";
 import { TbArrowBigUpLines } from "react-icons/tb";
 import { MyAccount } from "./components/navbar/MyAccount";
+import { CheckoutPage } from "./components/checkout/CheckoutPage";
 
 function App() {
   useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
