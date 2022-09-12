@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
+  console.log(cart);
   const dispatch = useDispatch();
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
@@ -67,7 +68,7 @@ export const Cart = () => {
                       <tbody>
                         {cart.map((product) => {
                           return (
-                            <tr>
+                            <tr key={product.id}>
                               <td className="product_remove">
                                 <Link to="#">
                                   <i
@@ -81,18 +82,22 @@ export const Cart = () => {
                                   ></i>
                                 </Link>
                               </td>
-                              <td className="product-thumbnail">
-                                <Link to="#">
-                                  <img src={product.image} alt="Cart Thumbnail" />
-                                </Link>
+                              <td className="product-thumbnail td-align-center">
+                                <div className="img-container">
+                                  <Link to="#">
+                                    <img src={product.image} alt="Cart Thumbnail" />
+                                  </Link>
+                                </div>
                               </td>
-                              <td className="product-name">
-                                <Link to="#">{product.productName}</Link>
+                              <td className="product-name ">
+                                <Link className="product-name-link" to="#">
+                                  {product.productName}
+                                </Link>
                               </td>
                               <td className="product-price">
                                 <span className="amount">${product.price}</span>
                               </td>
-                              <td className="quantity">
+                              <td className="quantity ">
                                 <div className="cart-plus-minus">
                                   <button
                                     className="cart-plus-minus-box"
@@ -147,7 +152,7 @@ export const Cart = () => {
                           <input
                             className="button mt-xxs-30"
                             name="apply_coupon"
-                            // value="Apply coupon"
+                            value="Apply coupon"
                             type="submit"
                           />
                         </div>
@@ -155,7 +160,7 @@ export const Cart = () => {
                           <input
                             className="button"
                             name="update_cart"
-                            // value="Update cart"
+                            value="Update cart"
                             type="submit"
                           />
                         </div>

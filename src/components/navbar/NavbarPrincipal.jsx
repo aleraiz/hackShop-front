@@ -1,13 +1,24 @@
 import { Link } from "react-router-dom";
 import { SearchModal } from "./SearchModal";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { CartOffCanvas } from "./CartOffcanvas";
 import "./css/style.css";
+import Button from "react-bootstrap/Button";
+import Overlay from "react-bootstrap/Overlay";
+import Popover from "react-bootstrap/Popover";
 
 export const NavbarPrincipal = () => {
   const [openModalSearch, setOpenModalSearch] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+  const handleClick = (event) => {
+    setShow(!show);
+    setTarget(event.target);
+  };
+
   const cart = useSelector((state) => state.cart.cart);
 
   return (
@@ -126,23 +137,34 @@ export const NavbarPrincipal = () => {
                       ) : null}
                     </li>
                     <li className="dropdown d-none d-lg-block">
-                      <button
-                        className="btn btn-link dropdown-toggle ht-btn p-0"
-                        type="button"
-                        id="settingButton"
-                        data-bs-toggle="dropdown"
-                        aria-label="setting"
-                        aria-expanded="false"
-                      >
-                        <i className="pe-7s-users"></i>
-                      </button>
-                      <ul className="dropdown-menu" aria-labelledby="settingButton">
-                        <li>
-                          <Link className="dropdown-item" to="login-register.html">
-                            Login | Register
-                          </Link>
-                        </li>
-                      </ul>
+                      <div ref={ref}>
+                        <Button
+                          className="btn btn-link btn-light dropdown-toggle ht-btn p-0"
+                          onClick={handleClick}
+                        >
+                          <i className="pe-7s-users"></i>
+                        </Button>
+
+                        <Overlay
+                          show={show}
+                          target={target}
+                          placement="bottom"
+                          container={ref}
+                          containerPadding={20}
+                        >
+                          <Popover id="popover-contained">
+                            <Link className="dropdown-item" to="/register">
+                              Register
+                            </Link>
+                            <Link className="dropdown-item" to="/login">
+                              Login
+                            </Link>
+                            <Link className="dropdown-item" to="/account">
+                              My account
+                            </Link>
+                          </Popover>
+                        </Overlay>
+                      </div>
                     </li>
                     <li className="d-none d-lg-block">
                       <Link to="wishlist.html" style={{ color: "#212529" }}>
