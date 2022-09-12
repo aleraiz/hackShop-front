@@ -4,6 +4,7 @@ import axios from "axios";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/slices/userSlice";
+import { useSelector } from "react-redux";
 
 import "./style.css";
 
@@ -13,6 +14,7 @@ export const Login = () => {
   const [userError, setUserError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // const user = useSelector((state) => state.user.user);
 
   async function loginClient() {
     try {
@@ -31,11 +33,15 @@ export const Login = () => {
           firstname: response.data.client.firstname,
         }),
       );
-      navigate("/cuenta");
+      navigate("/account");
     } catch (error) {
       setUserError(error.response.data.error);
     }
   }
+
+  // if (Object.keys(user).length > 0) {
+  //   return <Navigate to="/home" replace />;
+  // }
 
   return (
     <main className="main-content">

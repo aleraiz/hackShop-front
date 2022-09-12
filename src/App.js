@@ -38,13 +38,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/account" element={<MyAccount />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route element={<PrivateRoutes />}>
+          <Route path="/account" element={<MyAccount />} />
           <Route path="/admin" element={<Admin />} />
         </Route>
         <Route path="/contactUs" element={<ContactUs />} />
