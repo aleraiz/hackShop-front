@@ -65,70 +65,79 @@ export const Cart = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {cart.map((product) => {
-                          return (
-                            <tr>
-                              <td className="product_remove">
-                                <a href="#">
-                                  <i
-                                    className="pe-7s-close"
-                                    data-tippy="Remove"
-                                    data-tippy-inertia="true"
-                                    data-tippy-animation="shift-away"
-                                    data-tippy-delay="50"
-                                    data-tippy-arrow="true"
-                                    data-tippy-theme="sharpborder"
-                                  ></i>
-                                </a>
-                              </td>
-                              <td className="product-thumbnail">
-                                <a href="#">
-                                  <img src={product.image} alt="Cart Thumbnail" />
-                                </a>
-                              </td>
-                              <td className="product-name">
-                                <Link to="#">{product.productName}</Link>
-                              </td>
-                              <td className="product-price">
-                                <span className="amount">${product.price}</span>
-                              </td>
-                              <td className="quantity">
-                                <div className="cart-plus-minus">
-                                  <button
-                                    className="cart-plus-minus-box"
-                                    type="submit"
-                                    onClick={() => {
-                                      handlerDecrementProduct(product.id);
-                                    }}
-                                  >
-                                    <div className="dec qtybutton">
-                                      <i className="fa fa-minus"></i>
+                        {cart.length !== 0 ? (
+                          <>
+                            {cart.map((product) => {
+                              return (
+                                <tr>
+                                  <td className="product_remove">
+                                    <a href="#">
+                                      <i
+                                        className="pe-7s-close"
+                                        data-tippy="Remove"
+                                        data-tippy-inertia="true"
+                                        data-tippy-animation="shift-away"
+                                        data-tippy-delay="50"
+                                        data-tippy-arrow="true"
+                                        data-tippy-theme="sharpborder"
+                                      ></i>
+                                    </a>
+                                  </td>
+                                  <td className="product-thumbnail">
+                                    <a href="#">
+                                      <img src={product.image} alt="Cart Thumbnail" />
+                                    </a>
+                                  </td>
+                                  <td className="product-name">
+                                    <Link to="#">{product.productName}</Link>
+                                  </td>
+                                  <td className="product-price">
+                                    <span className="amount">${product.price}</span>
+                                  </td>
+                                  <td className="quantity">
+                                    <div className="cart-plus-minus">
+                                      <button
+                                        className="cart-plus-minus-box"
+                                        type="submit"
+                                        onClick={() => {
+                                          handlerDecrementProduct(product.id);
+                                        }}
+                                      >
+                                        <div className="dec qtybutton">
+                                          <i className="fa fa-minus"></i>
+                                        </div>
+                                      </button>
                                     </div>
-                                  </button>
-                                </div>
-                                {product.quantity}
-                                <div className="cart-plus-minus">
-                                  <button
-                                    className="cart-plus-minus-box"
-                                    type="submit"
-                                    onClick={() => {
-                                      handlerIncrementProduct(product.id);
-                                    }}
-                                  >
-                                    <div className="inc qtybutton">
-                                      <i className="fa fa-plus"></i>
+                                    {product.quantity}
+                                    <div className="cart-plus-minus">
+                                      <button
+                                        className="cart-plus-minus-box"
+                                        type="submit"
+                                        onClick={() => {
+                                          handlerIncrementProduct(product.id);
+                                        }}
+                                      >
+                                        <div className="inc qtybutton">
+                                          <i className="fa fa-plus"></i>
+                                        </div>
+                                      </button>
                                     </div>
-                                  </button>
-                                </div>
-                              </td>
-                              <td className="product-subtotal">
-                                <span className="amount">
-                                  {priceFormat.format(product.price * product.quantity)}
-                                </span>
-                              </td>
-                            </tr>
-                          );
-                        })}
+                                  </td>
+                                  <td className="product-subtotal">
+                                    <span className="amount">
+                                      {priceFormat.format(product.price * product.quantity)}
+                                    </span>
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </>
+                        ) : (
+                          <p className="addProductsToCart">
+                            no hay productos en tu carrito{" "}
+                            <Link to={"/products"}>Ver productos</Link>
+                          </p>
+                        )}
                       </tbody>
                     </table>
                   </div>

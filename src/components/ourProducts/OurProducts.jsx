@@ -9,12 +9,13 @@ export const OurProducts = () => {
     const listProducts = async () => {
       const response = await axios({
         method: "get",
-        url: `http://localhost:8000/products`,
+        url: `${process.env.REACT_APP_DB_HOST}/products`,
       });
       setOurProducts(response.data.slice(0, 8));
     };
     listProducts();
   }, []);
+
   return (
     <div className="product-area section-space-top-100">
       <div className="container">

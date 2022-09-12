@@ -121,3 +121,8 @@
 .breadcrumb-height {
   background: url("../../../../public/images/cart/1-1-1919x388.jpg");
 }
+
+.addProductsToCart {
+  font-size: 20px;
+  font-weight: 600;
+}

@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NavbarFilter } from "./FiltersProducts";
-
+import "./style.css";
 export const Products = () => {
   const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState(2);
+
   useEffect(() => {
     const listProducts = async () => {
       const response = await axios({
         method: "get",
-        url: `http://localhost:8000/products`,
+        url: `${process.env.REACT_APP_DB_HOST}/products/${category}`,
       });
       setProducts(response.data);
     };
     listProducts();
-  }, []);
+  }, [category]);
+
+  function onChangeInput(e) {
+    setCategory(e.target.value);
+    console.log(e.target.value);
+  }
+
   return (
     <>
       <div className="main-wrapper">
@@ -43,7 +51,30 @@ export const Products = () => {
               <div className="row">
                 <div className="col-lg-12">
                   <NavbarFilter />
+
                   <div className="tab-content">
+                    <form onSubmit={(e) => e.preventDefault()}>
+                      <label>
+                        <input
+                          type="radio"
+                          id="cbox1"
+                          value={1}
+                          onChange={onChangeInput}
+                          name="category"
+                        />{" "}
+                        Interior
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          id="cbox1"
+                          value={2}
+                          onChange={onChangeInput}
+                          name="category"
+                        />{" "}
+                        Exterior
+                      </label>
+                    </form>
                     <div
                       className="tab-pane fade show active"
                       id="grid-view"
@@ -51,9 +82,16 @@ export const Products = () => {
                       aria-labelledby="grid-view-tab"
                     >
                       <div className="product-grid-view row g-y-20">
+                        {/* {productsFilter.length !== 0 ? (
+                          <>
+                            {productsFilter[0].categoryId === 1 ? (
+                              <h2 className="titleCategory">Interior</h2>
+                            ) : (
+                              <h2 className="titleCategory">Exterior</h2>
+                            )} */}
                         {products.map((product, index) => {
                           return (
-                            <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
                               <div className="product-item">
                                 <div className="product-img">
                                   <a href="single-product-variable.html">
