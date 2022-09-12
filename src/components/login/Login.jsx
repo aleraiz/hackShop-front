@@ -18,7 +18,7 @@ export const Login = () => {
     try {
       const response = await axios({
         method: "post",
-        url: "http://localhost:8000/token",
+        url: `http://localhost:8000/token`,
         data: {
           email,
           password,

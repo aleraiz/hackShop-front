@@ -15,7 +15,10 @@ export const ProductDetail = () => {
 
   useEffect(() => {
     const productDetail = async () => {
-      const response = await axios.get(`http://localhost:8000/product/${id}`);
+      const response = await axios({
+        method: "get",
+        url: `http://localhost:8000/product/${id}`,
+      });
       setProductDetail(response.data);
     };
     productDetail();

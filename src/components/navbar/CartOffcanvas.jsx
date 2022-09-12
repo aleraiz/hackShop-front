@@ -14,6 +14,13 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
     dispatch(deleteProductCart(productId));
   }
 
+  const priceFormat = new Intl.NumberFormat("en", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+    roundingIncrement: 5,
+  });
+
   return (
     <Offcanvas
       show={true}
@@ -71,7 +78,11 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
         </div>
         <div className="minicart-item_total">
           <span>Subtotal</span>
-          <span className="ammount">$79.35</span>
+          <span className="ammount">
+            {priceFormat.format(
+              cart.reduce((total, product) => total + product.price * product.quantity, 0),
+            )}
+          </span>
         </div>
         <div className="group-btn_wrap d-grid gap-2">
           <Link to="/cart" className="btn btn-dark">
