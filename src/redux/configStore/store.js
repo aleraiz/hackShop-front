@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "../slices/userSlice";
 import cartSlice from "../slices/cartSlice";
+import logoutUser from "../slices/userSlice";
 import {
   persistStore,
   persistReducer,
@@ -33,4 +34,10 @@ const store = configureStore({
 });
 const persistor = persistStore(store);
 
-export { persistor, store };
+const resetStore = async () => {
+  await persistor.purge();
+  store.dispatch(logoutUser());
+  await persistor.flush();
+};
+
+export { persistor, store, resetStore };

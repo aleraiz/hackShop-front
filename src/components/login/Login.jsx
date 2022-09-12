@@ -31,9 +31,8 @@ export const Login = () => {
           firstname: response.data.buyer.firstname,
         }),
       );
-      navigate("/");
+      navigate("/cuenta");
     } catch (error) {
-      console.log(error);
       setUserError(error.response.data.error);
     }
   }
