@@ -2,6 +2,7 @@ import "./css/style.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
+import { deleteProductCart } from "../../redux/slices/cartSlice";
 import { useState } from "react";
 
 export const Cart = () => {
@@ -19,6 +20,10 @@ export const Cart = () => {
   function handlerDecrementProduct(productId) {
     setRemoveProduct(quantityProduct - 1);
     dispatch(decrementQuantity({ productId }));
+  }
+
+  function handlerDeleteProductFromCart(productId) {
+    dispatch(deleteProductCart(productId));
   }
 
   const priceFormat = new Intl.NumberFormat("en", {
@@ -72,7 +77,13 @@ export const Cart = () => {
                               return (
                                 <tr key={product.id}>
                                   <td className="product_remove">
-                                    <Link to="#">
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.preventDefault();
+                                        handlerDeleteProductFromCart(product.id);
+                                      }}
+                                    >
                                       <i
                                         className="pe-7s-close"
                                         data-tippy="Remove"
@@ -82,7 +93,7 @@ export const Cart = () => {
                                         data-tippy-arrow="true"
                                         data-tippy-theme="sharpborder"
                                       ></i>
-                                    </Link>
+                                    </button>
                                   </td>
                                   <td className="product-thumbnail td-align-center">
                                     <div className="img-container">
