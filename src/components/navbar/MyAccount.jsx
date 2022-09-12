@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { logoutUser } from "../../redux/slices/userSlice";
+import { emptyCart } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useState } from "react";
@@ -17,7 +18,8 @@ export const MyAccount = () => {
         url: `http://localhost:8000/logout`,
         headers: { Authorization: `Bearer ${user.token}` },
       });
-      dispatch(logoutUser(response.data));
+      dispatch(logoutUser());
+      dispatch(emptyCart());
       navigate("/");
     } catch (error) {
       console.log(error);
