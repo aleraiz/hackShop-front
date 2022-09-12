@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
+  console.log(cart);
   const dispatch = useDispatch();
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
@@ -65,70 +66,83 @@ export const Cart = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {cart.map((product) => {
-                          return (
-                            <tr>
-                              <td className="product_remove">
-                                <Link to="#">
-                                  <i
-                                    className="pe-7s-close"
-                                    data-tippy="Remove"
-                                    data-tippy-inertia="true"
-                                    data-tippy-animation="shift-away"
-                                    data-tippy-delay="50"
-                                    data-tippy-arrow="true"
-                                    data-tippy-theme="sharpborder"
-                                  ></i>
-                                </Link>
-                              </td>
-                              <td className="product-thumbnail">
-                                <Link to="#">
-                                  <img src={product.image} alt="Cart Thumbnail" />
-                                </Link>
-                              </td>
-                              <td className="product-name">
-                                <Link to="#">{product.productName}</Link>
-                              </td>
-                              <td className="product-price">
-                                <span className="amount">${product.price}</span>
-                              </td>
-                              <td className="quantity">
-                                <div className="cart-plus-minus">
-                                  <button
-                                    className="cart-plus-minus-box"
-                                    type="submit"
-                                    onClick={() => {
-                                      handlerDecrementProduct(product.id);
-                                    }}
-                                  >
-                                    <div className="dec qtybutton">
-                                      <i className="fa fa-minus"></i>
+                        {cart.length !== 0 ? (
+                          <>
+                            {cart.map((product) => {
+                              return (
+                                <tr key={product.id}>
+                                  <td className="product_remove">
+                                    <Link to="#">
+                                      <i
+                                        className="pe-7s-close"
+                                        data-tippy="Remove"
+                                        data-tippy-inertia="true"
+                                        data-tippy-animation="shift-away"
+                                        data-tippy-delay="50"
+                                        data-tippy-arrow="true"
+                                        data-tippy-theme="sharpborder"
+                                      ></i>
+                                    </Link>
+                                  </td>
+                                  <td className="product-thumbnail td-align-center">
+                                    <div className="img-container">
+                                      <Link to="#">
+                                        <img src={product.image} alt="Cart Thumbnail" />
+                                      </Link>
                                     </div>
-                                  </button>
-                                </div>
-                                {product.quantity}
-                                <div className="cart-plus-minus">
-                                  <button
-                                    className="cart-plus-minus-box"
-                                    type="submit"
-                                    onClick={() => {
-                                      handlerIncrementProduct(product.id);
-                                    }}
-                                  >
-                                    <div className="inc qtybutton">
-                                      <i className="fa fa-plus"></i>
+                                  </td>
+                                  <td className="product-name ">
+                                    <Link className="product-name-link" to="#">
+                                      {product.productName}
+                                    </Link>
+                                  </td>
+                                  <td className="product-price">
+                                    <span className="amount">${product.price}</span>
+                                  </td>
+                                  <td className="quantity ">
+                                    <div className="cart-plus-minus">
+                                      <button
+                                        className="cart-plus-minus-box"
+                                        type="submit"
+                                        onClick={() => {
+                                          handlerDecrementProduct(product.id);
+                                        }}
+                                      >
+                                        <div className="dec qtybutton">
+                                          <i className="fa fa-minus"></i>
+                                        </div>
+                                      </button>
                                     </div>
-                                  </button>
-                                </div>
-                              </td>
-                              <td className="product-subtotal">
-                                <span className="amount">
-                                  {priceFormat.format(product.price * product.quantity)}
-                                </span>
-                              </td>
-                            </tr>
-                          );
-                        })}
+                                    {product.quantity}
+                                    <div className="cart-plus-minus">
+                                      <button
+                                        className="cart-plus-minus-box"
+                                        type="submit"
+                                        onClick={() => {
+                                          handlerIncrementProduct(product.id);
+                                        }}
+                                      >
+                                        <div className="inc qtybutton">
+                                          <i className="fa fa-plus"></i>
+                                        </div>
+                                      </button>
+                                    </div>
+                                  </td>
+                                  <td className="product-subtotal">
+                                    <span className="amount">
+                                      {priceFormat.format(product.price * product.quantity)}
+                                    </span>
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </>
+                        ) : (
+                          <p className="addProductsToCart">
+                            no hay productos en tu carrito{" "}
+                            <Link to={"/products"}>Ver productos</Link>
+                          </p>
+                        )}
                       </tbody>
                     </table>
                   </div>
@@ -147,7 +161,7 @@ export const Cart = () => {
                           <input
                             className="button mt-xxs-30"
                             name="apply_coupon"
-                            // value="Apply coupon"
+                            value="Apply coupon"
                             type="submit"
                           />
                         </div>
@@ -155,7 +169,7 @@ export const Cart = () => {
                           <input
                             className="button"
                             name="update_cart"
-                            // value="Update cart"
+                            value="Update cart"
                             type="submit"
                           />
                         </div>

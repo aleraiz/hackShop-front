@@ -17,7 +17,7 @@ export const ProductDetail = () => {
     const productDetail = async () => {
       const response = await axios({
         method: "get",
-        url: `http://localhost:8000/product/${id}`,
+        url: `${process.env.REACT_APP_DB_HOST}/product/${id}`,
       });
       setProductDetail(response.data);
     };

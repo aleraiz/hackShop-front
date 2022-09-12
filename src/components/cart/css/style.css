@@ -11,6 +11,11 @@
   .cart-area .table-content table td:nth-child(3) {
     padding: 45.1px 10px;
   }
+
+  .img-container{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .coupon-all {
@@ -120,4 +125,24 @@
 
 .breadcrumb-height {
   background: url("../../../../public/images/cart/1-1-1919x388.jpg");
+}
+
+
+.img-container{
+  height: 124px;
+  width: 112px;
+
+}
+.td-align-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-name .product-name-link{
+  color: #303030; 
+}
+.addProductsToCart {
+  font-size: 20px;
+  font-weight: 600;
 }

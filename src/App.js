@@ -24,6 +24,7 @@ import { AboutUs } from "./components/aboutUs/AboutUs";
 import React, { useEffect } from "react";
 import { TbArrowBigUpLines } from "react-icons/tb";
 import { MyAccount } from "./components/navbar/MyAccount";
+import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
 
 function App() {
@@ -37,13 +38,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/cuenta" element={<MyAccount />} />
-        <Route path="/registro" element={<Register />} />
+        <Route path="/account" element={<MyAccount />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/admin" element={<Admin />} />
+        </Route>
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<Error404 />} />
