@@ -26,9 +26,9 @@ export const Login = () => {
       });
       dispatch(
         loginUser({
-          id: response.data.buyer.id,
+          id: response.data.client.id,
           token: response.data.token,
-          firstname: response.data.buyer.firstname,
+          firstname: response.data.client.firstname,
         }),
       );
       navigate("/cuenta");
