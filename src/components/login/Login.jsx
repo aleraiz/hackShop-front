@@ -18,16 +18,21 @@ export const Login = () => {
     try {
       const response = await axios({
         method: "post",
-        url: "http://localhost:8000/token",
+        url: `http://localhost:8000/token`,
         data: {
           email,
           password,
         },
       });
-      dispatch(loginUser({ data: response.data.buyer.id, token: response.data.token }));
-      navigate("/");
+      dispatch(
+        loginUser({
+          id: response.data.buyer.id,
+          token: response.data.token,
+          firstname: response.data.buyer.firstname,
+        }),
+      );
+      navigate("/cuenta");
     } catch (error) {
-      console.log(error);
       setUserError(error.response.data.error);
     }
   }

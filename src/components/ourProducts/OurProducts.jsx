@@ -7,7 +7,10 @@ export const OurProducts = () => {
 
   useEffect(() => {
     const listProducts = async () => {
-      const response = await axios.get(`http://localhost:8000/products`);
+      const response = await axios({
+        method: "get",
+        url: `http://localhost:8000/products`,
+      });
       setOurProducts(response.data.slice(0, 8));
     };
     listProducts();

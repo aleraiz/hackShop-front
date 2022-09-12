@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NavbarFilter } from "./FiltersProducts";
+
 export const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const listProducts = async () => {
-      const response = await axios.get(`http://localhost:8000/products`);
-      console.log(response.data);
+      const response = await axios({
+        method: "get",
+        url: `http://localhost:8000/products`,
+      });
       setProducts(response.data);
     };
     listProducts();

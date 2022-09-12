@@ -12,13 +12,20 @@ export const Cart = () => {
 
   function handlerIncrementProduct(productId) {
     setQuantityProduct(quantityProduct + 1);
-    dispatch(incrementQuantity({ productId, quantityProduct }));
+    dispatch(incrementQuantity({ productId }));
   }
 
   function handlerDecrementProduct(productId) {
-    setQuantityProduct(removeProduct - 1);
-    dispatch(decrementQuantity({ productId, removeProduct }));
+    setRemoveProduct(quantityProduct - 1);
+    dispatch(decrementQuantity({ productId }));
   }
+
+  const priceFormat = new Intl.NumberFormat("en", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+    roundingIncrement: 5,
+  });
 
   return (
     <>
@@ -115,7 +122,9 @@ export const Cart = () => {
                                 </div>
                               </td>
                               <td className="product-subtotal">
-                                <span className="amount">$23.45</span>
+                                <span className="amount">
+                                  {priceFormat.format(product.price * product.quantity)}
+                                </span>
                               </td>
                             </tr>
                           );
@@ -159,10 +168,26 @@ export const Cart = () => {
                         <h2>Cart totals</h2>
                         <ul>
                           <li>
-                            Subtotal <span>$79.35</span>
+                            Subtotal
+                            <span>
+                              {priceFormat.format(
+                                cart.reduce(
+                                  (total, product) => total + product.price * product.quantity,
+                                  0,
+                                ),
+                              )}
+                            </span>
                           </li>
                           <li>
-                            Total <span>$79.35</span>
+                            Total
+                            <span>
+                              {priceFormat.format(
+                                cart.reduce(
+                                  (total, product) => total + product.price * product.quantity,
+                                  0,
+                                ),
+                              )}
+                            </span>
                           </li>
                         </ul>
                         <a href="#">Proceed to checkout</a>
