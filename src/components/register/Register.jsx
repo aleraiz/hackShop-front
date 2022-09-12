@@ -29,7 +29,13 @@ export const Register = () => {
           phoneNumber,
         },
       });
-      dispatch(registerUser(response.data.id));
+      dispatch(
+        registerUser({
+          id: response.data.buyer.id,
+          token: response.data.token,
+          firstname: response.data.buyer.firstname,
+        }),
+      );
     } catch (error) {
       setUserError(error.response.data.error);
     }

@@ -24,7 +24,13 @@ export const Login = () => {
           password,
         },
       });
-      dispatch(loginUser({ data: response.data.buyer.id, token: response.data.token }));
+      dispatch(
+        loginUser({
+          id: response.data.buyer.id,
+          token: response.data.token,
+          firstname: response.data.buyer.firstname,
+        }),
+      );
       navigate("/");
     } catch (error) {
       console.log(error);
