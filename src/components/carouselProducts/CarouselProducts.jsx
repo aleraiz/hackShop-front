@@ -1,5 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
 import "../newProducts/style.css";
 export const CarouselProducts = () => {
   const responsive = {
@@ -23,7 +24,7 @@ export const CarouselProducts = () => {
     <Carousel responsive={responsive} infinite={true}>
       <div className="swiper-slide product-item">
         <div className="product-img">
-          <a href="shop.html">
+          <Link to={""}>
             <img
               className="primary-img"
               src="../../images/newProducts/1-9-270x300.jpg"
@@ -34,7 +35,7 @@ export const CarouselProducts = () => {
               src="../../images/newProducts/1-10-270x300.jpg"
               alt="Product Images"
             />
-          </a>
+          </Link>
           <div className="product-add-action">
             <ul>
               <li>
@@ -50,11 +51,7 @@ export const CarouselProducts = () => {
                   <i className="pe-7s-like"></i>
                 </a>
               </li>
-              <li
-                className="quuickview-btn"
-                data-bs-toggle="modal"
-                data-bs-target="#quickModal"
-              >
+              <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                 <a
                   href="#"
                   data-tippy="Quickview"
@@ -140,11 +137,7 @@ export const CarouselProducts = () => {
                   <i className="pe-7s-like"></i>
                 </a>
               </li>
-              <li
-                className="quuickview-btn"
-                data-bs-toggle="modal"
-                data-bs-target="#quickModal"
-              >
+              <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                 <a
                   href="#"
                   data-tippy="Quickview"
@@ -230,11 +223,7 @@ export const CarouselProducts = () => {
                   <i className="pe-7s-like"></i>
                 </a>
               </li>
-              <li
-                className="quuickview-btn"
-                data-bs-toggle="modal"
-                data-bs-target="#quickModal"
-              >
+              <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                 <a
                   href="#"
                   data-tippy="Quickview"
@@ -320,11 +309,7 @@ export const CarouselProducts = () => {
                   <i className="pe-7s-like"></i>
                 </a>
               </li>
-              <li
-                className="quuickview-btn"
-                data-bs-toggle="modal"
-                data-bs-target="#quickModal"
-              >
+              <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                 <a
                   href="#"
                   data-tippy="Quickview"

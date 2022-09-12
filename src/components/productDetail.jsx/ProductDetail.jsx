@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CarouselProducts } from "../carouselProducts/CarouselProducts";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -532,7 +532,7 @@ export const ProductDetail = () => {
                   </p>
                 </div>
                 <div className="col-lg-12">
-                  <CarouselProducts />
+                  <CarouselProducts productDetail={productDetail} />
                 </div>
               </div>
             </div>
@@ -570,22 +570,22 @@ export const ProductDetail = () => {
                       <div className="swiper-container modal-slider">
                         <div className="swiper-wrapper">
                           <div className="swiper-slide">
-                            <a href="#" className="single-img">
+                            <Link to={`/product/${productDetail.id}`} className="single-img">
                               <img
                                 className="img-full"
                                 src="assets/images/product/large-size/1-1-570x633.jpg"
                                 alt="Product Image"
                               />
-                            </a>
+                            </Link>
                           </div>
                           <div className="swiper-slide">
-                            <a href="#" className="single-img">
+                            <Link to={`/product/${productDetail.id}`} className="single-img">
                               <img
                                 className="img-full"
                                 src="assets/images/product/large-size/1-2-570x633.jpg"
                                 alt="Product Image"
                               />
-                            </a>
+                            </Link>
                           </div>
                           <div className="swiper-slide">
                             <a href="#" className="single-img">
