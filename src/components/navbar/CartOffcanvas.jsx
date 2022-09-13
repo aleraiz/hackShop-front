@@ -105,9 +105,15 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
         </Offcanvas.Body>
       ) : (
         <div className="cartEmptyMsj">
-          <MdOutlineRemoveShoppingCart className="svgCartEmpty" />
-          <h4>Your cart is empty</h4>
-          <p className="paragraphEmptyCart">Add something to make me happy :)</p>
+          <div className="iconCartEmpty">
+            <MdOutlineRemoveShoppingCart className="svgCartEmpty" />
+          </div>
+          <div>
+            <h4>Your cart is empty</h4>
+          </div>
+          <div>
+            <p className="paragraphEmptyCart">Add something to make us happy :)</p>
+          </div>
         </div>
       )}
     </Offcanvas>

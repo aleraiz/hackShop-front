@@ -613,15 +613,19 @@
 }
 
 .cartEmptyMsj h4 {
-  color: #f03e3e;
+  color: #abd373;
 }
 
 .svgCartEmpty {
   font-size: 4rem;
-  color: #f03e3e;
+  color: #abd373;
   align-self: center;
 }
 
 .paragraphEmptyCart {
   align-self: center;
+}
+
+.iconCartEmpty {
+  text-align-last: center;
 }
