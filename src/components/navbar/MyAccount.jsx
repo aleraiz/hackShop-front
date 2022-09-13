@@ -4,6 +4,7 @@ import { emptyCart } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useState } from "react";
+import "./css/style.css";
 
 export const MyAccount = () => {
   const dispatch = useDispatch();
@@ -54,7 +55,11 @@ export const MyAccount = () => {
           <div className="container">
             <div className="row">
               <div className="col-lg-3">
-                <ul className="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
+                <ul
+                  className="nav myaccount-tab-trigger flex-column"
+                  id="account-page-tab"
+                  role="tablist"
+                >
                   <li className="nav-item">
                     <Link
                       className="nav-link active"
@@ -109,7 +114,7 @@ export const MyAccount = () => {
                   </li>
                   <li className="nav-item">
                     <button
-                      className="nav-link"
+                      className="nav-link btn-logout"
                       id="account-logout-tab"
                       role="tab"
                       aria-selected="false"
