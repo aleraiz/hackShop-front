@@ -28,11 +28,13 @@ export const NavbarPrincipal = () => {
           <div className="row align-items-center">
             <div className="col-lg-12">
               <div className="header-middle-wrap position-relative">
-                <Link to="/" className="header-logo">
-                  <img src="../../dark.png" alt="Header Logo" />
-                </Link>
+                <div className="logoDiv">
+                  <Link to="/" className="header-logo">
+                    <img src="../../hackshop.png" alt="Header Logo" id="imgLogoPage" />
+                  </Link>
+                </div>
                 <nav className="main-nav">
-                  <ul>
+                  <ul id="navbarMenuBtns">
                     <li className="drop-holder">
                       <Link to="/">Home</Link>
                     </li>
@@ -139,10 +141,11 @@ export const NavbarPrincipal = () => {
                     <li className="dropdown d-none d-lg-block">
                       <div ref={ref}>
                         <Button
-                          className="btn btn-link btn-light dropdown-toggle ht-btn p-0"
+                          className="btn btn-link dropdown-toggle ht-btn p-0"
+                          id="btnProfileIcon"
                           onClick={handleClick}
                         >
-                          <i className="pe-7s-users"></i>
+                          <i className="pe-7s-users" id="btnUsersProfile"></i>
                         </Button>
 
                         <Overlay
@@ -182,7 +185,9 @@ export const NavbarPrincipal = () => {
                         }}
                       >
                         <i className="pe-7s-shopbag"></i>
-                        <span className="quantity">{cart.length}</span>
+                        <span className="quantity" id="numberCartShop">
+                          {cart.length}
+                        </span>
                       </button>
                       {openOffcanvas ? <CartOffCanvas setOpenOffcanvas={setOpenOffcanvas} /> : null}
                     </li>

@@ -199,7 +199,7 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: baseline;
+  align-items: self-end;
   padding: 15px;
 }
 
@@ -524,4 +524,41 @@
 
 .header-right .dropdown {
   width: 38px;
+}
+
+.main-nav #navbarMenuBtns {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+#imgLogoPage {
+  width: 111px;
+  height: 60px;
+}
+
+#numberCartShop {
+  margin-right: 0;
+}
+
+#btnUsersProfile {
+  background-color: #fff;
+}
+
+#btnProfileIcon {
+  background-color: #fff;
+}
+
+/* @media (max-width: 768px) {
+  #imgLogoPage {
+  }
+} */
+
+.minicart-product .btnRemove {
+  background-color: transparent;
+  height: fit-content;
+  border: none;
+}
+
+.minicart-list hr:nth-child(n) {
+  display: none;
 }
