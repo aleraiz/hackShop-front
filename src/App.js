@@ -13,7 +13,7 @@ import { NavbarPrincipal } from "./components/navbar/NavbarPrincipal";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Cart } from "./components/cart/Cart";
-import { ProductDetail } from "./components/productDetail.jsx/ProductDetail";
+import { ProductDetail } from "./components/productDetail/ProductDetail";
 import { Error404 } from "./components/error404/Error404";
 import { Register } from "./components/register/Register";
 import { Login } from "./components/login/Login";
