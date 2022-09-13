@@ -30,6 +30,9 @@ export const NavbarPrincipal = () => {
   };
 
   const cart = useSelector((state) => state.cart.cart);
+  const user = useSelector((state) => state.user.user);
+  console.log(user);
+
   return (
     <>
       <header className="main-header-area sticky-top navbarPrincipal">
@@ -154,6 +157,9 @@ export const NavbarPrincipal = () => {
                             </li>
                             <li>
                               <Link to="contact.html">Contact Us</Link>
+                            </li>
+                            <li>
+                              <Link to="contact.html">{user && <p>{user.firstname}</p>}</Link>
                             </li>
                           </ul>
                         </Nav>

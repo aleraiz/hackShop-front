@@ -24,6 +24,7 @@ export const Login = () => {
           password,
         },
       });
+      console.log(response.data.client);
       dispatch(
         loginUser({
           id: response.data.client.id,

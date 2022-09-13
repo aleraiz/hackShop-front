@@ -187,7 +187,7 @@ export const Cart = () => {
                           <h2>Cart totals</h2>
                           <ul>
                             <li>
-                              Subtotal
+                              Subtotal:
                               <span>
                                 {priceFormat.format(
                                   cart.reduce(
