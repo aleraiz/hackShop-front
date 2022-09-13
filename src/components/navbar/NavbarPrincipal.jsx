@@ -29,7 +29,7 @@ export const NavbarPrincipal = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const handleClick = (event) => {
-    setShow(!show);
+    setNavbarShow(true);
     setTarget(event.target);
   };
 
@@ -51,6 +51,9 @@ export const NavbarPrincipal = () => {
   }
 
   const cart = useSelector((state) => state.cart.cart);
+  const user = useSelector((state) => state.user.user);
+  console.log(user);
+
   return (
     <>
       <header className="main-header-area sticky-top navbarPrincipal">
@@ -174,6 +177,9 @@ export const NavbarPrincipal = () => {
                             <li>
                               <Link to="contact.html">Contact Us</Link>
                             </li>
+                            <li>
+                              <Link to="contact.html">{user && <p>{user.firstname}</p>}</Link>
+                            </li>
                           </ul>
                         </Nav>
                         <div className="header-right d-flex align-items-end">
@@ -203,7 +209,7 @@ export const NavbarPrincipal = () => {
                                 </Button>
 
                                 <Overlay
-                                  show={show}
+                                  show={navbarShow}
                                   target={target}
                                   placement="bottom"
                                   container={ref}

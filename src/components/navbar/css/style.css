@@ -629,3 +629,35 @@
     width: 100vw;
   }
 }
+
+.subtotalMinicart {
+  font-weight: bold;
+}
+
+.minicart-item_total {
+  text-align-last: center;
+  margin-bottom: 15px;
+}
+
+.cartEmptyMsj {
+  margin-top: 30px;
+  align-self: center;
+}
+
+.cartEmptyMsj h4 {
+  color: #abd373;
+}
+
+.svgCartEmpty {
+  font-size: 4rem;
+  color: #abd373;
+  align-self: center;
+}
+
+.paragraphEmptyCart {
+  align-self: center;
+}
+
+.iconCartEmpty {
+  text-align-last: center;
+}
