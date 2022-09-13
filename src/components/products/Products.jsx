@@ -14,6 +14,7 @@ export const Products = () => {
         url: `${process.env.REACT_APP_DB_HOST}/products/${category}`,
       });
       setProducts(response.data);
+      console.log(response.data);
     };
     listProducts();
   }, [category]);
@@ -95,7 +96,7 @@ export const Products = () => {
                             <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
                               <div className="product-item">
                                 <div className="product-img">
-                                  <Link to="single-product-variable.html">
+                                  <Link to={`/product/${product.id}`}>
                                     <img
                                       className="primary-img"
                                       src={product.image[3].imageDetailOne}
