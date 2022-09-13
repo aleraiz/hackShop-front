@@ -275,17 +275,16 @@ export const BillingDetails = () => {
             <div class="payment-accordion">
               <div id="accordion">
                 <div class="card">
-                  <div class="card-header" id="#payment-1">
+                  <div class="card-header" id="payment-1">
                     <h5 class="panel-title">
-                      <a
-                        href="#"
-                        class=""
+                      <span
+                        class="collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
                         aria-expanded="true"
                       >
                         Direct Bank Transfer.
-                      </a>
+                      </span>
                     </h5>
                   </div>
                   <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
@@ -299,17 +298,16 @@ export const BillingDetails = () => {
                   </div>
                 </div>
                 <div class="card">
-                  <div class="card-header" id="#payment-2">
+                  <div class="card-header" id="payment-2">
                     <h5 class="panel-title">
-                      <a
-                        href="#"
+                      <span
                         class="collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
                         aria-expanded="false"
                       >
                         Cheque Payment
-                      </a>
+                      </span>
                     </h5>
                   </div>
                   <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
@@ -323,17 +321,16 @@ export const BillingDetails = () => {
                   </div>
                 </div>
                 <div class="card">
-                  <div class="card-header" id="#payment-3">
+                  <div class="card-header" id="payment-3">
                     <h5 class="panel-title">
-                      <a
-                        href="#"
+                      <span
                         class="collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
                         aria-expanded="false"
                       >
                         PayPal
-                      </a>
+                      </span>
                     </h5>
                   </div>
                   <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
@@ -350,6 +347,7 @@ export const BillingDetails = () => {
               <div class="order-button-payment">
                 <button
                   value="Place order"
+                  id="placeOrderBtn"
                   type="submit"
                   onClick={() => {
                     registerClient();

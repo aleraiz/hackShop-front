@@ -1,0 +1,27 @@
+.quantity {
+  display: flex;
+  background-color: #505050;
+  border-radius: 5px;
+  padding-right: 0 !important;
+  margin-right: 10px;
+  height: 47px;
+}
+
+#quantityBtn {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 32px;
+  height: auto;
+}
+
+#quantityBtnDecrement {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 32px;
+  height: auto;
+}
+
+.quantityNumber {
+  color: #fff;
+  align-self: center;
+}

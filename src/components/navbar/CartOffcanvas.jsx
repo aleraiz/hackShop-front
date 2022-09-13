@@ -38,40 +38,43 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
           <ul className="minicart-list">
             {cart.map((product) => {
               return (
-                <li className="minicart-product minicart-flex" key={product.id}>
-                  <button
-                    className="product-item_remove"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handlerDeleteProductFromCart(product.id);
-                    }}
-                  >
-                    <i
-                      className="pe-7s-close"
-                      data-tippy="Remove"
-                      data-tippy-inertia="true"
-                      data-tippy-animation="shift-away"
-                      data-tippy-delay="50"
-                      data-tippy-arrow="true"
-                      data-tippy-theme="sharpborder"
-                    ></i>
-                  </button>
-                  <Link to="single-product-variable.html" className="product-item_img">
-                    <img
-                      className="img-full img-cartOffCanvas"
-                      src={product.image}
-                      alt="Product Image"
-                    />
-                  </Link>
-                  <div className="product-item_content">
-                    <Link className="product-item_title" to="single-product-variable.html">
-                      {product.productName}
+                <>
+                  <li className="minicart-product minicart-flex" key={product.id}>
+                    <Link to="single-product-variable.html" className="product-item_img">
+                      <img
+                        className="img-full img-cartOffCanvas"
+                        src={product.image}
+                        alt="Product Image"
+                      />
                     </Link>
-                    <span className="product-item_quantity">
-                      {product.quantity}x${product.price}
-                    </span>
-                  </div>
-                </li>
+                    <div className="product-item_content">
+                      <Link className="product-item_title" to="single-product-variable.html">
+                        {product.productName}
+                      </Link>
+                      <span className="product-item_quantity">
+                        {product.quantity}x${product.price}
+                      </span>
+                    </div>
+                    <button
+                      className="product-item_remove btnRemove"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handlerDeleteProductFromCart(product.id);
+                      }}
+                    >
+                      <i
+                        className="pe-7s-close"
+                        data-tippy="Remove"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay="50"
+                        data-tippy-arrow="true"
+                        data-tippy-theme="sharpborder"
+                      ></i>
+                    </button>
+                  </li>
+                  <hr className="hrCartOffCanvas" />
+                </>
               );
             })}
           </ul>

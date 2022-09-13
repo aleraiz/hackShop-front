@@ -5,3 +5,44 @@
 .accordion {
   margin-bottom: 30px;
 }
+
+#placeOrderBtn {
+  background-color: #505050;
+  height: 50px;
+  width: 100%;
+  color: #fff;
+  border-color: #505050;
+  border: 0px;
+  margin-top: 20px;
+}
+
+#placeOrderBtn:hover {
+  background-color: #abd373;
+}
+
+#payment-3 .panel-title {
+  color: #525252;
+  font-weight: 700;
+}
+
+#payment-3 .collapsed:hover {
+  color: #abd373;
+}
+
+#payment-2 .panel-title {
+  color: #525252;
+  font-weight: 700;
+}
+
+#payment-2 .collapsed:hover {
+  color: #abd373;
+}
+
+#payment-1 .panel-title {
+  color: #525252;
+  font-weight: 700;
+}
+
+#payment-1 .collapsed:hover {
+  color: #abd373;
+}

@@ -7,11 +7,16 @@
   padding: 0;
 }
 
-.btn-collection:hover {
-  background-color: #74b816 !important;
-  border-color: #74b816 !important;
-  color: #ffff !important;
+
+@media (hover: hover) {
+  .btn-collection:hover {
+    background-color: #74b816 !important;
+    border-color: #74b816 !important;
+    color: #ffff !important;
+  }
+
 }
+
 
 .btn-custom-size {
   width: 160px;

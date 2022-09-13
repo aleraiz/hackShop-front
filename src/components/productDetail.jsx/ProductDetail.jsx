@@ -7,11 +7,17 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProductCart } from "../../redux/slices/cartSlice";
 import { useSelector } from "react-redux";
+import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
+import "./style.css";
 
 export const ProductDetail = () => {
   const dispatch = useDispatch();
   const [productDetail, setProductDetail] = useState([]);
   const { id } = useParams();
+  const [quantityProduct, setQuantityProduct] = useState(1);
+  const [removeProduct, setRemoveProduct] = useState(quantityProduct);
+  const cart = useSelector((state) => state.cart.cart);
+  let count = 1;
 
   useEffect(() => {
     const productDetail = async () => {
@@ -26,6 +32,16 @@ export const ProductDetail = () => {
 
   function handleAddCart() {
     dispatch(addProductCart(productDetail));
+  }
+
+  function handlerIncrementProduct(productId) {
+    setQuantityProduct(quantityProduct + 1);
+    dispatch(incrementQuantity({ productId }));
+  }
+
+  function handlerDecrementProduct(productId) {
+    setRemoveProduct(quantityProduct - 1);
+    dispatch(decrementQuantity({ productId }));
   }
 
   const responsive = {
@@ -195,26 +211,51 @@ export const ProductDetail = () => {
                           </li>
                         </ul>
                       </div>
-                      <div className="review-status">
-                        <Link to="#">( 1 Review )</Link>
-                      </div>
                     </div>
-                    <p className="short-desc">
-                      Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempo
-                      incid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru
-                      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                      aute irure dolor in reprehenderit in voluptate
-                    </p>
-                    <ul className="quantity-with-btn pb-4">
+                    <p className="short-desc">{productDetail.description}</p>
+                    <ul className="quantity-with-btn ps-0">
+                      <li className="quantity">
+                        {" "}
+                        <div className="cart-plus-minus quantityBtn">
+                          <button
+                            className="cart-plus-minus-box"
+                            id="quantityBtnDecrement"
+                            type="submit"
+                            onClick={() => {
+                              handlerDecrementProduct(productDetail.id);
+                            }}
+                          >
+                            <div className="dec qtybutton">
+                              <i className="fa fa-minus"></i>
+                            </div>
+                          </button>
+                        </div>
+                        <span className="quantityNumber">{quantityProduct}</span>
+                        <div className="cart-plus-minus">
+                          <button
+                            className="cart-plus-minus-box quantityBtn"
+                            id="quantityBtn"
+                            type="submit"
+                            onClick={() => {
+                              handlerIncrementProduct(productDetail.id);
+                            }}
+                          >
+                            <div className="inc qtybutton">
+                              <i className="fa fa-plus"></i>
+                            </div>
+                          </button>
+                        </div>
+                      </li>
                       <li className="affiliate-btn-wrap">
                         <button
-                          className="btn btn-custom-size xl-size btn-pronia-primary"
+                          className="btn btn-custom-size btn-pronia-primary  btn-collection"
+                          id="#btnAddToCart"
                           onClick={(e) => {
                             e.preventDefault();
                             handleAddCart();
                           }}
                         >
-                          Buy Now
+                          ADD TO CART
                         </button>
                       </li>
                     </ul>
@@ -223,17 +264,6 @@ export const ProductDetail = () => {
                       <ul>
                         <li>
                           <Link to="#">Ch-256xl</Link>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="product-category">
-                      <span className="title">Categories :</span>
-                      <ul>
-                        <li>
-                          <Link to="#">Office,</Link>
-                        </li>
-                        <li>
-                          <Link to="#">Home</Link>
                         </li>
                       </ul>
                     </div>
@@ -307,233 +337,11 @@ export const ProductDetail = () => {
               </div>
             </div>
           </div>
-          <div className="product-tab-area section-space-top-100">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12">
-                  <ul className="nav product-tab-nav tab-style-2 pt-0" role="tablist">
-                    <li className="nav-item" role="presentation">
-                      <Link
-                        className="tab-btn"
-                        id="information-tab"
-                        data-bs-toggle="tab"
-                        to="#information"
-                        role="tab"
-                        aria-controls="information"
-                        aria-selected="false"
-                      >
-                        Information
-                      </Link>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <Link
-                        className="active tab-btn"
-                        id="description-tab"
-                        data-bs-toggle="tab"
-                        to="#description"
-                        role="tab"
-                        aria-controls="description"
-                        aria-selected="true"
-                      >
-                        Description
-                      </Link>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <Link
-                        className="tab-btn"
-                        id="reviews-tab"
-                        data-bs-toggle="tab"
-                        to="#reviews"
-                        role="tab"
-                        aria-controls="reviews"
-                        aria-selected="false"
-                      >
-                        Reviews(3)
-                      </Link>
-                    </li>
-                  </ul>
-                  <div className="tab-content product-tab-content">
-                    <div
-                      className="tab-pane fade"
-                      id="information"
-                      role="tabpanel"
-                      aria-labelledby="information-tab"
-                    >
-                      <div className="product-information-body">
-                        <h4 className="title">Shipping</h4>
-                        <p className="short-desc mb-4">
-                          The item will be shipped from China. So it need 15-20 days to deliver. Our
-                          product is good with reasonable price and we believe you will worth it. So
-                          please wait for it patiently! Thanks.Any question please kindly to contact
-                          us and we promise to work hard to help you to solve the problem
-                        </p>
-                        <h4 className="title">About return request</h4>
-                        <p className="short-desc mb-4">
-                          If you don't need the item with worry, you can contact us then we will
-                          help you to solve the problem, so please close the return request! Thanks
-                        </p>
-                        <h4 className="title">Guarantee</h4>
-                        <p className="short-desc mb-0">
-                          If it is the quality question, we will resend or refund to you; If you
-                          receive damaged or wrong items, please contact us and attach some pictures
-                          about product, we will exchange a new correct item to you after the
-                          confirmation.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      className="tab-pane fade show active"
-                      id="description"
-                      role="tabpanel"
-                      aria-labelledby="description-tab"
-                    >
-                      <div className="product-description-body">
-                        <p className="short-desc mb-0">{productDetail.description}</p>
-                      </div>
-                    </div>
-                    <div
-                      className="tab-pane fade"
-                      id="reviews"
-                      role="tabpanel"
-                      aria-labelledby="reviews-tab"
-                    >
-                      <div className="product-review-body">
-                        <div className="blog-comment mt-0">
-                          <h4 className="heading">Comments (03)</h4>
-                          <div className="blog-comment-item">
-                            <div className="blog-comment-img">
-                              <img
-                                src="assets/images/blog/avatar/1-1-120x120.png"
-                                alt="User Image"
-                              />
-                            </div>
-                            <div className="blog-comment-content">
-                              <div className="user-meta">
-                                <h2 className="user-name">Donald Chavez</h2>
-                                <span className="date">21 July 2021</span>
-                              </div>
-                              <p className="user-comment">
-                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
-                                tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea
-                                commodo consequat.
-                              </p>
-                              <Link className="btn btn-custom-size comment-btn" to="#">
-                                Reply
-                              </Link>
-                            </div>
-                          </div>
-                          <div className="blog-comment-item relpy-item">
-                            <div className="blog-comment-img">
-                              <img
-                                src="assets/images/blog/avatar/1-2-120x120.png"
-                                alt="User Image"
-                              />
-                            </div>
-                            <div className="blog-comment-content">
-                              <div className="user-meta">
-                                <h2 className="user-name">Marissa Swan</h2>
-                                <span className="date">21 July 2021</span>
-                              </div>
-                              <p className="user-comment">
-                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
-                                tempr incidid ut labore etl dolore magna aliqua. Ut enim ad minim
-                                veniam, quisnos exercitati ullamco laboris nisi ut aliquiex.
-                              </p>
-                              <Link className="btn btn-custom-size comment-btn style-2" to="#">
-                                Reply
-                              </Link>
-                            </div>
-                          </div>
-                          <div className="blog-comment-item">
-                            <div className="blog-comment-img">
-                              <img
-                                src="assets/images/blog/avatar/1-3-120x120.png"
-                                alt="User Image"
-                              />
-                            </div>
-                            <div className="blog-comment-content">
-                              <div className="user-meta">
-                                <h2 className="user-name">Donald Chavez</h2>
-                                <span className="date">21 July 2021</span>
-                              </div>
-                              <p className="user-comment">
-                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed do eiusmod
-                                tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea
-                                commodo consequat.
-                              </p>
-                              <Link className="btn btn-custom-size comment-btn" to="#">
-                                Reply
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="feedback-area">
-                          <h2 className="heading">Leave a comment</h2>
-                          <form className="feedback-form" action="#">
-                            <div className="group-input">
-                              <div className="form-field me-md-30 mb-30 mb-md-0">
-                                <input
-                                  type="text"
-                                  name="name"
-                                  placeholder="Your Name*"
-                                  className="input-field"
-                                />
-                              </div>
-                              <div className="form-field">
-                                <input
-                                  type="text"
-                                  name="email"
-                                  placeholder="Your Email*"
-                                  className="input-field"
-                                />
-                              </div>
-                            </div>
-                            <div className="form-field mt-30">
-                              <input
-                                type="text"
-                                name="subject"
-                                placeholder="Subject (Optinal)"
-                                className="input-field"
-                              />
-                            </div>
-                            <div className="form-field mt-30">
-                              <textarea
-                                name="message"
-                                placeholder="Message"
-                                className="textarea-field"
-                              ></textarea>
-                            </div>
-                            <div className="button-wrap pt-5">
-                              <button
-                                type="submit"
-                                value="submit"
-                                className="btn btn-custom-size xl-size btn-pronia-primary"
-                                name="submit"
-                              >
-                                Post Comment
-                              </button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="product-area section-space-y-axis-90">
             <div className="container">
               <div className="row">
                 <div className="section-title-wrap without-tab">
                   <h2 className="section-title">Related Products</h2>
-                  <p className="section-desc">
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                    in a piece of classNameical Latin literature
-                  </p>
                 </div>
                 <div className="col-lg-12">
                   <CarouselProducts productDetail={productDetail} />
@@ -611,124 +419,6 @@ export const ProductDetail = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 pt-5 pt-lg-0">
-                    <div className="single-product-content">
-                      <h2 className="title">American Marigold</h2>
-                      <div className="price-box">
-                        <span className="new-price">$23.45</span>
-                      </div>
-                      <div className="rating-box-wrap">
-                        <div className="rating-box">
-                          <ul>
-                            <li>
-                              <i className="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i className="fa fa-star"></i>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="review-status">
-                          <Link to="#">( 1 Review )</Link>
-                        </div>
-                      </div>
-                      <div className="selector-wrap color-option">
-                        <span className="selector-title border-bottom-0">Color</span>
-                        <select className="nice-select wide border-bottom-0 rounded-0">
-                          <option value="default">Black & White</option>
-                          <option value="blue">Blue</option>
-                          <option value="green">Green</option>
-                          <option value="red">Red</option>
-                        </select>
-                      </div>
-                      <div className="selector-wrap size-option">
-                        <span className="selector-title">Size</span>
-                        <select className="nice-select wide rounded-0">
-                          <option value="medium">Medium Size & Poot</option>
-                          <option value="large">Large Size With Poot</option>
-                          <option value="small">Small Size With Poot</option>
-                        </select>
-                      </div>
-                      <p className="short-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempo
-                        incid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                        aute irure dolor in reprehenderit in voluptate
-                      </p>
-                      <ul className="quantity-with-btn">
-                        <li className="quantity">
-                          <div className="cart-plus-minus">
-                            <input className="cart-plus-minus-box" type="text" />
-                          </div>
-                        </li>
-                        <li className="add-to-cart">
-                          <Link
-                            className="btn btn-custom-size lg-size btn-pronia-primary"
-                            to="cart.html"
-                          >
-                            Add to cart
-                          </Link>
-                        </li>
-                        <li className="wishlist-btn-wrap">
-                          <Link className="custom-circle-btn" to="wishlist.html">
-                            <i className="pe-7s-like"></i>
-                          </Link>
-                        </li>
-                        <li className="compare-btn-wrap">
-                          <Link className="custom-circle-btn" to="compare.html">
-                            <i className="pe-7s-refresh-2"></i>
-                          </Link>
-                        </li>
-                      </ul>
-                      <ul className="service-item-wrap pb-0">
-                        <li className="service-item">
-                          <div className="service-img">
-                            <img src="assets/images/shipping/icon/car.png" alt="Shipping Icon" />
-                          </div>
-                          <div className="service-content">
-                            <span className="title">
-                              Free <br />
-                              Shipping
-                            </span>
-                          </div>
-                        </li>
-                        <li className="service-item">
-                          <div className="service-img">
-                            <img src="assets/images/shipping/icon/card.png" alt="Shipping Icon" />
-                          </div>
-                          <div className="service-content">
-                            <span className="title">
-                              Safe <br />
-                              Payment
-                            </span>
-                          </div>
-                        </li>
-                        <li className="service-item">
-                          <div className="service-img">
-                            <img
-                              src="assets/images/shipping/icon/service.png"
-                              alt="Shipping Icon"
-                            />
-                          </div>
-                          <div className="service-content">
-                            <span className="title">
-                              Safe <br />
-                              Payment
-                            </span>
-                          </div>
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </div>

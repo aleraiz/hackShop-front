@@ -21,17 +21,11 @@ import { Products } from "./components/products/Products";
 import { Admin } from "./components/administrator/Admin";
 import { ContactUs } from "./components/contactUs/ContactUs";
 import { AboutUs } from "./components/aboutUs/AboutUs";
-import React, { useEffect } from "react";
-import { TbArrowBigUpLines } from "react-icons/tb";
 import { MyAccount } from "./components/navbar/MyAccount";
 import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
 
 function App() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
-
   return (
     <div className="app">
       <NavbarPrincipal />
@@ -51,26 +45,6 @@ function App() {
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
-      <div>
-        <button
-          onClick={() => {
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-          }}
-          style={{
-            position: "fixed",
-            fontSize: "70px",
-            bottom: "40px",
-            right: "40px",
-            backgroundColor: "transparent",
-            color: "#abd373",
-            textAlign: "center",
-            border: "0",
-            zIndex: "9999",
-          }}
-        >
-          <TbArrowBigUpLines />
-        </button>
-      </div>
       <Footer />
     </div>
   );
