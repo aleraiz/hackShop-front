@@ -79,12 +79,12 @@ export const OurProducts = () => {
                             <Link to={`/product/${product.id}`}>
                               <img
                                 className="primary-img"
-                                src={product.image[0].imageOne}
+                                src={product.image[3].imageDetailOne}
                                 alt="Product Images"
                               />
                               <img
                                 className="secondary-img"
-                                src={product.image[1].imageTwo}
+                                src={product.image[4].imageDetailTwo}
                                 alt="Product Images"
                               />
                             </Link>
