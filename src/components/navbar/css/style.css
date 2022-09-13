@@ -6,6 +6,18 @@
   color: inherit;
 }
 
+.btn-logout {
+  border: 1px solid #444444;
+  display: block;
+  background: #2c2c2c;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: start;
+}
+
 .dropdown .btn-link:focus {
   text-decoration: none;
 }
@@ -22,8 +34,55 @@
   display: block;
   margin-bottom: 10px;
 }
-.minicart-flex .product-item_content .product-item_title:hover {
-  color: #abd373;
+
+@media (hover: hover) {
+  .minicart-flex .product-item_content .product-item_title:hover {
+    color: #abd373;
+  }
+
+  .dropdown-menu li a:hover,
+  .dropdown-menu li a:focus {
+    background-color: #abd373;
+    color: #ffffff;
+  }
+
+  .header-contact a:hover {
+    color: #abd373;
+  }
+
+  .main-nav > ul > li:hover > a {
+    color: #abd373;
+  }
+
+  .main-nav > ul > li:hover > a:before {
+    width: 100%;
+  }
+
+  .main-nav > ul > li:hover > .drop-menu {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+
+  .drop-menu a:hover {
+    padding-left: 5px;
+    color: #abd373;
+  }
+  .sub-dropdown-holder:hover .sub-dropdown.drop-menu {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sub-dropdown-holder:hover > a {
+    color: #abd373;
+  }
+
+  .btn-logout:hover {
+    color: #abd373;
+  }
 }
 
 .minicart-flex .product-item_content {
@@ -96,12 +155,6 @@
   opacity: 1;
 }
 
-.dropdown-menu li a:hover,
-.dropdown-menu li a:focus {
-  background-color: #abd373;
-  color: #ffffff;
-}
-
 .dropdown-menu li a {
   font-size: 14px;
   padding: 0.25rem 2rem;
@@ -164,10 +217,6 @@
 
 .header-contact a {
   font-size: 18px;
-}
-
-.header-contact a:hover {
-  color: #abd373;
 }
 
 .header-contact i {
@@ -246,22 +295,6 @@
   left: 0;
 }
 
-.main-nav > ul > li:hover > a {
-  color: #abd373;
-}
-
-.main-nav > ul > li:hover > a:before {
-  width: 100%;
-}
-
-.main-nav > ul > li:hover > .drop-menu {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: scaleY(1);
-  -ms-transform: scaleY(1);
-  transform: scaleY(1);
-}
-
 /* ---Drop Menu--- */
 .drop-holder {
   position: relative;
@@ -297,26 +330,11 @@
   padding-bottom: 10px;
 }
 
-.drop-menu a:hover {
-  padding-left: 5px;
-  color: #abd373;
-}
-
 /* ---Sub Dropdown--- */
 .sub-dropdown.drop-menu {
   top: 30px;
   left: auto;
   right: 100%;
-}
-
-.sub-dropdown-holder:hover .sub-dropdown.drop-menu {
-  top: 0;
-  opacity: 1;
-  visibility: visible;
-}
-
-.sub-dropdown-holder:hover > a {
-  color: #abd373;
 }
 
 /* ---Megamenu--- */
