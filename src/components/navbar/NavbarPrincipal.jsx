@@ -6,11 +6,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchModal } from "./SearchModal";
 import { useState, useRef } from "react";
-import { useSelector } from "react-redux";
 import { CartOffCanvas } from "./CartOffcanvas";
+import { logoutUser } from "../../redux/slices/userSlice";
+import { emptyCart } from "../../redux/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import "./css/style.css";
 
 import Overlay from "react-bootstrap/Overlay";
@@ -20,12 +23,32 @@ export const NavbarPrincipal = () => {
   const [openModalSearch, setOpenModalSearch] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
   const [show, setShow] = useState(false);
+  const [showCanvasNavbar, setShowCanvasNavbar] = useState(false);
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
   const handleClick = (event) => {
     setShow(!show);
     setTarget(event.target);
   };
+
+  const [userError, setUserError] = useState("");
+
+  async function handlerLogout() {
+    try {
+      const response = await axios({
+        method: "post",
+        url: `${process.env.REACT_APP_DB_HOST}/logout`,
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      dispatch(logoutUser());
+      dispatch(emptyCart());
+    } catch (error) {
+      console.log(error);
+      setUserError(error.response.data.error);
+    }
+  }
 
   const cart = useSelector((state) => state.cart.cart);
   return (
@@ -35,7 +58,7 @@ export const NavbarPrincipal = () => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-12">
-                <Navbar expand="md" className="mb-3">
+                <Navbar expand="md" key="md" className="mb-3">
                   <Container fluid className="p-0 align-items-end">
                     <Navbar.Brand href="#">
                       <div className="logoDiv">
@@ -44,19 +67,17 @@ export const NavbarPrincipal = () => {
                         </Link>
                       </div>
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
+                    <Navbar.Toggle onClick={() => setShowCanvasNavbar((prev) => !prev)} />
                     <Navbar.Offcanvas
+                      show={showCanvasNavbar}
+                      onHide={() => setShowCanvasNavbar(false)}
                       id={`offcanvasNavbar-expand-md`}
                       aria-labelledby={`offcanvasNavbarLabel-expand-md`}
                       placement="start"
                     >
-                      <Offcanvas.Header closeButton>
-                        {/* <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
-                          Offcanvas
-                        </Offcanvas.Title> */}
-                      </Offcanvas.Header>
+                      <Offcanvas.Header closeButton></Offcanvas.Header>
                       <Offcanvas.Body>
-                        <Nav className="justify-content-center flex-grow-1 pe-3 main-nav">
+                        <Nav className="justify-content-md-center flex-grow-1 pe-3 main-nav">
                           <ul id="navbarMenuBtns">
                             <li className="drop-holder">
                               <Link to="/">Home</Link>
@@ -171,7 +192,7 @@ export const NavbarPrincipal = () => {
                                 <SearchModal setOpenModalSearch={setOpenModalSearch} />
                               ) : null}
                             </li>
-                            <li className="dropdown d-none d-lg-block">
+                            <li className="dropdown">
                               <div ref={ref}>
                                 <Button
                                   className="btn btn-link dropdown-toggle ht-btn p-0"
@@ -189,22 +210,34 @@ export const NavbarPrincipal = () => {
                                   containerPadding={20}
                                 >
                                   <Popover id="popover-contained">
-                                    <Link className="dropdown-item" to="/register">
-                                      Register
-                                    </Link>
-                                    <hr style={{ margin: "5 0 5 0px" }} />
-                                    <Link className="dropdown-item" to="/login">
-                                      Login
-                                    </Link>
-                                    <hr style={{ margin: "5 0 5 0px" }} />
-                                    <Link className="dropdown-item" to="/account">
-                                      My account
-                                    </Link>
+                                    {!user ? (
+                                      <>
+                                        <Link className="dropdown-item" to="/register">
+                                          Register
+                                        </Link>
+                                        <Link className="dropdown-item" to="/login">
+                                          Login
+                                        </Link>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <Link className="dropdown-item" to="/account">
+                                          My account
+                                        </Link>
+                                        <Link
+                                          className="dropdown-item"
+                                          to="/login"
+                                          onClick={() => handlerLogout()}
+                                        >
+                                          LogOut
+                                        </Link>
+                                      </>
+                                    )}
                                   </Popover>
                                 </Overlay>
                               </div>
                             </li>
-                            <li className="d-none d-lg-block">
+                            <li className="">
                               <Link to="wishlist.html" style={{ color: "#212529" }}>
                                 <i className="pe-7s-like"></i>
                               </Link>
@@ -225,11 +258,6 @@ export const NavbarPrincipal = () => {
                               {openOffcanvas ? (
                                 <CartOffCanvas setOpenOffcanvas={setOpenOffcanvas} />
                               ) : null}
-                            </li>
-                            <li className="mobile-menu_wrap d-block d-lg-none">
-                              <Link to="#mobileMenu" className="mobile-menu_btn toolbar-btn pl-0">
-                                <i className="pe-7s-menu"></i>
-                              </Link>
                             </li>
                           </ul>
                         </div>
