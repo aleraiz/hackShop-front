@@ -198,11 +198,9 @@ export const NavbarPrincipal = () => {
                                     <Link className="dropdown-item" to="/register">
                                       Register
                                     </Link>
-                                    <hr style={{ margin: "5 0 5 0px" }} />
                                     <Link className="dropdown-item" to="/login">
                                       Login
                                     </Link>
-                                    <hr style={{ margin: "5 0 5 0px" }} />
                                     <Link className="dropdown-item" to="/account">
                                       My account
                                     </Link>

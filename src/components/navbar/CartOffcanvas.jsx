@@ -85,7 +85,7 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
           </ul>
         </div>
         <div className="minicart-item_total">
-          <span>Subtotal</span>
+          <span className="subtotalMinicart">Subtotal</span>
           <span className="ammount">
             {priceFormat.format(
               cart.reduce((total, product) => total + product.price * product.quantity, 0),
