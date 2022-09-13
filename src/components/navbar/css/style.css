@@ -606,3 +606,22 @@
   text-align-last: center;
   margin-bottom: 15px;
 }
+
+.cartEmptyMsj {
+  margin-top: 30px;
+  align-self: center;
+}
+
+.cartEmptyMsj h4 {
+  color: #f03e3e;
+}
+
+.svgCartEmpty {
+  font-size: 4rem;
+  color: #f03e3e;
+  align-self: center;
+}
+
+.paragraphEmptyCart {
+  align-self: center;
+}

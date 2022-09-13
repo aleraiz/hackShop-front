@@ -19,11 +19,13 @@ import Popover from "react-bootstrap/Popover";
 export const NavbarPrincipal = () => {
   const [openModalSearch, setOpenModalSearch] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
-  const [show, setShow] = useState(false);
-  const [target, setTarget] = useState(null);
-  const ref = useRef(null);
+  const [navbarShow, setNavbarShow] = useState(false);
+  const [target, setTarget] = useState(false);
+
+  const ref = useRef(false);
+
   const handleClick = (event) => {
-    setShow(!show);
+    setNavbarShow(true);
     setTarget(event.target);
   };
 
@@ -50,7 +52,7 @@ export const NavbarPrincipal = () => {
                       aria-labelledby={`offcanvasNavbarLabel-expand-md`}
                       placement="start"
                     >
-                      <Offcanvas.Header closeButton>
+                      <Offcanvas.Header closeButton id="closeBtn">
                         {/* <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
                           Offcanvas
                         </Offcanvas.Title> */}
@@ -182,7 +184,7 @@ export const NavbarPrincipal = () => {
                                 </Button>
 
                                 <Overlay
-                                  show={show}
+                                  show={navbarShow}
                                   target={target}
                                   placement="bottom"
                                   container={ref}
