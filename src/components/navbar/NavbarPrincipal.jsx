@@ -20,20 +20,21 @@ import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 
 export const NavbarPrincipal = () => {
+  const dispatch = useDispatch();
+  const ref = useRef(null);
+  const user = useSelector((state) => state.user.user);
+  const cart = useSelector((state) => state.cart.cart);
   const [openModalSearch, setOpenModalSearch] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
   const [show, setShow] = useState(false);
   const [showCanvasNavbar, setShowCanvasNavbar] = useState(false);
   const [target, setTarget] = useState(null);
-  const ref = useRef(null);
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
+  const [userError, setUserError] = useState("");
+
   const handleClick = (event) => {
-    setNavbarShow(true);
+    setShow(!show);
     setTarget(event.target);
   };
-
-  const [userError, setUserError] = useState("");
 
   async function handlerLogout() {
     try {
@@ -49,10 +50,6 @@ export const NavbarPrincipal = () => {
       setUserError(error.response.data.error);
     }
   }
-
-  const cart = useSelector((state) => state.cart.cart);
-  const user = useSelector((state) => state.user.user);
-  console.log(user);
 
   return (
     <>
@@ -172,7 +169,7 @@ export const NavbarPrincipal = () => {
                               </ul>
                             </li>
                             <li>
-                              <Link to="about.html">About Us</Link>
+                              <Link to="/aboutus">About Us</Link>
                             </li>
                             <li>
                               <Link to="contact.html">Contact Us</Link>
@@ -209,7 +206,7 @@ export const NavbarPrincipal = () => {
                                 </Button>
 
                                 <Overlay
-                                  show={navbarShow}
+                                  show={show}
                                   target={target}
                                   placement="bottom"
                                   container={ref}

@@ -108,7 +108,7 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
           <div className="iconCartEmpty">
             <MdOutlineRemoveShoppingCart className="svgCartEmpty" />
           </div>
-          <div>
+          <div style={{ textAlign: "center" }}>
             <h4>Your cart is empty</h4>
           </div>
           <div>
