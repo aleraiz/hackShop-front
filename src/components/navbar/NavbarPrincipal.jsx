@@ -1,23 +1,20 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SearchModal } from "./SearchModal";
 import { useState, useRef } from "react";
 import { CartOffCanvas } from "./CartOffcanvas";
 import { logoutUser } from "../../redux/slices/userSlice";
 import { emptyCart } from "../../redux/slices/cartSlice";
+import Overlay from "react-bootstrap/Overlay";
+import Popover from "react-bootstrap/Popover";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import "./css/style.css";
-
-import Overlay from "react-bootstrap/Overlay";
-import Popover from "react-bootstrap/Popover";
 
 export const NavbarPrincipal = () => {
   const dispatch = useDispatch();
