@@ -32,6 +32,7 @@ export const ProductDetail = () => {
 
   function handleAddCart() {
     dispatch(addProductCart(productDetail));
+    setQuantityProduct(1);
   }
 
   function handlerIncrementProduct(productId) {
@@ -106,7 +107,7 @@ export const ProductDetail = () => {
                                 alt="Product Image"
                               />
                             ) : (
-                              <h1>Hola</h1>
+                              <h1>No hay imagen</h1>
                             )}
                           </Link>
                         </div>
