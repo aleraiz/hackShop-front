@@ -216,8 +216,7 @@ export const ProductDetail = () => {
                     <p className="short-desc">{productDetail.description}</p>
                     <ul className="quantity-with-btn ps-0">
                       <li className="quantity">
-                        {" "}
-                        <div className="cart-plus-minus quantityBtn">
+                        <div className="cart-plus-minus">
                           <button
                             className="cart-plus-minus-box"
                             id="quantityBtnDecrement"
@@ -234,7 +233,7 @@ export const ProductDetail = () => {
                         <span className="quantityNumber">{quantityProduct}</span>
                         <div className="cart-plus-minus">
                           <button
-                            className="cart-plus-minus-box quantityBtn"
+                            className="cart-plus-minus-box "
                             id="quantityBtn"
                             type="submit"
                             onClick={() => {

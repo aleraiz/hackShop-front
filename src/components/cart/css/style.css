@@ -146,3 +146,50 @@
   font-size: 20px;
   font-weight: 600;
 }
+
+#emptyCartDiv {
+  text-align-last: center;
+  margin: 50px 0 50px 0;
+}
+
+.btnRemoveCartPage {
+  background-color: transparent;
+  height: fit-content;
+  border: none;
+}
+
+#quantityTableCart {
+  /* display: flex; */
+  /* background-color: #505050; */
+  /* border-radius: 5px;
+  padding-right: 0 !important;
+  margin-right: 10px;
+  height: 47px; */
+}
+
+#quantityIncrement {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 32px;
+  height: 47px;
+  border: 0;
+  color: #fff;
+  background-color: #505050;
+}
+
+#quantityDecrement {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 32px;
+  height: 47px;
+  border: 0;
+  color: #fff;
+  background-color: #505050;
+}
+
+.containerBtnMoreAndRemove {
+  display: inline-flex;
+  background-color: #505050;
+  justify-content: center;
+  width: 70px;
+}
