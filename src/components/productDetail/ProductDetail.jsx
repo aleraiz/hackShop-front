@@ -15,6 +15,7 @@ export const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
   const { id } = useParams();
   const [quantityProduct, setQuantityProduct] = useState(1);
+  const [isReadMore, setIsReadMore] = useState(true);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
   const cart = useSelector((state) => state.cart.cart);
   let count = 1;
@@ -42,6 +43,10 @@ export const ProductDetail = () => {
   function handlerDecrementProduct(productId) {
     setRemoveProduct(quantityProduct - 1);
     dispatch(decrementQuantity({ productId }));
+  }
+
+  function toggleReadMore() {
+    setIsReadMore(!isReadMore);
   }
 
   const responsive = {
@@ -212,7 +217,19 @@ export const ProductDetail = () => {
                         </ul>
                       </div>
                     </div>
-                    <p className="short-desc">{productDetail.description}</p>
+                    <p className="short-desc">
+                      {isReadMore
+                        ? productDetail.description?.slice(0, 150)
+                        : productDetail.description}
+                      <span
+                        onClick={() => {
+                          toggleReadMore();
+                        }}
+                        className="read-or-hide"
+                      >
+                        {isReadMore ? "...read more" : " show less"}
+                      </span>
+                    </p>
                     <ul className="quantity-with-btn ps-0">
                       <li className="quantity">
                         <div className="cart-plus-minus">
@@ -248,7 +265,7 @@ export const ProductDetail = () => {
                       <li className="affiliate-btn-wrap">
                         <button
                           className="btn btn-custom-size btn-pronia-primary  btn-collection"
-                          id="#btnAddToCart"
+                          id="btnAddToCart"
                           onClick={(e) => {
                             e.preventDefault();
                             handleAddCart();

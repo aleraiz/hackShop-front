@@ -25,3 +25,13 @@
   color: #fff;
   align-self: center;
 }
+
+#btnAddToCart:hover {
+  background-color: #505050;
+  color: #fff;
+}
+
+.read-or-hide {
+  color: #0d6efd;
+  cursor: pointer;
+}
