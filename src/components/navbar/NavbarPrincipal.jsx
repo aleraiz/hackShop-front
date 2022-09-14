@@ -51,8 +51,6 @@ export const NavbarPrincipal = () => {
   }
 
   const cart = useSelector((state) => state.cart.cart);
-  const user = useSelector((state) => state.user.user);
-  console.log(user);
 
   return (
     <>
