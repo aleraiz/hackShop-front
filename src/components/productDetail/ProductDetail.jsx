@@ -18,7 +18,6 @@ export const ProductDetail = () => {
   const [isReadMore, setIsReadMore] = useState(true);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
   const cart = useSelector((state) => state.cart.cart);
-  let count = 1;
 
   useEffect(() => {
     const productDetail = async () => {
@@ -32,16 +31,21 @@ export const ProductDetail = () => {
   }, []);
 
   function handleAddCart() {
-    dispatch(addProductCart(productDetail));
+    dispatch(addProductCart({ productDetail, quantityProduct }));
+    setQuantityProduct(0);
   }
 
   function handlerIncrementProduct(productId) {
-    setQuantityProduct(quantityProduct + 1);
+    if (quantityProduct < productDetail.stock) {
+      setQuantityProduct(quantityProduct + 1);
+    }
     dispatch(incrementQuantity({ productId }));
   }
 
   function handlerDecrementProduct(productId) {
-    setRemoveProduct(quantityProduct - 1);
+    if (quantityProduct > 1) {
+      setQuantityProduct(quantityProduct - 1);
+    }
     dispatch(decrementQuantity({ productId }));
   }
 
@@ -111,7 +115,7 @@ export const ProductDetail = () => {
                                 alt="Product Image"
                               />
                             ) : (
-                              <h1>Hola</h1>
+                              <h1>No hay imagen</h1>
                             )}
                           </Link>
                         </div>

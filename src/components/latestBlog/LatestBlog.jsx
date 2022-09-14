@@ -31,22 +31,25 @@ export const LatestBlog = () => {
                       </div>
                       <h2 className="title">
                         <Link className="text-decoration-none" to="blog.html">
-                          There Many Variations
+                          Protect them from high temperatures
                         </Link>
                       </h2>
                       <p className="short-desc mb-7">
-                        Lorem ipsum dolor sit amet, consecteturl adipisl elit, sed do eiusmod tempor
-                        incidio ut labore et dolore magna aliqua.
+                        Heat waves and high temperatures can make our plants suffer. That's why
+                        watering at the right time is important...
                       </p>
                     </div>
                     <div className="blog-img img-hover-effect">
-                      <Link to="blog.html">
+                      <a
+                        target="_blank"
+                        href="https://www.revistamijardin.es/protege-tus-plantas-frente-a-las-altas-temperaturas/"
+                      >
                         <img
                           className="img-full"
                           src="../latestBlog/latestBlog1.jpg"
                           alt="Blog Image"
                         />
-                      </Link>
+                      </a>
                       <div className="inner-btn-wrap">
                         <Link className="inner-btn text-decoration-none" to="blog.html">
                           <i className="pe-7s-link"></i>
@@ -55,6 +58,7 @@ export const LatestBlog = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="swiper-slide latest-item">
                   <div className="blog-item">
                     <div className="blog-content">
@@ -70,22 +74,26 @@ export const LatestBlog = () => {
                       </div>
                       <h2 className="title">
                         <Link className="text-decoration-none" to="blog.html">
-                          Maecenas Laoreet Massa
+                          Ideas and pots at home
                         </Link>
                       </h2>
                       <p className="short-desc mb-7">
-                        Lorem ipsum dolor sit amet, consecteturl adipisl elit, sed do eiusmod tempor
-                        incidio ut labore et dolore magna aliqua.
+                        What pots are the best to plant? What characteristics do you have? Ideas to
+                        make your own without having to leave your house...
                       </p>
                     </div>
                     <div className="blog-img img-hover-effect">
-                      <Link className="text-decoration-none" to="blog.html">
+                      <a
+                        className="text-decoration-none"
+                        target="_blank"
+                        href="https://saposyprincesas.elmundo.es/ocio-en-casa/manualidades-para-ninos/manualidades-para-crear-un-jardin-dentro-de-casa/"
+                      >
                         <img
                           className="img-full"
                           src="../latestBlog/latestBlog2.jpg"
                           alt="Blog Image"
                         />
-                      </Link>
+                      </a>
                       <div className="inner-btn-wrap">
                         <Link className="inner-btn text-decoration-none" to="blog.html">
                           <i className="pe-7s-link"></i>
@@ -109,22 +117,25 @@ export const LatestBlog = () => {
                       </div>
                       <h2 className="title">
                         <Link className="text-decoration-none" to="blog.html">
-                          Aenean Vulputate Lorem
+                          A garden in our home
                         </Link>
                       </h2>
                       <p className="short-desc mb-7">
-                        Lorem ipsum dolor sit amet, consecteturl adipisl elit, sed do eiusmod tempor
-                        incidio ut labore et dolore magna aliqua.
+                        Large, small, hanging and even in vases. Having plants at home will help you
+                        decorate your home and bring freshness...
                       </p>
                     </div>
                     <div className="blog-img img-hover-effect">
-                      <Link to="blog.html">
+                      <a
+                        target="_blank"
+                        href="https://www.admagazine.com/editors-pick/consejos-para-tener-plantas-en-casa-20180122-3754-articulos"
+                      >
                         <img
                           className="img-full"
                           src="../latestBlog/latestBlog3.jpg"
                           alt="Blog Image"
                         />
-                      </Link>
+                      </a>
                       <div className="inner-btn-wrap">
                         <Link className="inner-btn text-decoration-none" to="blog.html">
                           <i className="pe-7s-link"></i>

@@ -14,14 +14,12 @@ export const Products = () => {
         url: `${process.env.REACT_APP_DB_HOST}/products/${category}`,
       });
       setProducts(response.data);
-      console.log(response.data);
     };
     listProducts();
   }, [category]);
 
   function onChangeInput(e) {
     setCategory(e.target.value);
-    console.log(e.target.value);
   }
 
   return (

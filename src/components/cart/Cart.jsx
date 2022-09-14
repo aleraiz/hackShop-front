@@ -8,7 +8,6 @@ import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
-  console.log(cart);
   const dispatch = useDispatch();
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
