@@ -1,7 +1,6 @@
 import React from "react";
 
 const TestimonialItem = ({ img, testimonial, user }) => {
-  console.log(testimonial);
   return (
     <div className="swiper-slide testimonial-item testimonial-item-style">
       <div className="user-info mb-3">

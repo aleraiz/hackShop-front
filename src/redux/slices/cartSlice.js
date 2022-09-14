@@ -7,19 +7,19 @@ const cartSlice = createSlice({
   },
   reducers: {
     addProductCart: (state, action) => {
-      const { productName, id, price, image } = action.payload;
+      const { productName, id, price, image, stock } = action.payload.productDetail;
       const product = {
         id,
         productName,
         price,
+        stock,
         image: image[3].imageDetailOne,
-        quantity: 1,
+        quantity: action.payload.quantityProduct,
       };
 
       const duplicateProduct = state.cart.find((productCart) => {
-        return productCart.id === action.payload.id;
+        return productCart.id === action.payload.productDetail.id;
       });
-
       if (!duplicateProduct) {
         state.cart.push(product);
       }
@@ -34,6 +34,7 @@ const cartSlice = createSlice({
       const searchProduct = state.cart.findIndex((product) => {
         return product.id === action.payload.productId;
       });
+
       state.cart[searchProduct].quantity++;
     },
     decrementQuantity: (state, action) => {

@@ -29,7 +29,7 @@ export const NavbarPrincipal = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const handleClick = (event) => {
-    setNavbarShow(true);
+    setShow(!show);
     setTarget(event.target);
   };
 
@@ -51,8 +51,6 @@ export const NavbarPrincipal = () => {
   }
 
   const cart = useSelector((state) => state.cart.cart);
-  const user = useSelector((state) => state.user.user);
-  console.log(user);
 
   return (
     <>
@@ -209,7 +207,7 @@ export const NavbarPrincipal = () => {
                                 </Button>
 
                                 <Overlay
-                                  show={navbarShow}
+                                  show={show}
                                   target={target}
                                   placement="bottom"
                                   container={ref}

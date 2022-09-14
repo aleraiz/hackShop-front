@@ -8,8 +8,8 @@ import { loginUser } from "../../redux/slices/userSlice";
 import "./style.css";
 
 export const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("user@user.com");
+  const [password, setPassword] = useState("123");
   const [userError, setUserError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,7 +24,6 @@ export const Login = () => {
           password,
         },
       });
-      console.log(response.data.client);
       dispatch(
         loginUser({
           id: response.data.client.id,
@@ -83,6 +82,7 @@ export const Login = () => {
                         onChange={(e) => {
                           setEmail(e.target.value);
                         }}
+                        defaultValue={email}
                         onFocus={() => {
                           setUserError();
                         }}
@@ -94,6 +94,7 @@ export const Login = () => {
                         type="password"
                         placeholder="Password"
                         name="password"
+                        defaultValue={password}
                         onChange={(e) => {
                           setPassword(e.target.value);
                         }}

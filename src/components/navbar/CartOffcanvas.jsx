@@ -57,9 +57,18 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
                           <Link className="product-item_title" to="single-product-variable.html">
                             {product.productName}
                           </Link>
-                          <span className="product-item_quantity">
-                            {product.quantity}x${product.price}
-                          </span>
+                          {product.quantity <= product.stock ? (
+                            <span className="product-item_quantity">
+                              {product.quantity} x${product.price}
+                            </span>
+                          ) : (
+                            <span className="product-item_quantity">
+                              {product.stock} x${product.price}
+                              <p>
+                                <strong>Stock disponible : {product.stock} ud</strong>
+                              </p>
+                            </span>
+                          )}
                         </div>
                         <button
                           className="product-item_remove btnRemove"

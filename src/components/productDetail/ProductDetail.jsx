@@ -15,9 +15,7 @@ export const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
   const { id } = useParams();
   const [quantityProduct, setQuantityProduct] = useState(1);
-  const [removeProduct, setRemoveProduct] = useState(quantityProduct);
   const cart = useSelector((state) => state.cart.cart);
-  let count = 1;
 
   useEffect(() => {
     const productDetail = async () => {
@@ -31,17 +29,21 @@ export const ProductDetail = () => {
   }, []);
 
   function handleAddCart() {
-    dispatch(addProductCart(productDetail));
-    setQuantityProduct(1);
+    dispatch(addProductCart({ productDetail, quantityProduct }));
+    setQuantityProduct(0);
   }
 
   function handlerIncrementProduct(productId) {
-    setQuantityProduct(quantityProduct + 1);
+    if (quantityProduct < productDetail.stock) {
+      setQuantityProduct(quantityProduct + 1);
+    }
     dispatch(incrementQuantity({ productId }));
   }
 
   function handlerDecrementProduct(productId) {
-    setRemoveProduct(quantityProduct - 1);
+    if (quantityProduct > 1) {
+      setQuantityProduct(quantityProduct - 1);
+    }
     dispatch(decrementQuantity({ productId }));
   }
 
