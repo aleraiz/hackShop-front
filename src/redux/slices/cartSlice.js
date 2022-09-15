@@ -8,7 +8,7 @@ const cartSlice = createSlice({
   reducers: {
     addProductCart: (state, action) => {
       console.log(action.payload);
-
+      // const { productName, id, price, image, stock } = action.payload.product;
       const { productName, id, price, image, stock } = action.payload.productDetail;
 
       const product = {

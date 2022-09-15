@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -13,6 +13,7 @@ export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userError, setUserError] = useState("");
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   async function registerClient() {
@@ -38,6 +39,7 @@ export const Register = () => {
           firstname: response.data.client.firstname,
         }),
       );
+      navigate("/account");
     } catch (error) {
       setUserError(error.response.data.error);
     }

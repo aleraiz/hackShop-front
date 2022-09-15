@@ -8,7 +8,7 @@ import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 export const CartOffCanvas = ({ setOpenOffcanvas }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
-
+  console.log(cart);
   const handleClose = () => setOpenOffcanvas(false);
 
   function handlerDeleteProductFromCart(productId) {
@@ -107,7 +107,7 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
             <Link to="/cart" className="btn btn-dark">
               View Cart
             </Link>
-            <Link to="checkout.html" className="btn btn-dark">
+            <Link to="/checkout" className="btn btn-dark">
               Checkout
             </Link>
           </div>

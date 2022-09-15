@@ -1,0 +1,28 @@
+.paragraphOrderSuccess {
+  justify-content: center;
+  display: flex;
+}
+
+.svgCheckOrder {
+  font-size: 60px;
+  color: #abd373;
+  margin-bottom: 10px;
+  justify-self: center;
+}
+
+.divContainerOrder {
+  box-shadow: 1px 1px 5px 5px rgb(0 0 0 / 10%);
+  height: 30%;
+  padding: 50px;
+  display: grid;
+}
+
+.divpadreOrder {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 100px 0;
+}
+
+.divContainerOrder p:nth-child(2) {
+  text-align-last: center;
+}
