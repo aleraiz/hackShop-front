@@ -1,8 +1,29 @@
 import Carousel from "react-multi-carousel";
+import axios from "axios";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
 import "../newProducts/style.css";
+import { useState, useEffect } from "react";
+import { Products } from "../products/Products";
+
 export const CarouselProducts = () => {
+  const [newProducts, setNewProducts] = useState([]);
+  const quantityDisplayed = 6; // cantidad de productos a mostrar
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const result = await axios({
+        method: "GET",
+        url: `${process.env.REACT_APP_DB_HOST}/products`,
+      });
+      if (result.data.length <= quantityDisplayed) {
+        setNewProducts(result.data);
+      }
+      setNewProducts(result.data.splice(0, quantityDisplayed));
+    };
+    getProducts();
+  }, []);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -22,7 +43,101 @@ export const CarouselProducts = () => {
   };
   return (
     <Carousel responsive={responsive} infinite={true}>
-      <div className="swiper-slide product-item">
+      {newProducts.map((product) => {
+        return (
+          <div className="swiper-slide product-item" key={product.id}>
+            <div className="product-img">
+              <Link to={""}>
+                <img
+                  className="primary-img"
+                  src={product.image[3].imageDetailOne}
+                  alt="Product Images"
+                />
+                <img
+                  className="secondary-img"
+                  src={product.image[4].imageDetailTwo}
+                  alt="Product Images"
+                />
+              </Link>
+              <div className="product-add-action">
+                <ul>
+                  <li>
+                    <Link
+                      to="wishlist.html"
+                      data-tippy="Add to wishlist"
+                      data-tippy-inertia="true"
+                      data-tippy-animation="shift-away"
+                      data-tippy-delay="50"
+                      data-tippy-arrow="true"
+                      data-tippy-theme="sharpborder"
+                    >
+                      <i className="pe-7s-like"></i>
+                    </Link>
+                  </li>
+                  <li
+                    className="quuickview-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#quickModal"
+                  >
+                    <Link
+                      to="#"
+                      data-tippy="Quickview"
+                      data-tippy-inertia="true"
+                      data-tippy-animation="shift-away"
+                      data-tippy-delay="50"
+                      data-tippy-arrow="true"
+                      data-tippy-theme="sharpborder"
+                    >
+                      <i className="pe-7s-look"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="cart.html"
+                      data-tippy="Add to cart"
+                      data-tippy-inertia="true"
+                      data-tippy-animation="shift-away"
+                      data-tippy-delay="50"
+                      data-tippy-arrow="true"
+                      data-tippy-theme="sharpborder"
+                    >
+                      <i className="pe-7s-cart"></i>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="product-content">
+              <Link className="product-name" to="shop.html">
+                {product.productName}
+              </Link>
+              <div className="price-box pb-1">
+                <span className="new-price">${product.price}</span>
+              </div>
+              <div className="rating-box">
+                <ul>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+      {/* <div className="swiper-slide product-item">
         <div className="product-img">
           <Link to={""}>
             <img
@@ -365,7 +480,7 @@ export const CarouselProducts = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
     </Carousel>
   );
 };
