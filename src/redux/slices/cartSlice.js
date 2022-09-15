@@ -7,7 +7,10 @@ const cartSlice = createSlice({
   },
   reducers: {
     addProductCart: (state, action) => {
+      console.log(action.payload);
+
       const { productName, id, price, image, stock } = action.payload.productDetail;
+
       const product = {
         id,
         productName,
@@ -16,6 +19,7 @@ const cartSlice = createSlice({
         image: image[3].imageDetailOne,
         quantity: action.payload.quantityProduct,
       };
+      console.log(product);
 
       const duplicateProduct = state.cart.find((productCart) => {
         return productCart.id === action.payload.productDetail.id;

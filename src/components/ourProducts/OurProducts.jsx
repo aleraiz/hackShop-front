@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { addProductCart } from "../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 export const OurProducts = () => {
   const [ourProducts, setOurProducts] = useState([]);
+  const [product, setProduct] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const listProducts = async () => {
@@ -15,6 +19,11 @@ export const OurProducts = () => {
     };
     listProducts();
   }, []);
+
+  function handleAddCart(product) {
+    console.log(product);
+    dispatch(addProductCart(product));
+  }
 
   return (
     <div className="product-area section-space-top-100">
@@ -122,13 +131,17 @@ export const OurProducts = () => {
                                 </li>
                                 <li>
                                   <Link
-                                    to="cart.html"
+                                    to=""
                                     data-tippy="Add to cart"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
                                     data-tippy-delay="50"
                                     data-tippy-arrow="true"
                                     data-tippy-theme="sharpborder"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      handleAddCart(product);
+                                    }}
                                   >
                                     <i className="pe-7s-cart"></i>
                                   </Link>

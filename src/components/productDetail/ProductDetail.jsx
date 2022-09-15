@@ -11,13 +11,13 @@ import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSli
 import "./style.css";
 
 export const ProductDetail = () => {
-  const dispatch = useDispatch();
   const [productDetail, setProductDetail] = useState([]);
-  const { id } = useParams();
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [isReadMore, setIsReadMore] = useState(true);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
   const cart = useSelector((state) => state.cart.cart);
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
   useEffect(() => {
     const productDetail = async () => {
