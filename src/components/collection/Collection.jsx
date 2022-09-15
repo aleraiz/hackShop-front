@@ -19,7 +19,7 @@ export const Collection = () => {
                 <div className="button-wrap">
                   <Link
                     className="btn btn-custom-size btn-pronia-primary rounded-pill btn-collection"
-                    to="shop.html"
+                    to="/products"
                   >
                     Shop Now
                   </Link>
@@ -38,7 +38,7 @@ export const Collection = () => {
                 <div className="button-wrap">
                   <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
-                    to="shop.html"
+                    to="/products"
                   >
                     Shop Now
                   </Link>
@@ -57,7 +57,7 @@ export const Collection = () => {
                 <div className="button-wrap">
                   <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
-                    to="shop.html"
+                    to="/products"
                   >
                     Shop Now
                   </Link>
@@ -78,7 +78,7 @@ export const Collection = () => {
                 <div className="button-wrap">
                   <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
-                    to="shop.html"
+                    to="/products"
                   >
                     Shop Now
                   </Link>

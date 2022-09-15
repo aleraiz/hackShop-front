@@ -393,6 +393,7 @@
 
 .header-right {
   padding: 5px 0 5px 0;
+  margin-bottom: 7px;
 }
 
 .header-right > ul {
@@ -679,4 +680,5 @@
 
 .userNav {
   padding: 0;
+  margin: 0;
 }
