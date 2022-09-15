@@ -1,8 +1,13 @@
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import "react-multi-carousel/lib/styles.css";
 import "../newProducts/style.css";
+
 export const CarouselProducts = () => {
+  const MySwal = withReactContent(Swal);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -20,6 +25,17 @@ export const CarouselProducts = () => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+
+  function handlerMsgErr() {
+    MySwal.fire({
+      title: "Warning!",
+      text: "This functionality escapes from the scope of the project.",
+      icon: "warning",
+      confirmButtonText: "Cancel",
+      confirmButtonColor: "#f8bb86",
+    });
+  }
+
   return (
     <Carousel responsive={responsive} infinite={true}>
       <div className="swiper-slide product-item">
@@ -39,17 +55,20 @@ export const CarouselProducts = () => {
           <div className="product-add-action">
             <ul>
               <li>
-                <Link
-                  to="wishlist.html"
+                <button
+                  className="whislistBtn"
                   data-tippy="Add to wishlist"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
                   data-tippy-delay="50"
                   data-tippy-arrow="true"
                   data-tippy-theme="sharpborder"
+                  onClick={() => {
+                    handlerMsgErr();
+                  }}
                 >
                   <i className="pe-7s-like"></i>
-                </Link>
+                </button>
               </li>
               <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                 <Link
@@ -125,17 +144,20 @@ export const CarouselProducts = () => {
           <div className="product-add-action">
             <ul>
               <li>
-                <Link
-                  to="wishlist.html"
+                <button
+                  className="whislistBtn"
                   data-tippy="Add to wishlist"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
                   data-tippy-delay="50"
                   data-tippy-arrow="true"
                   data-tippy-theme="sharpborder"
+                  onClick={() => {
+                    handlerMsgErr();
+                  }}
                 >
                   <i className="pe-7s-like"></i>
-                </Link>
+                </button>
               </li>
               <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                 <Link
@@ -211,17 +233,20 @@ export const CarouselProducts = () => {
           <div className="product-add-action">
             <ul>
               <li>
-                <Link
-                  to="wishlist.html"
+                <button
+                  className="whislistBtn"
                   data-tippy="Add to wishlist"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
                   data-tippy-delay="50"
                   data-tippy-arrow="true"
                   data-tippy-theme="sharpborder"
+                  onClick={() => {
+                    handlerMsgErr();
+                  }}
                 >
                   <i className="pe-7s-like"></i>
-                </Link>
+                </button>
               </li>
               <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                 <Link
@@ -297,17 +322,20 @@ export const CarouselProducts = () => {
           <div className="product-add-action">
             <ul>
               <li>
-                <Link
-                  to="wishlist.html"
+                <button
+                  className="whislistBtn"
                   data-tippy="Add to wishlist"
                   data-tippy-inertia="true"
                   data-tippy-animation="shift-away"
                   data-tippy-delay="50"
                   data-tippy-arrow="true"
                   data-tippy-theme="sharpborder"
+                  onClick={() => {
+                    handlerMsgErr();
+                  }}
                 >
                   <i className="pe-7s-like"></i>
-                </Link>
+                </button>
               </li>
               <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
                 <Link

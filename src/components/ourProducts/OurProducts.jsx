@@ -1,9 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
+import "./styles.css";
 
 export const OurProducts = () => {
   const [ourProducts, setOurProducts] = useState([]);
+  const MySwal = withReactContent(Swal);
+
+  function handlerMsgErr() {
+    MySwal.fire({
+      title: "Warning!",
+      text: "This functionality escapes from the scope of the project.",
+      icon: "warning",
+      confirmButtonText: "Cancel",
+      confirmButtonColor: "#f8bb86",
+    });
+  }
 
   useEffect(() => {
     const listProducts = async () => {
@@ -26,41 +40,51 @@ export const OurProducts = () => {
           <div className="col-lg-12">
             <ul className="nav product-tab-nav tab-style-1" id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
-                <Link
-                  className="active"
+                <button
+                  className="active ourProductsBtn"
                   id="featured-tab"
                   data-bs-toggle="tab"
-                  to="#featured"
                   role="tab"
                   aria-controls="featured"
                   aria-selected="true"
+                  onClick={() => {
+                    handlerMsgErr();
+                  }}
                 >
                   Featured
-                </Link>
+                </button>
               </li>
               <li className="nav-item" role="presentation">
-                <Link
+                <button
                   id="bestseller-tab"
+                  className="active ourProductsBtn"
                   data-bs-toggle="tab"
                   to="#bestseller"
                   role="tab"
                   aria-controls="bestseller"
                   aria-selected="false"
+                  onClick={() => {
+                    handlerMsgErr();
+                  }}
                 >
                   Bestseller
-                </Link>
+                </button>
               </li>
               <li className="nav-item" role="presentation">
-                <Link
+                <button
                   id="latest-tab"
+                  className="active ourProductsBtn"
                   data-bs-toggle="tab"
                   to="#latest"
                   role="tab"
                   aria-controls="latest"
                   aria-selected="false"
+                  onClick={() => {
+                    handlerMsgErr();
+                  }}
                 >
                   Latest
-                </Link>
+                </button>
               </li>
             </ul>
             <div className="tab-content" id="myTabContent">
@@ -91,17 +115,20 @@ export const OurProducts = () => {
                             <div className="product-add-action">
                               <ul>
                                 <li>
-                                  <Link
-                                    to="wishlist.html"
+                                  <button
                                     data-tippy="Add to wishlist"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
                                     data-tippy-delay="50"
                                     data-tippy-arrow="true"
                                     data-tippy-theme="sharpborder"
+                                    className="whislistBtn"
+                                    onClick={() => {
+                                      handlerMsgErr();
+                                    }}
                                   >
                                     <i className="pe-7s-like"></i>
-                                  </Link>
+                                  </button>
                                 </li>
                                 <li
                                   className="quuickview-btn"

@@ -107,7 +107,7 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
             <Link to="/cart" className="btn btn-dark">
               View Cart
             </Link>
-            <Link to="checkout.html" className="btn btn-dark">
+            <Link to="/checkout" className="btn btn-dark">
               Checkout
             </Link>
           </div>
