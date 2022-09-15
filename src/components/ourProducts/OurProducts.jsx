@@ -34,8 +34,7 @@ export const OurProducts = () => {
   }, []);
 
   function handleAddCart(product) {
-    const { productName, id, price, image, stock } = product;
-    dispatch(addProductCart({ product }));
+    dispatch(addProductCart({ productDetail: product, quantityProduct: 1 }));
   }
 
   return (
@@ -108,7 +107,7 @@ export const OurProducts = () => {
                       <div className="col-xl-3 col-md-4 col-sm-6">
                         <div className="product-item" key={index}>
                           <div className="product-img">
-                            <Link to={`/product/${product.id}`}>
+                            <Link to={`/product/${product.slug}`}>
                               <img
                                 className="primary-img"
                                 src={product.image[3].imageDetailOne}
@@ -144,7 +143,7 @@ export const OurProducts = () => {
                                   data-bs-target="#quickModal"
                                 >
                                   <Link
-                                    to="#"
+                                    to={`/product/${product.slug}`}
                                     data-tippy="Quickview"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"

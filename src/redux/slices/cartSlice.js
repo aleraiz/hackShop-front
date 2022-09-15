@@ -7,10 +7,8 @@ const cartSlice = createSlice({
   },
   reducers: {
     addProductCart: (state, action) => {
-      console.log(action.payload);
-      // const { productName, id, price, image, stock } = action.payload.product;
-      const { productName, id, price, image, stock } = action.payload.productDetail;
-
+      console.log(action.payload.productDetail);
+      const { productName, id, price, stock, image } = action.payload.productDetail;
       const product = {
         id,
         productName,
@@ -19,7 +17,6 @@ const cartSlice = createSlice({
         image: image[3].imageDetailOne,
         quantity: action.payload.quantityProduct,
       };
-      console.log(product);
 
       const duplicateProduct = state.cart.find((productCart) => {
         return productCart.id === action.payload.productDetail.id;
@@ -38,7 +35,6 @@ const cartSlice = createSlice({
       const searchProduct = state.cart.findIndex((product) => {
         return product.id === action.payload.productId;
       });
-
       state.cart[searchProduct].quantity++;
     },
     decrementQuantity: (state, action) => {

@@ -17,21 +17,23 @@ export const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [isReadMore, setIsReadMore] = useState(true);
+  const [refreshSlug, setRefresSlug] = useState(false);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const { slug } = useParams();
 
   useEffect(() => {
     const productDetail = async () => {
       const response = await axios({
         method: "get",
-        url: `${process.env.REACT_APP_DB_HOST}/product/${id}`,
+        url: `${process.env.REACT_APP_DB_HOST}/product/${slug}`,
       });
       setProductDetail(response.data);
+      console.log(response.data);
     };
     productDetail();
-  }, []);
+  }, [refreshSlug]);
 
   function handleAddCart() {
     dispatch(addProductCart({ productDetail, quantityProduct }));
@@ -399,7 +401,7 @@ export const ProductDetail = () => {
                   <h2 className="section-title">Related Products</h2>
                 </div>
                 <div className="col-lg-12">
-                  <CarouselProducts productDetail={productDetail} />
+                  <CarouselProducts productDetail={productDetail} setRefresSlug={setRefresSlug} />
                 </div>
               </div>
             </div>
