@@ -5,6 +5,9 @@ import { registerUser } from "../../redux/slices/userSlice";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { emptyCart } from "../../redux/slices/cartSlice";
 import axios from "axios";
 
 export const BillingDetails = () => {
@@ -18,6 +21,7 @@ export const BillingDetails = () => {
   const [password, setPassword] = useState("");
   const [userError, setUserError] = useState("");
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();
 
   const priceFormat = new Intl.NumberFormat("en", {
@@ -26,6 +30,16 @@ export const BillingDetails = () => {
     maximumFractionDigits: 2,
     roundingIncrement: 5,
   });
+
+  function handlerMsgErr() {
+    MySwal.fire({
+      title: "Warning!",
+      text: "This functionality escapes from the scope of the project.",
+      icon: "warning",
+      confirmButtonText: "Cancel",
+      confirmButtonColor: "#f8bb86",
+    });
+  }
 
   async function registerClient() {
     try {
@@ -54,7 +68,6 @@ export const BillingDetails = () => {
   }
 
   async function orderSend(cart) {
-    console.log(cart);
     try {
       const response = await axios({
         method: "post",
@@ -66,7 +79,8 @@ export const BillingDetails = () => {
         },
       });
 
-      navigate("/order");
+      handlerMsgErr();
+      dispatch(emptyCart());
     } catch (error) {
       setUserError(error.response.data.error);
     }
@@ -373,6 +387,7 @@ export const BillingDetails = () => {
                   type="submit"
                   onClick={() => {
                     if (!user) {
+                      orderSend(cart);
                       registerClient();
                     }
                     orderSend(cart);
