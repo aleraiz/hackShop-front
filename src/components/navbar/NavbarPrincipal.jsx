@@ -13,6 +13,8 @@ import { emptyCart } from "../../redux/slices/cartSlice";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
 import "./css/style.css";
 
@@ -27,6 +29,17 @@ export const NavbarPrincipal = () => {
   const [showCanvasNavbar, setShowCanvasNavbar] = useState(false);
   const [target, setTarget] = useState(null);
   const [userError, setUserError] = useState("");
+  const MySwal = withReactContent(Swal);
+
+  function handlerMsgErr() {
+    MySwal.fire({
+      title: "Warning!",
+      text: "This functionality escapes from the scope of the project.",
+      icon: "warning",
+      confirmButtonText: "Cancel",
+      confirmButtonColor: "#f8bb86",
+    });
+  }
 
   const handleClick = (event) => {
     setShow(!show);
@@ -168,8 +181,13 @@ export const NavbarPrincipal = () => {
                             <li>
                               <Link to="/aboutus">About Us</Link>
                             </li>
-                            <li>
-                              <Link to="contact.html">Contact Us</Link>
+                            <li
+                              className="contactUs"
+                              onClick={() => {
+                                handlerMsgErr();
+                              }}
+                            >
+                              Contact Us
                             </li>
                             <li>
                               <Link to="contact.html">{user && <p>{user.firstname}</p>}</Link>
@@ -237,10 +255,14 @@ export const NavbarPrincipal = () => {
                                 </Overlay>
                               </div>
                             </li>
-                            <li className="">
-                              <Link to="wishlist.html" style={{ color: "#212529" }}>
-                                <i className="pe-7s-like"></i>
-                              </Link>
+                            <li
+                              className="whishlist"
+                              onClick={() => {
+                                handlerMsgErr();
+                              }}
+                              style={{ color: "#212529" }}
+                            >
+                              <i className="pe-7s-like"></i>
                             </li>
                             <li className="minicart-wrap me-3 me-lg-0">
                               <button

@@ -8,16 +8,19 @@ import { useDispatch } from "react-redux";
 import { addProductCart } from "../../redux/slices/cartSlice";
 import { useSelector } from "react-redux";
 import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import "./style.css";
 
 export const ProductDetail = () => {
-  const dispatch = useDispatch();
+  const MySwal = withReactContent(Swal);
   const [productDetail, setProductDetail] = useState([]);
-  const { id } = useParams();
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [isReadMore, setIsReadMore] = useState(true);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
   const cart = useSelector((state) => state.cart.cart);
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
   useEffect(() => {
     const productDetail = async () => {
@@ -51,6 +54,16 @@ export const ProductDetail = () => {
 
   function toggleReadMore() {
     setIsReadMore(!isReadMore);
+  }
+
+  function handlerMsgErr() {
+    MySwal.fire({
+      title: "Warning!",
+      text: "This functionality escapes from the scope of the project.",
+      icon: "warning",
+      confirmButtonText: "Cancel",
+      confirmButtonColor: "#f8bb86",
+    });
   }
 
   const responsive = {
@@ -282,16 +295,26 @@ export const ProductDetail = () => {
                     <div className="product-category">
                       <span className="title">SKU:</span>
                       <ul>
-                        <li>
-                          <Link to="#">Ch-256xl</Link>
+                        <li
+                          onClick={() => {
+                            handlerMsgErr();
+                          }}
+                          style={{ cursor: "pointer", color: "#9f9e9e" }}
+                        >
+                          Ch-256xl
                         </li>
                       </ul>
                     </div>
                     <div className="product-category product-tags">
                       <span className="title">Tags :</span>
                       <ul>
-                        <li>
-                          <Link to="#">Furniture</Link>
+                        <li
+                          onClick={() => {
+                            handlerMsgErr();
+                          }}
+                          style={{ cursor: "pointer", color: "#9f9e9e" }}
+                        >
+                          Furniture
                         </li>
                       </ul>
                     </div>
@@ -299,56 +322,68 @@ export const ProductDetail = () => {
                       <span className="title pe-3">Share:</span>
                       <ul>
                         <li>
-                          <Link
-                            to="#"
+                          <button
                             data-tippy="Pinterest"
                             data-tippy-inertia="true"
                             data-tippy-animation="shift-away"
                             data-tippy-delay="50"
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
+                            onClick={() => {
+                              handlerMsgErr();
+                            }}
+                            className="shareSocialMedia"
                           >
                             <i className="fa fa-pinterest-p"></i>
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="#"
+                          <button
                             data-tippy="Twitter"
                             data-tippy-inertia="true"
                             data-tippy-animation="shift-away"
                             data-tippy-delay="50"
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
+                            className="shareSocialMedia"
+                            onClick={() => {
+                              handlerMsgErr();
+                            }}
                           >
                             <i className="fa fa-twitter"></i>
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="#"
+                          <button
                             data-tippy="Tumblr"
                             data-tippy-inertia="true"
                             data-tippy-animation="shift-away"
                             data-tippy-delay="50"
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
+                            className="shareSocialMedia"
+                            onClick={() => {
+                              handlerMsgErr();
+                            }}
                           >
                             <i className="fa fa-tumblr"></i>
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="#"
+                          <button
                             data-tippy="Dribbble"
                             data-tippy-inertia="true"
                             data-tippy-animation="shift-away"
                             data-tippy-delay="50"
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
+                            className="shareSocialMedia"
+                            onClick={() => {
+                              handlerMsgErr();
+                            }}
                           >
                             <i className="fa fa-dribbble"></i>
-                          </Link>
+                          </button>
                         </li>
                       </ul>
                     </div>

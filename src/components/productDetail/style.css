@@ -35,3 +35,10 @@
   color: #0d6efd;
   cursor: pointer;
 }
+
+.shareSocialMedia {
+  cursor: pointer;
+  color: #9f9e9e;
+  background-color: #fff;
+  border: none;
+}

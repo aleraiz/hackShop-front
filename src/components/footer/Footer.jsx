@@ -9,9 +9,9 @@ export const Footer = () => {
           <div className="row">
             <div className="col-lg-3">
               <div className="footer-widget-item">
-                <div className="footer-widget-logo">
+                <div className="footer-widget-logo logoDiv">
                   <Link to="index.html">
-                    <img src="../../dark.png" alt="Logo" />
+                    <img src="./hackshopEDITADA.png" alt="Logo" id="imgLogoPage" />
                   </Link>
                 </div>
                 <p className="footer-widget-desc">

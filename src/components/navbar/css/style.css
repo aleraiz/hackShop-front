@@ -661,3 +661,18 @@
 .iconCartEmpty {
   text-align-last: center;
 }
+.contactUs {
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  color: #4c4c4c;
+}
+
+.whishlist {
+  font-size: 24px;
+  display: flex;
+}
