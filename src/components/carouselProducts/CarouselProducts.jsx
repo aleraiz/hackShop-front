@@ -1,4 +1,5 @@
 import Carousel from "react-multi-carousel";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -6,7 +7,6 @@ import { addProductCart } from "../../redux/slices/cartSlice";
 import "react-multi-carousel/lib/styles.css";
 import "../newProducts/style.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 export const CarouselProducts = (setRefresSlug) => {
   const [productsCarousel, setProductsCarousel] = useState([]);
@@ -34,11 +34,15 @@ export const CarouselProducts = (setRefresSlug) => {
 
   useEffect(() => {
     const listProducts = async () => {
+      const quantityDisplayed = 8;
       const response = await axios({
         method: "get",
         url: `${process.env.REACT_APP_DB_HOST}/products`,
       });
-      setProductsCarousel(response.data.slice(0, 8));
+      if (response.data <= quantityDisplayed) {
+        setProductsCarousel(response.data);
+      }
+      setProductsCarousel(response.data.slice(0, quantityDisplayed));
     };
     listProducts();
   }, []);

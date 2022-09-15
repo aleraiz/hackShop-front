@@ -107,7 +107,9 @@ export const NavbarPrincipal = () => {
                               Contact Us
                             </li>
                             <li>
-                              <Link to="contact.html">{user && <>{user.firstname}</>}</Link>
+                              <Link to="contact.html">
+                                {user && <p className="userNav">{user.firstname}</p>}
+                              </Link>
                             </li>
                           </ul>
                         </Nav>
