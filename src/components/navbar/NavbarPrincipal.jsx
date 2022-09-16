@@ -1,20 +1,20 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import { Link } from "react-router-dom";
 import { SearchModal } from "./SearchModal";
 import { useState, useRef } from "react";
 import { CartOffCanvas } from "./CartOffcanvas";
 import { logoutUser } from "../../redux/slices/userSlice";
 import { emptyCart } from "../../redux/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
-import { useDispatch, useSelector } from "react-redux";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
 import "./css/style.css";
 
@@ -56,7 +56,6 @@ export const NavbarPrincipal = () => {
       dispatch(logoutUser());
       dispatch(emptyCart());
     } catch (error) {
-      console.log(error);
       setUserError(error.response.data.error);
     }
   }
@@ -107,7 +106,7 @@ export const NavbarPrincipal = () => {
                               Contact Us
                             </li>
                             <li>
-                              <Link to="contact.html">
+                              <Link to="/account">
                                 {user && <p className="userNav">{user.firstname}</p>}
                               </Link>
                             </li>
@@ -166,7 +165,7 @@ export const NavbarPrincipal = () => {
                                           to="/login"
                                           onClick={() => handlerLogout()}
                                         >
-                                          LogOut
+                                          Logout
                                         </Link>
                                       </>
                                     )}

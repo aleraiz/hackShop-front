@@ -1,107 +1,430 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaReact } from "react-icons/fa";
+import { SiRedux } from "react-icons/si";
+import { TbBrandJavascript } from "react-icons/tb";
+import { FaTrello } from "react-icons/fa";
+import { FaNode } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { SiMysql } from "react-icons/si";
+import { SiCss3 } from "react-icons/si";
+import { FaHtml5 } from "react-icons/fa";
+import { SiBootstrap } from "react-icons/si";
+import { SiSequelize } from "react-icons/si";
+import { FaFigma } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import Carousel from "react-multi-carousel";
+
+import "./styles.css";
 
 export const AboutUs = () => {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 2,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
+
   return (
     <>
-      <div class="about-area section-space-top-95">
+      <div class="about-area aboutContainer">
+        <div className="containerImageAboutUs"></div>
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
               <div class="about-content">
-                <h2 class="about-title">
-                  Our <span>Story</span>
-                </h2>
-                <p class="about-desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-                </p>
-                <div class="about-signature">
-                  <img src="assets/images/about/icon/2.png" alt="Signature" />
+                <div>
+                  <h2 class="about-title">
+                    Sobre el <span>Proyecto</span>
+                  </h2>
+                  <p class="about-desc aboutUsDescription">
+                    HackShop es una aplicación web realizada como proyecto final del Coding Bootcamp
+                    en Hack Academy, una institución educativa fundada en 2016 en Montevideo,
+                    Uruguay, especializada en cursos intensivos de programación. El bootcamp es un
+                    curso de tiempo completo que prepara a jóvenes profesionales como{" "}
+                    <span> Full Stack Jr. Devs</span>. El objetivo del proyecto final es poner en
+                    práctica los conocimientos adquiridos durante el curso utilizando diversas
+                    tecnologías; el proyecto fue desarrollado en <span>dos semanas</span> por el
+                    equipo.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="shipping-area section-space-y-axis-100">
+      <div class="about-area">
         <div class="container">
-          <div class="shipping-bg">
-            <div class="row shipping-wrap">
-              <div class="col-lg-4 col-md-6">
-                <div class="shipping-item">
-                  <div class="shipping-img">
-                    <img src="assets/images/shipping/icon/car.png" alt="Shipping Icon" />
-                  </div>
-                  <div class="shipping-content">
-                    <h2 class="title">Free Shipping</h2>
-                    <p class="short-desc mb-0">Capped at $319 per order</p>
-                  </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div className="divContainerHackshop">
+                <div>
+                  <h2 class="about-title hackshopTitle">
+                    ¿Cómo nació <span>Hackshop?</span>
+                  </h2>
                 </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-                <div class="shipping-item">
-                  <div class="shipping-img">
-                    <img src="assets/images/shipping/icon/card.png" alt="Shipping Icon" />
-                  </div>
-                  <div class="shipping-content">
-                    <h2 class="title">Safe Payment</h2>
-                    <p class="short-desc mb-0">With our payment gateway</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-                <div class="shipping-item">
-                  <div class="shipping-img">
-                    <img src="assets/images/shipping/icon/service.png" alt="Shipping Icon" />
-                  </div>
-                  <div class="shipping-content">
-                    <h2 class="title">Best Services</h2>
-                    <p class="short-desc mb-0">Friendly & Supper Services</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="banner-with-counter">
-        <div class="banner-area">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="banner-boxshadow">
-                  <div class="banner-item" data-bg-image="assets/images/banner/3-1-1208x542.jpg">
-                    <div class="popup-btn">
-                      <a
-                        class="popup-vimeo wave-btn"
-                        href="https://player.vimeo.com/video/172601404?autoplay=1"
-                      >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <div class="icon">
-                          <i class="pe-7s-play"></i>
-                        </div>
-                      </a>
+                <div className="divPlanningHackshopPoint">
+                  <div>
+                    <img src="./HackShopRoutesFrontEdit.png" alt="MERHS" className="imgDiagrama" />
+                  </div>
+                  <div className="titlesAndDescriptionStep">
+                    <div>
+                      <h3>1 - Concepción del proyecto y MER</h3>
+                      <p class="about-desc aboutUsDescription paragraphText">
+                        Nuestro primer paso fue definir que necesitamos en el <span>Backend </span>
+                        antes de seguir avanzando, por esto hicimos un listado de las cinco
+                        principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
+                        entidad cuidadosamente pensado. Aquí definimos las principales relaciones
+                        entre las siguientes entidades:{" "}
+                        <span> Client, Administrator, Category, Product y Order.</span>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <div className="divPlanningHackshopRoutes">
+                <div className="titlesAndDescriptionStepTwo">
+                  <div>
+                    <h3>2 - Diseño e Inspiración</h3>
+                    <p class="about-desc aboutUsDescription paragraphText">
+                      Nos inspiramos en diversas páginas de plantas, con personalidades bastante{" "}
+                      <span>funny</span>. Llenamos nuestra base de datos con imágenes,
+                      descripciones, nombres y precios de TusPlantasOnline, otro sitio web con
+                      excelente diseño
+                    </p>
+                    <h3>3- Pasos a seguir</h3>
+                    <p class="about-desc aboutUsDescription paragraphText">
+                      Posterior a tener creada nuestra Base de Datos, definimos las rutas básicas y
+                      necesarias para poder utilizar nuestra aplicación tanto a nivel de{" "}
+                      <span> Backend </span>
+                      como <span> Frontend</span>; teniendo especial consideración en colocar que
+                      tipo de método tenía cada ruta.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="divContainerImg">
+                  <img src="./HackshopMER.png" alt="MERHS" className="imgDiagrama" />
+                </div>
+              </div>
+              <div>
+                <div className="divPlanningHackshopRoutesBottom">
+                  <div className="divContainerImg">
+                    <img src="./HackShopRoutes.png" alt="MERHS" className="imgDiagrama" />
+                  </div>
+                  <div>
+                    <h3>4- Metodología de trabajo</h3>
+                    <p class="about-desc aboutUsDescription paragraphText">
+                      Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span> con
+                      tres sprints. Cada sprint tenía tareas que se organizaban y desarrollaban
+                      individualmente o en grupos, usando <span> Trello</span> para determinar el
+                      curso y la finalización de cada una, teniendo siempre tareas pendientes para
+                      que cada intregrante pudiese tomar nuevas en caso de terminar con las
+                      asignadas.Todo el proyecto se realizó en línea usando Discord.
+                    </p>
+                    <h3> 5 - Marcos y Tecnologías</h3>
+                    <p class="about-desc aboutUsDescription paragraphText">
+                      Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos con
+                      <span> MySql y Sequelize</span> como persistencia de datos, además de
+                      <span> Cloudinary</span> para importar imágenes.
+                      <span> NodeJs/Express, React, Redux</span>
+                      como nuestros marcos de aplicación.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="section-title-wrap without-tab">
+        <h2 class="section-title " id="technologyTitle">
+          ¡TECNOLOGíAS <span>UTILIZADAS!</span>
+        </h2>
+      </div>
+      <div class="about-area imageBackgroundSuculenta">
+        <div className="containerImageSuculenta">
+          <div className="containerTechnology">
+            <Carousel
+              responsive={responsive}
+              infinite={true}
+              className="containerSvg"
+              draggable={false}
+            >
+              <div className="containerSvgName">
+                <FaReact className="reactSvg" />
+                <p>React</p>
+              </div>
+              <div className="containerSvgName">
+                <SiRedux className="reduxSvg" />
+                <p>Redux</p>
+              </div>
+              <div className="containerSvgName">
+                <TbBrandJavascript className="javascriptSvg" />
+                <p>Javacript</p>
+              </div>
+              <div className="containerSvgName">
+                <FaTrello className="trelloSvg" />
+                <p>Trello</p>
+              </div>
+              <div>
+                <FaNode className="nodeJsSvg" />
+                <p>Node Js</p>
+              </div>
+              <div className="containerSvgName">
+                <SiBootstrap className="bootstrapSvg" />
+                <p>Bootstrap</p>
+              </div>
+              <div className="containerSvgName">
+                <SiMysql className="mysqlSvg" />
+                <p>MySql</p>
+              </div>
+              <div>
+                <SiCss3 className="cssSvg" />
+                <p>Css</p>
+              </div>
+              <div>
+                <FaGithub className="githubSvg" />
+                <p>GitHub</p>
+              </div>
+              <div>
+                <SiSequelize className="sequelizeSvg" />
+                <p>Sequelize</p>
+              </div>
+              <div>
+                <FaFigma className="figmaSvg" />
+                <p>Figma</p>
+              </div>
+              <div>
+                <FaHtml5 className="htmlSvg" />
+                <p>Html</p>
+              </div>
+            </Carousel>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-area  teamContainer">
+        <div class="container">
+          <div class="section-title-wrap without-tab">
+            <h2 class="section-title">¡Nuestro Team!</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-6 pt-sm-5">
+              <div class="team-item">
+                <div class="team-img">
+                  <img
+                    src="./AleCircle.png"
+                    alt="Team Member"
+                    className="teamImageProfile primary-img"
+                  />
+                  <img
+                    src="./fotoAle-modified.png"
+                    alt="Team Member"
+                    className="teamImageProfile secondary-img"
+                  />
+                  <div class="inner-content">
+                    <h2 class="team-member-name">Alejandro Raíz</h2>
+                    <div class="social-link with-border">
+                      <ul>
+                        <li>
+                          <Link
+                            to="https://github.com/aleraiz"
+                            data-tippy="github"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <FaGithub />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="https://www.linkedin.com/in/alejandro-raiz/"
+                            data-tippy="linkedin"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <FaLinkedinIn />
+                          </Link>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            data-tippy="Pinterest"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <i class="fa fa-pinterest"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-content">
+                  <h2 class="team-member-name mb-0">Alejandro Raíz</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
+              <div class="team-item">
+                <div class="team-img">
+                  <img
+                    src="./Marco.png"
+                    alt="Team Member"
+                    className="teamImageProfile primary-img"
+                  />
+                  <img
+                    src="./MarcoPlaya-modified.png"
+                    alt="Team Member"
+                    className="teamImageProfile secondary-img"
+                  />
+                  <div class="inner-content">
+                    <h2 class="team-member-name">Marco De Luca</h2>
+                    <div class="social-link with-border">
+                      <ul>
+                        <li>
+                          <Link
+                            to="https://github.com/antondelu"
+                            data-tippy="github"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <FaGithub />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="https://www.linkedin.com/in/marcodeluca-dw/"
+                            data-tippy="Linkedin"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <FaLinkedinIn />
+                          </Link>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            data-tippy="Pinterest"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <i class="fa fa-pinterest"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-content">
+                  <h2 class="team-member-name mb-0">Marco de Luca</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 pt-5">
+              <div class="team-item">
+                <div class="team-img">
+                  <img
+                    src="./imageCircleRomina.png"
+                    alt="Team Member"
+                    className="teamImageProfile primary-img"
+                  />
+                  <img
+                    src="./paracaidismo.png"
+                    alt="Team Member"
+                    className="teamImageProfile secondary-img"
+                  />
+                  <div class="inner-content">
+                    <h2 class="team-member-name">Romina Dos Santos</h2>
+                    <div class="social-link with-border">
+                      <ul>
+                        <li>
+                          <Link
+                            to="https://github.com/RominaDosSantos"
+                            data-tippy="github"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <FaGithub />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="https://www.linkedin.com/in/romina-dos-santos/"
+                            data-tippy="Linkedin"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <FaLinkedinIn />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/"
+                            data-tippy="Pinterest"
+                            data-tippy-inertia="true"
+                            data-tippy-animation="shift-away"
+                            data-tippy-delay="50"
+                            data-tippy-arrow="true"
+                            data-tippy-theme="sharpborder"
+                          >
+                            <i class="fa fa-pinterest"></i>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-content">
+                  <h2 class="team-member-name mb-0">Romina Dos Santos</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner-with-counter" id="counterBootcamp">
         <div class="counter-area">
           <div class="container">
-            {/* <h2 class="counter-title">
-              Lorem ipsum dolor sit amet, consectetur adipisicing <br /> elit, sed do
-              <span>eiusmod tempor</span> incididunt.
-            </h2> */}
             <h2 class="counter-title">
               En este bootcamp de dedicacion full-time <span>hemos echo</span>:
             </h2>
@@ -112,9 +435,8 @@ export const AboutUs = () => {
                     <h3 class="count mb-0" data-counterup-time="500">
                       3
                     </h3>
-                    {/* <span class="prefix">+</span> */}
                   </div>
-                  <h4 class="count-title mb-0">Months</h4>
+                  <h4 class="count-title mb-0">Meses</h4>
                 </div>
               </div>
               <div class="col-lg-3 col-md-4 col-6">
@@ -125,7 +447,7 @@ export const AboutUs = () => {
                     </h3>
                     <span class="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Hours</h4>
+                  <h4 class="count-title mb-0">Horas</h4>
                 </div>
               </div>
               <div class="col-lg-3 col-md-4 col-6 pt-4 pt-md-0">
@@ -136,7 +458,7 @@ export const AboutUs = () => {
                     </h3>
                     <span class="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Language</h4>
+                  <h4 class="count-title mb-0">Lenguajes</h4>
                 </div>
               </div>
               <div class="col-lg-3 col-md-4 col-6 pt-4 pt-lg-0">
@@ -147,249 +469,7 @@ export const AboutUs = () => {
                     </h3>
                     <span class="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Projects</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-area section-space-top-100">
-        <div class="container">
-          <div class="section-title-wrap without-tab">
-            <h2 class="section-title">Our Team</h2>
-            <p class="section-desc">
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-              piece of classical Latin literature
-            </p>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-sm-6 pt-sm-5">
-              <div class="team-item">
-                <div class="team-img">
-                  <img src="assets/images/about/team/1-1-270x270.png" alt="Team Member" />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Micheal Murphy</h2>
-                    <span class="occupation">Sales man</span>
-                    <div class="social-link with-border">
-                      <ul>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Facebook"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Twitter"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Micheal Murphy</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
-              <div class="team-item">
-                <div class="team-img">
-                  <img src="assets/images/about/team/1-2-270x270.png" alt="Team Member" />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Kari Rasmus</h2>
-                    <span class="occupation">Sales man</span>
-                    <div class="social-link with-border">
-                      <ul>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Facebook"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Twitter"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Kari Rasmus</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 pt-5">
-              <div class="team-item">
-                <div class="team-img">
-                  <img src="assets/images/about/team/1-3-270x270.png" alt="Team Member" />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Britney Cooper</h2>
-                    <span class="occupation">Sales man</span>
-                    <div class="social-link with-border">
-                      <ul>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Facebook"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Twitter"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Britney Cooper</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
-              <div class="team-item">
-                <div class="team-img">
-                  <img src="../assets/images/about/team/1-1-270x270.png" alt="Team Member" />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Marissa Swan</h2>
-                    <span class="occupation">Sales man</span>
-                    <div class="social-link with-border">
-                      <ul>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Facebook"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Twitter"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Marissa Swan</h2>
+                  <h4 class="count-title mb-0">Proyectos</h4>
                 </div>
               </div>
             </div>
