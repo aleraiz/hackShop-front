@@ -56,7 +56,6 @@ export const NavbarPrincipal = () => {
       dispatch(logoutUser());
       dispatch(emptyCart());
     } catch (error) {
-      console.log(error);
       setUserError(error.response.data.error);
     }
   }
@@ -166,7 +165,7 @@ export const NavbarPrincipal = () => {
                                           to="/login"
                                           onClick={() => handlerLogout()}
                                         >
-                                          LogOut
+                                          Logout
                                         </Link>
                                       </>
                                     )}

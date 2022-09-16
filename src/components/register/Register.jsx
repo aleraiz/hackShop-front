@@ -30,8 +30,6 @@ export const Register = () => {
           phoneNumber,
         },
       });
-      console.log(firstname);
-      console.log(response.data.client);
       dispatch(
         registerUser({
           id: response.data.client.id,

@@ -2,7 +2,7 @@ import { Link, useNavigate, Navigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/slices/userSlice";
 
 import "./style.css";
@@ -13,6 +13,7 @@ export const Login = () => {
   const [userError, setUserError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.user.user);
 
   async function loginClient() {
     try {

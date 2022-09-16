@@ -1,11 +1,14 @@
 .about-title {
   line-height: 57px;
   color: #000000;
+  display: flex;
+  justify-content: center;
 }
 
 .about-title span {
   color: #abd373;
   position: relative;
+  margin-left: 5px;
 }
 
 .containerImageAboutUs {
@@ -180,7 +183,7 @@
 
 .hackshopTitle {
   text-align-last: center;
-  margin: 30px 0 70px 0;
+  margin-bottom: 50px;
 }
 
 .divPlanningHackshop {
@@ -205,13 +208,14 @@
 }
 
 .divContainerHackshop {
-  margin-bottom: 70px;
+  margin: 50px 0 50px 0;
 }
 
 .containerImageSuculenta {
   width: 100%;
   height: 500px;
   position: absolute;
+  align-items: center;
   display: flex;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     url("../../../public/suculentaAboutUsReverse.jpg");
@@ -221,17 +225,15 @@
 }
 
 .imageBackgroundSuculenta {
-  height: 300px;
+  height: 500px;
 }
 
 .containerSvg {
-  display: flex;
-  justify-content: center;
   text-align: center;
 }
 
 .containerSvg svg {
-  font-size: 70px;
+  font-size: 100px;
   margin: 0 120px 0 120px;
 }
 
@@ -248,7 +250,7 @@
 }
 
 .nodeJsSvg {
-  color: #68a063;
+  color: #000000;
 }
 
 .reduxSvg {
@@ -311,7 +313,7 @@
 }
 
 .teamContainer {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 #counterBootcamp {
@@ -341,8 +343,8 @@
 }
 
 .divPlanningHackshopPoint2 div {
-  width: auto;
-  height: 400px;
+  width: 100%;
+  /* height: 400px; */
 }
 
 .divPlanningHackshopPoint2 p {
@@ -353,14 +355,53 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 
 .divPlanningHackshopRoutesBottom div {
-  width: 500px;
-  height: 550px;
+  width: 100%;
 }
 
 .divPlanningHackshopRoutesBottom p {
   max-width: 90ch;
+}
+
+.divContainerHackshop h3 {
+  font-size: 24px;
+}
+
+.divPlanningHackshopPoint2 .paragraphText {
+  font-size: 1rem;
+}
+
+.divPlanningHackshopRoutesBottom .paragraphText {
+  font-size: 1rem;
+}
+
+.divPlanningHackshopRoutes h3 {
+  font-size: 24px;
+}
+
+.divPlanningHackshopRoutes .paragraphText {
+  font-size: 1rem;
+}
+
+.divPlanningHackshopRoutesBottom h3 {
+  font-size: 24px;
+}
+
+.aboutContainer {
+  height: 400px;
+}
+
+.bornHackshop {
+  margin-top: 50px;
+}
+
+.section-title span {
+  color: #abd373;
+}
+
+#technologyTitle {
+  margin-bottom: 50px;
 }

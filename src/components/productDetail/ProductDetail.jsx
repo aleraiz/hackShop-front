@@ -30,7 +30,6 @@ export const ProductDetail = () => {
         url: `${process.env.REACT_APP_DB_HOST}/product/${slug}`,
       });
       setProductDetail(response.data);
-      console.log(response.data);
     };
     productDetail();
   }, [refreshSlug]);

@@ -104,10 +104,16 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
             </span>
           </div>
           <div className="group-btn_wrap d-grid gap-2">
-            <Link to="/cart" className="btn btn-dark">
+            <Link
+              to="/cart"
+              className="btn btn-dark"
+              onClick={() => {
+                handleClose();
+              }}
+            >
               View Cart
             </Link>
-            <Link to="/checkout" className="btn btn-dark">
+            <Link to="/checkout" className="btn btn-dark" onClick={() => handleClose()}>
               Checkout
             </Link>
           </div>

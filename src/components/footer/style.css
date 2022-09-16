@@ -150,3 +150,7 @@
 .copyright-text {
   text-transform: capitalize;
 }
+
+.socialBtns {
+  padding: 0;
+}

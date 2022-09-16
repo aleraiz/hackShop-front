@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./style.css";
 
 export const Footer = () => {
+  const user = useSelector((state) => state.user.user);
+
   return (
     <div className="footer-area">
       <div className="footer-top section-space-top-100 pb-60">
@@ -15,12 +18,10 @@ export const Footer = () => {
                   </Link>
                 </div>
                 <p className="footer-widget-desc">
-                  Lorem ipsum dolor sit amet, consec adipisl elit, sed do eiusmod tempor
-                  <br />
-                  incidio ut labore et dolore magna.
+                  To keep up to date with our news, follow us on all our social networks
                 </p>
                 <div className="social-link with-border">
-                  <ul>
+                  <ul className="socialBtns">
                     <li>
                       <Link
                         to="#"
@@ -82,7 +83,7 @@ export const Footer = () => {
                 <h3 className="footer-widget-title">Useful Links</h3>
                 <ul className="footer-widget-list-item">
                   <li>
-                    <Link to="#">About Pronia</Link>
+                    <Link to="/aboutus">About Hackshop</Link>
                   </li>
                   <li>
                     <Link to="#">How to shop</Link>
@@ -103,9 +104,11 @@ export const Footer = () => {
               <div className="footer-widget-item">
                 <h3 className="footer-widget-title">My Account</h3>
                 <ul className="footer-widget-list-item">
-                  <li>
-                    <Link to="#">Sign In</Link>
-                  </li>
+                  {!user && (
+                    <li>
+                      <Link to="/login">Sign In</Link>
+                    </li>
+                  )}
                   <li>
                     <Link to="#">View Cart</Link>
                   </li>
@@ -145,20 +148,10 @@ export const Footer = () => {
             </div>
             <div className="col-lg-3 pt-40">
               <div className="footer-contact-info">
-                <h3 className="footer-widget-title">Got Question? Call Us</h3>
-                <Link className="number" to="tel://123-456-789">
-                  123 456 789
-                </Link>
-                <div className="address">
-                  <ul>
-                    <li>Your Address Goes Here</li>
-                  </ul>
-                </div>
+                <h3 className="footer-widget-title">Payments Methods</h3>
               </div>
               <div className="payment-method">
-                <Link to="#">
-                  <img src="../../../image/formas-de-pago-footer.jpg" alt="Payment Method" />
-                </Link>
+                <img src="../../../image/formas-de-pago-footer.jpg" alt="Payment Method" />
               </div>
             </div>
           </div>
@@ -169,12 +162,7 @@ export const Footer = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="copyright">
-                <span className="copyright-text">
-                  © 2022 Hack academy {/* <i className="fa fa-heart text-danger"></i> by */}
-                  <Link to="https://hasthemes.com/" rel="noopener" target="_blank">
-                    -Equipo 5
-                  </Link>{" "}
-                </span>
+                <span className="copyright-text">© 2022 Hack academy -Equipo 5</span>
               </div>
             </div>
           </div>

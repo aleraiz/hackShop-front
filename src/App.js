@@ -24,6 +24,7 @@ import { AboutUs } from "./components/aboutUs/AboutUs";
 import { MyAccount } from "./components/navbar/MyAccount";
 import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
+import LoginExist from "./components/loginExist/LoginExist";
 
 function App() {
   return (
@@ -33,7 +34,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route element={<LoginExist />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
         <Route path="/products" element={<Products />} />
         <Route path="/product/:slug" element={<ProductDetail />} />
         <Route path="/checkout" element={<CheckoutPage />} />

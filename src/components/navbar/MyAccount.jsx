@@ -23,7 +23,6 @@ export const MyAccount = () => {
       dispatch(emptyCart());
       navigate("/");
     } catch (error) {
-      console.log(error);
       setUserError(error.response.data.error);
     }
   }

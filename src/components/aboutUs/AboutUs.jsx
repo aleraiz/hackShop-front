@@ -13,13 +13,32 @@ import { SiBootstrap } from "react-icons/si";
 import { SiSequelize } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import Carousel from "react-multi-carousel";
 
 import "./styles.css";
 
 export const AboutUs = () => {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 2,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
+
   return (
     <>
-      <div class="about-area">
+      <div class="about-area aboutContainer">
         <div className="containerImageAboutUs"></div>
         <div class="container">
           <div class="row">
@@ -45,7 +64,7 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div class="about-area section-space-top-95">
+      <div class="about-area">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -61,13 +80,14 @@ export const AboutUs = () => {
                   </div>
                   <div>
                     <div>
-                      <h3>1 - Concepción del proyecto y ERD</h3>
-                      <p class="about-desc aboutUsDescription">
-                        Comenzamos en principio definiendo crear todo el Backend antes de entrar al
-                        Frontend, con un listado de las cinco principales tareas. Luego, procedimos
-                        a hacer un diagrama de relaciones de entidad cuidadosamente pensado. Aquí
-                        definimos las principales relaciones entre las siguientes entidades: Client,
-                        Administrator, Category, Product y Order.
+                      <h3>1 - Concepción del proyecto y MER</h3>
+                      <p class="about-desc aboutUsDescription paragraphText">
+                        Nuestro primer paso fue definir que necesitamos en el <span>Backend </span>
+                        antes de seguir avanzando, por esto hicimos un listado de las cinco
+                        principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
+                        entidad cuidadosamente pensado. Aquí definimos las principales relaciones
+                        entre las siguientes entidades:{" "}
+                        <span> Client, Administrator, Category, Product y Order.</span>
                       </p>
                     </div>
                   </div>
@@ -78,21 +98,23 @@ export const AboutUs = () => {
                 <div className="divPlanningHackshopRoutes">
                   <div>
                     <h3>2 - Diseño e Inspiración</h3>
-                    <p class="about-desc aboutUsDescription">
-                      Utilizamos el template de Pronia, un sitio web de plantas con una personalidad
-                      bastante funny. Llenamos nuestra base de datos con imágenes, descripciones,
-                      nombres y precios de TusPlantasOnline, otro sitio web con excelente diseño
+                    <p class="about-desc aboutUsDescription paragraphText">
+                      Nos inspiramos en diversas páginas de plantas, con personalidades bastante{" "}
+                      <span>funny</span>. Llenamos nuestra base de datos con imágenes,
+                      descripciones, nombres y precios de TusPlantasOnline, otro sitio web con
+                      excelente diseño
                     </p>
                     <h3>3- Pasos a seguir</h3>
-                    <p class="about-desc aboutUsDescription">
+                    <p class="about-desc aboutUsDescription paragraphText">
                       Posterior a tener creada nuestra Base de Datos, definimos las rutas básicas y
-                      necesarias para poder utilizar nuestra aplicación tanto a nivel de Backend
-                      como Frontend; teniendo especial consideración en colocar que tipo de método
-                      tenía cada ruta.
+                      necesarias para poder utilizar nuestra aplicación tanto a nivel de{" "}
+                      <span> Backend </span>
+                      como <span> Frontend</span>; teniendo especial consideración en colocar que
+                      tipo de método tenía cada ruta.
                     </p>
                   </div>
                   <div className="divContainerImg">
-                    <img src="./MERHackshop.png" alt="MERHS" className="imgDiagrama" />
+                    <img src="./HackshopMER.png" alt="MERHS" className="imgDiagrama" />
                   </div>
                 </div>
               </div>
@@ -103,21 +125,21 @@ export const AboutUs = () => {
                   </div>
                   <div>
                     <h3>4- Metodología de trabajo</h3>
-                    <p class="about-desc aboutUsDescription">
-                      Organizamos nuestro trabajo utilizando una Metodología Ágil con tres sprints.
-                      Cada sprint tenía tareas que se organizaban y desarrollaban individualmente o
-                      en grupos, usando Trello para determinar la finalización de las tareas,
-                      teniendo siempre tareas pendientes para que cada intregrante pudiese tomar
-                      nuevas en caso de terminar con las asignadas.Todo el proyecto, se realizó en
-                      línea usando Discord.
+                    <p class="about-desc aboutUsDescription paragraphText">
+                      Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span> con
+                      tres sprints. Cada sprint tenía tareas que se organizaban y desarrollaban
+                      individualmente o en grupos, usando <span> Trello</span> para determinar el
+                      curso y la finalización de cada una, teniendo siempre tareas pendientes para
+                      que cada intregrante pudiese tomar nuevas en caso de terminar con las
+                      asignadas.Todo el proyecto se realizó en línea usando Discord.
                     </p>
                     <h3> 5 - Marcos y Tecnologías</h3>
-                    <p class="about-desc aboutUsDescription">
-                      Nuestro proyecto utilizó una base de datos relacional, por ello trabahamos con
-                      MySql y Sequelize, además de cloudinary para importar imágenes. Express,
-                      React, Redux y Node como nuestros marcos de aplicación. En el desarrollo
-                      utilizamos tecnologías conocidas que rodean este stack, como React Bootstrap,
-                      Hooks, etc.
+                    <p class="about-desc aboutUsDescription paragraphText">
+                      Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos con
+                      <span> MySql y Sequelize</span> como persistencia de datos, además de
+                      <span> Cloudinary</span> para importar imágenes.
+                      <span> NodeJs/Express, React, Redux</span>
+                      como nuestros marcos de aplicación.
                     </p>
                   </div>
                 </div>
@@ -127,77 +149,73 @@ export const AboutUs = () => {
         </div>
       </div>
       <div class="section-title-wrap without-tab">
-        <h2 class="section-title">¡TECNOLOGíAS UTILIZADAS!</h2>
+        <h2 class="section-title " id="technologyTitle">
+          ¡TECNOLOGíAS <span>UTILIZADAS!</span>
+        </h2>
       </div>
       <div class="about-area imageBackgroundSuculenta">
         <div className="containerImageSuculenta">
-          {/* <div>
-            <h2>
-              Tecnologias <span>usadas:</span>
-            </h2>
-          </div> */}
           <div className="containerTechnology">
-            <ul className="containerSvg">
-              <li className="containerSvgName">
+            <Carousel
+              responsive={responsive}
+              infinite={true}
+              className="containerSvg"
+              draggable={false}
+            >
+              <div className="containerSvgName">
                 <FaReact className="reactSvg" />
                 <p>React</p>
-              </li>
-              <li className="containerSvgName">
+              </div>
+              <div className="containerSvgName">
                 <SiRedux className="reduxSvg" />
                 <p>Redux</p>
-              </li>
-              <li className="containerSvgName">
+              </div>
+              <div className="containerSvgName">
                 <TbBrandJavascript className="javascriptSvg" />
                 <p>Javacript</p>
-              </li>
-            </ul>
-            <ul className="containerSvg">
-              <li className="containerSvgName">
+              </div>
+              <div className="containerSvgName">
                 <FaTrello className="trelloSvg" />
                 <p>Trello</p>
-              </li>
-              <li>
+              </div>
+              <div>
                 <FaNode className="nodeJsSvg" />
                 <p>Node Js</p>
-              </li>
-              <li>
-                <FaGithub className="githubSvg" />
-                <p>GitHub</p>
-              </li>
-            </ul>
-            <ul className="containerSvg">
-              <li className="containerSvgName">
-                <SiMysql className="mysqlSvg" />
-                <p>MySql</p>
-              </li>
-              <li>
-                <SiCss3 className="cssSvg" />
-                <p>Css</p>
-              </li>
-              <li>
-                <FaHtml5 className="htmlSvg" />
-                <p>Html</p>
-              </li>
-            </ul>
-            <ul className="containerSvg">
-              <li className="containerSvgName">
+              </div>
+              <div className="containerSvgName">
                 <SiBootstrap className="bootstrapSvg" />
                 <p>Bootstrap</p>
-              </li>
-              <li>
+              </div>
+              <div className="containerSvgName">
+                <SiMysql className="mysqlSvg" />
+                <p>MySql</p>
+              </div>
+              <div>
+                <SiCss3 className="cssSvg" />
+                <p>Css</p>
+              </div>
+              <div>
+                <FaGithub className="githubSvg" />
+                <p>GitHub</p>
+              </div>
+              <div>
                 <SiSequelize className="sequelizeSvg" />
                 <p>Sequelize</p>
-              </li>
-              <li>
+              </div>
+              <div>
                 <FaFigma className="figmaSvg" />
                 <p>Figma</p>
-              </li>
-            </ul>
+              </div>
+              <div>
+                <FaHtml5 className="htmlSvg" />
+                <p>Html</p>
+              </div>
+            </Carousel>
           </div>
         </div>
       </div>
 
-      <div class="team-area section-space-top-100 teamContainer">
+      <div class="team-area  teamContainer">
         <div class="container">
           <div class="section-title-wrap without-tab">
             <h2 class="section-title">¡Nuestro Team!</h2>
@@ -402,7 +420,6 @@ export const AboutUs = () => {
                     <h3 class="count mb-0" data-counterup-time="500">
                       3
                     </h3>
-                    {/* <span class="prefix">+</span> */}
                   </div>
                   <h4 class="count-title mb-0">Meses</h4>
                 </div>
