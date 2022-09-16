@@ -33,39 +33,39 @@ export const BillingDetails = () => {
 
   function handlerMsgErr() {
     MySwal.fire({
-      title: "Warning!",
-      text: "This functionality escapes from the scope of the project.",
-      icon: "warning",
-      confirmButtonText: "Cancel",
-      confirmButtonColor: "#f8bb86",
+      title: "success!",
+      text: "Your purchase was successful",
+      icon: "success",
+      confirmButtonText: "OK",
+      confirmButtonColor: "#abd373",
     });
   }
 
-  async function registerClient() {
-    try {
-      const response = await axios({
-        method: "post",
-        url: `http://localhost:8000/register`,
-        data: {
-          firstname,
-          lastname,
-          email,
-          password,
-          address,
-          phoneNumber,
-        },
-      });
-      dispatch(
-        registerUser({
-          id: response.data.client.id,
-          token: response.data.token,
-          firstname: response.data.client.firstname,
-        }),
-      );
-    } catch (error) {
-      setUserError(error.response.data.error);
-    }
-  }
+  // async function registerClient() {
+  //   try {
+  //     const response = await axios({
+  //       method: "post",
+  //       url: `http://localhost:8000/register`,
+  //       data: {
+  //         firstname,
+  //         lastname,
+  //         email,
+  //         password,
+  //         address,
+  //         phoneNumber,
+  //       },
+  //     });
+  //     dispatch(
+  //       registerUser({
+  //         id: response.data.client.id,
+  //         token: response.data.token,
+  //         firstname: response.data.client.firstname,
+  //       }),
+  //     );
+  //   } catch (error) {
+  //     setUserError(error.response.data.error);
+  //   }
+  // }
 
   async function orderSend(cart) {
     try {
@@ -87,8 +87,8 @@ export const BillingDetails = () => {
   }
 
   return (
-    <div class="row">
-      <div class="col-lg-6 col-12">
+    <div class="row" style={{ justifyContent: "center" }}>
+      {/* <div class="col-lg-6 col-12">
         <form action="javascript:void(0)">
           <div class="checkbox-form">
             <h3>Billing Details</h3>
@@ -247,7 +247,7 @@ export const BillingDetails = () => {
             </div>
           </div>
         </form>
-      </div>
+      </div> */}
       <div class="col-lg-6 col-12">
         <div class="your-order">
           <h3>Your order</h3>
@@ -386,10 +386,10 @@ export const BillingDetails = () => {
                   id="placeOrderBtn"
                   type="submit"
                   onClick={() => {
-                    if (!user) {
-                      orderSend(cart);
-                      registerClient();
-                    }
+                    // if (!user) {
+                    //   orderSend(cart);
+                    //   registerClient();
+                    // }
                     orderSend(cart);
                   }}
                 >

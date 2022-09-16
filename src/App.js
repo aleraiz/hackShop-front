@@ -24,7 +24,6 @@ import { AboutUs } from "./components/aboutUs/AboutUs";
 import { MyAccount } from "./components/navbar/MyAccount";
 import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
-import { OrderComplete } from "./components/orderComplete/OrderComplete";
 
 function App() {
   return (
@@ -41,7 +40,6 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path="/account" element={<MyAccount />} />
           <Route path="/admin" element={<Admin />} />
-          {/* <Route path="/order" element={<OrderComplete />} /> */}
         </Route>
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
