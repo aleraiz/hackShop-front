@@ -79,16 +79,21 @@ export const AboutUs = () => {
                     <img src="./HackShopRoutesFrontEdit.png" alt="MERHS" className="imgDiagrama" />
                   </div>
                   <div>
-                    <div>
-                      <h3>1 - Concepción del proyecto y MER</h3>
-                      <p class="about-desc aboutUsDescription paragraphText">
-                        Nuestro primer paso fue definir que necesitamos en el <span>Backend </span>
-                        antes de seguir avanzando, por esto hicimos un listado de las cinco
-                        principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
-                        entidad cuidadosamente pensado. Aquí definimos las principales relaciones
-                        entre las siguientes entidades:{" "}
-                        <span> Client, Administrator, Category, Product y Order.</span>
-                      </p>
+                    <div className="">
+                      <div>
+                        <h3>1 - Concepción del proyecto y MER</h3>
+                      </div>
+                      <div>
+                        <p class="about-desc aboutUsDescription paragraphText">
+                          Nuestro primer paso fue definir que necesitamos en el{" "}
+                          <span>Backend </span>
+                          antes de seguir avanzando, por esto hicimos un listado de las cinco
+                          principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
+                          entidad cuidadosamente pensado. Aquí definimos las principales relaciones
+                          entre las siguientes entidades:{" "}
+                          <span> Client, Administrator, Category, Product y Order.</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -225,9 +230,14 @@ export const AboutUs = () => {
               <div class="team-item">
                 <div class="team-img">
                   <img
-                    src="assets/images/about/team/1-1-270x270.png"
+                    src="./AleCircle.png"
                     alt="Team Member"
-                    className="teamImageProfile"
+                    className="teamImageProfile primary-img"
+                  />
+                  <img
+                    src="./fotoAle-modified.png"
+                    alt="Team Member"
+                    className="teamImageProfile secondary-img"
                   />
                   <div class="inner-content">
                     <h2 class="team-member-name">Alejandro Raíz</h2>
@@ -284,7 +294,16 @@ export const AboutUs = () => {
             <div class="col-lg-4 col-sm-6 pt-5 pt-sm-0">
               <div class="team-item">
                 <div class="team-img">
-                  <img src="./Marco.png" alt="Team Member" className="teamImageProfile" />
+                  <img
+                    src="./Marco.png"
+                    alt="Team Member"
+                    className="teamImageProfile primary-img"
+                  />
+                  <img
+                    src="./MarcoPlaya-modified.png"
+                    alt="Team Member"
+                    className="teamImageProfile secondary-img"
+                  />
                   <div class="inner-content">
                     <h2 class="team-member-name">Marco De Luca</h2>
                     <div class="social-link with-border">
@@ -391,7 +410,6 @@ export const AboutUs = () => {
                             data-tippy-theme="sharpborder"
                           >
                             <i class="fa fa-pinterest"></i>
-                            {/* <FaLinkedin /> */}
                           </Link>
                         </li>
                       </ul>

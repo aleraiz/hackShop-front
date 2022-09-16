@@ -1,9 +1,25 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { CartOffCanvas } from "../navbar/CartOffcanvas";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
 import "./style.css";
 
 export const Footer = () => {
   const user = useSelector((state) => state.user.user);
+  const MySwal = withReactContent(Swal);
+  const [openOffcanvas, setOpenOffcanvas] = useState(false);
+
+  function handlerMsgErr() {
+    MySwal.fire({
+      title: "Warning!",
+      text: "This functionality escapes from the scope of the project.",
+      icon: "warning",
+      confirmButtonText: "Cancel",
+      confirmButtonColor: "#f8bb86",
+    });
+  }
 
   return (
     <div className="footer-area">
@@ -13,7 +29,7 @@ export const Footer = () => {
             <div className="col-lg-3">
               <div className="footer-widget-item">
                 <div className="footer-widget-logo logoDiv">
-                  <Link to="index.html">
+                  <Link to="/">
                     <img src="./hackshopEDITADA.png" alt="Logo" id="imgLogoPage" />
                   </Link>
                 </div>
@@ -31,6 +47,7 @@ export const Footer = () => {
                         data-tippy-delay="50"
                         data-tippy-arrow="true"
                         data-tippy-theme="sharpborder"
+                        onClick={() => handlerMsgErr()}
                       >
                         <i className="fa fa-facebook"></i>
                       </Link>
@@ -44,6 +61,7 @@ export const Footer = () => {
                         data-tippy-delay="50"
                         data-tippy-arrow="true"
                         data-tippy-theme="sharpborder"
+                        onClick={() => handlerMsgErr()}
                       >
                         <i className="fa fa-twitter"></i>
                       </Link>
@@ -57,6 +75,7 @@ export const Footer = () => {
                         data-tippy-delay="50"
                         data-tippy-arrow="true"
                         data-tippy-theme="sharpborder"
+                        onClick={() => handlerMsgErr()}
                       >
                         <i className="fa fa-pinterest"></i>
                       </Link>
@@ -70,6 +89,7 @@ export const Footer = () => {
                         data-tippy-delay="50"
                         data-tippy-arrow="true"
                         data-tippy-theme="sharpborder"
+                        onClick={() => handlerMsgErr()}
                       >
                         <i className="fa fa-dribbble"></i>
                       </Link>
@@ -86,17 +106,25 @@ export const Footer = () => {
                     <Link to="/aboutus">About Hackshop</Link>
                   </li>
                   <li>
-                    <Link to="#">How to shop</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      How to shop
+                    </Link>
                   </li>
                   <li>
-                    <Link to="#">FAQ</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      FAQ
+                    </Link>
                   </li>
                   <li>
-                    <Link to="#">Contact us</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      Contact us
+                    </Link>
                   </li>
-                  <li>
-                    <Link to="#">Log in</Link>
-                  </li>
+                  {!user && (
+                    <li>
+                      <Link to="/login">Log in</Link>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
@@ -106,20 +134,34 @@ export const Footer = () => {
                 <ul className="footer-widget-list-item">
                   {!user && (
                     <li>
-                      <Link to="/login">Sign In</Link>
+                      <Link to="/register">Sign In</Link>
                     </li>
                   )}
                   <li>
-                    <Link to="#">View Cart</Link>
+                    <Link
+                      to="#"
+                      onClick={() => {
+                        setOpenOffcanvas(true);
+                      }}
+                    >
+                      View Cart
+                    </Link>
+                    {openOffcanvas ? <CartOffCanvas setOpenOffcanvas={setOpenOffcanvas} /> : null}
                   </li>
                   <li>
-                    <Link to="#">My Wishlist</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      My Wishlist
+                    </Link>
                   </li>
                   <li>
-                    <Link to="#">Track My Order</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      Track My Order
+                    </Link>
                   </li>
                   <li>
-                    <Link to="#">Help</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      Help
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -129,19 +171,29 @@ export const Footer = () => {
                 <h3 className="footer-widget-title">Our Service</h3>
                 <ul className="footer-widget-list-item">
                   <li>
-                    <Link to="#">Payment Methods</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      Payment Methods
+                    </Link>
                   </li>
                   <li>
-                    <Link to="#">Money Guarantee!</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      Money Guarantee!
+                    </Link>
                   </li>
                   <li>
-                    <Link to="#">Returns</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      Returns
+                    </Link>
                   </li>
                   <li>
-                    <Link to="#">Shipping</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      Shipping
+                    </Link>
                   </li>
                   <li>
-                    <Link to="#">Privacy Policy</Link>
+                    <Link to="#" onClick={() => handlerMsgErr()}>
+                      Privacy Policy
+                    </Link>
                   </li>
                 </ul>
               </div>
