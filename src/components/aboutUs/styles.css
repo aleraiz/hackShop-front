@@ -85,7 +85,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  /* height: 135px; */
+  height: 135px;
   text-align: center;
   padding-top: 25px;
   border-end-end-radius: 100vh;
@@ -293,12 +293,6 @@
   width: 100%;
 }
 
-.teamImageProfile {
-  /* width: 261px;
-  height: 310px;
-  border-radius: 100%; */
-}
-
 .secondary-img {
   position: absolute;
   left: 0;
@@ -324,30 +318,28 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  margin-bottom: 50px;
+  height: 500px;
 }
 
 .divPlanningHackshopRoutes div {
-  width: 500px;
-  height: 550px;
+  width: 100%;
 }
 
 .divPlanningHackshopRoutes p {
   max-width: 90ch;
 }
 
-.divPlanningHackshopPoint2 {
+.divPlanningHackshopPoint {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
 
-.divPlanningHackshopPoint2 div {
+.divPlanningHackshopPoint div {
   width: 100%;
-  /* height: 400px; */
 }
 
-.divPlanningHackshopPoint2 p {
+.divPlanningHackshopPoint p {
   max-width: 70ch;
 }
 
@@ -370,7 +362,7 @@
   font-size: 24px;
 }
 
-.divPlanningHackshopPoint2 .paragraphText {
+.divPlanningHackshopPoint .paragraphText {
   font-size: 1rem;
 }
 
@@ -404,4 +396,15 @@
 
 #technologyTitle {
   margin-bottom: 50px;
+}
+
+.titlesAndDescriptionStep {
+  display: flex;
+  align-self: center;
+  margin-left: 50px;
+}
+
+.titlesAndDescriptionStepTwo {
+  display: flex;
+  align-self: center;
 }

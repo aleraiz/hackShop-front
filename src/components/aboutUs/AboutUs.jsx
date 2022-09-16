@@ -74,33 +74,29 @@ export const AboutUs = () => {
                     ¿Cómo nació <span>Hackshop?</span>
                   </h2>
                 </div>
-                <div className="divPlanningHackshopPoint2">
+
+                <div className="divPlanningHackshopPoint">
                   <div>
                     <img src="./HackShopRoutesFrontEdit.png" alt="MERHS" className="imgDiagrama" />
                   </div>
-                  <div>
-                    <div className="">
-                      <div>
-                        <h3>1 - Concepción del proyecto y MER</h3>
-                      </div>
-                      <div>
-                        <p class="about-desc aboutUsDescription paragraphText">
-                          Nuestro primer paso fue definir que necesitamos en el{" "}
-                          <span>Backend </span>
-                          antes de seguir avanzando, por esto hicimos un listado de las cinco
-                          principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
-                          entidad cuidadosamente pensado. Aquí definimos las principales relaciones
-                          entre las siguientes entidades:{" "}
-                          <span> Client, Administrator, Category, Product y Order.</span>
-                        </p>
-                      </div>
+                  <div className="titlesAndDescriptionStep">
+                    <div>
+                      <h3>1 - Concepción del proyecto y MER</h3>
+                      <p class="about-desc aboutUsDescription paragraphText">
+                        Nuestro primer paso fue definir que necesitamos en el <span>Backend </span>
+                        antes de seguir avanzando, por esto hicimos un listado de las cinco
+                        principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
+                        entidad cuidadosamente pensado. Aquí definimos las principales relaciones
+                        entre las siguientes entidades:{" "}
+                        <span> Client, Administrator, Category, Product y Order.</span>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div>
-                <div className="divPlanningHackshopRoutes">
+              <div className="divPlanningHackshopRoutes">
+                <div className="titlesAndDescriptionStepTwo">
                   <div>
                     <h3>2 - Diseño e Inspiración</h3>
                     <p class="about-desc aboutUsDescription paragraphText">
@@ -118,9 +114,10 @@ export const AboutUs = () => {
                       tipo de método tenía cada ruta.
                     </p>
                   </div>
-                  <div className="divContainerImg">
-                    <img src="./HackshopMER.png" alt="MERHS" className="imgDiagrama" />
-                  </div>
+                </div>
+
+                <div className="divContainerImg">
+                  <img src="./HackshopMER.png" alt="MERHS" className="imgDiagrama" />
                 </div>
               </div>
               <div>
@@ -225,8 +222,8 @@ export const AboutUs = () => {
           <div class="section-title-wrap without-tab">
             <h2 class="section-title">¡Nuestro Team!</h2>
           </div>
-          <div class="row">
-            <div class="col-lg-4 col-sm-6 pt-sm-5">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-6 pt-sm-5">
               <div class="team-item">
                 <div class="team-img">
                   <img
@@ -291,7 +288,7 @@ export const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-sm-6 pt-5 pt-sm-0">
+            <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
               <div class="team-item">
                 <div class="team-img">
                   <img
@@ -356,7 +353,7 @@ export const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-sm-6 pt-5">
+            <div class="col-lg-3 col-sm-6 pt-5">
               <div class="team-item">
                 <div class="team-img">
                   <img
