@@ -1,7 +1,28 @@
 import TestimonialItem from "./TestimonialItem";
 import "./testimonialStyle.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export const Testimonial = () => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1200 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1200, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   const testimonialUser1 =
     " They have really brought life to our company and particularly to each of our offices.";
   const testimonialUser2 =
@@ -21,8 +42,8 @@ export const Testimonial = () => {
           </div>
         </div>
         <div className="container custom-space">
-          <div className="swiper-container testimonial-slider with-bg">
-            <div className="swiper-wrapper justify-content-center">
+          <div className="swiper-container testimonial-slider with-bg ">
+            <Carousel responsive={responsive} infinite={true} draggable={false}>
               <TestimonialItem
                 img={"../testimonial/user1.png"}
                 testimonial={testimonialUser1}
@@ -38,7 +59,7 @@ export const Testimonial = () => {
                 testimonial={testimonialUser3}
                 user={"Alice Morgan"}
               />
-            </div>
+            </Carousel>
             <div className="swiper-pagination without-absolute"></div>
           </div>
         </div>
