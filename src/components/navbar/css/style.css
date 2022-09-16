@@ -393,6 +393,7 @@
 
 .header-right {
   padding: 5px 0 5px 0;
+  margin-bottom: 7px;
 }
 
 .header-right > ul {
@@ -675,4 +676,9 @@
 .whishlist {
   font-size: 24px;
   display: flex;
+}
+
+.userNav {
+  padding: 0;
+  margin: 0;
 }

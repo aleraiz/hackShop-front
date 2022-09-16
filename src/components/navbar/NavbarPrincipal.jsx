@@ -93,90 +93,7 @@ export const NavbarPrincipal = () => {
                               <Link to="/">Home</Link>
                             </li>
                             <li className="megamenu-holder">
-                              <Link to="shop.html">Shop</Link>
-                              <ul className="drop-menu megamenu">
-                                <li>
-                                  <span className="title">Shop Layout</span>
-                                  <ul>
-                                    <li>
-                                      <Link to="shop.html">Shop Default</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="shop-grid-fullwidth.html">Shop Grid Fullwidth</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="shop-right-sidebar.html">Shop Right Sidebar</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="shop-list-fullwidth.html">Shop List Fullwidth</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="shop-list-left-sidebar.html">
-                                        Shop List Left Sidebar
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link to="shop-list-right-sidebar.html">
-                                        Shop List Right Sidebar
-                                      </Link>
-                                    </li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <span className="title">Product Style</span>
-                                  <ul>
-                                    <li>
-                                      <Link to="single-product-variable.html">
-                                        Single Product Variable
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link to="single-product-group.html">
-                                        Single Product Group
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link to="single-product.html">Single Product Default</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="single-product-affiliate.html">
-                                        Single Product Affiliate
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link to="single-product-sale.html">Single Product Sale</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="single-product-sticky.html">
-                                        Single Product Sticky
-                                      </Link>
-                                    </li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <span className="title">Product Related</span>
-                                  <ul>
-                                    <li>
-                                      <Link to="my-account.html">My Account</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="login-register.html">Login | Register</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="cart.html">Shopping Cart</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="wishlist.html">Wishlist</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="compare.html">Compare</Link>
-                                    </li>
-                                    <li>
-                                      <Link to="checkout.html">Checkout</Link>
-                                    </li>
-                                  </ul>
-                                </li>
-                              </ul>
+                              <Link to="/products">Shop</Link>
                             </li>
                             <li>
                               <Link to="/aboutus">About Us</Link>
@@ -190,7 +107,9 @@ export const NavbarPrincipal = () => {
                               Contact Us
                             </li>
                             <li>
-                              <Link to="contact.html">{user && <p>{user.firstname}</p>}</Link>
+                              <Link to="contact.html">
+                                {user && <p className="userNav">{user.firstname}</p>}
+                              </Link>
                             </li>
                           </ul>
                         </Nav>

@@ -69,7 +69,7 @@ export const BillingDetails = () => {
 
   async function orderSend(cart) {
     try {
-      const response = await axios({
+      await axios({
         method: "post",
         url: `http://localhost:8000/order`,
         headers: { Authorization: `Bearer ${user.token}` },

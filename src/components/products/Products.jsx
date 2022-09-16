@@ -82,19 +82,12 @@ export const Products = () => {
                       aria-labelledby="grid-view-tab"
                     >
                       <div className="product-grid-view row g-y-20">
-                        {/* {productsFilter.length !== 0 ? (
-                          <>
-                            {productsFilter[0].categoryId === 1 ? (
-                              <h2 className="titleCategory">Interior</h2>
-                            ) : (
-                              <h2 className="titleCategory">Exterior</h2>
-                            )} */}
                         {products.map((product, index) => {
                           return (
                             <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
                               <div className="product-item">
                                 <div className="product-img">
-                                  <Link to={`/product/${product.id}`}>
+                                  <Link to={`/product/${product.slug}`}>
                                     <img
                                       className="primary-img"
                                       src={product.image[3].imageDetailOne}
@@ -127,7 +120,7 @@ export const Products = () => {
                                         data-bs-target="#quickModal"
                                       >
                                         <Link
-                                          to="#"
+                                          to={`/product/${product.slug}`}
                                           data-tippy="Quickview"
                                           data-tippy-inertia="true"
                                           data-tippy-animation="shift-away"

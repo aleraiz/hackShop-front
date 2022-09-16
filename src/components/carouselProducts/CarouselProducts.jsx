@@ -1,12 +1,18 @@
 import Carousel from "react-multi-carousel";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { addProductCart } from "../../redux/slices/cartSlice";
 import "react-multi-carousel/lib/styles.css";
 import "../newProducts/style.css";
-
-export const CarouselProducts = () => {
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+export const CarouselProducts = (setRefresSlug) => {
+  const [productsCarousel, setProductsCarousel] = useState([]);
   const MySwal = withReactContent(Swal);
+
+  const dispatch = useDispatch();
 
   const responsive = {
     desktop: {
@@ -26,6 +32,25 @@ export const CarouselProducts = () => {
     },
   };
 
+  useEffect(() => {
+    const listProducts = async () => {
+      const quantityDisplayed = 8;
+      const response = await axios({
+        method: "get",
+        url: `${process.env.REACT_APP_DB_HOST}/products`,
+      });
+      if (response.data <= quantityDisplayed) {
+        setProductsCarousel(response.data);
+      }
+      setProductsCarousel(response.data.slice(0, quantityDisplayed));
+    };
+    listProducts();
+  }, []);
+
+  function handleAddCart(element) {
+    dispatch(addProductCart({ productDetail: element, quantityProduct: 1 }));
+  }
+
   function handlerMsgErr() {
     MySwal.fire({
       title: "Warning!",
@@ -38,362 +63,110 @@ export const CarouselProducts = () => {
 
   return (
     <Carousel responsive={responsive} infinite={true}>
-      <div className="swiper-slide product-item">
-        <div className="product-img">
-          <Link to={""}>
-            <img
-              className="primary-img"
-              src="../../images/newProducts/1-9-270x300.jpg"
-              alt="Product Images"
-            />
-            <img
-              className="secondary-img"
-              src="../../images/newProducts/1-10-270x300.jpg"
-              alt="Product Images"
-            />
-          </Link>
-          <div className="product-add-action">
-            <ul>
-              <li>
-                <button
-                  className="whislistBtn"
-                  data-tippy="Add to wishlist"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                  onClick={() => {
-                    handlerMsgErr();
-                  }}
-                >
-                  <i className="pe-7s-like"></i>
-                </button>
-              </li>
-              <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                <Link
-                  to="#"
-                  data-tippy="Quickview"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                >
-                  <i className="pe-7s-look"></i>
+      {productsCarousel.map((element, index) => {
+        return (
+          <>
+            <div className="swiper-slide product-item" key={index}>
+              <div className="product-img">
+                <Link to={`/product/${element.slug}`} onClick={() => setRefresSlug(true)}>
+                  <img
+                    className="primary-img"
+                    src={element.image[3].imageDetailOne}
+                    alt="Product Images"
+                  />
+                  <img
+                    className="secondary-img"
+                    src={element.image[4].imageDetailTwo}
+                    alt="Product Images"
+                  />
                 </Link>
-              </li>
-              <li>
-                <Link
-                  to="cart.html"
-                  data-tippy="Add to cart"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                >
-                  <i className="pe-7s-cart"></i>
+                <div className="product-add-action">
+                  <ul>
+                    <li>
+                      <button
+                        className="whislistBtn"
+                        data-tippy="Add to wishlist"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay="50"
+                        data-tippy-arrow="true"
+                        data-tippy-theme="sharpborder"
+                        onClick={() => {
+                          handlerMsgErr();
+                        }}
+                      >
+                        <i className="pe-7s-like"></i>
+                      </button>
+                    </li>
+                    <li
+                      className="quuickview-btn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#quickModal"
+                    >
+                      <Link
+                        to={`/product/${element.slug}`}
+                        onClick={() => setRefresSlug(true)}
+                        data-tippy="Quickview"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay="50"
+                        data-tippy-arrow="true"
+                        data-tippy-theme="sharpborder"
+                      >
+                        <i className="pe-7s-look"></i>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="cart.html"
+                        data-tippy="Add to cart"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay="50"
+                        data-tippy-arrow="true"
+                        data-tippy-theme="sharpborder"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleAddCart(element);
+                        }}
+                      >
+                        <i className="pe-7s-cart"></i>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="product-content">
+                <Link className="product-name" to="shop.html">
+                  {element.productName}
                 </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="product-content">
-          <Link className="product-name" to="shop.html">
-            American Marigold
-          </Link>
-          <div className="price-box pb-1">
-            <span className="new-price">$23.45</span>
-          </div>
-          <div className="rating-box">
-            <ul>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="swiper-slide product-item">
-        <div className="product-img">
-          <Link to="shop.html">
-            <img
-              className="primary-img"
-              src="../../images/newProducts/1-10-270x300.jpg"
-              alt="Product Images"
-            />
-            <img
-              className="secondary-img"
-              src="../../images/newProducts/1-11-270x300.jpg"
-              alt="Product Images"
-            />
-          </Link>
-          <div className="product-add-action">
-            <ul>
-              <li>
-                <button
-                  className="whislistBtn"
-                  data-tippy="Add to wishlist"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                  onClick={() => {
-                    handlerMsgErr();
-                  }}
-                >
-                  <i className="pe-7s-like"></i>
-                </button>
-              </li>
-              <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                <Link
-                  to="#"
-                  data-tippy="Quickview"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                >
-                  <i className="pe-7s-look"></i>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="cart.html"
-                  data-tippy="Add to cart"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                >
-                  <i className="pe-7s-cart"></i>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="product-content">
-          <Link className="product-name" to="shop.html">
-            Black Eyed Susan
-          </Link>
-          <div className="price-box pb-1">
-            <span className="new-price">$25.45</span>
-          </div>
-          <div className="rating-box">
-            <ul>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="swiper-slide product-item">
-        <div className="product-img">
-          <Link to="shop.html">
-            <img
-              className="primary-img"
-              src="../../images/newProducts/1-11-270x300.jpg"
-              alt="Product Images"
-            />
-            <img
-              className="secondary-img"
-              src="../../images/newProducts/1-4-270x300.jpg"
-              alt="Product Images"
-            />
-          </Link>
-          <div className="product-add-action">
-            <ul>
-              <li>
-                <button
-                  className="whislistBtn"
-                  data-tippy="Add to wishlist"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                  onClick={() => {
-                    handlerMsgErr();
-                  }}
-                >
-                  <i className="pe-7s-like"></i>
-                </button>
-              </li>
-              <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                <Link
-                  to="#"
-                  data-tippy="Quickview"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                >
-                  <i className="pe-7s-look"></i>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="cart.html"
-                  data-tippy="Add to cart"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                >
-                  <i className="pe-7s-cart"></i>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="product-content">
-          <Link className="product-name" to="shop.html">
-            Bleeding Heart
-          </Link>
-          <div className="price-box pb-1">
-            <span className="new-price">$30.45</span>
-          </div>
-          <div className="rating-box">
-            <ul>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="swiper-slide product-item">
-        <div className="product-img">
-          <Link to="shop.html">
-            <img
-              className="primary-img"
-              src="../../images/newProducts/1-7-270x300.jpg"
-              alt="Product Images"
-            />
-            <img
-              className="secondary-img"
-              src="../../images/newProducts/1-8-270x300.jpg"
-              alt="Product Images"
-            />
-          </Link>
-          <div className="product-add-action">
-            <ul>
-              <li>
-                <button
-                  className="whislistBtn"
-                  data-tippy="Add to wishlist"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                  onClick={() => {
-                    handlerMsgErr();
-                  }}
-                >
-                  <i className="pe-7s-like"></i>
-                </button>
-              </li>
-              <li className="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                <Link
-                  to="#"
-                  data-tippy="Quickview"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                >
-                  <i className="pe-7s-look"></i>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="cart.html"
-                  data-tippy="Add to cart"
-                  data-tippy-inertia="true"
-                  data-tippy-animation="shift-away"
-                  data-tippy-delay="50"
-                  data-tippy-arrow="true"
-                  data-tippy-theme="sharpborder"
-                >
-                  <i className="pe-7s-cart"></i>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="product-content">
-          <Link className="product-name" to="shop.html">
-            Bloody Cranesbill
-          </Link>
-          <div className="price-box pb-1">
-            <span className="new-price">$45.00</span>
-          </div>
-          <div className="rating-box">
-            <ul>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+                <div className="price-box pb-1">
+                  <span className="new-price">${element.price}</span>
+                </div>
+                <div className="rating-box">
+                  <ul>
+                    <li>
+                      <i className="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i className="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i className="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i className="fa fa-star"></i>
+                    </li>
+                    <li>
+                      <i className="fa fa-star"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      })}
     </Carousel>
   );
 };

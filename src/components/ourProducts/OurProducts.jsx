@@ -4,10 +4,13 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
 import "./styles.css";
+import { addProductCart } from "../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 export const OurProducts = () => {
   const [ourProducts, setOurProducts] = useState([]);
   const MySwal = withReactContent(Swal);
+  const dispatch = useDispatch();
 
   function handlerMsgErr() {
     MySwal.fire({
@@ -29,6 +32,10 @@ export const OurProducts = () => {
     };
     listProducts();
   }, []);
+
+  function handleAddCart(product) {
+    dispatch(addProductCart({ productDetail: product, quantityProduct: 1 }));
+  }
 
   return (
     <div className="product-area section-space-top-100">
@@ -100,7 +107,7 @@ export const OurProducts = () => {
                       <div className="col-xl-3 col-md-4 col-sm-6">
                         <div className="product-item" key={index}>
                           <div className="product-img">
-                            <Link to={`/product/${product.id}`}>
+                            <Link to={`/product/${product.slug}`}>
                               <img
                                 className="primary-img"
                                 src={product.image[3].imageDetailOne}
@@ -136,7 +143,7 @@ export const OurProducts = () => {
                                   data-bs-target="#quickModal"
                                 >
                                   <Link
-                                    to="#"
+                                    to={`/product/${product.slug}`}
                                     data-tippy="Quickview"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
@@ -149,13 +156,17 @@ export const OurProducts = () => {
                                 </li>
                                 <li>
                                   <Link
-                                    to="cart.html"
+                                    to=""
                                     data-tippy="Add to cart"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
                                     data-tippy-delay="50"
                                     data-tippy-arrow="true"
                                     data-tippy-theme="sharpborder"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      handleAddCart(product);
+                                    }}
                                   >
                                     <i className="pe-7s-cart"></i>
                                   </Link>
