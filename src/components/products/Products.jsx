@@ -94,7 +94,7 @@ export const Products = () => {
                                       alt="Product Images"
                                     />
                                     <img
-                                      className="secondary-img"
+                                      className="secondary-img secondary-img-bg"
                                       src={product.image[4].imageDetailTwo}
                                       alt="Product Images"
                                     />

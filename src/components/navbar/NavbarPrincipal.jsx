@@ -30,6 +30,10 @@ export const NavbarPrincipal = () => {
   const [target, setTarget] = useState(null);
   const [userError, setUserError] = useState("");
   const MySwal = withReactContent(Swal);
+  let total = 0;
+  cart.map((item) => {
+    total += item.quantity;
+  });
 
   function handlerMsgErr() {
     MySwal.fire({
@@ -192,7 +196,7 @@ export const NavbarPrincipal = () => {
                               >
                                 <i className="pe-7s-shopbag"></i>
                                 <span className="quantity" id="numberCartShop">
-                                  {cart.length}
+                                  {total}
                                 </span>
                               </button>
                               {openOffcanvas ? (

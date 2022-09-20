@@ -36,21 +36,19 @@ export const ProductDetail = () => {
 
   function handleAddCart() {
     dispatch(addProductCart({ productDetail, quantityProduct }));
-    setQuantityProduct(0);
+    setQuantityProduct(1);
   }
 
   function handlerIncrementProduct(productId) {
     if (quantityProduct < productDetail.stock) {
       setQuantityProduct(quantityProduct + 1);
     }
-    dispatch(incrementQuantity({ productId }));
   }
 
   function handlerDecrementProduct(productId) {
     if (quantityProduct > 1) {
       setQuantityProduct(quantityProduct - 1);
     }
-    dispatch(decrementQuantity({ productId }));
   }
 
   function toggleReadMore() {
@@ -118,7 +116,7 @@ export const ProductDetail = () => {
                       <div className="swiper-wrapper">
                         <div className="swiper-slide">
                           <Link
-                            to="/"
+                            to="#"
                             // to={productDetail.image[0].imageOne}
                             className="single-img gallery-popup"
                           >
@@ -175,36 +173,47 @@ export const ProductDetail = () => {
                       </div>
                     </div>
                     <div className="swiper-container single-product-thumbs">
-                      <Carousel responsive={responsive} infinite={true} arrows={true}>
-                        <div className="swiper-slide">
-                          <img
-                            className="img-full"
-                            src="../../../image/macetaUno.jpg"
-                            alt="Product Thumnail"
-                          />
-                        </div>
-                        <div className="swiper-slide">
-                          <img
-                            className="img-full"
-                            src="../../../image/macetaDos.jpg"
-                            alt="Product Thumnail"
-                          />
-                        </div>
-                        <div className="swiper-slide">
-                          <img
-                            className="img-full"
-                            src="../../../image/macetaTres.jpg"
-                            alt="Product Thumnail"
-                          />
-                        </div>
-                        <div className="swiper-slide">
-                          <img
-                            className="img-full"
-                            src="../../../image/macetaSiete.jpg"
-                            alt="Product Thumnail"
-                          />
-                        </div>
-                      </Carousel>
+                      {productDetail.image ? (
+                        <Carousel responsive={responsive} infinite={true} arrows={true}>
+                          <div className="swiper-slide">
+                            <img
+                              className="img-full"
+                              src={productDetail.image[0].imageOne}
+                              alt="Product Thumnail"
+                            />
+                          </div>
+                          <div className="swiper-slide">
+                            <img
+                              className="img-full"
+                              src={productDetail.image[1].imageTwo}
+                              alt="Product Thumnail"
+                            />
+                          </div>
+                          <div className="swiper-slide">
+                            <img
+                              className="img-full"
+                              src={productDetail.image[2].imageThree}
+                              alt="Product Thumnail"
+                            />
+                          </div>
+                          <div className="swiper-slide">
+                            <img
+                              className="img-full"
+                              src={productDetail.image[3].imageDetailOne}
+                              alt="Product Thumnail"
+                            />
+                          </div>
+                          <div className="swiper-slide">
+                            <img
+                              className="img-full"
+                              src={productDetail.image[4].imageDetailTwo}
+                              alt="Product Thumnail"
+                            />
+                          </div>
+                        </Carousel>
+                      ) : (
+                        <h2>Cargando...</h2>
+                      )}
                     </div>
                   </div>
                 </div>
