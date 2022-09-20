@@ -45,7 +45,7 @@ export const AboutUs = () => {
             <div class="col-lg-12">
               <div class="about-content">
                 <div>
-                  <h2 class="about-title">
+                  <h2 class="about-title hackshopTitle">
                     Sobre el <span>Proyecto</span>
                   </h2>
                   <p class="about-desc aboutUsDescription">
@@ -67,7 +67,7 @@ export const AboutUs = () => {
       <div class="about-area">
         <div class="container">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 containerPlanning">
               <div className="divContainerHackshop">
                 <div>
                   <h2 class="about-title hackshopTitle">
@@ -76,8 +76,8 @@ export const AboutUs = () => {
                 </div>
 
                 <div className="divPlanningHackshopPoint">
-                  <div>
-                    <img src="./HackShopRoutesFrontEdit.png" alt="MERHS" className="imgDiagrama" />
+                  <div className="divContainerImg">
+                    <img src="./RoutesFront.png" alt="MERHS" className="imgDiagrama" />
                   </div>
                   <div className="titlesAndDescriptionStep">
                     <div>
@@ -95,7 +95,7 @@ export const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="divPlanningHackshopRoutes">
+              <div className="divPlanningHackshopPoint columnReverseMinWidth">
                 <div className="titlesAndDescriptionStepTwo">
                   <div>
                     <h3>2 - Diseño e Inspiración</h3>
@@ -115,34 +115,37 @@ export const AboutUs = () => {
                     </p>
                   </div>
                 </div>
-
                 <div className="divContainerImg">
-                  <img src="./HackshopMER.png" alt="MERHS" className="imgDiagrama" />
+                  <img src="./MER.png" alt="MERHS" className="imgDiagrama" />
                 </div>
               </div>
               <div>
-                <div className="divPlanningHackshopRoutesBottom">
+                <div className="divPlanningHackshopPoint">
                   <div className="divContainerImg">
-                    <img src="./HackShopRoutes.png" alt="MERHS" className="imgDiagrama" />
+                    <img src="./RoutesBack.png" alt="MERHS" className="imgDiagrama" />
                   </div>
-                  <div>
-                    <h3>4- Metodología de trabajo</h3>
-                    <p class="about-desc aboutUsDescription paragraphText">
-                      Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span> con
-                      tres sprints. Cada sprint tenía tareas que se organizaban y desarrollaban
-                      individualmente o en grupos, usando <span> Trello</span> para determinar el
-                      curso y la finalización de cada una, teniendo siempre tareas pendientes para
-                      que cada intregrante pudiese tomar nuevas en caso de terminar con las
-                      asignadas.Todo el proyecto se realizó en línea usando Discord.
-                    </p>
-                    <h3> 5 - Marcos y Tecnologías</h3>
-                    <p class="about-desc aboutUsDescription paragraphText">
-                      Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos con
-                      <span> MySql y Sequelize</span> como persistencia de datos, además de
-                      <span> Cloudinary</span> para importar imágenes.
-                      <span> NodeJs/Express, React, Redux</span>
-                      como nuestros marcos de aplicación.
-                    </p>
+                  <div className="titlesAndDescriptionStep">
+                    <div>
+                      <h3>4- Metodología de trabajo</h3>
+                      <p class="about-desc aboutUsDescription paragraphText">
+                        Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span>{" "}
+                        con tres sprints. Cada sprint tenía tareas que se organizaban y
+                        desarrollaban individualmente o en grupos, usando <span> Trello</span> para
+                        determinar el curso y la finalización de cada una, teniendo siempre tareas
+                        pendientes para que cada intregrante pudiese tomar nuevas en caso de
+                        terminar con las asignadas.Todo el proyecto se realizó en línea usando
+                        Discord.
+                      </p>
+                      <h3> 5 - Marcos y Tecnologías</h3>
+                      <p class="about-desc aboutUsDescription paragraphText">
+                        Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos
+                        con
+                        <span> MySql y Sequelize</span> como persistencia de datos, además de
+                        <span> Cloudinary</span> para importar imágenes.
+                        <span> NodeJs/Express, React, Redux</span>
+                        como nuestros marcos de aplicación.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -157,7 +160,7 @@ export const AboutUs = () => {
       </div>
       <div class="about-area imageBackgroundSuculenta">
         <div className="containerImageSuculenta">
-          <div className="containerTechnology">
+          <div className="container containerTechnology">
             <Carousel
               responsive={responsive}
               infinite={true}
@@ -216,7 +219,6 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-
       <div class="team-area  teamContainer">
         <div class="container">
           <div class="section-title-wrap without-tab">
@@ -224,197 +226,145 @@ export const AboutUs = () => {
           </div>
           <div class="row justify-content-center">
             <div class="col-lg-3 col-sm-6 pt-sm-5">
-              <div class="team-item">
-                <div class="team-img">
-                  <img
-                    src="./AleCircle.png"
-                    alt="Team Member"
-                    className="teamImageProfile primary-img"
-                  />
-                  <img
-                    src="./fotoAle-modified.png"
-                    alt="Team Member"
-                    className="teamImageProfile secondary-img"
-                  />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Alejandro Raíz</h2>
-                    <div class="social-link with-border">
-                      <ul>
-                        <li>
-                          <Link
-                            to="https://github.com/aleraiz"
-                            data-tippy="github"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaGithub />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="https://www.linkedin.com/in/alejandro-raiz/"
-                            data-tippy="linkedin"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaLinkedinIn />
-                          </Link>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Alejandro Raíz</h2>
+              <div class="team-img">
+                <img
+                  src="./AleCircle.png"
+                  alt="Team Member"
+                  className="teamImageProfile primary-img"
+                />
+                <img
+                  src="./fotoAle-modified.png"
+                  alt="Team Member"
+                  className="teamImageProfile secondary-img"
+                />
+              </div>
+              <div class="team-content">
+                <h2 class="team-member-name mb-0">Alejandro Raíz</h2>
+                <div class="social-link with-border justify-content-center">
+                  <ul className="socialLinksProfiles">
+                    <li>
+                      <a
+                        href="https://github.com/aleraiz"
+                        target="_blank"
+                        data-tippy="github"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay="50"
+                        data-tippy-arrow="true"
+                        data-tippy-theme="sharpborder"
+                      >
+                        <FaGithub />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        to="https://www.linkedin.com/in/alejandro-raiz/"
+                        data-tippy="linkedin"
+                        target="_blank"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay="50"
+                        data-tippy-arrow="true"
+                        data-tippy-theme="sharpborder"
+                      >
+                        <FaLinkedinIn />
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
-              <div class="team-item">
-                <div class="team-img">
-                  <img
-                    src="./Marco.png"
-                    alt="Team Member"
-                    className="teamImageProfile primary-img"
-                  />
-                  <img
-                    src="./MarcoPlaya-modified.png"
-                    alt="Team Member"
-                    className="teamImageProfile secondary-img"
-                  />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Marco De Luca</h2>
-                    <div class="social-link with-border">
-                      <ul>
-                        <li>
-                          <Link
-                            to="https://github.com/antondelu"
-                            data-tippy="github"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaGithub />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="https://www.linkedin.com/in/marcodeluca-dw/"
-                            data-tippy="Linkedin"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaLinkedinIn />
-                          </Link>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <div class="team-img">
+                <img src="./Marco.png" alt="Team Member" className="teamImageProfile primary-img" />
+                <img
+                  src="./MarcoPlaya-modified.png"
+                  alt="Team Member"
+                  className="teamImageProfile secondary-img"
+                />
                 <div class="team-content">
                   <h2 class="team-member-name mb-0">Marco de Luca</h2>
+                  <div class="social-link with-border justify-content-center">
+                    <ul className="socialLinksProfiles">
+                      <li>
+                        <a
+                          href="https://github.com/antondelu"
+                          target="_blank"
+                          data-tippy="github"
+                          data-tippy-inertia="true"
+                          data-tippy-animation="shift-away"
+                          data-tippy-delay="50"
+                          data-tippy-arrow="true"
+                          data-tippy-theme="sharpborder"
+                        >
+                          <FaGithub />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.linkedin.com/in/marcodeluca-dw/"
+                          target="_blank"
+                          data-tippy="Linkedin"
+                          data-tippy-inertia="true"
+                          data-tippy-animation="shift-away"
+                          data-tippy-delay="50"
+                          data-tippy-arrow="true"
+                          data-tippy-theme="sharpborder"
+                        >
+                          <FaLinkedinIn />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-sm-6 pt-5">
-              <div class="team-item">
-                <div class="team-img">
-                  <img
-                    src="./imageCircleRomina.png"
-                    alt="Team Member"
-                    className="teamImageProfile primary-img"
-                  />
-                  <img
-                    src="./paracaidismo.png"
-                    alt="Team Member"
-                    className="teamImageProfile secondary-img"
-                  />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Romina Dos Santos</h2>
-                    <div class="social-link with-border">
-                      <ul>
-                        <li>
-                          <Link
-                            to="https://github.com/RominaDosSantos"
-                            data-tippy="github"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaGithub />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="https://www.linkedin.com/in/romina-dos-santos/"
-                            data-tippy="Linkedin"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaLinkedinIn />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i class="fa fa-pinterest"></i>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <div class="team-img">
+                <img
+                  src="./imageCircleRomina.png"
+                  alt="Team Member"
+                  className="teamImageProfile primary-img"
+                />
+                <img
+                  src="./paracaidismo.png"
+                  alt="Team Member"
+                  className="teamImageProfile secondary-img"
+                />
                 <div class="team-content">
                   <h2 class="team-member-name mb-0">Romina Dos Santos</h2>
+                  <div class="social-link with-border justify-content-center">
+                    <ul className="socialLinksProfiles">
+                      <li>
+                        <a
+                          href="https://github.com/RominaDosSantos"
+                          data-tippy="github"
+                          target="_blank"
+                          data-tippy-inertia="true"
+                          data-tippy-animation="shift-away"
+                          data-tippy-delay="50"
+                          data-tippy-arrow="true"
+                          data-tippy-theme="sharpborder"
+                        >
+                          <FaGithub />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.linkedin.com/in/romina-dos-santos/"
+                          target="_blank"
+                          data-tippy="Linkedin"
+                          data-tippy-inertia="true"
+                          data-tippy-animation="shift-away"
+                          data-tippy-delay="50"
+                          data-tippy-arrow="true"
+                          data-tippy-theme="sharpborder"
+                        >
+                          <FaLinkedinIn />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
