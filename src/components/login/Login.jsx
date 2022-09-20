@@ -4,6 +4,8 @@ import axios from "axios";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/slices/userSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 import "./style.css";
 
@@ -104,14 +106,14 @@ export const Login = () => {
                         }}
                       />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-6 d-flex align-items-end">
                       <div className="check-box">
                         <input type="checkbox" id="remember_me" />
                         <label htmlFor="remember_me">Remember me</label>
                       </div>
                     </div>
-                    <div className="col-md-4 pt-1 mt-md-0">
-                      <div className="forgotton-password_info">
+                    <div className="col-md-6 mt-md-0">
+                      <div className="forgotton-password_info text-end">
                         <Link to="#" className="text-dark">
                           Forgotten password?
                         </Link>
@@ -123,15 +125,23 @@ export const Login = () => {
                         <p>{userError}</p>
                       </div>
                     )}
-                    <div className="col-lg-12 pt-5">
-                      <button
-                        className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill"
-                        onClick={() => {
-                          loginClient();
-                        }}
-                      >
-                        Login
-                      </button>
+                    <div className="col-lg-12 pt-5 d-flex justify-content-between">
+                      <div>
+                        <button
+                          className="btn btn-custom-size lg-size btn-pronia-primary btn-collection rounded-pill"
+                          onClick={() => {
+                            loginClient();
+                          }}
+                        >
+                          Login
+                        </button>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <a href="http://localhost:3001/login" className="text-dark admin-login">
+                          Admin login
+                          <FontAwesomeIcon icon={faLock} className="ms-2" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
