@@ -74,7 +74,7 @@ export const CarouselProducts = (setRefresSlug) => {
                   alt="Product Images"
                 />
                 <img
-                  className="secondary-img"
+                  className="secondary-img secondary-img-bg"
                   src={element.image[4].imageDetailTwo}
                   alt="Product Images"
                 />

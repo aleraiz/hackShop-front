@@ -1,12 +1,15 @@
-.testimonial-bg1{
-    background-image: url('../../../public/testimonial/bgTestimonial.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.testimonial-bg1 {
+  background-image: url("../../../public/testimonial/bgTestimonial.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .testimonial-item-style {
-    width: 360px;
-    margin-right: 30px;
+  height: 360px;
+  margin-right: 30px;
 }
 
+.testimonailCarousel {
+  margin: 0 15px 0 15px;
+}

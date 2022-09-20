@@ -87,26 +87,26 @@ export const BillingDetails = () => {
   }
 
   return (
-    <div class="row" style={{ justifyContent: "center" }}>
-      {/* <div class="col-lg-6 col-12">
+    <div className="row" style={{ justifyContent: "center" }}>
+      {/* <div className="col-lg-6 col-12">
         <form action="javascript:void(0)">
-          <div class="checkbox-form">
+          <div className="checkbox-form">
             <h3>Billing Details</h3>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="country-select clearfix">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="country-select clearfix">
                   <label>
-                    Country <span class="required">*</span>
+                    Country <span className="required">*</span>
                   </label>
-                  <select class="myniceselect nice-select wide">
+                  <select className="myniceselect nice-select wide">
                     <option data-display="uy">Uruguay</option>
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label>
-                    First Name <span class="required">*</span>
+                    First Name <span className="required">*</span>
                   </label>
                   <input
                     placeholder=""
@@ -118,10 +118,10 @@ export const BillingDetails = () => {
                   />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label>
-                    Last Name <span class="required">*</span>
+                    Last Name <span className="required">*</span>
                   </label>
                   <input
                     placeholder=""
@@ -133,11 +133,11 @@ export const BillingDetails = () => {
                   />
                 </div>
               </div>
-              <div class="col-md-12"></div>
-              <div class="col-md-12">
-                <div class="checkout-form-list">
+              <div className="col-md-12"></div>
+              <div className="col-md-12">
+                <div className="checkout-form-list">
                   <label>
-                    Address <span class="required">*</span>
+                    Address <span className="required">*</span>
                   </label>
                   <input
                     placeholder="Street address"
@@ -149,18 +149,18 @@ export const BillingDetails = () => {
                   />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label>
-                    Postcode / Zip <span class="required">*</span>
+                    Postcode / Zip <span className="required">*</span>
                   </label>
                   <input placeholder="" type="text" />
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="checkout-form-list">
+              <div className="col-md-6">
+                <div className="checkout-form-list">
                   <label>
-                    Phone <span class="required">*</span>
+                    Phone <span className="required">*</span>
                   </label>
                   <input
                     type="text"
@@ -171,10 +171,10 @@ export const BillingDetails = () => {
                   />
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="checkout-form-list">
+              <div className="col-md-12">
+                <div className="checkout-form-list">
                   <label>
-                    Email <span class="required">*</span>
+                    Email <span className="required">*</span>
                   </label>
                   <input
                     placeholder=""
@@ -199,13 +199,13 @@ export const BillingDetails = () => {
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>Create an account?</Accordion.Header>
                   <Accordion.Body>
-                    <div id="cbox-info" class="checkout-form-list">
+                    <div id="cbox-info" className="checkout-form-list">
                       <p>
                         Create an account by entering the information below. If you are a returning
                         customer please login at the top of the page.
                       </p>
                       <label>
-                        Account password <span class="required">*</span>
+                        Account password <span className="required">*</span>
                       </label>
                       <input
                         placeholder="password"
@@ -219,22 +219,22 @@ export const BillingDetails = () => {
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
-              <div class="col-md-12">
-                <div id="cbox-info" class="checkout-form-list create-account">
+              <div className="col-md-12">
+                <div id="cbox-info" className="checkout-form-list create-account">
                   <p>
                     Create an account by entering the information below. If you are a returning
                     customer please login at the top of the page.
                   </p>
                   <label>
-                    Account password <span class="required">*</span>
+                    Account password <span className="required">*</span>
                   </label>
                   <input placeholder="password" type="password" />
                 </div>
               </div>
             </div>
-            <div class="different-address">
-              <div class="order-notes">
-                <div class="checkout-form-list checkout-form-list-2">
+            <div className="different-address">
+              <div className="order-notes">
+                <div className="checkout-form-list checkout-form-list-2">
                   <label>Order Notes</label>
                   <textarea
                     id="checkout-mess"
@@ -248,38 +248,38 @@ export const BillingDetails = () => {
           </div>
         </form>
       </div> */}
-      <div class="col-lg-6 col-12">
-        <div class="your-order">
+      <div className="col-lg-6 col-12">
+        <div className="your-order">
           <h3>Your order</h3>
-          <div class="your-order-table table-responsive">
-            <table class="table">
+          <div className="your-order-table table-responsive">
+            <table className="table">
               <thead>
                 <tr>
-                  <th class="cart-product-name">Product</th>
-                  <th class="cart-product-total">Total</th>
+                  <th className="cart-product-name">Product</th>
+                  <th className="cart-product-total">Total</th>
                 </tr>
               </thead>
               <tbody>
                 {cart.map((product) => {
                   return (
-                    <tr class="cart_item">
-                      <td class="cart-product-name">
+                    <tr className="cart_item">
+                      <td className="cart-product-name">
                         {product.productName}
-                        <strong class="product-quantity">× {product.quantity}</strong>
+                        <strong className="product-quantity">× {product.quantity}</strong>
                       </td>
-                      <td class="cart-product-total">
+                      <td className="cart-product-total">
                         {priceFormat.format(product.price * product.quantity)}
-                        <span class="amount"></span>
+                        <span className="amount"></span>
                       </td>
                     </tr>
                   );
                 })}
               </tbody>
               <tfoot>
-                <tr class="cart-subtotal">
+                <tr className="cart-subtotal">
                   <th>Cart Subtotal</th>
                   <td>
-                    <span class="amount">
+                    <span className="amount">
                       {priceFormat.format(
                         cart.reduce(
                           (total, product) => total + product.price * product.quantity,
@@ -289,11 +289,11 @@ export const BillingDetails = () => {
                     </span>
                   </td>
                 </tr>
-                <tr class="order-total">
+                <tr className="order-total">
                   <th>Order Total</th>
                   <td>
                     <strong>
-                      <span class="amount">
+                      <span className="amount">
                         {priceFormat.format(
                           cart.reduce(
                             (total, product) => total + product.price * product.quantity,
@@ -307,14 +307,14 @@ export const BillingDetails = () => {
               </tfoot>
             </table>
           </div>
-          <div class="payment-method">
-            <div class="payment-accordion">
+          <div className="payment-method">
+            <div className="payment-accordion">
               <div id="accordion">
-                <div class="card">
-                  <div class="card-header" id="payment-1">
-                    <h5 class="panel-title">
+                <div className="card">
+                  <div className="card-header" id="payment-1">
+                    <h5 className="panel-title">
                       <span
-                        class="collapsed"
+                        className="collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
                         aria-expanded="true"
@@ -323,8 +323,8 @@ export const BillingDetails = () => {
                       </span>
                     </h5>
                   </div>
-                  <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
-                    <div class="card-body">
+                  <div id="collapseOne" className="collapse show" data-bs-parent="#accordion">
+                    <div className="card-body">
                       <p>
                         Make your payment directly into our bank account. Please use your Order ID
                         as the payment reference. Your order won’t be shipped until the funds have
@@ -333,11 +333,11 @@ export const BillingDetails = () => {
                     </div>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-header" id="payment-2">
-                    <h5 class="panel-title">
+                <div className="card">
+                  <div className="card-header" id="payment-2">
+                    <h5 className="panel-title">
                       <span
-                        class="collapsed"
+                        className="collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
                         aria-expanded="false"
@@ -346,8 +346,8 @@ export const BillingDetails = () => {
                       </span>
                     </h5>
                   </div>
-                  <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-                    <div class="card-body">
+                  <div id="collapseTwo" className="collapse" data-bs-parent="#accordion">
+                    <div className="card-body">
                       <p>
                         Make your payment directly into our bank account. Please use your Order ID
                         as the payment reference. Your order won’t be shipped until the funds have
@@ -356,11 +356,11 @@ export const BillingDetails = () => {
                     </div>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-header" id="payment-3">
-                    <h5 class="panel-title">
+                <div className="card">
+                  <div className="card-header" id="payment-3">
+                    <h5 className="panel-title">
                       <span
-                        class="collapsed"
+                        className="collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
                         aria-expanded="false"
@@ -369,8 +369,8 @@ export const BillingDetails = () => {
                       </span>
                     </h5>
                   </div>
-                  <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
-                    <div class="card-body">
+                  <div id="collapseThree" className="collapse" data-bs-parent="#accordion">
+                    <div className="card-body">
                       <p>
                         Make your payment directly into our bank account. Please use your Order ID
                         as the payment reference. Your order won’t be shipped until the funds have
@@ -380,7 +380,7 @@ export const BillingDetails = () => {
                   </div>
                 </div>
               </div>
-              <div class="order-button-payment">
+              <div className="order-button-payment">
                 <button
                   value="Place order"
                   id="placeOrderBtn"

@@ -517,10 +517,6 @@
 }
 
 @media (max-width: 767px) {
-  .offcanvas-header {
-    /* background-color: rgb(43, 40, 40); */
-  }
-
   .offcanvas-header .btn-close {
     color: #fff;
   }
@@ -540,10 +536,6 @@
   .offcanvas-body #navbarMenuBtns {
     display: flex;
     flex-direction: column;
-  }
-
-  .main-nav li {
-    color: #fff;
   }
 }
 
@@ -681,4 +673,10 @@
 .userNav {
   padding: 0;
   margin: 0;
+}
+
+@media (max-width: 991px) {
+  .main-na #navbarMenuBtns .navbarMenuLi {
+    font-size: 12px !important;
+  }
 }
