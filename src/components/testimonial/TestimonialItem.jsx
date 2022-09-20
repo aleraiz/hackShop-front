@@ -3,7 +3,7 @@ import React from "react";
 const TestimonialItem = ({ img, testimonial, user }) => {
   return (
     <div className="swiper-slide testimonial-item testimonial-item-style">
-      <div className="user-info mb-3">
+      <div className="user-info mb-3 ">
         <div className="user-shape-wrap">
           <div className="user-img">
             <img src={img} alt="User Image" />
