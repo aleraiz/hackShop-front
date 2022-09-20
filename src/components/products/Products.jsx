@@ -157,19 +157,19 @@ export const Products = () => {
                                   <div className="rating-box">
                                     <ul>
                                       <li>
-                                        <i class="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
                                       </li>
                                       <li>
-                                        <i class="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
                                       </li>
                                       <li>
-                                        <i class="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
                                       </li>
                                       <li>
-                                        <i class="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
                                       </li>
                                       <li>
-                                        <i class="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
                                       </li>
                                     </ul>
                                   </div>
@@ -181,26 +181,26 @@ export const Products = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="pagination-area">
+                  <div className="pagination-area">
                     <nav aria-label="Page navigation example">
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item active">
-                          <Link class="page-link" to="#">
+                      <ul className="pagination justify-content-center">
+                        <li className="page-item active">
+                          <Link className="page-link" to="#">
                             1
                           </Link>
                         </li>
-                        <li class="page-item">
-                          <Link class="page-link" to="#">
+                        <li className="page-item">
+                          <Link className="page-link" to="#">
                             2
                           </Link>
                         </li>
-                        <li class="page-item">
-                          <Link class="page-link" to="#">
+                        <li className="page-item">
+                          <Link className="page-link" to="#">
                             3
                           </Link>
                         </li>
-                        <li class="page-item">
-                          <Link class="page-link" to="#" aria-label="Next">
+                        <li className="page-item">
+                          <Link className="page-link" to="#" aria-label="Next">
                             &raquo;
                           </Link>
                         </li>
