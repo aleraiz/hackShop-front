@@ -92,24 +92,24 @@ export const NavbarPrincipal = () => {
                       <Offcanvas.Body>
                         <Nav className="justify-content-md-center flex-grow-1 pe-3 main-nav">
                           <ul id="navbarMenuBtns">
-                            <li className="drop-holder">
+                            <li className="drop-holder navbarMenuLi">
                               <Link to="/">Home</Link>
                             </li>
-                            <li className="megamenu-holder">
+                            <li className="megamenu-holder navbarMenuLi">
                               <Link to="/products">Shop</Link>
                             </li>
-                            <li>
+                            <li className="navbarMenuLi">
                               <Link to="/aboutus">About Us</Link>
                             </li>
                             <li
-                              className="contactUs"
+                              className="contactUs navbarMenuLi"
                               onClick={() => {
                                 handlerMsgErr();
                               }}
                             >
                               Contact Us
                             </li>
-                            <li>
+                            <li className="navbarMenuLi">
                               <Link to="/account">
                                 {user && <p className="userNav">{user.firstname}</p>}
                               </Link>

@@ -24,6 +24,10 @@ export const ProductDetail = () => {
   const { slug } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const productDetail = async () => {
       const response = await axios({
         method: "get",

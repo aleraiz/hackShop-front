@@ -39,13 +39,13 @@ export const AboutUs = () => {
   return (
     <>
       <div className="about-area aboutContainer">
-        <div classNameName="containerImageAboutUs"></div>
+        <div className="containerImageAboutUs"></div>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="about-content">
                 <div>
-                  <h2 className="about-title">
+                  <h2 class="about-title hackshopTitle">
                     Sobre el <span>Proyecto</span>
                   </h2>
                   <p className="about-desc aboutUsDescription">
@@ -64,26 +64,22 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="about-area">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div classNameName="divContainerHackshop">
+      <div class="about-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 containerPlanning">
+              <div className="divContainerHackshop">
                 <div>
                   <h2 className="about-title hackshopTitle">
                     ¿Cómo nació <span>Hackshop?</span>
                   </h2>
                 </div>
 
-                <div classNameName="divPlanningHackshopPoint">
-                  <div>
-                    <img
-                      src="./HackShopRoutesFrontEdit.png"
-                      alt="MERHS"
-                      classNameName="imgDiagrama"
-                    />
+                <div className="divPlanningHackshopPoint">
+                  <div className="divContainerImg">
+                    <img src="./RoutesFront.png" alt="MERHS" className="imgDiagrama" />
                   </div>
-                  <div classNameName="titlesAndDescriptionStep">
+                  <div className="titlesAndDescriptionStep">
                     <div>
                       <h3>1 - Concepción del proyecto y MER</h3>
                       <p className="about-desc aboutUsDescription paragraphText">
@@ -99,8 +95,8 @@ export const AboutUs = () => {
                 </div>
               </div>
 
-              <div classNameName="divPlanningHackshopRoutes">
-                <div classNameName="titlesAndDescriptionStepTwo">
+              <div className="divPlanningHackshopPoint columnReverseMinWidth">
+                <div className="titlesAndDescriptionStepTwo">
                   <div>
                     <h3>2 - Diseño e Inspiración</h3>
                     <p className="about-desc aboutUsDescription paragraphText">
@@ -119,34 +115,37 @@ export const AboutUs = () => {
                     </p>
                   </div>
                 </div>
-
-                <div classNameName="divContainerImg">
-                  <img src="./HackshopMER.png" alt="MERHS" classNameName="imgDiagrama" />
+                <div className="divContainerImg">
+                  <img src="./MER.png" alt="MERHS" className="imgDiagrama" />
                 </div>
               </div>
               <div>
-                <div classNameName="divPlanningHackshopRoutesBottom">
-                  <div classNameName="divContainerImg">
-                    <img src="./HackShopRoutes.png" alt="MERHS" classNameName="imgDiagrama" />
+                <div className="divPlanningHackshopPoint">
+                  <div className="divContainerImg">
+                    <img src="./RoutesBack.png" alt="MERHS" className="imgDiagrama" />
                   </div>
-                  <div>
-                    <h3>4- Metodología de trabajo</h3>
-                    <p className="about-desc aboutUsDescription paragraphText">
-                      Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span> con
-                      tres sprints. Cada sprint tenía tareas que se organizaban y desarrollaban
-                      individualmente o en grupos, usando <span> Trello</span> para determinar el
-                      curso y la finalización de cada una, teniendo siempre tareas pendientes para
-                      que cada intregrante pudiese tomar nuevas en caso de terminar con las
-                      asignadas.Todo el proyecto se realizó en línea usando Discord.
-                    </p>
-                    <h3> 5 - Marcos y Tecnologías</h3>
-                    <p className="about-desc aboutUsDescription paragraphText">
-                      Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos con
-                      <span> MySql y Sequelize</span> como persistencia de datos, además de
-                      <span> Cloudinary</span> para importar imágenes.
-                      <span> NodeJs/Express, React, Redux</span>
-                      como nuestros marcos de aplicación.
-                    </p>
+                  <div className="titlesAndDescriptionStep">
+                    <div>
+                      <h3>4- Metodología de trabajo</h3>
+                      <p class="about-desc aboutUsDescription paragraphText">
+                        Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span>{" "}
+                        con tres sprints. Cada sprint tenía tareas que se organizaban y
+                        desarrollaban individualmente o en grupos, usando <span> Trello</span> para
+                        determinar el curso y la finalización de cada una, teniendo siempre tareas
+                        pendientes para que cada intregrante pudiese tomar nuevas en caso de
+                        terminar con las asignadas.Todo el proyecto se realizó en línea usando
+                        Discord.
+                      </p>
+                      <h3> 5 - Marcos y Tecnologías</h3>
+                      <p class="about-desc aboutUsDescription paragraphText">
+                        Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos
+                        con
+                        <span> MySql y Sequelize</span> como persistencia de datos, además de
+                        <span> Cloudinary</span> para importar imágenes.
+                        <span> NodeJs/Express, React, Redux</span>
+                        como nuestros marcos de aplicación.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -154,271 +153,218 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="section-title-wrap without-tab">
-        <h2 className="section-title " id="technologyTitle">
+      <div class="section-title-wrap without-tab">
+        <h2 class="section-title " id="technologyTitle">
           ¡TECNOLOGíAS <span>UTILIZADAS!</span>
         </h2>
       </div>
-      <div className="about-area imageBackgroundSuculenta">
-        <div classNameName="containerImageSuculenta">
-          <div classNameName="containerTechnology">
+      <div class="about-area imageBackgroundSuculenta">
+        <div className="containerImageSuculenta">
+          <div className="container containerTechnology">
             <Carousel
               responsive={responsive}
               infinite={true}
-              classNameName="containerSvg"
+              className="containerSvg"
               draggable={false}
             >
-              <div classNameName="containerSvgName">
-                <FaReact classNameName="reactSvg" />
+              <div className="containerSvgName">
+                <FaReact className="reactSvg" />
                 <p>React</p>
               </div>
-              <div classNameName="containerSvgName">
-                <SiRedux classNameName="reduxSvg" />
+              <div className="containerSvgName">
+                <SiRedux className="reduxSvg" />
                 <p>Redux</p>
               </div>
-              <div classNameName="containerSvgName">
-                <TbBrandJavascript classNameName="javascriptSvg" />
+              <div className="containerSvgName">
+                <TbBrandJavascript className="javascriptSvg" />
                 <p>Javacript</p>
               </div>
-              <div classNameName="containerSvgName">
-                <FaTrello classNameName="trelloSvg" />
+              <div className="containerSvgName">
+                <FaTrello className="trelloSvg" />
                 <p>Trello</p>
               </div>
               <div>
-                <FaNode classNameName="nodeJsSvg" />
+                <FaNode className="nodeJsSvg" />
                 <p>Node Js</p>
               </div>
-              <div classNameName="containerSvgName">
-                <SiBootstrap classNameName="bootstrapSvg" />
+              <div className="containerSvgName">
+                <SiBootstrap className="bootstrapSvg" />
                 <p>Bootstrap</p>
               </div>
-              <div classNameName="containerSvgName">
-                <SiMysql classNameName="mysqlSvg" />
+              <div className="containerSvgName">
+                <SiMysql className="mysqlSvg" />
                 <p>MySql</p>
               </div>
               <div>
-                <SiCss3 classNameName="cssSvg" />
+                <SiCss3 className="cssSvg" />
                 <p>Css</p>
               </div>
               <div>
-                <FaGithub classNameName="githubSvg" />
+                <FaGithub className="githubSvg" />
                 <p>GitHub</p>
               </div>
               <div>
-                <SiSequelize classNameName="sequelizeSvg" />
+                <SiSequelize className="sequelizeSvg" />
                 <p>Sequelize</p>
               </div>
               <div>
-                <FaFigma classNameName="figmaSvg" />
+                <FaFigma className="figmaSvg" />
                 <p>Figma</p>
               </div>
               <div>
-                <FaHtml5 classNameName="htmlSvg" />
+                <FaHtml5 className="htmlSvg" />
                 <p>Html</p>
               </div>
             </Carousel>
           </div>
         </div>
       </div>
-
-      <div className="team-area  teamContainer">
-        <div className="container">
-          <div className="section-title-wrap without-tab">
-            <h2 className="section-title">¡Nuestro Team!</h2>
+      <div class="team-area  teamContainer">
+        <div class="container">
+          <div class="section-title-wrap without-tab">
+            <h2 class="section-title">¡Nuestro Team!</h2>
           </div>
-          <div className="row justify-content-center">
-            <div className="col-lg-3 col-sm-6 pt-sm-5">
-              <div className="team-item">
-                <div className="team-img">
-                  <img
-                    src="./AleCircle.png"
-                    alt="Team Member"
-                    classNameName="teamImageProfile primary-img"
-                  />
-                  <img
-                    src="./fotoAle-modified.png"
-                    alt="Team Member"
-                    classNameName="teamImageProfile secondary-img"
-                  />
-                  <div className="inner-content">
-                    <h2 className="team-member-name">Alejandro Raíz</h2>
-                    <div className="social-link with-border">
-                      <ul>
-                        <li>
-                          <Link
-                            to="https://github.com/aleraiz"
-                            data-tippy="github"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaGithub />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="https://www.linkedin.com/in/alejandro-raiz/"
-                            data-tippy="linkedin"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaLinkedinIn />
-                          </Link>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i className="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div className="team-content">
-                  <h2 className="team-member-name mb-0">Alejandro Raíz</h2>
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-6 pt-sm-5">
+              <div class="team-img">
+                <img
+                  src="./AleCircle.png"
+                  alt="Team Member"
+                  className="teamImageProfile primary-img"
+                />
+                <img
+                  src="./fotoAle-modified.png"
+                  alt="Team Member"
+                  className="teamImageProfile secondary-img"
+                />
+              </div>
+              <div class="team-content">
+                <h2 class="team-member-name mb-0">Alejandro Raíz</h2>
+                <div class="social-link with-border justify-content-center">
+                  <ul className="socialLinksProfiles">
+                    <li>
+                      <a
+                        href="https://github.com/aleraiz"
+                        target="_blank"
+                        data-tippy="github"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay="50"
+                        data-tippy-arrow="true"
+                        data-tippy-theme="sharpborder"
+                      >
+                        <FaGithub />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        to="https://www.linkedin.com/in/alejandro-raiz/"
+                        data-tippy="linkedin"
+                        target="_blank"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay="50"
+                        data-tippy-arrow="true"
+                        data-tippy-theme="sharpborder"
+                      >
+                        <FaLinkedinIn />
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 pt-5 pt-sm-0">
-              <div className="team-item">
-                <div className="team-img">
-                  <img
-                    src="./Marco.png"
-                    alt="Team Member"
-                    classNameName="teamImageProfile primary-img"
-                  />
-                  <img
-                    src="./MarcoPlaya-modified.png"
-                    alt="Team Member"
-                    classNameName="teamImageProfile secondary-img"
-                  />
-                  <div className="inner-content">
-                    <h2 className="team-member-name">Marco De Luca</h2>
-                    <div className="social-link with-border">
-                      <ul>
-                        <li>
-                          <Link
-                            to="https://github.com/antondelu"
-                            data-tippy="github"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaGithub />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="https://www.linkedin.com/in/marcodeluca-dw/"
-                            data-tippy="Linkedin"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaLinkedinIn />
-                          </Link>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i className="fa fa-pinterest"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+            <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
+              <div class="team-img">
+                <img src="./Marco.png" alt="Team Member" className="teamImageProfile primary-img" />
+                <img
+                  src="./MarcoPlaya-modified.png"
+                  alt="Team Member"
+                  className="teamImageProfile secondary-img"
+                />
+                <div class="team-content">
+                  <h2 class="team-member-name mb-0">Marco de Luca</h2>
+                  <div class="social-link with-border justify-content-center">
+                    <ul className="socialLinksProfiles">
+                      <li>
+                        <a
+                          href="https://github.com/antondelu"
+                          target="_blank"
+                          data-tippy="github"
+                          data-tippy-inertia="true"
+                          data-tippy-animation="shift-away"
+                          data-tippy-delay="50"
+                          data-tippy-arrow="true"
+                          data-tippy-theme="sharpborder"
+                        >
+                          <FaGithub />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.linkedin.com/in/marcodeluca-dw/"
+                          target="_blank"
+                          data-tippy="Linkedin"
+                          data-tippy-inertia="true"
+                          data-tippy-animation="shift-away"
+                          data-tippy-delay="50"
+                          data-tippy-arrow="true"
+                          data-tippy-theme="sharpborder"
+                        >
+                          <FaLinkedinIn />
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-                </div>
-                <div className="team-content">
-                  <h2 className="team-member-name mb-0">Marco de Luca</h2>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 pt-5">
-              <div className="team-item">
-                <div className="team-img">
-                  <img
-                    src="./imageCircleRomina.png"
-                    alt="Team Member"
-                    classNameName="teamImageProfile primary-img"
-                  />
-                  <img
-                    src="./paracaidismo.png"
-                    alt="Team Member"
-                    classNameName="teamImageProfile secondary-img"
-                  />
-                  <div className="inner-content">
-                    <h2 className="team-member-name">Romina Dos Santos</h2>
-                    <div className="social-link with-border">
-                      <ul>
-                        <li>
-                          <Link
-                            to="https://github.com/RominaDosSantos"
-                            data-tippy="github"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaGithub />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="https://www.linkedin.com/in/romina-dos-santos/"
-                            data-tippy="Linkedin"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <FaLinkedinIn />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/"
-                            data-tippy="Pinterest"
-                            data-tippy-inertia="true"
-                            data-tippy-animation="shift-away"
-                            data-tippy-delay="50"
-                            data-tippy-arrow="true"
-                            data-tippy-theme="sharpborder"
-                          >
-                            <i className="fa fa-pinterest"></i>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
+            <div class="col-lg-3 col-sm-6 pt-5">
+              <div class="team-img">
+                <img
+                  src="./imageCircleRomina.png"
+                  alt="Team Member"
+                  className="teamImageProfile primary-img"
+                />
+                <img
+                  src="./paracaidismo.png"
+                  alt="Team Member"
+                  className="teamImageProfile secondary-img"
+                />
+                <div class="team-content">
+                  <h2 class="team-member-name mb-0">Romina Dos Santos</h2>
+                  <div class="social-link with-border justify-content-center">
+                    <ul className="socialLinksProfiles">
+                      <li>
+                        <a
+                          href="https://github.com/RominaDosSantos"
+                          data-tippy="github"
+                          target="_blank"
+                          data-tippy-inertia="true"
+                          data-tippy-animation="shift-away"
+                          data-tippy-delay="50"
+                          data-tippy-arrow="true"
+                          data-tippy-theme="sharpborder"
+                        >
+                          <FaGithub />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.linkedin.com/in/romina-dos-santos/"
+                          target="_blank"
+                          data-tippy="Linkedin"
+                          data-tippy-inertia="true"
+                          data-tippy-animation="shift-away"
+                          data-tippy-delay="50"
+                          data-tippy-arrow="true"
+                          data-tippy-theme="sharpborder"
+                        >
+                          <FaLinkedinIn />
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-                </div>
-                <div className="team-content">
-                  <h2 className="team-member-name mb-0">Romina Dos Santos</h2>
                 </div>
               </div>
             </div>

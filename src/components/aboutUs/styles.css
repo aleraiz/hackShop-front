@@ -41,7 +41,7 @@
 
 /* ---Team--- */
 @media (max-width: 991px) {
-  .team-item {
+  /* .team-item {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -55,11 +55,11 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-  }
+  } */
 }
 
 .team-img {
-  background-color: #abd373;
+  /* background-color: #abd373; */
   border-radius: 100%;
   position: relative;
 }
@@ -85,7 +85,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 135px;
+  height: 120px;
   text-align: center;
   padding-top: 25px;
   border-end-end-radius: 100vh;
@@ -183,7 +183,6 @@
 
 .hackshopTitle {
   text-align-last: center;
-  margin-bottom: 50px;
 }
 
 .divPlanningHackshop {
@@ -314,72 +313,21 @@
   margin-top: 0;
 }
 
-.divPlanningHackshopRoutes {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  height: 500px;
-}
-
-.divPlanningHackshopRoutes div {
-  width: 100%;
-}
-
-.divPlanningHackshopRoutes p {
-  max-width: 90ch;
-}
-
 .divPlanningHackshopPoint {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.divPlanningHackshopPoint div {
-  width: 100%;
+  height: 350px;
 }
 
 .divPlanningHackshopPoint p {
-  max-width: 70ch;
-}
-
-.divPlanningHackshopRoutesBottom {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  margin-bottom: 50px;
-}
-
-.divPlanningHackshopRoutesBottom div {
-  width: 100%;
-}
-
-.divPlanningHackshopRoutesBottom p {
   max-width: 90ch;
 }
 
-.divContainerHackshop h3 {
+.divPlanningHackshopPoint h3 {
   font-size: 24px;
 }
 
 .divPlanningHackshopPoint .paragraphText {
   font-size: 1rem;
-}
-
-.divPlanningHackshopRoutesBottom .paragraphText {
-  font-size: 1rem;
-}
-
-.divPlanningHackshopRoutes h3 {
-  font-size: 24px;
-}
-
-.divPlanningHackshopRoutes .paragraphText {
-  font-size: 1rem;
-}
-
-.divPlanningHackshopRoutesBottom h3 {
-  font-size: 24px;
 }
 
 .aboutContainer {
@@ -407,4 +355,72 @@
 .titlesAndDescriptionStepTwo {
   display: flex;
   align-self: center;
+  margin-right: 50px;
+}
+
+.containerPlanning {
+  margin-bottom: 50px;
+}
+
+.team-img .inner-content .social-link ul li:nth-child(1) {
+  transform: none;
+}
+
+.socialLinksProfiles {
+  padding-left: 0;
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    height: 500px;
+  }
+  .containerImageAboutUs {
+    height: 500px;
+  }
+  .divPlanningHackshopPoint {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .columnReverseMinWidth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .divContainerImg {
+    height: 400px;
+    width: 100%;
+  }
+
+  .titlesAndDescriptionStep {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 509px) {
+  .hackshopTitle {
+    display: block !important;
+  }
+}
+
+@media (max-width: 473px) {
+  .aboutContainer {
+    height: 760px;
+  }
+  .containerImageAboutUs {
+    height: 760px;
+  }
+  .divPlanningHackshopPoint .paragraphText {
+    display: block;
+    margin-bottom: 0;
+  }
+  .columnReverseMinWidth {
+    margin-bottom: 0;
+  }
+  .divContainerHackshop {
+    margin-bottom: 0;
+  }
 }

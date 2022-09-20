@@ -8,7 +8,7 @@ import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 export const CartOffCanvas = ({ setOpenOffcanvas }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
-  console.log(cart);
+
   const handleClose = () => setOpenOffcanvas(false);
 
   function handlerDeleteProductFromCart(productId) {
@@ -39,7 +39,6 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
           <div className="minicart-content">
             <ul className="minicart-list">
               {cart.map((product) => {
-                console.log(product.quantity);
                 return (
                   <>
                     <li className="minicart-product minicart-flex" key={product.id}>
