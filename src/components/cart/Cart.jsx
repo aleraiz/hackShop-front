@@ -36,7 +36,7 @@ export const Cart = () => {
   return (
     <>
       <main className="main-content">
-        <div className="breadcrumb-area breadcrumb-height">
+        <div className="breadcrumb-area breadcrumb-height bg-height">
           <div className="container h-100">
             <div className="row h-100">
               <div className="col-lg-12">
@@ -156,37 +156,7 @@ export const Cart = () => {
                         </tbody>
                       </table>
                     </div>
-                    <div className="row">
-                      <div className="col-12">
-                        <div className="coupon-all">
-                          <div className="coupon">
-                            <input
-                              id="coupon_code"
-                              className="input-text"
-                              name="coupon_code"
-                              // value=""
-                              placeholder="Coupon code"
-                              type="text"
-                            />
-                            <input
-                              className="button mt-xxs-30"
-                              name="apply_coupon"
-                              value="Apply coupon"
-                              type="submit"
-                            />
-                          </div>
-                          <div className="coupon2">
-                            <input
-                              className="button"
-                              name="update_cart"
-                              value="Update cart"
-                              type="submit"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
+                    <div className="row justify-content-between">
                       <div className="col-md-5 ml-auto">
                         <div className="cart-page-total">
                           <h2>Cart totals</h2>
@@ -214,8 +184,10 @@ export const Cart = () => {
                               </span>
                             </li>
                           </ul>
-                          <Link to="/checkout">Proceed to checkout</Link>
                         </div>
+                      </div>
+                      <div className="col-md-5 ml-auto proceed-checkout">
+                        <Link to="/checkout">Proceed to checkout</Link>
                       </div>
                     </div>
                   </form>

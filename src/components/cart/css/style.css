@@ -125,6 +125,30 @@
   transition: all 0.3s ease 0s;
 }
 
+.proceed-checkout {
+  padding-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.proceed-checkout a {
+  background-color: #505050;
+  border: 0;
+  color: #ffffff;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.bg-height {
+  height: 130px;
+}
+
 .breadcrumb-height {
   background: url("../../../../public/images/cart/1-1-1919x388.jpg");
 }

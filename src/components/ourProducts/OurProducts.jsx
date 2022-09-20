@@ -104,8 +104,8 @@ export const OurProducts = () => {
                 <div className="product-item-wrap row">
                   {ourProducts.map((product, index) => {
                     return (
-                      <div className="col-xl-3 col-md-4 col-sm-6">
-                        <div className="product-item" key={index}>
+                      <div className="col-xl-3 col-md-4 col-sm-6" key={index}>
+                        <div className="product-item">
                           <div className="product-img">
                             <Link to={`/product/${product.slug}`}>
                               <img
@@ -114,7 +114,7 @@ export const OurProducts = () => {
                                 alt="Product Images"
                               />
                               <img
-                                className="secondary-img"
+                                className="secondary-img secondary-img-bg"
                                 src={product.image[4].imageDetailTwo}
                                 alt="Product Images"
                               />

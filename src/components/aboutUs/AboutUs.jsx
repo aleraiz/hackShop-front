@@ -38,17 +38,17 @@ export const AboutUs = () => {
 
   return (
     <>
-      <div class="about-area aboutContainer">
+      <div className="about-area aboutContainer">
         <div className="containerImageAboutUs"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="about-content">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="about-content">
                 <div>
                   <h2 class="about-title hackshopTitle">
                     Sobre el <span>Proyecto</span>
                   </h2>
-                  <p class="about-desc aboutUsDescription">
+                  <p className="about-desc aboutUsDescription">
                     HackShop es una aplicación web realizada como proyecto final del Coding Bootcamp
                     en Hack Academy, una institución educativa fundada en 2016 en Montevideo,
                     Uruguay, especializada en cursos intensivos de programación. El bootcamp es un
@@ -70,7 +70,7 @@ export const AboutUs = () => {
             <div class="col-lg-12 containerPlanning">
               <div className="divContainerHackshop">
                 <div>
-                  <h2 class="about-title hackshopTitle">
+                  <h2 className="about-title hackshopTitle">
                     ¿Cómo nació <span>Hackshop?</span>
                   </h2>
                 </div>
@@ -82,7 +82,7 @@ export const AboutUs = () => {
                   <div className="titlesAndDescriptionStep">
                     <div>
                       <h3>1 - Concepción del proyecto y MER</h3>
-                      <p class="about-desc aboutUsDescription paragraphText">
+                      <p className="about-desc aboutUsDescription paragraphText">
                         Nuestro primer paso fue definir que necesitamos en el <span>Backend </span>
                         antes de seguir avanzando, por esto hicimos un listado de las cinco
                         principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
@@ -99,14 +99,14 @@ export const AboutUs = () => {
                 <div className="titlesAndDescriptionStepTwo">
                   <div>
                     <h3>2 - Diseño e Inspiración</h3>
-                    <p class="about-desc aboutUsDescription paragraphText">
+                    <p className="about-desc aboutUsDescription paragraphText">
                       Nos inspiramos en diversas páginas de plantas, con personalidades bastante{" "}
                       <span>funny</span>. Llenamos nuestra base de datos con imágenes,
                       descripciones, nombres y precios de TusPlantasOnline, otro sitio web con
                       excelente diseño
                     </p>
                     <h3>3- Pasos a seguir</h3>
-                    <p class="about-desc aboutUsDescription paragraphText">
+                    <p className="about-desc aboutUsDescription paragraphText">
                       Posterior a tener creada nuestra Base de Datos, definimos las rutas básicas y
                       necesarias para poder utilizar nuestra aplicación tanto a nivel de{" "}
                       <span> Backend </span>
@@ -372,54 +372,54 @@ export const AboutUs = () => {
         </div>
       </div>
 
-      <div class="banner-with-counter" id="counterBootcamp">
-        <div class="counter-area">
-          <div class="container">
-            <h2 class="counter-title">
+      <div className="banner-with-counter" id="counterBootcamp">
+        <div className="counter-area">
+          <div className="container">
+            <h2 className="counter-title">
               En este bootcamp de dedicacion full-time <span>hemos echo</span>:
             </h2>
-            <div class="row">
-              <div class="col-lg-3 col-md-4 col-6">
-                <div class="counter-item">
-                  <div class="count-wrap">
-                    <h3 class="count mb-0" data-counterup-time="500">
+            <div className="row">
+              <div className="col-lg-3 col-md-4 col-6">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="500">
                       3
                     </h3>
                   </div>
-                  <h4 class="count-title mb-0">Meses</h4>
+                  <h4 className="count-title mb-0">Meses</h4>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-6">
-                <div class="counter-item">
-                  <div class="count-wrap">
-                    <h3 class="count mb-0" data-counterup-time="1000">
+              <div className="col-lg-3 col-md-4 col-6">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="1000">
                       600
                     </h3>
-                    <span class="prefix">+</span>
+                    <span className="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Horas</h4>
+                  <h4 className="count-title mb-0">Horas</h4>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-6 pt-4 pt-md-0">
-                <div class="counter-item">
-                  <div class="count-wrap">
-                    <h3 class="count mb-0" data-counterup-time="1500">
+              <div className="col-lg-3 col-md-4 col-6 pt-4 pt-md-0">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="1500">
                       12
                     </h3>
-                    <span class="prefix">+</span>
+                    <span className="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Lenguajes</h4>
+                  <h4 className="count-title mb-0">Lenguajes</h4>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-6 pt-4 pt-lg-0">
-                <div class="counter-item">
-                  <div class="count-wrap">
-                    <h3 class="count mb-0" data-counterup-time="2000">
+              <div className="col-lg-3 col-md-4 col-6 pt-4 pt-lg-0">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="2000">
                       15
                     </h3>
-                    <span class="prefix">+</span>
+                    <span className="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Proyectos</h4>
+                  <h4 className="count-title mb-0">Proyectos</h4>
                 </div>
               </div>
             </div>
