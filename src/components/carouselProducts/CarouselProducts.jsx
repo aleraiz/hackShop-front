@@ -65,106 +65,104 @@ export const CarouselProducts = (setRefresSlug) => {
     <Carousel responsive={responsive} infinite={true}>
       {productsCarousel.map((element, index) => {
         return (
-          <>
-            <div className="swiper-slide product-item" key={index}>
-              <div className="product-img">
-                <Link to={`/product/${element.slug}`} onClick={() => setRefresSlug(true)}>
-                  <img
-                    className="primary-img"
-                    src={element.image[3].imageDetailOne}
-                    alt="Product Images"
-                  />
-                  <img
-                    className="secondary-img"
-                    src={element.image[4].imageDetailTwo}
-                    alt="Product Images"
-                  />
-                </Link>
-                <div className="product-add-action">
-                  <ul>
-                    <li>
-                      <button
-                        className="whislistBtn"
-                        data-tippy="Add to wishlist"
-                        data-tippy-inertia="true"
-                        data-tippy-animation="shift-away"
-                        data-tippy-delay="50"
-                        data-tippy-arrow="true"
-                        data-tippy-theme="sharpborder"
-                        onClick={() => {
-                          handlerMsgErr();
-                        }}
-                      >
-                        <i className="pe-7s-like"></i>
-                      </button>
-                    </li>
-                    <li
-                      className="quuickview-btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#quickModal"
+          <div className="swiper-slide product-item" key={index}>
+            <div className="product-img">
+              <Link to={`/product/${element.slug}`} onClick={() => setRefresSlug(true)}>
+                <img
+                  className="primary-img"
+                  src={element.image[3].imageDetailOne}
+                  alt="Product Images"
+                />
+                <img
+                  className="secondary-img"
+                  src={element.image[4].imageDetailTwo}
+                  alt="Product Images"
+                />
+              </Link>
+              <div className="product-add-action">
+                <ul>
+                  <li>
+                    <button
+                      className="whislistBtn"
+                      data-tippy="Add to wishlist"
+                      data-tippy-inertia="true"
+                      data-tippy-animation="shift-away"
+                      data-tippy-delay="50"
+                      data-tippy-arrow="true"
+                      data-tippy-theme="sharpborder"
+                      onClick={() => {
+                        handlerMsgErr();
+                      }}
                     >
-                      <Link
-                        to={`/product/${element.slug}`}
-                        onClick={() => setRefresSlug(true)}
-                        data-tippy="Quickview"
-                        data-tippy-inertia="true"
-                        data-tippy-animation="shift-away"
-                        data-tippy-delay="50"
-                        data-tippy-arrow="true"
-                        data-tippy-theme="sharpborder"
-                      >
-                        <i className="pe-7s-look"></i>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="cart.html"
-                        data-tippy="Add to cart"
-                        data-tippy-inertia="true"
-                        data-tippy-animation="shift-away"
-                        data-tippy-delay="50"
-                        data-tippy-arrow="true"
-                        data-tippy-theme="sharpborder"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleAddCart(element);
-                        }}
-                      >
-                        <i className="pe-7s-cart"></i>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="product-content">
-                <Link className="product-name" to="shop.html">
-                  {element.productName}
-                </Link>
-                <div className="price-box pb-1">
-                  <span className="new-price">${element.price}</span>
-                </div>
-                <div className="rating-box">
-                  <ul>
-                    <li>
-                      <i className="fa fa-star"></i>
-                    </li>
-                    <li>
-                      <i className="fa fa-star"></i>
-                    </li>
-                    <li>
-                      <i className="fa fa-star"></i>
-                    </li>
-                    <li>
-                      <i className="fa fa-star"></i>
-                    </li>
-                    <li>
-                      <i className="fa fa-star"></i>
-                    </li>
-                  </ul>
-                </div>
+                      <i className="pe-7s-like"></i>
+                    </button>
+                  </li>
+                  <li
+                    className="quuickview-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#quickModal"
+                  >
+                    <Link
+                      to={`/product/${element.slug}`}
+                      onClick={() => setRefresSlug(true)}
+                      data-tippy="Quickview"
+                      data-tippy-inertia="true"
+                      data-tippy-animation="shift-away"
+                      data-tippy-delay="50"
+                      data-tippy-arrow="true"
+                      data-tippy-theme="sharpborder"
+                    >
+                      <i className="pe-7s-look"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="cart.html"
+                      data-tippy="Add to cart"
+                      data-tippy-inertia="true"
+                      data-tippy-animation="shift-away"
+                      data-tippy-delay="50"
+                      data-tippy-arrow="true"
+                      data-tippy-theme="sharpborder"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleAddCart(element);
+                      }}
+                    >
+                      <i className="pe-7s-cart"></i>
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
-          </>
+            <div className="product-content">
+              <Link className="product-name" to="shop.html">
+                {element.productName}
+              </Link>
+              <div className="price-box pb-1">
+                <span className="new-price">${element.price}</span>
+              </div>
+              <div className="rating-box">
+                <ul>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                  <li>
+                    <i className="fa fa-star"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         );
       })}
     </Carousel>

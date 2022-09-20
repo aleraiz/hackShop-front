@@ -38,17 +38,17 @@ export const AboutUs = () => {
 
   return (
     <>
-      <div class="about-area aboutContainer">
-        <div className="containerImageAboutUs"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="about-content">
+      <div className="about-area aboutContainer">
+        <div classNameName="containerImageAboutUs"></div>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="about-content">
                 <div>
-                  <h2 class="about-title">
+                  <h2 className="about-title">
                     Sobre el <span>Proyecto</span>
                   </h2>
-                  <p class="about-desc aboutUsDescription">
+                  <p className="about-desc aboutUsDescription">
                     HackShop es una aplicación web realizada como proyecto final del Coding Bootcamp
                     en Hack Academy, una institución educativa fundada en 2016 en Montevideo,
                     Uruguay, especializada en cursos intensivos de programación. El bootcamp es un
@@ -64,25 +64,29 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div class="about-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div className="divContainerHackshop">
+      <div className="about-area">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div classNameName="divContainerHackshop">
                 <div>
-                  <h2 class="about-title hackshopTitle">
+                  <h2 className="about-title hackshopTitle">
                     ¿Cómo nació <span>Hackshop?</span>
                   </h2>
                 </div>
 
-                <div className="divPlanningHackshopPoint">
+                <div classNameName="divPlanningHackshopPoint">
                   <div>
-                    <img src="./HackShopRoutesFrontEdit.png" alt="MERHS" className="imgDiagrama" />
+                    <img
+                      src="./HackShopRoutesFrontEdit.png"
+                      alt="MERHS"
+                      classNameName="imgDiagrama"
+                    />
                   </div>
-                  <div className="titlesAndDescriptionStep">
+                  <div classNameName="titlesAndDescriptionStep">
                     <div>
                       <h3>1 - Concepción del proyecto y MER</h3>
-                      <p class="about-desc aboutUsDescription paragraphText">
+                      <p className="about-desc aboutUsDescription paragraphText">
                         Nuestro primer paso fue definir que necesitamos en el <span>Backend </span>
                         antes de seguir avanzando, por esto hicimos un listado de las cinco
                         principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
@@ -95,18 +99,18 @@ export const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="divPlanningHackshopRoutes">
-                <div className="titlesAndDescriptionStepTwo">
+              <div classNameName="divPlanningHackshopRoutes">
+                <div classNameName="titlesAndDescriptionStepTwo">
                   <div>
                     <h3>2 - Diseño e Inspiración</h3>
-                    <p class="about-desc aboutUsDescription paragraphText">
+                    <p className="about-desc aboutUsDescription paragraphText">
                       Nos inspiramos en diversas páginas de plantas, con personalidades bastante{" "}
                       <span>funny</span>. Llenamos nuestra base de datos con imágenes,
                       descripciones, nombres y precios de TusPlantasOnline, otro sitio web con
                       excelente diseño
                     </p>
                     <h3>3- Pasos a seguir</h3>
-                    <p class="about-desc aboutUsDescription paragraphText">
+                    <p className="about-desc aboutUsDescription paragraphText">
                       Posterior a tener creada nuestra Base de Datos, definimos las rutas básicas y
                       necesarias para poder utilizar nuestra aplicación tanto a nivel de{" "}
                       <span> Backend </span>
@@ -116,18 +120,18 @@ export const AboutUs = () => {
                   </div>
                 </div>
 
-                <div className="divContainerImg">
-                  <img src="./HackshopMER.png" alt="MERHS" className="imgDiagrama" />
+                <div classNameName="divContainerImg">
+                  <img src="./HackshopMER.png" alt="MERHS" classNameName="imgDiagrama" />
                 </div>
               </div>
               <div>
-                <div className="divPlanningHackshopRoutesBottom">
-                  <div className="divContainerImg">
-                    <img src="./HackShopRoutes.png" alt="MERHS" className="imgDiagrama" />
+                <div classNameName="divPlanningHackshopRoutesBottom">
+                  <div classNameName="divContainerImg">
+                    <img src="./HackShopRoutes.png" alt="MERHS" classNameName="imgDiagrama" />
                   </div>
                   <div>
                     <h3>4- Metodología de trabajo</h3>
-                    <p class="about-desc aboutUsDescription paragraphText">
+                    <p className="about-desc aboutUsDescription paragraphText">
                       Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span> con
                       tres sprints. Cada sprint tenía tareas que se organizaban y desarrollaban
                       individualmente o en grupos, usando <span> Trello</span> para determinar el
@@ -136,7 +140,7 @@ export const AboutUs = () => {
                       asignadas.Todo el proyecto se realizó en línea usando Discord.
                     </p>
                     <h3> 5 - Marcos y Tecnologías</h3>
-                    <p class="about-desc aboutUsDescription paragraphText">
+                    <p className="about-desc aboutUsDescription paragraphText">
                       Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos con
                       <span> MySql y Sequelize</span> como persistencia de datos, además de
                       <span> Cloudinary</span> para importar imágenes.
@@ -150,66 +154,66 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div class="section-title-wrap without-tab">
-        <h2 class="section-title " id="technologyTitle">
+      <div className="section-title-wrap without-tab">
+        <h2 className="section-title " id="technologyTitle">
           ¡TECNOLOGíAS <span>UTILIZADAS!</span>
         </h2>
       </div>
-      <div class="about-area imageBackgroundSuculenta">
-        <div className="containerImageSuculenta">
-          <div className="containerTechnology">
+      <div className="about-area imageBackgroundSuculenta">
+        <div classNameName="containerImageSuculenta">
+          <div classNameName="containerTechnology">
             <Carousel
               responsive={responsive}
               infinite={true}
-              className="containerSvg"
+              classNameName="containerSvg"
               draggable={false}
             >
-              <div className="containerSvgName">
-                <FaReact className="reactSvg" />
+              <div classNameName="containerSvgName">
+                <FaReact classNameName="reactSvg" />
                 <p>React</p>
               </div>
-              <div className="containerSvgName">
-                <SiRedux className="reduxSvg" />
+              <div classNameName="containerSvgName">
+                <SiRedux classNameName="reduxSvg" />
                 <p>Redux</p>
               </div>
-              <div className="containerSvgName">
-                <TbBrandJavascript className="javascriptSvg" />
+              <div classNameName="containerSvgName">
+                <TbBrandJavascript classNameName="javascriptSvg" />
                 <p>Javacript</p>
               </div>
-              <div className="containerSvgName">
-                <FaTrello className="trelloSvg" />
+              <div classNameName="containerSvgName">
+                <FaTrello classNameName="trelloSvg" />
                 <p>Trello</p>
               </div>
               <div>
-                <FaNode className="nodeJsSvg" />
+                <FaNode classNameName="nodeJsSvg" />
                 <p>Node Js</p>
               </div>
-              <div className="containerSvgName">
-                <SiBootstrap className="bootstrapSvg" />
+              <div classNameName="containerSvgName">
+                <SiBootstrap classNameName="bootstrapSvg" />
                 <p>Bootstrap</p>
               </div>
-              <div className="containerSvgName">
-                <SiMysql className="mysqlSvg" />
+              <div classNameName="containerSvgName">
+                <SiMysql classNameName="mysqlSvg" />
                 <p>MySql</p>
               </div>
               <div>
-                <SiCss3 className="cssSvg" />
+                <SiCss3 classNameName="cssSvg" />
                 <p>Css</p>
               </div>
               <div>
-                <FaGithub className="githubSvg" />
+                <FaGithub classNameName="githubSvg" />
                 <p>GitHub</p>
               </div>
               <div>
-                <SiSequelize className="sequelizeSvg" />
+                <SiSequelize classNameName="sequelizeSvg" />
                 <p>Sequelize</p>
               </div>
               <div>
-                <FaFigma className="figmaSvg" />
+                <FaFigma classNameName="figmaSvg" />
                 <p>Figma</p>
               </div>
               <div>
-                <FaHtml5 className="htmlSvg" />
+                <FaHtml5 classNameName="htmlSvg" />
                 <p>Html</p>
               </div>
             </Carousel>
@@ -217,28 +221,28 @@ export const AboutUs = () => {
         </div>
       </div>
 
-      <div class="team-area  teamContainer">
-        <div class="container">
-          <div class="section-title-wrap without-tab">
-            <h2 class="section-title">¡Nuestro Team!</h2>
+      <div className="team-area  teamContainer">
+        <div className="container">
+          <div className="section-title-wrap without-tab">
+            <h2 className="section-title">¡Nuestro Team!</h2>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-3 col-sm-6 pt-sm-5">
-              <div class="team-item">
-                <div class="team-img">
+          <div className="row justify-content-center">
+            <div className="col-lg-3 col-sm-6 pt-sm-5">
+              <div className="team-item">
+                <div className="team-img">
                   <img
                     src="./AleCircle.png"
                     alt="Team Member"
-                    className="teamImageProfile primary-img"
+                    classNameName="teamImageProfile primary-img"
                   />
                   <img
                     src="./fotoAle-modified.png"
                     alt="Team Member"
-                    className="teamImageProfile secondary-img"
+                    classNameName="teamImageProfile secondary-img"
                   />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Alejandro Raíz</h2>
-                    <div class="social-link with-border">
+                  <div className="inner-content">
+                    <h2 className="team-member-name">Alejandro Raíz</h2>
+                    <div className="social-link with-border">
                       <ul>
                         <li>
                           <Link
@@ -276,34 +280,34 @@ export const AboutUs = () => {
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
                           >
-                            <i class="fa fa-pinterest"></i>
+                            <i className="fa fa-pinterest"></i>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Alejandro Raíz</h2>
+                <div className="team-content">
+                  <h2 className="team-member-name mb-0">Alejandro Raíz</h2>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
-              <div class="team-item">
-                <div class="team-img">
+            <div className="col-lg-3 col-sm-6 pt-5 pt-sm-0">
+              <div className="team-item">
+                <div className="team-img">
                   <img
                     src="./Marco.png"
                     alt="Team Member"
-                    className="teamImageProfile primary-img"
+                    classNameName="teamImageProfile primary-img"
                   />
                   <img
                     src="./MarcoPlaya-modified.png"
                     alt="Team Member"
-                    className="teamImageProfile secondary-img"
+                    classNameName="teamImageProfile secondary-img"
                   />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Marco De Luca</h2>
-                    <div class="social-link with-border">
+                  <div className="inner-content">
+                    <h2 className="team-member-name">Marco De Luca</h2>
+                    <div className="social-link with-border">
                       <ul>
                         <li>
                           <Link
@@ -341,34 +345,34 @@ export const AboutUs = () => {
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
                           >
-                            <i class="fa fa-pinterest"></i>
+                            <i className="fa fa-pinterest"></i>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Marco de Luca</h2>
+                <div className="team-content">
+                  <h2 className="team-member-name mb-0">Marco de Luca</h2>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 pt-5">
-              <div class="team-item">
-                <div class="team-img">
+            <div className="col-lg-3 col-sm-6 pt-5">
+              <div className="team-item">
+                <div className="team-img">
                   <img
                     src="./imageCircleRomina.png"
                     alt="Team Member"
-                    className="teamImageProfile primary-img"
+                    classNameName="teamImageProfile primary-img"
                   />
                   <img
                     src="./paracaidismo.png"
                     alt="Team Member"
-                    className="teamImageProfile secondary-img"
+                    classNameName="teamImageProfile secondary-img"
                   />
-                  <div class="inner-content">
-                    <h2 class="team-member-name">Romina Dos Santos</h2>
-                    <div class="social-link with-border">
+                  <div className="inner-content">
+                    <h2 className="team-member-name">Romina Dos Santos</h2>
+                    <div className="social-link with-border">
                       <ul>
                         <li>
                           <Link
@@ -406,15 +410,15 @@ export const AboutUs = () => {
                             data-tippy-arrow="true"
                             data-tippy-theme="sharpborder"
                           >
-                            <i class="fa fa-pinterest"></i>
+                            <i className="fa fa-pinterest"></i>
                           </Link>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Romina Dos Santos</h2>
+                <div className="team-content">
+                  <h2 className="team-member-name mb-0">Romina Dos Santos</h2>
                 </div>
               </div>
             </div>
@@ -422,54 +426,54 @@ export const AboutUs = () => {
         </div>
       </div>
 
-      <div class="banner-with-counter" id="counterBootcamp">
-        <div class="counter-area">
-          <div class="container">
-            <h2 class="counter-title">
+      <div className="banner-with-counter" id="counterBootcamp">
+        <div className="counter-area">
+          <div className="container">
+            <h2 className="counter-title">
               En este bootcamp de dedicacion full-time <span>hemos echo</span>:
             </h2>
-            <div class="row">
-              <div class="col-lg-3 col-md-4 col-6">
-                <div class="counter-item">
-                  <div class="count-wrap">
-                    <h3 class="count mb-0" data-counterup-time="500">
+            <div className="row">
+              <div className="col-lg-3 col-md-4 col-6">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="500">
                       3
                     </h3>
                   </div>
-                  <h4 class="count-title mb-0">Meses</h4>
+                  <h4 className="count-title mb-0">Meses</h4>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-6">
-                <div class="counter-item">
-                  <div class="count-wrap">
-                    <h3 class="count mb-0" data-counterup-time="1000">
+              <div className="col-lg-3 col-md-4 col-6">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="1000">
                       600
                     </h3>
-                    <span class="prefix">+</span>
+                    <span className="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Horas</h4>
+                  <h4 className="count-title mb-0">Horas</h4>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-6 pt-4 pt-md-0">
-                <div class="counter-item">
-                  <div class="count-wrap">
-                    <h3 class="count mb-0" data-counterup-time="1500">
+              <div className="col-lg-3 col-md-4 col-6 pt-4 pt-md-0">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="1500">
                       12
                     </h3>
-                    <span class="prefix">+</span>
+                    <span className="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Lenguajes</h4>
+                  <h4 className="count-title mb-0">Lenguajes</h4>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-6 pt-4 pt-lg-0">
-                <div class="counter-item">
-                  <div class="count-wrap">
-                    <h3 class="count mb-0" data-counterup-time="2000">
+              <div className="col-lg-3 col-md-4 col-6 pt-4 pt-lg-0">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="2000">
                       15
                     </h3>
-                    <span class="prefix">+</span>
+                    <span className="prefix">+</span>
                   </div>
-                  <h4 class="count-title mb-0">Proyectos</h4>
+                  <h4 className="count-title mb-0">Proyectos</h4>
                 </div>
               </div>
             </div>
