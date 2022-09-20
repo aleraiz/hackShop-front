@@ -43,14 +43,14 @@ export const ProductDetail = () => {
     if (quantityProduct < productDetail.stock) {
       setQuantityProduct(quantityProduct + 1);
     }
-    dispatch(incrementQuantity({ productId }));
+    // dispatch(incrementQuantity({ productId }));
   }
 
   function handlerDecrementProduct(productId) {
     if (quantityProduct > 1) {
       setQuantityProduct(quantityProduct - 1);
     }
-    dispatch(decrementQuantity({ productId }));
+    // dispatch(decrementQuantity({ productId }));
   }
 
   function toggleReadMore() {
