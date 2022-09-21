@@ -3,10 +3,16 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { NavbarFilter } from "./NavbarFilter";
 import "./style.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { addProductCart } from "../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
+const MySwal = withReactContent(Swal);
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState(2);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const listProducts = async () => {
@@ -18,6 +24,19 @@ export const Products = () => {
     };
     listProducts();
   }, [category]);
+
+  function handleAddCart(product) {
+    dispatch(addProductCart({ productDetail: product, quantityProduct: 1 }));
+    handleMsgAdded();
+  }
+
+  function handleMsgAdded() {
+    MySwal.fire({
+      title: "Added!",
+      icon: "success",
+      confirmButtonColor: "#505050",
+    });
+  }
 
   function onChangeInput(e) {
     setCategory(e.target.value);
@@ -38,7 +57,7 @@ export const Products = () => {
                     <h2 className="breadcrumb-heading">Shop</h2>
                     <ul>
                       <li>
-                        <Link to="index.html">Home</Link>
+                        <Link to="/">Home</Link>
                       </li>
                       <li>Shop</li>
                     </ul>
@@ -140,6 +159,10 @@ export const Products = () => {
                                           data-tippy-delay="50"
                                           data-tippy-arrow="true"
                                           data-tippy-theme="sharpborder"
+                                          onClick={(e) => {
+                                            e.preventDefault();
+                                            handleAddCart(product);
+                                          }}
                                         >
                                           <i className="pe-7s-cart"></i>
                                         </Link>

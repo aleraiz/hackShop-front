@@ -42,6 +42,7 @@ export const ProductDetail = () => {
   function handleAddCart() {
     dispatch(addProductCart({ productDetail, quantityProduct }));
     setQuantityProduct(1);
+    handleMsgAdded();
   }
 
   function handlerIncrementProduct(productId) {
@@ -58,6 +59,14 @@ export const ProductDetail = () => {
 
   function toggleReadMore() {
     setIsReadMore(!isReadMore);
+  }
+
+  function handleMsgAdded() {
+    MySwal.fire({
+      title: "Added!",
+      icon: "success",
+      confirmButtonColor: "#505050",
+    });
   }
 
   function handlerMsgErr() {

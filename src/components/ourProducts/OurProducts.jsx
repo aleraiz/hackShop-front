@@ -12,6 +12,14 @@ export const OurProducts = () => {
   const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();
 
+  function handleMsgAdded() {
+    MySwal.fire({
+      title: "Added!",
+      icon: "success",
+      confirmButtonColor: "#505050",
+    });
+  }
+
   function handlerMsgErr() {
     MySwal.fire({
       title: "Warning!",
@@ -35,6 +43,7 @@ export const OurProducts = () => {
 
   function handleAddCart(product) {
     dispatch(addProductCart({ productDetail: product, quantityProduct: 1 }));
+    handleMsgAdded();
   }
 
   return (

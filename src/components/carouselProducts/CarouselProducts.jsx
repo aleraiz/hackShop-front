@@ -49,6 +49,15 @@ export const CarouselProducts = (setRefresSlug) => {
 
   function handleAddCart(element) {
     dispatch(addProductCart({ productDetail: element, quantityProduct: 1 }));
+    handleMsgAdded();
+  }
+
+  function handleMsgAdded() {
+    MySwal.fire({
+      title: "Added!",
+      icon: "success",
+      confirmButtonColor: "#505050",
+    });
   }
 
   function handlerMsgErr() {
