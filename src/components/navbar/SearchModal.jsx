@@ -37,14 +37,7 @@ export const SearchModal = ({ setOpenModalSearch }) => {
             Start typing and press Enter to search or ESC to close
           </span>
           <form action="#" className="hm-searchbox">
-            <input
-              type="text"
-              name="Search..."
-              //   value="Search..."
-              //   onblur="if(this.value==''){this.value='Search...'}"
-              //   onfocus="if(this.value=='Search...'){this.value=''}"
-              autocomplete="off"
-            />
+            <input type="text" name="Search..." />
             <button className="search-btn" type="submit" aria-label="searchbtn">
               <i className="pe-7s-search"></i>
             </button>

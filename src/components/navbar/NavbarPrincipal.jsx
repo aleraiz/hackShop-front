@@ -31,6 +31,7 @@ export const NavbarPrincipal = () => {
   const [userError, setUserError] = useState("");
   const MySwal = withReactContent(Swal);
   let total = 0;
+
   cart.map((item) => {
     total += item.quantity;
   });

@@ -233,7 +233,6 @@
 
 .containerSvg svg {
   font-size: 100px;
-  margin: 0 120px 0 120px;
 }
 
 .reactSvg {
@@ -368,6 +367,10 @@
 
 .socialLinksProfiles {
   padding-left: 0;
+}
+
+.socialLinksProfiles .linkSocialMedia:hover {
+  color: #fff;
 }
 
 @media (max-width: 768px) {

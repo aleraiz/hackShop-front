@@ -5,6 +5,7 @@ import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSli
 import { deleteProductCart } from "../../redux/slices/cartSlice";
 import { useState } from "react";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
@@ -63,7 +64,7 @@ export const Cart = () => {
                       <table className="table">
                         <thead>
                           <tr>
-                            <th className="product_remove">remove</th>
+                            <th className="product_remove"></th>
                             <th className="product-thumbnail">images</th>
                             <th className="cart-product-name">Product</th>
                             <th className="product-price">Unit Price</th>
@@ -85,15 +86,7 @@ export const Cart = () => {
                                         handlerDeleteProductFromCart(product.id);
                                       }}
                                     >
-                                      <i
-                                        className="pe-7s-close"
-                                        data-tippy="Remove"
-                                        data-tippy-inertia="true"
-                                        data-tippy-animation="shift-away"
-                                        data-tippy-delay="50"
-                                        data-tippy-arrow="true"
-                                        data-tippy-theme="sharpborder"
-                                      ></i>
+                                      <RiDeleteBin6Line className="removeItem" />
                                     </button>
                                   </td>
                                   <td className="product-thumbnail td-align-center">

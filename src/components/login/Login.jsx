@@ -32,6 +32,7 @@ export const Login = () => {
           id: response.data.client.id,
           token: response.data.token,
           firstname: response.data.client.firstname,
+          address: response.data.client.address,
         }),
       );
       navigate("/account");
