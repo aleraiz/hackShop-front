@@ -105,7 +105,7 @@ export const AboutUs = () => {
                       descripciones, nombres y precios de TusPlantasOnline, otro sitio web con
                       excelente diseño
                     </p>
-                    <h3>3- Pasos a seguir</h3>
+                    <h3>3 - Pasos a seguir</h3>
                     <p className="about-desc aboutUsDescription paragraphText">
                       Posterior a tener creada nuestra Base de Datos, definimos las rutas básicas y
                       necesarias para poder utilizar nuestra aplicación tanto a nivel de{" "}
@@ -126,7 +126,7 @@ export const AboutUs = () => {
                   </div>
                   <div className="titlesAndDescriptionStep">
                     <div>
-                      <h3>4- Metodología de trabajo</h3>
+                      <h3>4 - Metodología de trabajo</h3>
                       <p class="about-desc aboutUsDescription paragraphText">
                         Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span>{" "}
                         con tres sprints. Cada sprint tenía tareas que se organizaban y
@@ -136,7 +136,7 @@ export const AboutUs = () => {
                         terminar con las asignadas.Todo el proyecto se realizó en línea usando
                         Discord.
                       </p>
-                      <h3> 5 - Marcos y Tecnologías</h3>
+                      <h3>5 - Marcos y Tecnologías</h3>
                       <p class="about-desc aboutUsDescription paragraphText">
                         Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos
                         con
@@ -258,9 +258,9 @@ export const AboutUs = () => {
                     </li>
                     <li>
                       <a
-                        to="https://www.linkedin.com/in/alejandro-raiz/"
-                        data-tippy="linkedin"
+                        href="https://www.linkedin.com/in/alejandro-raiz/"
                         target="_blank"
+                        data-tippy="Linkedin"
                         data-tippy-inertia="true"
                         data-tippy-animation="shift-away"
                         data-tippy-delay="50"

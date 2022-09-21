@@ -73,7 +73,7 @@ export const NavbarPrincipal = () => {
               <div className="col-lg-12">
                 <Navbar expand="md" key="md" className="mb-3">
                   <Container fluid className="p-0 align-items-end">
-                    <Navbar.Brand href="#">
+                    <Navbar.Brand>
                       <div className="logoDiv">
                         <Link to="/" className="header-logo">
                           <img src="../../hackshop.png" alt="Header Logo" id="imgLogoPage" />
@@ -196,7 +196,7 @@ export const NavbarPrincipal = () => {
                               >
                                 <i className="pe-7s-shopbag"></i>
                                 <span className="quantity" id="numberCartShop">
-                                  {total}
+                                  {total < 10 ? total : "9+"}
                                 </span>
                               </button>
                               {openOffcanvas ? (
