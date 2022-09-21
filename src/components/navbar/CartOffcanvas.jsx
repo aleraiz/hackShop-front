@@ -14,6 +14,9 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
   function handlerDeleteProductFromCart(productId) {
     dispatch(deleteProductCart(productId));
   }
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   const priceFormat = new Intl.NumberFormat("en", {
     style: "currency",
@@ -43,18 +46,23 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
                   <>
                     <li className="minicart-product minicart-flex" key={product.id}>
                       <Link
-                        to="single-product-variable.html"
+                        to={`/product/${product.slug}`}
                         className="product-item_img imgMinicart"
                       >
                         <img
                           className="img-full img-cartOffCanvas"
                           src={product.image}
                           alt="Product Image"
+                          onClick={() => handleClose()}
                         />
                       </Link>
                       <div className="nameAndCloseBtn">
                         <div className="product-item_content itemContentMinicart">
-                          <Link className="product-item_title" to={`/product/${product.slug}`}>
+                          <Link
+                            className="product-item_title"
+                            to={`/product/${product.slug}`}
+                            onClick={() => handleClose()}
+                          >
                             {product.productName}
                           </Link>
                           {product.quantity <= product.stock ? (

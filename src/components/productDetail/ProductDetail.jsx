@@ -19,6 +19,7 @@ export const ProductDetail = () => {
   const [isReadMore, setIsReadMore] = useState(true);
   const [refreshSlug, setRefresSlug] = useState(false);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
+  const [imageOne, setImageOne] = useState("");
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
   const { slug } = useParams();

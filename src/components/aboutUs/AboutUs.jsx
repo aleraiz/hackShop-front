@@ -252,6 +252,7 @@ export const AboutUs = () => {
                         data-tippy-delay="50"
                         data-tippy-arrow="true"
                         data-tippy-theme="sharpborder"
+                        className="linkSocialMedia"
                       >
                         <FaGithub />
                       </a>
@@ -259,13 +260,14 @@ export const AboutUs = () => {
                     <li>
                       <a
                         href="https://www.linkedin.com/in/alejandro-raiz/"
+                        data-tippy="linkedin"
                         target="_blank"
-                        data-tippy="Linkedin"
                         data-tippy-inertia="true"
                         data-tippy-animation="shift-away"
                         data-tippy-delay="50"
                         data-tippy-arrow="true"
                         data-tippy-theme="sharpborder"
+                        className="linkSocialMedia"
                       >
                         <FaLinkedinIn />
                       </a>
@@ -296,6 +298,7 @@ export const AboutUs = () => {
                           data-tippy-delay="50"
                           data-tippy-arrow="true"
                           data-tippy-theme="sharpborder"
+                          className="linkSocialMedia"
                         >
                           <FaGithub />
                         </a>
@@ -310,6 +313,7 @@ export const AboutUs = () => {
                           data-tippy-delay="50"
                           data-tippy-arrow="true"
                           data-tippy-theme="sharpborder"
+                          className="linkSocialMedia"
                         >
                           <FaLinkedinIn />
                         </a>
@@ -345,6 +349,7 @@ export const AboutUs = () => {
                           data-tippy-delay="50"
                           data-tippy-arrow="true"
                           data-tippy-theme="sharpborder"
+                          className="linkSocialMedia"
                         >
                           <FaGithub />
                         </a>
@@ -359,6 +364,7 @@ export const AboutUs = () => {
                           data-tippy-delay="50"
                           data-tippy-arrow="true"
                           data-tippy-theme="sharpborder"
+                          className="linkSocialMedia"
                         >
                           <FaLinkedinIn />
                         </a>
@@ -408,7 +414,7 @@ export const AboutUs = () => {
                     </h3>
                     <span className="prefix">+</span>
                   </div>
-                  <h4 className="count-title mb-0">Lenguajes</h4>
+                  <h4 className="count-title mb-0">Tecnologías</h4>
                 </div>
               </div>
               <div className="col-lg-3 col-md-4 col-6 pt-4 pt-lg-0">

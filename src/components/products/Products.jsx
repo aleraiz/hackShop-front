@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { NavbarFilter } from "./FiltersProducts";
+import { NavbarFilter } from "./NavbarFilter";
 import "./style.css";
+
 export const Products = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState(2);
@@ -39,7 +40,7 @@ export const Products = () => {
                       <li>
                         <Link to="index.html">Home</Link>
                       </li>
-                      <li>Shop Grid Fullwidth</li>
+                      <li>Shop</li>
                     </ul>
                   </div>
                 </div>
@@ -51,7 +52,6 @@ export const Products = () => {
               <div className="row">
                 <div className="col-lg-12">
                   <NavbarFilter />
-
                   <div className="tab-content">
                     <form onSubmit={(e) => e.preventDefault()}>
                       <label>

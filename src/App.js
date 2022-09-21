@@ -21,7 +21,7 @@ import { Products } from "./components/products/Products";
 import { Admin } from "./components/administrator/Admin";
 import { ContactUs } from "./components/contactUs/ContactUs";
 import { AboutUs } from "./components/aboutUs/AboutUs";
-import { MyAccount } from "./components/navbar/MyAccount";
+import { MyAccount } from "./components/myAccount/MyAccount";
 import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
 import LoginExist from "./components/loginExist/LoginExist";
@@ -44,8 +44,8 @@ function App() {
         </Route>
         <Route path="/products" element={<Products />} />
         <Route path="/product/:slug" element={<ProductDetail />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
         <Route element={<PrivateRoutes />}>
+          <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/account" element={<MyAccount />} />
           <Route path="/admin" element={<Admin />} />
         </Route>
