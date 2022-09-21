@@ -34,7 +34,7 @@ export const BillingDetails = () => {
   async function orderSend(cart) {
     try {
       await axios({
-        method: "patch",
+        method: "post",
         url: `http://localhost:8000/order`,
         headers: { Authorization: `Bearer ${user.token}` },
         data: {
