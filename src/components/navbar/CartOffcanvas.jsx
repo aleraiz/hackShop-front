@@ -46,21 +46,22 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
                   <>
                     <li className="minicart-product minicart-flex" key={product.id}>
                       <Link
-                        to="single-product-variable.html"
+                        to={`/product/${product.slug}`}
                         className="product-item_img imgMinicart"
                       >
                         <img
                           className="img-full img-cartOffCanvas"
                           src={product.image}
                           alt="Product Image"
+                          onClick={() => handleClose()}
                         />
                       </Link>
                       <div className="nameAndCloseBtn">
                         <div className="product-item_content itemContentMinicart">
                           <Link
                             className="product-item_title"
-                            // onClick={refreshPage}
                             to={`/product/${product.slug}`}
+                            onClick={() => handleClose()}
                           >
                             {product.productName}
                           </Link>

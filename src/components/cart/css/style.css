@@ -151,6 +151,7 @@
 
 .breadcrumb-height {
   background: url("../../../../public/images/cart/1-1-1919x388.jpg");
+  height: 370px;
 }
 
 .img-container {
@@ -216,4 +217,8 @@
   background-color: #505050;
   justify-content: center;
   width: 70px;
+}
+
+.removeItem {
+  color: #abd373;
 }
