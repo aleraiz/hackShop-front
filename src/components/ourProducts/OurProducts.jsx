@@ -164,27 +164,27 @@ export const OurProducts = () => {
                                   </Link>
                                 </li>
                                 <li>
-                                  <Link
-                                    to=""
+                                  <button
                                     data-tippy="Add to cart"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
                                     data-tippy-delay="50"
                                     data-tippy-arrow="true"
                                     data-tippy-theme="sharpborder"
+                                    className="whislistBtn"
                                     onClick={(e) => {
                                       e.preventDefault();
                                       handleAddCart(product);
                                     }}
                                   >
                                     <i className="pe-7s-cart"></i>
-                                  </Link>
+                                  </button>
                                 </li>
                               </ul>
                             </div>
                           </div>
                           <div className="product-content">
-                            <Link className="product-name" to="shop.html">
+                            <Link className="product-name" to={`/product/${product.slug}`}>
                               {product.productName}
                             </Link>
                             <div className="price-box pb-1">

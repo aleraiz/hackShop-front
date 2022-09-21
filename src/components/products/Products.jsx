@@ -38,6 +38,16 @@ export const Products = () => {
     });
   }
 
+  function handlerMsgErr() {
+    MySwal.fire({
+      title: "Warning!",
+      text: "This functionality escapes from the scope of the project.",
+      icon: "warning",
+      confirmButtonText: "Cancel",
+      confirmButtonColor: "#f8bb86",
+    });
+  }
+
   function onChangeInput(e) {
     setCategory(e.target.value);
   }
@@ -121,17 +131,20 @@ export const Products = () => {
                                   <div className="product-add-action">
                                     <ul>
                                       <li>
-                                        <Link
-                                          to="wishlist.html"
+                                        <button
                                           data-tippy="Add to wishlist"
                                           data-tippy-inertia="true"
                                           data-tippy-animation="shift-away"
                                           data-tippy-delay="50"
                                           data-tippy-arrow="true"
                                           data-tippy-theme="sharpborder"
+                                          className="whislistBtn"
+                                          onClick={() => {
+                                            handlerMsgErr();
+                                          }}
                                         >
                                           <i className="pe-7s-like"></i>
-                                        </Link>
+                                        </button>
                                       </li>
                                       <li
                                         className="quuickview-btn"
@@ -151,27 +164,27 @@ export const Products = () => {
                                         </Link>
                                       </li>
                                       <li>
-                                        <Link
-                                          to="cart.html"
+                                        <button
                                           data-tippy="Add to cart"
                                           data-tippy-inertia="true"
                                           data-tippy-animation="shift-away"
                                           data-tippy-delay="50"
                                           data-tippy-arrow="true"
                                           data-tippy-theme="sharpborder"
+                                          className="whislistBtn"
                                           onClick={(e) => {
                                             e.preventDefault();
                                             handleAddCart(product);
                                           }}
                                         >
                                           <i className="pe-7s-cart"></i>
-                                        </Link>
+                                        </button>
                                       </li>
                                     </ul>
                                   </div>
                                 </div>
                                 <div className="product-content">
-                                  <Link className="product-name" to="single-product-variable.html">
+                                  <Link className="product-name" to={`/product/${product.slug}`}>
                                     {product.productName}
                                   </Link>
                                   <div className="price-box pb-1">
