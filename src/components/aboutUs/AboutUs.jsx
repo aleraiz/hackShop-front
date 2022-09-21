@@ -382,19 +382,9 @@ export const AboutUs = () => {
         <div className="counter-area">
           <div className="container">
             <h2 className="counter-title">
-              En este bootcamp de dedicacion full-time <span>hemos echo</span>:
+              En este bootcamp de dedicacion full-time <span>hemos trabajado</span>:
             </h2>
             <div className="row">
-              <div className="col-lg-3 col-md-4 col-6">
-                <div className="counter-item">
-                  <div className="count-wrap">
-                    <h3 className="count mb-0" data-counterup-time="500">
-                      3
-                    </h3>
-                  </div>
-                  <h4 className="count-title mb-0">Meses</h4>
-                </div>
-              </div>
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="counter-item">
                   <div className="count-wrap">
@@ -426,6 +416,16 @@ export const AboutUs = () => {
                     <span className="prefix">+</span>
                   </div>
                   <h4 className="count-title mb-0">Proyectos</h4>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-4 col-6">
+                <div className="counter-item">
+                  <div className="count-wrap">
+                    <h3 className="count mb-0" data-counterup-time="500">
+                      3
+                    </h3>
+                  </div>
+                  <h4 className="count-title mb-0">Meses</h4>
                 </div>
               </div>
             </div>
