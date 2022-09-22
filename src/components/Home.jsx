@@ -1,4 +1,5 @@
-import { Carousel } from "./carousel/Carousel";
+import { useEffect } from "react";
+import { CarouselHome } from "./carousel/Carousel";
 import { ShippingArea } from "./shippingArea/ShippingArea";
 import { OurProducts } from "./ourProducts/OurProducts";
 import { Collection } from "./collection/Collection";
@@ -8,9 +9,13 @@ import { BrandArea } from "./brandArea/BrandArea";
 import { LatestBlog } from "./latestBlog/LatestBlog";
 
 export const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="main-wrapper">
-      <Carousel />
+      <CarouselHome />
       <ShippingArea />
       <OurProducts />
       <Collection />

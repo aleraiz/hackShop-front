@@ -17,6 +17,7 @@ import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import axios from "axios";
 import "./css/style.css";
+import { OverlayTrigger } from "react-bootstrap";
 
 export const NavbarPrincipal = () => {
   const dispatch = useDispatch();
@@ -125,23 +126,12 @@ export const NavbarPrincipal = () => {
                               ) : null}
                             </li>
                             <li className="dropdown">
-                              <div ref={ref}>
-                                <Button
-                                  className="btn btn-link dropdown-toggle ht-btn p-0"
-                                  id="btnProfileIcon"
-                                  onClick={handleClick}
-                                >
-                                  <i className="pe-7s-users" id="btnUsersProfile"></i>
-                                </Button>
-
-                                <Overlay
-                                  show={show}
-                                  target={target}
-                                  placement="bottom"
-                                  container={ref}
-                                  containerPadding={20}
-                                >
-                                  <Popover id="popover-contained">
+                              <OverlayTrigger
+                                trigger="click"
+                                placement="bottom"
+                                rootClose
+                                overlay={
+                                  <Popover id={`popover-positioned-bottom`}>
                                     {!user ? (
                                       <>
                                         <Link className="dropdown-item" to="/register">
@@ -166,8 +156,15 @@ export const NavbarPrincipal = () => {
                                       </>
                                     )}
                                   </Popover>
-                                </Overlay>
-                              </div>
+                                }
+                              >
+                                <Button
+                                  className="btn btn-link dropdown-toggle ht-btn p-0"
+                                  id="btnProfileIcon"
+                                >
+                                  <i className="pe-7s-users" id="btnUsersProfile"></i>
+                                </Button>
+                              </OverlayTrigger>
                             </li>
                             <li
                               className="whishlist"
