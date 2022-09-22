@@ -156,3 +156,10 @@
 .socialBtns {
   padding: 0;
 }
+
+@media (max-width: 992px) {
+  .footer-area {
+    background-position: none;
+    background-repeat: repeat;
+  }
+}
