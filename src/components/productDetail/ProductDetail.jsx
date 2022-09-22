@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
 export const ProductDetail = () => {
@@ -28,6 +30,14 @@ export const ProductDetail = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const notify = () => {
+    toast("Default Notification !");
+
+    toast.success("Success Notification !", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
+
   useEffect(() => {
     const productDetail = async () => {
       const response = await axios({
@@ -37,7 +47,7 @@ export const ProductDetail = () => {
       setProductDetail(response.data);
     };
     productDetail();
-  }, [refreshSlug]);
+  }, [refreshSlug, slug]);
 
   function handleAddCart() {
     dispatch(addProductCart({ productDetail, quantityProduct }));
@@ -137,7 +147,7 @@ export const ProductDetail = () => {
                             {productDetail.image ? (
                               <img
                                 className="img-full"
-                                src={productDetail?.image[0].imageOne}
+                                src={productDetail?.image[0]}
                                 alt="Product Image"
                               />
                             ) : (
@@ -192,35 +202,35 @@ export const ProductDetail = () => {
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[0].imageOne}
+                              src={productDetail.image[0]}
                               alt="Product Thumnail"
                             />
                           </div>
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[1].imageTwo}
+                              src={productDetail.image[1]}
                               alt="Product Thumnail"
                             />
                           </div>
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[2].imageThree}
+                              src={productDetail.image[2]}
                               alt="Product Thumnail"
                             />
                           </div>
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[3].imageDetailOne}
+                              src={productDetail.image[3]}
                               alt="Product Thumnail"
                             />
                           </div>
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[4].imageDetailTwo}
+                              src={productDetail.image[4]}
                               alt="Product Thumnail"
                             />
                           </div>
@@ -308,6 +318,7 @@ export const ProductDetail = () => {
                           className="btn btn-custom-size btn-pronia-primary  btn-collection"
                           id="btnAddToCart"
                           onClick={(e) => {
+                            notify();
                             e.preventDefault();
                             handleAddCart();
                           }}

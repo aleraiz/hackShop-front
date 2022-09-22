@@ -9,7 +9,6 @@ import axios from "axios";
 export const BillingDetails = () => {
   const cart = useSelector((state) => state.cart.cart);
   const user = useSelector((state) => state.user.user);
-  console.log("soy el user", user);
   const [userError, setUserError] = useState("");
   const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();

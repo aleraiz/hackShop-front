@@ -64,7 +64,7 @@ export const MyAccount = () => {
     }
     try {
       const response = await axios({
-        method: "post",
+        method: "patch",
         url: `${process.env.REACT_APP_DB_HOST}/myaccount`,
         headers: { Authorization: `Bearer ${user.token}` },
         data: {

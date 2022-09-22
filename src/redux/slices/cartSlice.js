@@ -7,14 +7,14 @@ const cartSlice = createSlice({
   },
   reducers: {
     addProductCart: (state, action) => {
-      console.log(action.payload);
       const { productName, id, price, stock, image, slug } = action.payload.productDetail;
+      console.log(image[3]);
       const product = {
         id,
         productName,
         price,
         stock,
-        image: image[3].imageDetailOne,
+        image: image[3],
         slug,
         quantity: action.payload.quantityProduct,
       };
@@ -40,7 +40,6 @@ const cartSlice = createSlice({
       state.cart = filteredProduct;
     },
     incrementQuantity: (state, action) => {
-      console.log(action.payload);
       const searchProduct = state.cart.findIndex((product) => {
         return product.id === action.payload.productId;
       });

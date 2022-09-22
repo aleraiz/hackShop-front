@@ -119,12 +119,12 @@ export const Products = () => {
                                   <Link to={`/product/${product.slug}`}>
                                     <img
                                       className="primary-img"
-                                      src={product.image[3].imageDetailOne}
+                                      src={product.image[3]}
                                       alt="Product Images"
                                     />
                                     <img
                                       className="secondary-img secondary-img-bg"
-                                      src={product.image[4].imageDetailTwo}
+                                      src={product.image[4]}
                                       alt="Product Images"
                                     />
                                   </Link>
