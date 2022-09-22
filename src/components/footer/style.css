@@ -1,5 +1,7 @@
 .footer-area {
   background-image: url("../../../public/image//imgFooter.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 /* ---Social Link--- */
 .social-link {

@@ -36,8 +36,7 @@ export const Testimonial = () => {
           <div className="section-title-wrap">
             <h2 className="section-title">What Say Client</h2>
             <p className="section-desc mb-0">
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-              piece of classNameical Latin literature
+              Some reviews from our clients, taking into account each of your comments to improve!
             </p>
           </div>
         </div>
