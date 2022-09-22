@@ -1,9 +1,14 @@
 import { BillingDetails } from "./BillingDetails";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import "./style.css";
 
 export const CheckoutPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="main-content">
       <div
