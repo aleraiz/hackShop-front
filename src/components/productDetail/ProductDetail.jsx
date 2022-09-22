@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import { Link, useParams } from "react-router-dom";
-import { CarouselProducts } from "../carouselProducts/CarouselProducts";
-import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addProductCart } from "../../redux/slices/cartSlice";
-import { useSelector } from "react-redux";
-import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
+import { CarouselProducts } from "../carouselProducts/CarouselProducts";
+import { ToastContainer, toast } from "react-toastify";
+import Carousel from "react-multi-carousel";
+import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { ToastContainer, toast } from "react-toastify";
+import "react-multi-carousel/lib/styles.css";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
@@ -20,8 +18,6 @@ export const ProductDetail = () => {
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [isReadMore, setIsReadMore] = useState(true);
   const [refreshSlug, setRefresSlug] = useState(false);
-  const [removeProduct, setRemoveProduct] = useState(quantityProduct);
-  const [imageOne, setImageOne] = useState("");
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
   const { slug } = useParams();
@@ -29,14 +25,6 @@ export const ProductDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const notify = () => {
-    toast("Default Notification !");
-
-    toast.success("Success Notification !", {
-      position: toast.POSITION.TOP_CENTER,
-    });
-  };
 
   useEffect(() => {
     const productDetail = async () => {
@@ -51,8 +39,15 @@ export const ProductDetail = () => {
 
   function handleAddCart() {
     dispatch(addProductCart({ productDetail, quantityProduct }));
+
+    cart.map((product) => {
+      if (product.quantity >= productDetail.stock) {
+        notify();
+      } else {
+        handleMsgAdded();
+      }
+    });
     setQuantityProduct(1);
-    handleMsgAdded();
   }
 
   function handlerIncrementProduct(productId) {
@@ -89,6 +84,10 @@ export const ProductDetail = () => {
     });
   }
 
+  const notify = () => {
+    toast.warn("So sorry, our stock is 15 units");
+  };
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -106,7 +105,6 @@ export const ProductDetail = () => {
       slidesToSlide: 1,
     },
   };
-
   return (
     <>
       <div className="main-wrapper">
@@ -318,7 +316,6 @@ export const ProductDetail = () => {
                           className="btn btn-custom-size btn-pronia-primary  btn-collection"
                           id="btnAddToCart"
                           onClick={(e) => {
-                            notify();
                             e.preventDefault();
                             handleAddCart();
                           }}
@@ -327,6 +324,19 @@ export const ProductDetail = () => {
                         </button>
                       </li>
                     </ul>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                    />
+                    {/* Same as */}
+                    <ToastContainer />
                     <div className="product-category">
                       <span className="title">SKU:</span>
                       <ul>

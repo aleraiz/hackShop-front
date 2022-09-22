@@ -3,7 +3,7 @@ import { logoutUser } from "../../redux/slices/userSlice";
 import { emptyCart } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
@@ -11,38 +11,32 @@ import Tab from "react-bootstrap/Tab";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 import "./styles.css";
-import { ModalOrder } from "./ModalOrder";
 
 export const MyAccount = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
-
   const [userError, setUserError] = useState("");
   const [userErrorPassword, setUserErrorPassword] = useState("");
   const [orders, setOrders] = useState([]);
-  const [firstname, setFirstname] = useState([]);
-  const [lastname, setLastname] = useState([]);
-  const [email, setEmail] = useState([]);
-  const [password, setPassword] = useState([]);
-  const [newPassword, setNewPassword] = useState([]);
-  const [passwordConfirm, setPasswordConfirm] = useState([]);
-  const [address, SetAddress] = useState([]);
-  const [openModalOrder, setOpenModalOrder] = useState(false);
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [address, SetAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [userData, setUserData] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   async function handlerLogout() {
-    try {
-      const response = await axios({
-        method: "post",
-        url: `${process.env.REACT_APP_DB_HOST}/logout`,
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
-      dispatch(logoutUser());
-      dispatch(emptyCart());
-      navigate("/");
-    } catch (error) {
-      setUserError(error.response.data.error);
-    }
+    dispatch(logoutUser());
+    dispatch(emptyCart());
+    navigate("/");
   }
 
   async function handlerOrders() {
@@ -59,11 +53,8 @@ export const MyAccount = () => {
   }
 
   async function changeDatas() {
-    if (newPassword !== passwordConfirm) {
-      return setUserErrorPassword("passwords do not match please try again");
-    }
     try {
-      const response = await axios({
+      await axios({
         method: "patch",
         url: `${process.env.REACT_APP_DB_HOST}/myaccount`,
         headers: { Authorization: `Bearer ${user.token}` },
@@ -74,10 +65,17 @@ export const MyAccount = () => {
           password,
           newPassword,
           address,
+          phoneNumber,
         },
       });
     } catch (error) {
       setUserError(error.response.data.error);
+    }
+  }
+
+  function comparePassword() {
+    if (newPassword !== passwordConfirm) {
+      setUserErrorPassword("passwords do not match, please try again");
     }
   }
 
@@ -185,21 +183,27 @@ export const MyAccount = () => {
                       <Tab.Pane eventKey="#orders">
                         <div className="myaccount-orders">
                           <h4 className="small-title">MY ORDERS</h4>
-                          <div className="table-responsive">
-                            {!orders ? (
-                              <div className="paragraphError">
-                                <AiOutlineExclamationCircle />
-                                <p>{userError}</p>
+                          {orders.length === 0 ? (
+                            <div className="divOrderEmpty">
+                              <div>
+                                <img src="./cat-travel-bag-svgrepo-com.svg" />
+                                <div>
+                                  <p>There are no recent orders to show!</p>
+                                  <p>The kitten will be happy when you buy :)</p>
+                                </div>
                               </div>
-                            ) : (
+                            </div>
+                          ) : (
+                            <div className="table-responsive">
                               <table className="table table-bordered table-hover">
                                 <tbody>
                                   <tr>
                                     <th>ORDER</th>
                                     <th>DATE</th>
                                     <th>STATUS</th>
+                                    <th>PAYMENT METHOD</th>
+                                    <th>ADDRESS</th>
                                     <th>TOTAL</th>
-                                    <th></th>
                                   </tr>
                                   {orders.map((order) => {
                                     return (
@@ -214,6 +218,8 @@ export const MyAccount = () => {
                                             .replace("T", ", ")}
                                         </td>
                                         <td>Complete</td>
+                                        <td>{order.paymentMethod}</td>
+                                        <td>{order.address}</td>
                                         <td>
                                           {priceFormat.format(
                                             order.productList.reduce(
@@ -223,31 +229,13 @@ export const MyAccount = () => {
                                             ),
                                           )}
                                         </td>
-                                        <td>
-                                          <button
-                                            className="btn btn-orderAccount"
-                                            onClick={() => {
-                                              setOpenModalOrder(true);
-                                            }}
-                                          >
-                                            <span>View</span>
-                                          </button>
-                                          {openModalOrder ? (
-                                            <ModalOrder
-                                              setOpenModal={setOpenModalOrder}
-                                              productList={order.productList}
-                                              paymentMethod={order.paymentMethod}
-                                              address={order.address}
-                                            />
-                                          ) : null}
-                                        </td>
                                       </tr>
                                     );
                                   })}
                                 </tbody>
                               </table>
-                            )}
-                          </div>
+                            </div>
+                          )}
                         </div>
                       </Tab.Pane>
                       <Tab.Pane eventKey="#addresses">
@@ -257,16 +245,8 @@ export const MyAccount = () => {
                           </p>
                           <div className="row">
                             <div className="col">
-                              <h4 className="small-title">BILLING ADDRESS</h4>
-                              <address>
-                                1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
-                              </address>
-                            </div>
-                            <div className="col">
                               <h4 className="small-title">SHIPPING ADDRESS</h4>
-                              <address>
-                                1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
-                              </address>
+                              <address>{user.address}</address>
                             </div>
                           </div>
                         </div>
@@ -288,6 +268,7 @@ export const MyAccount = () => {
                                   onChange={(e) => {
                                     setFirstname(e.target.value);
                                   }}
+                                  defaultValue={user.firstname}
                                 />
                               </div>
                               <div className="single-input single-input-half">
@@ -298,6 +279,7 @@ export const MyAccount = () => {
                                   onChange={(e) => {
                                     setLastname(e.target.value);
                                   }}
+                                  defaultValue={user.lastname}
                                 />
                               </div>
                               <div className="single-input">
@@ -308,6 +290,7 @@ export const MyAccount = () => {
                                   onChange={(e) => {
                                     setEmail(e.target.value);
                                   }}
+                                  defaultValue={user.email}
                                 />
                               </div>
                               <div className="single-input">
@@ -318,6 +301,18 @@ export const MyAccount = () => {
                                   onChange={(e) => {
                                     SetAddress(e.target.value);
                                   }}
+                                  defaultValue={user.address}
+                                />
+                              </div>
+                              <div className="single-input">
+                                <label>phone number</label>
+                                <input
+                                  type="text"
+                                  name="phoneNumber"
+                                  onChange={(e) => {
+                                    setPhoneNumber(e.target.value);
+                                  }}
+                                  defaultValue={user.phoneNumber}
                                 />
                               </div>
                               <div className="single-input">
@@ -341,6 +336,7 @@ export const MyAccount = () => {
                                   onChange={(e) => {
                                     setNewPassword(e.target.value);
                                   }}
+                                  onFocus={() => setUserErrorPassword()}
                                 />
                               </div>
                               <div className="single-input">
@@ -350,27 +346,31 @@ export const MyAccount = () => {
                                   onChange={(e) => {
                                     setPasswordConfirm(e.target.value);
                                   }}
+                                  onFocus={() => setUserErrorPassword()}
                                 />
                               </div>
+                              {userError && (
+                                <div className="paragraphError">
+                                  <AiOutlineExclamationCircle />
+                                  <p>{userError}</p>
+                                </div>
+                              )}
+                              {userErrorPassword && (
+                                <div className="paragraphError" style={{ width: "100%" }}>
+                                  <AiOutlineExclamationCircle />
+                                  <p>{userErrorPassword}</p>
+                                </div>
+                              )}
                               <div className="single-input">
                                 <button
-                                  className="btn btn-custom-size lg-size btn-pronia-primary"
+                                  className="btn btn-custom-size lg-size btnSaveChanges"
                                   type="submit"
-                                  onClick={() => changeDatas()}
+                                  onClick={() => {
+                                    comparePassword();
+                                    changeDatas();
+                                  }}
                                 >
-                                  <span>SAVE CHANGES</span>{" "}
-                                  {userError && (
-                                    <div className="paragraphError">
-                                      <AiOutlineExclamationCircle />
-                                      <p>{userError}</p>
-                                    </div>
-                                  )}
-                                  {userErrorPassword && (
-                                    <div className="paragraphError">
-                                      <AiOutlineExclamationCircle />
-                                      <p>{userErrorPassword}</p>
-                                    </div>
-                                  )}
+                                  SAVE CHANGES
                                 </button>
                               </div>
                             </div>

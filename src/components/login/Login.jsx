@@ -1,8 +1,8 @@
-import { Link, useNavigate, Navigate } from "react-router-dom";
-import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/slices/userSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +15,10 @@ export const Login = () => {
   const [userError, setUserError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user.user);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   async function loginClient() {
     try {
@@ -32,7 +35,10 @@ export const Login = () => {
           id: response.data.client.id,
           token: response.data.token,
           firstname: response.data.client.firstname,
+          lastname: response.data.client.lastname,
+          email: response.data.client.email,
           address: response.data.client.address,
+          phoneNumber: response.data.client.phoneNumber,
         }),
       );
       navigate("/account");

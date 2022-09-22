@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
 import { deleteProductCart } from "../../redux/slices/cartSlice";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
@@ -12,6 +12,11 @@ export const Cart = () => {
   const dispatch = useDispatch();
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
 
   function handlerIncrementProduct(productId) {
     setQuantityProduct(quantityProduct + 1);

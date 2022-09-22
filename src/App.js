@@ -25,22 +25,21 @@ import { MyAccount } from "./components/myAccount/MyAccount";
 import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
 import LoginExist from "./components/loginExist/LoginExist";
+import RegisterExist from "./components/registerExist/RegisterExist";
 import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="app">
       <NavbarPrincipal />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/register" element={<Register />} />
         <Route element={<LoginExist />}>
           <Route path="/login" element={<Login />} />
+        </Route>
+        <Route element={<RegisterExist />}>
+          <Route path="/register" element={<Register />} />
         </Route>
         <Route path="/products" element={<Products />} />
         <Route path="/product/:slug" element={<ProductDetail />} />

@@ -14,7 +14,6 @@ export const NavbarFilter = () => {
         method: "get",
         url: `${process.env.REACT_APP_DB_HOST}/products/`,
       });
-      console.log(response.data);
       setProducts(response.data);
     };
     listProducts();

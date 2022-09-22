@@ -30,6 +30,16 @@ export const BillingDetails = () => {
     });
   }
 
+  function handlerMsgErrBuy() {
+    MySwal.fire({
+      title: "error!",
+      text: "You must add items to your cart to buy",
+      icon: "error",
+      confirmButtonText: "OK",
+      confirmButtonColor: "#abd373",
+    });
+  }
+
   async function orderSend(cart) {
     try {
       await axios({
@@ -188,11 +198,11 @@ export const BillingDetails = () => {
                   id="placeOrderBtn"
                   type="submit"
                   onClick={() => {
-                    // if (!user) {
-                    //   orderSend(cart);
-                    //   registerClient();
-                    // }
-                    orderSend(cart);
+                    if (cart.length !== 0) {
+                      orderSend(cart);
+                    } else {
+                      handlerMsgErrBuy();
+                    }
                   }}
                 >
                   PLACE ORDER

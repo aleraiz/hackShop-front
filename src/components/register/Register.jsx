@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../redux/slices/userSlice";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
+import axios from "axios";
 
 export const Register = () => {
   const [firstname, setFirstname] = useState("");
@@ -15,6 +15,10 @@ export const Register = () => {
   const [userError, setUserError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   async function registerClient() {
     try {
