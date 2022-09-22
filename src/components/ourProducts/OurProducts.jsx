@@ -112,7 +112,6 @@ export const OurProducts = () => {
               >
                 <div className="product-item-wrap row">
                   {ourProducts.map((product, index) => {
-                    console.log(product);
                     return (
                       <div className="col-xl-3 col-md-4 col-sm-6" key={index}>
                         <div className="product-item">

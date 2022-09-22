@@ -9,7 +9,6 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 
-  console.log(cart);
   const handleClose = () => setOpenOffcanvas(false);
 
   function handlerDeleteProductFromCart(productId) {

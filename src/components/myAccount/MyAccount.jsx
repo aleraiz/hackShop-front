@@ -31,18 +31,9 @@ export const MyAccount = () => {
   const [userData, setUserData] = useState("");
 
   async function handlerLogout() {
-    try {
-      const response = await axios({
-        method: "post",
-        url: `${process.env.REACT_APP_DB_HOST}/logout`,
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
-      dispatch(logoutUser());
-      dispatch(emptyCart());
-      navigate("/");
-    } catch (error) {
-      setUserError(error.response.data.error);
-    }
+    dispatch(logoutUser());
+    dispatch(emptyCart());
+    navigate("/");
   }
 
   async function handlerOrders() {
