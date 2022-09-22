@@ -38,3 +38,31 @@
 #prueba {
   background: transparent;
 }
+
+.btnSaveChanges {
+  color: #fff;
+  background-color: #abd373;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-input .btnSaveChanges:hover {
+  background-color: #212529;
+  color: #fff;
+}
+
+.divOrderEmpty {
+  display: flex;
+  justify-content: center;
+}
+
+.divOrderEmpty img {
+  width: 250px;
+}
+
+.divOrderEmpty p {
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
