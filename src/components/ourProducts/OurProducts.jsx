@@ -12,6 +12,14 @@ export const OurProducts = () => {
   const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();
 
+  function handleMsgAdded() {
+    MySwal.fire({
+      title: "Added!",
+      icon: "success",
+      confirmButtonColor: "#505050",
+    });
+  }
+
   function handlerMsgErr() {
     MySwal.fire({
       title: "Warning!",
@@ -35,6 +43,7 @@ export const OurProducts = () => {
 
   function handleAddCart(product) {
     dispatch(addProductCart({ productDetail: product, quantityProduct: 1 }));
+    handleMsgAdded();
   }
 
   return (
@@ -103,6 +112,7 @@ export const OurProducts = () => {
               >
                 <div className="product-item-wrap row">
                   {ourProducts.map((product, index) => {
+                    console.log(product);
                     return (
                       <div className="col-xl-3 col-md-4 col-sm-6" key={index}>
                         <div className="product-item">
@@ -110,12 +120,12 @@ export const OurProducts = () => {
                             <Link to={`/product/${product.slug}`}>
                               <img
                                 className="primary-img"
-                                src={product.image[3].imageDetailOne}
+                                src={product.image[3]}
                                 alt="Product Images"
                               />
                               <img
                                 className="secondary-img secondary-img-bg"
-                                src={product.image[4].imageDetailTwo}
+                                src={product.image[4]}
                                 alt="Product Images"
                               />
                             </Link>
@@ -155,27 +165,27 @@ export const OurProducts = () => {
                                   </Link>
                                 </li>
                                 <li>
-                                  <Link
-                                    to=""
+                                  <button
                                     data-tippy="Add to cart"
                                     data-tippy-inertia="true"
                                     data-tippy-animation="shift-away"
                                     data-tippy-delay="50"
                                     data-tippy-arrow="true"
                                     data-tippy-theme="sharpborder"
+                                    className="whislistBtn"
                                     onClick={(e) => {
                                       e.preventDefault();
                                       handleAddCart(product);
                                     }}
                                   >
                                     <i className="pe-7s-cart"></i>
-                                  </Link>
+                                  </button>
                                 </li>
                               </ul>
                             </div>
                           </div>
                           <div className="product-content">
-                            <Link className="product-name" to="shop.html">
+                            <Link className="product-name" to={`/product/${product.slug}`}>
                               {product.productName}
                             </Link>
                             <div className="price-box pb-1">

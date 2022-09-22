@@ -49,6 +49,15 @@ export const CarouselProducts = (setRefresSlug) => {
 
   function handleAddCart(element) {
     dispatch(addProductCart({ productDetail: element, quantityProduct: 1 }));
+    handleMsgAdded();
+  }
+
+  function handleMsgAdded() {
+    MySwal.fire({
+      title: "Added!",
+      icon: "success",
+      confirmButtonColor: "#505050",
+    });
   }
 
   function handlerMsgErr() {
@@ -68,14 +77,10 @@ export const CarouselProducts = (setRefresSlug) => {
           <div className="swiper-slide product-item" key={index}>
             <div className="product-img">
               <Link to={`/product/${element.slug}`} onClick={() => setRefresSlug(true)}>
-                <img
-                  className="primary-img"
-                  src={element.image[3].imageDetailOne}
-                  alt="Product Images"
-                />
+                <img className="primary-img" src={element.image[3]} alt="Product Images" />
                 <img
                   className="secondary-img secondary-img-bg"
-                  src={element.image[4].imageDetailTwo}
+                  src={element.image[4]}
                   alt="Product Images"
                 />
               </Link>
@@ -116,27 +121,27 @@ export const CarouselProducts = (setRefresSlug) => {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      to="cart.html"
+                    <button
                       data-tippy="Add to cart"
                       data-tippy-inertia="true"
                       data-tippy-animation="shift-away"
                       data-tippy-delay="50"
                       data-tippy-arrow="true"
                       data-tippy-theme="sharpborder"
+                      className="whislistBtn"
                       onClick={(e) => {
                         e.preventDefault();
                         handleAddCart(element);
                       }}
                     >
                       <i className="pe-7s-cart"></i>
-                    </Link>
+                    </button>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="product-content">
-              <Link className="product-name" to="shop.html">
+              <Link className="product-name" to={`/product/${element.slug}`}>
                 {element.productName}
               </Link>
               <div className="price-box pb-1">
