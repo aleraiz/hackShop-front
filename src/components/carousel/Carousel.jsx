@@ -45,7 +45,7 @@ export const CarouselHome = () => {
                 <div className="inner-img">
                   <div className="scene fill">
                     <div className="expand-width" data-depth="0.2">
-                      <img src="./image/carouselImgDos.jpg" alt="Inner Image" />
+                      <img src="./image/CarouselImgDos.jpg" alt="Inner Image" />
                     </div>
                   </div>
                 </div>
