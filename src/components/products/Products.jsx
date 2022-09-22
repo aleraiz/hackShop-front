@@ -11,10 +11,17 @@ const MySwal = withReactContent(Swal);
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState(2);
+  const [category, setCategory] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const allProducts = async () => {
+      const response = await axios({
+        method: "get",
+        url: `${process.env.REACT_APP_DB_HOST}/products`,
+      });
+      setProducts(response.data);
+    };
     const listProducts = async () => {
       const response = await axios({
         method: "get",
@@ -22,7 +29,12 @@ export const Products = () => {
       });
       setProducts(response.data);
     };
-    listProducts();
+
+    if (category === 0) {
+      allProducts();
+    } else {
+      listProducts();
+    }
   }, [category]);
 
   function handleAddCart(product) {
@@ -48,9 +60,9 @@ export const Products = () => {
     });
   }
 
-  function onChangeInput(e) {
-    setCategory(e.target.value);
-  }
+  // function onChangeInput(e) {
+  //   setCategory(e.target.value);
+  // }
 
   return (
     <>
@@ -80,30 +92,55 @@ export const Products = () => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <NavbarFilter />
                   <div className="tab-content">
-                    <form onSubmit={(e) => e.preventDefault()}>
-                      <label>
-                        <input
-                          type="radio"
-                          id="cbox1"
-                          value={1}
-                          onChange={onChangeInput}
-                          name="category"
-                        />{" "}
-                        Indoor
-                      </label>
-                      <label>
-                        <input
-                          type="radio"
-                          id="cbox1"
-                          value={2}
-                          onChange={onChangeInput}
-                          name="category"
-                        />{" "}
-                        Outdoor
-                      </label>
-                    </form>
+                    <ul className="nav product-tab-nav tab-style-1 pt-0" id="myTab" role="tablist">
+                      <li className="nav-item" role="presentation">
+                        <button
+                          className="active ourProductsBtn"
+                          id="featured-tab"
+                          data-bs-toggle="tab"
+                          role="tab"
+                          aria-controls="featured"
+                          aria-selected="true"
+                          onClick={() => {
+                            setCategory(0);
+                          }}
+                        >
+                          All
+                        </button>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <button
+                          className="active ourProductsBtn"
+                          id="featured-tab"
+                          data-bs-toggle="tab"
+                          role="tab"
+                          aria-controls="featured"
+                          aria-selected="true"
+                          onClick={() => {
+                            setCategory(1);
+                          }}
+                        >
+                          Indoor
+                        </button>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <button
+                          id="bestseller-tab"
+                          className="active ourProductsBtn"
+                          data-bs-toggle="tab"
+                          to="#bestseller"
+                          role="tab"
+                          aria-controls="bestseller"
+                          aria-selected="false"
+                          onClick={() => {
+                            setCategory(2);
+                          }}
+                        >
+                          Outdoor
+                        </button>
+                      </li>
+                    </ul>
                     <div
                       className="tab-pane fade show active"
                       id="grid-view"
