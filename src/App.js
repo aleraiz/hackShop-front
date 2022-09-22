@@ -18,8 +18,6 @@ import { Error404 } from "./components/error404/Error404";
 import { Register } from "./components/register/Register";
 import { Login } from "./components/login/Login";
 import { Products } from "./components/products/Products";
-import { Admin } from "./components/administrator/Admin";
-import { ContactUs } from "./components/contactUs/ContactUs";
 import { AboutUs } from "./components/aboutUs/AboutUs";
 import { MyAccount } from "./components/myAccount/MyAccount";
 import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
@@ -46,9 +44,7 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/account" element={<MyAccount />} />
-          <Route path="/admin" element={<Admin />} />
         </Route>
-        <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
