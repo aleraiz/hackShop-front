@@ -77,14 +77,10 @@ export const CarouselProducts = (setRefresSlug) => {
           <div className="swiper-slide product-item" key={index}>
             <div className="product-img">
               <Link to={`/product/${element.slug}`} onClick={() => setRefresSlug(true)}>
-                <img
-                  className="primary-img"
-                  src={element.image[3].imageDetailOne}
-                  alt="Product Images"
-                />
+                <img className="primary-img" src={element.image[3]} alt="Product Images" />
                 <img
                   className="secondary-img secondary-img-bg"
-                  src={element.image[4].imageDetailTwo}
+                  src={element.image[4]}
                   alt="Product Images"
                 />
               </Link>

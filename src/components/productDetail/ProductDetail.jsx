@@ -137,7 +137,7 @@ export const ProductDetail = () => {
                             {productDetail.image ? (
                               <img
                                 className="img-full"
-                                src={productDetail?.image[0].imageOne}
+                                src={productDetail?.image[0]}
                                 alt="Product Image"
                               />
                             ) : (
@@ -192,35 +192,35 @@ export const ProductDetail = () => {
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[0].imageOne}
+                              src={productDetail.image[0]}
                               alt="Product Thumnail"
                             />
                           </div>
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[1].imageTwo}
+                              src={productDetail.image[1]}
                               alt="Product Thumnail"
                             />
                           </div>
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[2].imageThree}
+                              src={productDetail.image[2]}
                               alt="Product Thumnail"
                             />
                           </div>
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[3].imageDetailOne}
+                              src={productDetail.image[3]}
                               alt="Product Thumnail"
                             />
                           </div>
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[4].imageDetailTwo}
+                              src={productDetail.image[4]}
                               alt="Product Thumnail"
                             />
                           </div>
