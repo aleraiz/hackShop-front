@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { FaReact } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
 import { TbBrandJavascript } from "react-icons/tb";
@@ -18,6 +18,10 @@ import Carousel from "react-multi-carousel";
 import "./styles.css";
 
 export const AboutUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

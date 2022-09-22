@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { NavbarFilter } from "./NavbarFilter";
-import "./style.css";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import { addProductCart } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
+import axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import "./style.css";
+
 const MySwal = withReactContent(Swal);
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState(2);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const listProducts = async () => {

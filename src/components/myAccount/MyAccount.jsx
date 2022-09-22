@@ -3,7 +3,7 @@ import { logoutUser } from "../../redux/slices/userSlice";
 import { emptyCart } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
@@ -16,7 +16,6 @@ export const MyAccount = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
-
   const [userError, setUserError] = useState("");
   const [userErrorPassword, setUserErrorPassword] = useState("");
   const [orders, setOrders] = useState([]);
@@ -29,6 +28,10 @@ export const MyAccount = () => {
   const [address, SetAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [userData, setUserData] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   async function handlerLogout() {
     dispatch(logoutUser());
