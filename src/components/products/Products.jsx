@@ -91,7 +91,7 @@ export const Products = () => {
                           onChange={onChangeInput}
                           name="category"
                         />{" "}
-                        Interior
+                        Indoor
                       </label>
                       <label>
                         <input
@@ -101,7 +101,7 @@ export const Products = () => {
                           onChange={onChangeInput}
                           name="category"
                         />{" "}
-                        Exterior
+                        Outdoor
                       </label>
                     </form>
                     <div
