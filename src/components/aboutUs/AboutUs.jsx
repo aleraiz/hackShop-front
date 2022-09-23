@@ -49,7 +49,7 @@ export const AboutUs = () => {
             <div className="col-lg-12">
               <div className="about-content">
                 <div>
-                  <h2 class="about-title hackshopTitle">
+                  <h2 className="about-title hackshopTitle">
                     Sobre el <span>Proyecto</span>
                   </h2>
                   <p className="about-desc aboutUsDescription">
@@ -68,10 +68,10 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div class="about-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 containerPlanning">
+      <div className="about-area">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 containerPlanning">
               <div className="divContainerHackshop">
                 <div>
                   <h2 className="about-title hackshopTitle">
@@ -131,7 +131,7 @@ export const AboutUs = () => {
                   <div className="titlesAndDescriptionStep">
                     <div>
                       <h3>4 - Metodología de trabajo</h3>
-                      <p class="about-desc aboutUsDescription paragraphText">
+                      <p className="about-desc aboutUsDescription paragraphText">
                         Organizamos nuestro trabajo utilizando una <span> Metodología Ágil</span>{" "}
                         con tres sprints. Cada sprint tenía tareas que se organizaban y
                         desarrollaban individualmente o en grupos, usando <span> Trello</span> para
@@ -141,7 +141,7 @@ export const AboutUs = () => {
                         Discord.
                       </p>
                       <h3>5 - Marcos y Tecnologías</h3>
-                      <p class="about-desc aboutUsDescription paragraphText">
+                      <p className="about-desc aboutUsDescription paragraphText">
                         Nuestro proyecto utilizó una base de datos relacional, por ello trabajamos
                         con
                         <span> MySql y Sequelize</span> como persistencia de datos, además de
@@ -157,80 +157,82 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div class="section-title-wrap without-tab">
-        <h2 class="section-title " id="technologyTitle">
+      <div className="section-title-wrap without-tab">
+        <h2 className="section-title " id="technologyTitle">
           ¡TECNOLOGíAS <span>UTILIZADAS!</span>
         </h2>
       </div>
-      <div class="about-area imageBackgroundSuculenta">
-        <div className="containerImageSuculenta">
+      <div className="about-area imageBackgroundSuculenta">
+        <div className="technologyContainerBackground">
           <div className="container containerTechnology">
-            <Carousel
-              responsive={responsive}
-              infinite={true}
-              className="containerSvg"
-              draggable={false}
-            >
-              <div className="containerSvgName">
+            <div className="flexTechnology">
+              <div className="containerSvgName colorblack">
                 <FaReact className="reactSvg" />
                 <p>React</p>
               </div>
-              <div className="containerSvgName">
+              <div className="containerSvgName colorblack">
                 <SiRedux className="reduxSvg" />
                 <p>Redux</p>
               </div>
-              <div className="containerSvgName">
+              <div className="containerSvgName colorblack">
                 <TbBrandJavascript className="javascriptSvg" />
                 <p>Javacript</p>
               </div>
-              <div className="containerSvgName">
+            </div>
+            <div className="flexTechnology">
+              <div className="containerSvgName colorblack">
                 <FaTrello className="trelloSvg" />
                 <p>Trello</p>
               </div>
-              <div>
+              <div className="containerSvgName colorblack">
                 <FaNode className="nodeJsSvg" />
                 <p>Node Js</p>
               </div>
-              <div className="containerSvgName">
+              <div className="containerSvgName colorblack">
                 <SiBootstrap className="bootstrapSvg" />
                 <p>Bootstrap</p>
               </div>
-              <div className="containerSvgName">
+            </div>
+            <div className="flexTechnology">
+              <div className="containerSvgName colorblack">
                 <SiMysql className="mysqlSvg" />
                 <p>MySql</p>
               </div>
-              <div>
+              <div className="containerSvgName colorblack">
                 <SiCss3 className="cssSvg" />
                 <p>Css</p>
               </div>
-              <div>
+              <div className="containerSvgName colorblack">
                 <FaGithub className="githubSvg" />
                 <p>GitHub</p>
               </div>
-              <div>
+            </div>
+            <div className="flexTechnology">
+              <div className="containerSvgName colorblack">
                 <SiSequelize className="sequelizeSvg" />
                 <p>Sequelize</p>
               </div>
-              <div>
+              <div className="containerSvgName colorblack">
                 <FaFigma className="figmaSvg" />
                 <p>Figma</p>
               </div>
-              <div>
+              <div className="containerSvgName colorblack">
                 <FaHtml5 className="htmlSvg" />
                 <p>Html</p>
               </div>
-            </Carousel>
+            </div>
           </div>
         </div>
       </div>
-      <div class="team-area  teamContainer">
-        <div class="container">
-          <div class="section-title-wrap without-tab">
-            <h2 class="section-title">¡Nuestro Team!</h2>
+
+      <div className="team-area  teamContainer">
+        <div className="container">
+          <div className="section-title-wrap without-tab">
+            <h2 className="section-title">¡Nuestro Team!</h2>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-3 col-sm-6 pt-sm-5">
-              <div class="team-img">
+          <div className="row justify-content-center">
+            <div className="col-lg-3 col-sm-6 pt-sm-5">
+              <div className="team-img">
                 <img
                   src="./AleCircle.png"
                   alt="Team Member"
@@ -242,9 +244,9 @@ export const AboutUs = () => {
                   className="teamImageProfile secondary-img"
                 />
               </div>
-              <div class="team-content">
-                <h2 class="team-member-name mb-0">Alejandro Raíz</h2>
-                <div class="social-link with-border justify-content-center">
+              <div className="team-content">
+                <h2 className="team-member-name mb-0">Alejandro Raíz</h2>
+                <div className="social-link with-border justify-content-center">
                   <ul className="socialLinksProfiles">
                     <li>
                       <a
@@ -280,17 +282,17 @@ export const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
-              <div class="team-img">
+            <div className="col-lg-3 col-sm-6 pt-5 pt-sm-0">
+              <div className="team-img">
                 <img src="./Marco.png" alt="Team Member" className="teamImageProfile primary-img" />
                 <img
                   src="./MarcoPlaya-modified.png"
                   alt="Team Member"
                   className="teamImageProfile secondary-img"
                 />
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Marco de Luca</h2>
-                  <div class="social-link with-border justify-content-center">
+                <div className="team-content">
+                  <h2 className="team-member-name mb-0">Marco de Luca</h2>
+                  <div className="social-link with-border justify-content-center">
                     <ul className="socialLinksProfiles">
                       <li>
                         <a
@@ -327,8 +329,8 @@ export const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 pt-5">
-              <div class="team-img">
+            <div className="col-lg-3 col-sm-6 pt-5">
+              <div className="team-img">
                 <img
                   src="./imageCircleRomina.png"
                   alt="Team Member"
@@ -339,9 +341,9 @@ export const AboutUs = () => {
                   alt="Team Member"
                   className="teamImageProfile secondary-img"
                 />
-                <div class="team-content">
-                  <h2 class="team-member-name mb-0">Romina Dos Santos</h2>
-                  <div class="social-link with-border justify-content-center">
+                <div className="team-content">
+                  <h2 className="team-member-name mb-0">Romina Dos Santos</h2>
+                  <div className="social-link with-border justify-content-center">
                     <ul className="socialLinksProfiles">
                       <li>
                         <a

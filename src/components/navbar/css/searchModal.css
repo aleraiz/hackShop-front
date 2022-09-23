@@ -25,3 +25,20 @@
   font-size: 23px;
   vertical-align: middle;
 }
+
+.modal-search {
+  justify-content: initial;
+  height: auto;
+  margin-top: 25px;
+}
+
+.productSearch img {
+  width: 100%;
+}
+
+.productSearch p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}

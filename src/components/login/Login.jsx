@@ -144,7 +144,10 @@ export const Login = () => {
                         </button>
                       </div>
                       <div className="d-flex align-items-center">
-                        <a href="http://localhost:3001/login" className="text-dark admin-login">
+                        <a
+                          href={`https://hackshop-admin.vercel.app/`}
+                          className="text-dark admin-login"
+                        >
                           Admin login
                           <FontAwesomeIcon icon={faLock} className="ms-2" />
                         </a>

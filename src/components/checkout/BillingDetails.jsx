@@ -44,7 +44,7 @@ export const BillingDetails = () => {
     try {
       await axios({
         method: "post",
-        url: `http://localhost:8000/order`,
+        url: `${process.env.REACT_APP_DB_HOST}/order`,
         headers: { Authorization: `Bearer ${user.token}` },
         data: {
           productList: cart,

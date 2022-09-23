@@ -20,26 +20,19 @@ export const Products = () => {
   }, []);
 
   useEffect(() => {
-    const allProducts = async () => {
+    const getProducts = async () => {
+      const url =
+        category === 0
+          ? `${process.env.REACT_APP_DB_HOST}/products`
+          : `${process.env.REACT_APP_DB_HOST}/products/${category}`;
       const response = await axios({
         method: "get",
-        url: `${process.env.REACT_APP_DB_HOST}/products`,
-      });
-      setProducts(response.data);
-    };
-    const listProducts = async () => {
-      const response = await axios({
-        method: "get",
-        url: `${process.env.REACT_APP_DB_HOST}/products/${category}`,
+        url,
       });
       setProducts(response.data);
     };
 
-    if (category === 0) {
-      allProducts();
-    } else {
-      listProducts();
-    }
+    getProducts();
   }, [category]);
 
   function handleAddCart(product) {
@@ -64,10 +57,6 @@ export const Products = () => {
       confirmButtonColor: "#f8bb86",
     });
   }
-
-  // function onChangeInput(e) {
-  //   setCategory(e.target.value);
-  // }
 
   return (
     <>

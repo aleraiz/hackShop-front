@@ -29,7 +29,7 @@ export const BrandArea = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="swiper-container brand-slider">
-                <Carousel responsive={responsive} infinite={true}>
+                <Carousel responsive={responsive} infinite={true} draggable={false}>
                   <div className="swiper-slide">
                     <Link className="brand-item" to="#">
                       <img src="../../images/brandArea/1-1.webp" alt="Brand Image" />

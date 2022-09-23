@@ -197,7 +197,12 @@ export const ProductDetail = () => {
                     </div>
                     <div className="swiper-container single-product-thumbs">
                       {productDetail.image ? (
-                        <Carousel responsive={responsive} infinite={true} arrows={true}>
+                        <Carousel
+                          responsive={responsive}
+                          infinite={true}
+                          arrows={true}
+                          draggable={false}
+                        >
                           <div className="swiper-slide">
                             <img
                               className="img-full"

@@ -227,6 +227,32 @@
   height: 500px;
 }
 
+.technologyContainerBackground {
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  align-items: center;
+  display: flex;
+  background-color: #f9f1ef;
+}
+
+.flexTechnology {
+  display: flex;
+  justify-content: space-around;
+}
+
+.containerSvgName {
+  text-align-last: center;
+}
+
+.containerSvgName svg {
+  font-size: 80px;
+}
+
+.colorblack svg {
+  color: #000000;
+}
+
 .containerSvg {
   text-align: center;
 }
@@ -282,9 +308,6 @@
 .containerImageSuculenta div span {
   font-family: "Rampart One", cursive;
   color: #abd373;
-}
-
-.containerImageSuculenta div h2 {
 }
 
 .containerTechnology {
