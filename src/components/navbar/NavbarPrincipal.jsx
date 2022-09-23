@@ -21,6 +21,8 @@ export const NavbarPrincipal = () => {
   const [openModalSearch, setOpenModalSearch] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
   const [showCanvasNavbar, setShowCanvasNavbar] = useState(false);
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
   const user = useSelector((state) => state.user.user);
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
@@ -40,6 +42,11 @@ export const NavbarPrincipal = () => {
       confirmButtonColor: "#f8bb86",
     });
   }
+
+  const handleClick = (event) => {
+    setShow(!show);
+    setTarget(event.target);
+  };
 
   async function handlerLogout() {
     dispatch(logoutUser());
