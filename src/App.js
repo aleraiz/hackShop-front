@@ -24,7 +24,6 @@ import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
 import LoginExist from "./components/loginExist/LoginExist";
 import RegisterExist from "./components/registerExist/RegisterExist";
-import { useEffect } from "react";
 
 function App() {
   return (
