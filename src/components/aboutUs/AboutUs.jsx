@@ -389,7 +389,7 @@ export const AboutUs = () => {
               En este bootcamp de dedicacion full-time <span>hemos trabajado</span>:
             </h2>
             <div className="row">
-              <div className="col-lg-3 col-md-4 col-6">
+              <div className="col-lg-3  col-6">
                 <div className="counter-item">
                   <div className="count-wrap">
                     <h3 className="count mb-0" data-counterup-time="1000">
@@ -400,7 +400,7 @@ export const AboutUs = () => {
                   <h4 className="count-title mb-0">Horas</h4>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-4 col-6 pt-4 pt-md-0">
+              <div className="col-lg-3  col-6 pt-md-0">
                 <div className="counter-item">
                   <div className="count-wrap">
                     <h3 className="count mb-0" data-counterup-time="1500">
@@ -411,7 +411,7 @@ export const AboutUs = () => {
                   <h4 className="count-title mb-0">Tecnologías</h4>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-4 col-6 pt-4 pt-lg-0">
+              <div className="col-lg-3  col-6 pt-lg-0">
                 <div className="counter-item">
                   <div className="count-wrap">
                     <h3 className="count mb-0" data-counterup-time="2000">
@@ -422,7 +422,7 @@ export const AboutUs = () => {
                   <h4 className="count-title mb-0">Proyectos</h4>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-4 col-6">
+              <div className="col-lg-3  col-6">
                 <div className="counter-item">
                   <div className="count-wrap">
                     <h3 className="count mb-0" data-counterup-time="500">

@@ -149,7 +149,10 @@ export const NavbarPrincipal = () => {
                                         <Link
                                           className="dropdown-item"
                                           to="/login"
-                                          onClick={() => handlerLogout()}
+                                          onClick={() => {
+                                            handlerLogout();
+                                            handleClick();
+                                          }}
                                         >
                                           Logout
                                         </Link>

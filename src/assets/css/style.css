@@ -4015,7 +4015,7 @@ blockquote p {
   font-size: 30px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .banner-with-counter [class*="col-"]:not(:last-child) .counter-item {
     border-right: 1px solid #dcdcdc;
   }
