@@ -7,7 +7,6 @@ import { loginUser } from "../../redux/slices/userSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
-import { Reset } from "../buttonReset/ResetButton";
 
 export const Login = () => {
   const [email, setEmail] = useState("user@user.com");
@@ -142,9 +141,6 @@ export const Login = () => {
                         >
                           Login
                         </button>
-                      </div>
-                      <div>
-                        <Reset />
                       </div>
                       <div className="d-flex align-items-center">
                         <a
