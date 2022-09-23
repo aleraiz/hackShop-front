@@ -86,7 +86,7 @@ export const AboutUs = () => {
                     <div>
                       <h3>1 - Concepción del proyecto y MER</h3>
                       <p className="about-desc aboutUsDescription paragraphText">
-                        Nuestro primer paso fue definir que necesitamos en el <span>Backend </span>
+                        Nuestro primer paso fue definir que necesitamos en el <span>backend </span>
                         antes de seguir avanzando, por esto hicimos un listado de las cinco
                         principales tareas. Luego, procedimos a hacer un diagrama de relaciones de
                         entidad cuidadosamente pensado. Aquí definimos las principales relaciones
@@ -387,7 +387,7 @@ export const AboutUs = () => {
         <div className="counter-area">
           <div className="container">
             <h2 className="counter-title">
-              En este bootcamp de dedicacion full-time <span>hemos trabajado</span>:
+              En este bootcamp de dedicación full-time <span>hemos trabajado</span>:
             </h2>
             <div className="row">
               <div className="col-lg-3 col-md-4 col-6">
