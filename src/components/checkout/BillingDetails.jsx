@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import { emptyCart } from "../../redux/slices/cartSlice";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
 import axios from "axios";
 
 export const BillingDetails = () => {

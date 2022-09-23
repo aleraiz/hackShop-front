@@ -1,11 +1,11 @@
+import "./styles.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-import axios from "axios";
-import "./styles.css";
 import { addProductCart } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 export const OurProducts = () => {
   const [ourProducts, setOurProducts] = useState([]);

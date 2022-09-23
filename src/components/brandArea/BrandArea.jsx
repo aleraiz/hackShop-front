@@ -1,7 +1,7 @@
-import Carousel from "react-multi-carousel";
-import { Link } from "react-router-dom";
-import "react-multi-carousel/lib/styles.css";
 import "./css/style.css";
+import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
+import Carousel from "react-multi-carousel";
 
 export const BrandArea = () => {
   const responsive = {

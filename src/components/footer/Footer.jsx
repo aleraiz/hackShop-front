@@ -1,10 +1,10 @@
+import "./style.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { CartOffCanvas } from "../navbar/CartOffcanvas";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
-import "./style.css";
 
 export const Footer = () => {
   const user = useSelector((state) => state.user.user);

@@ -7,10 +7,9 @@ import { NewProducts } from "./newProducts/NewProducts";
 import { Testimonial } from "./testimonial/Testimonial";
 import { BrandArea } from "./brandArea/BrandArea";
 import { LatestBlog } from "./latestBlog/LatestBlog";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import { Reset } from "../components/buttonReset/Reset";
+import Modal from "react-bootstrap/Modal";
 
 export const Home = () => {
   const [show, setShow] = useState(true);

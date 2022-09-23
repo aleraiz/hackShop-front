@@ -1,12 +1,10 @@
-import Button from "react-bootstrap/Button";
+import "./css/searchModal.css";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Modal from "react-bootstrap/Modal";
-import axios from "axios";
 import { useDebounce } from "use-debounce";
 import { BsPencilSquare } from "react-icons/bs";
-
-import "./css/searchModal.css";
+import Modal from "react-bootstrap/Modal";
+import axios from "axios";
 
 export const SearchModal = ({ setOpenModalSearch }) => {
   useEffect(() => {
