@@ -40,14 +40,14 @@ const cartSlice = createSlice({
     },
     incrementQuantity: (state, action) => {
       const searchProduct = state.cart.findIndex((product) => {
-        return product.id === action.payload.productId;
+        return product.id === action.payload;
       });
       state.cart[searchProduct].quantity++;
     },
 
     decrementQuantity: (state, action) => {
       const searchProduct = state.cart.findIndex((product) => {
-        return product.id === action.payload.productId;
+        return product.id === action.payload;
       });
       if (state.cart[searchProduct].quantity > 1) {
         state.cart[searchProduct].quantity--;

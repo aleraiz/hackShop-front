@@ -32,19 +32,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:slug" element={<ProductDetail />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
         <Route element={<LoginExist />}>
           <Route path="/login" element={<Login />} />
         </Route>
         <Route element={<RegisterExist />}>
           <Route path="/register" element={<Register />} />
         </Route>
-        <Route path="/products" element={<Products />} />
-        <Route path="/product/:slug" element={<ProductDetail />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/account" element={<MyAccount />} />
         </Route>
-        <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />

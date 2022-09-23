@@ -18,7 +18,6 @@ import Popover from "react-bootstrap/Popover";
 import axios from "axios";
 import "./css/style.css";
 import { OverlayTrigger } from "react-bootstrap";
-import { Reset } from "../buttonReset/ResetButton";
 
 export const NavbarPrincipal = () => {
   const dispatch = useDispatch();
@@ -86,16 +85,28 @@ export const NavbarPrincipal = () => {
                       <Offcanvas.Body>
                         <Nav className="justify-content-md-center flex-grow-1 pe-3 main-nav">
                           <ul id="navbarMenuBtns">
-                            <li className="drop-holder navbarMenuLi">
+                            <li
+                              className="drop-holder navbarMenuLi"
+                              onClick={() => {
+                                setShowCanvasNavbar(false);
+                              }}
+                            >
                               <Link to="/">Home</Link>
                             </li>
-                            <li>
-                              <Reset />
-                            </li>
-                            <li className="megamenu-holder navbarMenuLi">
+                            <li
+                              className="megamenu-holder navbarMenuLi"
+                              onClick={() => {
+                                setShowCanvasNavbar(false);
+                              }}
+                            >
                               <Link to="/products">Shop</Link>
                             </li>
-                            <li className="navbarMenuLi">
+                            <li
+                              className="navbarMenuLi"
+                              onClick={() => {
+                                setShowCanvasNavbar(false);
+                              }}
+                            >
                               <Link to="/aboutus">About Us</Link>
                             </li>
                             <li
@@ -121,6 +132,7 @@ export const NavbarPrincipal = () => {
                                 type="button"
                                 onClick={() => {
                                   setOpenModalSearch(true);
+                                  setShowCanvasNavbar(false);
                                 }}
                               >
                                 <i className="pe-7s-search"></i>
@@ -138,22 +150,43 @@ export const NavbarPrincipal = () => {
                                   <Popover id={`popover-positioned-bottom`}>
                                     {!user ? (
                                       <>
-                                        <Link className="dropdown-item" to="/register">
+                                        <Link
+                                          className="dropdown-item"
+                                          to="/register"
+                                          onClick={() => {
+                                            setShowCanvasNavbar(false);
+                                          }}
+                                        >
                                           Register
                                         </Link>
-                                        <Link className="dropdown-item" to="/login">
+                                        <Link
+                                          className="dropdown-item"
+                                          to="/login"
+                                          onClick={() => {
+                                            setShowCanvasNavbar(false);
+                                          }}
+                                        >
                                           Login
                                         </Link>
                                       </>
                                     ) : (
                                       <>
-                                        <Link className="dropdown-item" to="/account">
+                                        <Link
+                                          className="dropdown-item"
+                                          to="/account"
+                                          onClick={() => {
+                                            setShowCanvasNavbar(false);
+                                          }}
+                                        >
                                           My account
                                         </Link>
                                         <Link
                                           className="dropdown-item"
                                           to="/login"
-                                          onClick={() => handlerLogout()}
+                                          onClick={() => {
+                                            handlerLogout();
+                                            setShowCanvasNavbar(false);
+                                          }}
                                         >
                                           Logout
                                         </Link>
@@ -185,6 +218,7 @@ export const NavbarPrincipal = () => {
                                 type="button"
                                 onClick={() => {
                                   setOpenOffcanvas(true);
+                                  setShowCanvasNavbar(false);
                                 }}
                               >
                                 <i className="pe-7s-shopbag"></i>
