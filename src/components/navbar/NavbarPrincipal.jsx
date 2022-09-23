@@ -18,6 +18,7 @@ import Popover from "react-bootstrap/Popover";
 import axios from "axios";
 import "./css/style.css";
 import { OverlayTrigger } from "react-bootstrap";
+import { Reset } from "../buttonReset/ResetButton";
 
 export const NavbarPrincipal = () => {
   const dispatch = useDispatch();
@@ -87,6 +88,9 @@ export const NavbarPrincipal = () => {
                           <ul id="navbarMenuBtns">
                             <li className="drop-holder navbarMenuLi">
                               <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                              <Reset />
                             </li>
                             <li className="megamenu-holder navbarMenuLi">
                               <Link to="/products">Shop</Link>
