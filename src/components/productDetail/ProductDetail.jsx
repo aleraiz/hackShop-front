@@ -150,7 +150,7 @@ export const ProductDetail = () => {
                                 alt="Product Image"
                               />
                             ) : (
-                              <h1>No hay imagen</h1>
+                              <div className="loading">Loading&#8230;</div>
                             )}
                           </Link>
                         </div>
@@ -197,7 +197,12 @@ export const ProductDetail = () => {
                     </div>
                     <div className="swiper-container single-product-thumbs">
                       {productDetail.image ? (
-                        <Carousel responsive={responsive} infinite={true} arrows={true}>
+                        <Carousel
+                          responsive={responsive}
+                          infinite={true}
+                          arrows={true}
+                          draggable={false}
+                        >
                           <div className="swiper-slide">
                             <img
                               className="img-full"
@@ -241,7 +246,7 @@ export const ProductDetail = () => {
                           </div>
                         </Carousel>
                       ) : (
-                        <h2>Cargando...</h2>
+                        <div className="loading">Loading&#8230;</div>
                       )}
                     </div>
                   </div>

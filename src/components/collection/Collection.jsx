@@ -12,16 +12,16 @@ export const Collection = () => {
                 <img src="../collection/collection1.jpg" alt="Banner Image" />
               </div>
               <div className="banner-content text-position-left">
-                <span className="collection">Collection Of Cactus</span>
+                <span className="collection">Collection of cactus</span>
                 <h3 className="title">
-                  Pottery Pots & <br /> Plant
+                  Pottery pots & <br /> plant
                 </h3>
                 <div className="button-wrap">
                   <Link
                     className="btn btn-custom-size btn-pronia-primary rounded-pill btn-collection"
                     to="/products"
                   >
-                    Shop Now
+                    Shop now
                   </Link>
                 </div>
               </div>
@@ -33,14 +33,14 @@ export const Collection = () => {
                 <img src="../collection/collection2.jpg" alt="Banner Image" />
               </div>
               <div className="banner-content text-position-center">
-                <span className="collection">New Collection</span>
-                <h3 className="title">Plant Port</h3>
+                <span className="collection">New collection</span>
+                <h3 className="title">Plant port</h3>
                 <div className="button-wrap">
                   <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
                     to="/products"
                   >
-                    Shop Now
+                    Shop now
                   </Link>
                 </div>
               </div>
@@ -52,14 +52,14 @@ export const Collection = () => {
                 <img src="../collection/collection3.jpg" alt="Banner Image" />
               </div>
               <div className="banner-content text-position-center">
-                <span className="collection">New Collection</span>
-                <h3 className="title">Plant Port</h3>
+                <span className="collection">New collection</span>
+                <h3 className="title">Plant port</h3>
                 <div className="button-wrap">
                   <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
                     to="/products"
                   >
-                    Shop Now
+                    Shop now
                   </Link>
                 </div>
               </div>
@@ -71,16 +71,16 @@ export const Collection = () => {
                 <img src="../collection/collection4.jpg" alt="Banner Image" />
               </div>
               <div className="banner-content text-position-left">
-                <span className="collection">Collection Of Cactus</span>
+                <span className="collection">Collection of cactus</span>
                 <h3 className="title">
-                  Hanging Pots & <br /> Plant
+                  Hanging pots & <br /> plant
                 </h3>
                 <div className="button-wrap">
                   <Link
                     className="btn btn-custom-size lg-size btn-pronia-primary rounded-pill btn-collection"
                     to="/products"
                   >
-                    Shop Now
+                    Shop now
                   </Link>
                 </div>
               </div>

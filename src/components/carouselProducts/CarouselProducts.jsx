@@ -71,7 +71,7 @@ export const CarouselProducts = (setRefresSlug) => {
   }
 
   return (
-    <Carousel responsive={responsive} infinite={true}>
+    <Carousel responsive={responsive} infinite={true} draggable={false}>
       {productsCarousel.map((element, index) => {
         return (
           <div className="swiper-slide product-item" key={index}>

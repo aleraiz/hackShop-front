@@ -85,13 +85,28 @@ export const NavbarPrincipal = () => {
                       <Offcanvas.Body>
                         <Nav className="justify-content-md-center flex-grow-1 pe-3 main-nav">
                           <ul id="navbarMenuBtns">
-                            <li className="drop-holder navbarMenuLi">
+                            <li
+                              className="drop-holder navbarMenuLi"
+                              onClick={() => {
+                                setShowCanvasNavbar(false);
+                              }}
+                            >
                               <Link to="/">Home</Link>
                             </li>
-                            <li className="megamenu-holder navbarMenuLi">
+                            <li
+                              className="megamenu-holder navbarMenuLi"
+                              onClick={() => {
+                                setShowCanvasNavbar(false);
+                              }}
+                            >
                               <Link to="/products">Shop</Link>
                             </li>
-                            <li className="navbarMenuLi">
+                            <li
+                              className="navbarMenuLi"
+                              onClick={() => {
+                                setShowCanvasNavbar(false);
+                              }}
+                            >
                               <Link to="/aboutus">About Us</Link>
                             </li>
                             <li
@@ -117,6 +132,7 @@ export const NavbarPrincipal = () => {
                                 type="button"
                                 onClick={() => {
                                   setOpenModalSearch(true);
+                                  setShowCanvasNavbar(false);
                                 }}
                               >
                                 <i className="pe-7s-search"></i>
@@ -134,16 +150,37 @@ export const NavbarPrincipal = () => {
                                   <Popover id={`popover-positioned-bottom`}>
                                     {!user ? (
                                       <>
-                                        <Link className="dropdown-item" to="/register">
+                                        <Link
+                                          className="dropdown-item"
+                                          to="/register"
+                                          onClick={() => {
+                                            setShowCanvasNavbar(false);
+                                            handleClick();
+                                          }}
+                                        >
                                           Register
                                         </Link>
-                                        <Link className="dropdown-item" to="/login">
+                                        <Link
+                                          className="dropdown-item"
+                                          to="/login"
+                                          onClick={() => {
+                                            setShowCanvasNavbar(false);
+                                            handleClick();
+                                          }}
+                                        >
                                           Login
                                         </Link>
                                       </>
                                     ) : (
                                       <>
-                                        <Link className="dropdown-item" to="/account">
+                                        <Link
+                                          className="dropdown-item"
+                                          to="/account"
+                                          onClick={() => {
+                                            setShowCanvasNavbar(false);
+                                            handleClick();
+                                          }}
+                                        >
                                           My account
                                         </Link>
                                         <Link
@@ -151,6 +188,7 @@ export const NavbarPrincipal = () => {
                                           to="/login"
                                           onClick={() => {
                                             handlerLogout();
+                                            setShowCanvasNavbar(false);
                                             handleClick();
                                           }}
                                         >
@@ -184,6 +222,7 @@ export const NavbarPrincipal = () => {
                                 type="button"
                                 onClick={() => {
                                   setOpenOffcanvas(true);
+                                  setShowCanvasNavbar(false);
                                 }}
                               >
                                 <i className="pe-7s-shopbag"></i>

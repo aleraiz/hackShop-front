@@ -10,7 +10,7 @@ export const ShippingArea = () => {
                   <img src="../../car.png" alt="Shipping Icon" />
                 </div>
                 <div className="shipping-content">
-                  <h2 className="title">Free Shipping</h2>
+                  <h2 className="title">Free shipping</h2>
                   <p className="short-desc mb-0 shippingText">Capped at $319 per order</p>
                 </div>
               </div>
@@ -21,7 +21,7 @@ export const ShippingArea = () => {
                   <img src="../../card.png" alt="Shipping Icon" />
                 </div>
                 <div className="shipping-content">
-                  <h2 className="title">Safe Payment</h2>
+                  <h2 className="title">Safe payment</h2>
                   <p className="short-desc mb-0 shippingText">With our payment gateway</p>
                 </div>
               </div>
@@ -32,8 +32,8 @@ export const ShippingArea = () => {
                   <img src="../../service.png" alt="Shipping Icon" />
                 </div>
                 <div className="shipping-content">
-                  <h2 className="title">Best Services</h2>
-                  <p className="short-desc mb-0 shippingText">Friendly & Supper Services</p>
+                  <h2 className="title">Best services</h2>
+                  <p className="short-desc mb-0 shippingText">Friendly & supper services</p>
                 </div>
               </div>
             </div>

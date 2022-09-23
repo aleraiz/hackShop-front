@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/slices/userSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
-
 import "./style.css";
 
 export const Login = () => {

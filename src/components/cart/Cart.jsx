@@ -1,36 +1,17 @@
 import "./css/style.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementQuantity, decrementQuantity } from "../../redux/slices/cartSlice";
-import { deleteProductCart } from "../../redux/slices/cartSlice";
 import { useState, useEffect } from "react";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { CartItem } from "./CartItem";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
-  const dispatch = useDispatch();
   const [quantityProduct, setQuantityProduct] = useState(1);
-  const [removeProduct, setRemoveProduct] = useState(quantityProduct);
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-
-
-  function handlerIncrementProduct(productId) {
-    setQuantityProduct(quantityProduct + 1);
-    dispatch(incrementQuantity({ productId }));
-  }
-
-  function handlerDecrementProduct(productId) {
-    setRemoveProduct(quantityProduct - 1);
-    dispatch(decrementQuantity({ productId }));
-  }
-
-  function handlerDeleteProductFromCart(productId) {
-    dispatch(deleteProductCart(productId));
-  }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const priceFormat = new Intl.NumberFormat("en", {
     style: "currency",
@@ -80,75 +61,7 @@ export const Cart = () => {
                         <tbody>
                           <>
                             {cart.map((product) => {
-                              return (
-                                <tr key={product.id}>
-                                  <td className="product_remove">
-                                    <button
-                                      className="product-item_remove btnRemoveCartPage"
-                                      type="button"
-                                      onClick={(e) => {
-                                        e.preventDefault();
-                                        handlerDeleteProductFromCart(product.id);
-                                      }}
-                                    >
-                                      <RiDeleteBin6Line className="removeItem" />
-                                    </button>
-                                  </td>
-                                  <td className="product-thumbnail td-align-center">
-                                    <div className="img-container">
-                                      <Link to="#">
-                                        <img src={product.image} alt="Cart Thumbnail" />
-                                      </Link>
-                                    </div>
-                                  </td>
-                                  <td className="product-name ">
-                                    <Link className="product-name-link" to="#">
-                                      {product.productName}
-                                    </Link>
-                                  </td>
-                                  <td className="product-price">
-                                    <span className="amount">${product.price}</span>
-                                  </td>
-                                  <td id="quantityTableCart">
-                                    <div className="containerBtnMoreAndRemove">
-                                      <div className="cart-plus-minus">
-                                        <button
-                                          className="cart-plus-minus-box"
-                                          type="submit"
-                                          id="quantityDecrement"
-                                          onClick={() => {
-                                            handlerDecrementProduct(product.id);
-                                          }}
-                                        >
-                                          <div className="dec qtybutton">
-                                            <i className="fa fa-minus"></i>
-                                          </div>
-                                        </button>
-                                      </div>
-                                      <span className="quantityNumber"> {product.quantity}</span>
-                                      <div className="cart-plus-minus">
-                                        <button
-                                          className="cart-plus-minus-box"
-                                          type="submit"
-                                          id="quantityIncrement"
-                                          onClick={() => {
-                                            handlerIncrementProduct(product.id);
-                                          }}
-                                        >
-                                          <div className="inc qtybutton">
-                                            <i className="fa fa-plus"></i>
-                                          </div>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </td>
-                                  <td className="product-subtotal">
-                                    <span className="amount">
-                                      {priceFormat.format(product.price * product.quantity)}
-                                    </span>
-                                  </td>
-                                </tr>
-                              );
+                              return <CartItem product={product} />;
                             })}
                           </>
                         </tbody>

@@ -34,7 +34,7 @@ export const Testimonial = () => {
       <div className="container-fluid">
         <div className="testimonial-bg testimonial-bg1">
           <div className="section-title-wrap">
-            <h2 className="section-title">What Say Client</h2>
+            <h2 className="section-title">Client reviews</h2>
             <p className="section-desc mb-0">
               Some reviews from our clients, taking into account each of your comments to improve!
             </p>

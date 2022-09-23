@@ -100,7 +100,7 @@ export const Footer = () => {
             </div>
             <div className="col-lg-2 col-md-4 pt-40">
               <div className="footer-widget-item">
-                <h3 className="footer-widget-title">Useful Links</h3>
+                <h3 className="footer-widget-title">Useful links</h3>
                 <ul className="footer-widget-list-item">
                   <li>
                     <Link to="/aboutus">About Hackshop</Link>
@@ -130,11 +130,11 @@ export const Footer = () => {
             </div>
             <div className="col-lg-2 col-md-4 pt-40">
               <div className="footer-widget-item">
-                <h3 className="footer-widget-title">My Account</h3>
+                <h3 className="footer-widget-title">My account</h3>
                 <ul className="footer-widget-list-item">
                   {!user && (
                     <li>
-                      <Link to="/register">Sign In</Link>
+                      <Link to="/register">Sign in</Link>
                     </li>
                   )}
                   <li>
@@ -144,18 +144,18 @@ export const Footer = () => {
                         setOpenOffcanvas(true);
                       }}
                     >
-                      View Cart
+                      View cart
                     </Link>
                     {openOffcanvas ? <CartOffCanvas setOpenOffcanvas={setOpenOffcanvas} /> : null}
                   </li>
                   <li>
                     <Link to="#" onClick={() => handlerMsgErr()}>
-                      My Wishlist
+                      My wishlist
                     </Link>
                   </li>
                   <li>
                     <Link to="#" onClick={() => handlerMsgErr()}>
-                      Track My Order
+                      Track my order
                     </Link>
                   </li>
                   <li>
@@ -172,12 +172,12 @@ export const Footer = () => {
                 <ul className="footer-widget-list-item">
                   <li>
                     <Link to="#" onClick={() => handlerMsgErr()}>
-                      Payment Methods
+                      Payment methods
                     </Link>
                   </li>
                   <li>
                     <Link to="#" onClick={() => handlerMsgErr()}>
-                      Money Guarantee!
+                      Money guarantee!
                     </Link>
                   </li>
                   <li>
@@ -192,7 +192,7 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link to="#" onClick={() => handlerMsgErr()}>
-                      Privacy Policy
+                      Privacy policy
                     </Link>
                   </li>
                 </ul>
@@ -200,7 +200,7 @@ export const Footer = () => {
             </div>
             <div className="col-lg-3 pt-40">
               <div className="footer-contact-info">
-                <h3 className="footer-widget-title">Payments Methods</h3>
+                <h3 className="footer-widget-title">Payments methods</h3>
               </div>
               <div className="payment-method">
                 <img src="../../../image/formas-de-pago-footer.jpg" alt="Payment Method" />

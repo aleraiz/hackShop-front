@@ -13,8 +13,8 @@
 
 .containerImageAboutUs {
   width: 100%;
-  height: 400px;
-  position: absolute;
+  min-height: 400px;
+  padding-bottom: 70px;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     url("../../../public/suculentaAboutUs3.jpg");
   background-position: center;
@@ -207,7 +207,7 @@
 }
 
 .divContainerHackshop {
-  margin: 50px 0 50px 0;
+  margin: 50px 0 0 0;
 }
 
 .containerImageSuculenta {
@@ -225,6 +225,32 @@
 
 .imageBackgroundSuculenta {
   height: 500px;
+}
+
+.technologyContainerBackground {
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  align-items: center;
+  display: flex;
+  background-color: #f9f1ef;
+}
+
+.flexTechnology {
+  display: flex;
+  justify-content: space-around;
+}
+
+.containerSvgName {
+  text-align-last: center;
+}
+
+.containerSvgName svg {
+  font-size: 80px;
+}
+
+.colorblack svg {
+  color: #000000;
 }
 
 .containerSvg {
@@ -284,9 +310,6 @@
   color: #abd373;
 }
 
-.containerImageSuculenta div h2 {
-}
-
 .containerTechnology {
   width: 100%;
 }
@@ -327,10 +350,6 @@
 
 .divPlanningHackshopPoint .paragraphText {
   font-size: 1rem;
-}
-
-.aboutContainer {
-  height: 400px;
 }
 
 .bornHackshop {
@@ -374,12 +393,6 @@
 }
 
 @media (max-width: 768px) {
-  .aboutContainer {
-    height: 500px;
-  }
-  .containerImageAboutUs {
-    height: 500px;
-  }
   .divPlanningHackshopPoint {
     display: flex;
     flex-direction: column-reverse;
@@ -410,12 +423,6 @@
 }
 
 @media (max-width: 473px) {
-  .aboutContainer {
-    height: 760px;
-  }
-  .containerImageAboutUs {
-    height: 760px;
-  }
   .divPlanningHackshopPoint .paragraphText {
     display: block;
     margin-bottom: 0;
