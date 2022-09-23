@@ -1,12 +1,12 @@
+import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/slices/userSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
-import "./style.css";
+import axios from "axios";
 
 export const Login = () => {
   const [email, setEmail] = useState("user@user.com");

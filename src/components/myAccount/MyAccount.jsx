@@ -1,16 +1,15 @@
+import "./styles.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { logoutUser } from "../../redux/slices/userSlice";
 import { emptyCart } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
-
-import "./styles.css";
+import axios from "axios";
 
 export const MyAccount = () => {
   const dispatch = useDispatch();
@@ -27,7 +26,6 @@ export const MyAccount = () => {
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [address, SetAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [userData, setUserData] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);

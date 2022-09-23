@@ -1,8 +1,7 @@
+import "./style.css";
 import { BillingDetails } from "./BillingDetails";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-
-import "./style.css";
 
 export const CheckoutPage = () => {
   useEffect(() => {

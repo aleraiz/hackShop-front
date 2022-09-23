@@ -1,13 +1,12 @@
 import "./css/style.css";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { CartItem } from "./CartItem";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
-  const [quantityProduct, setQuantityProduct] = useState(1);
 
   useEffect(() => {
     window.scrollTo(0, 0);

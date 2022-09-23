@@ -1,3 +1,6 @@
+import "./style.css";
+import "react-multi-carousel/lib/styles.css";
+import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -5,20 +8,18 @@ import { addProductCart } from "../../redux/slices/cartSlice";
 import { CarouselProducts } from "../carouselProducts/CarouselProducts";
 import { ToastContainer, toast } from "react-toastify";
 import Carousel from "react-multi-carousel";
-import axios from "axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import "react-multi-carousel/lib/styles.css";
-import "react-toastify/dist/ReactToastify.css";
-import "./style.css";
+import axios from "axios";
 
 export const ProductDetail = () => {
-  const MySwal = withReactContent(Swal);
   const [productDetail, setProductDetail] = useState([]);
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [isReadMore, setIsReadMore] = useState(true);
   const [refreshSlug, setRefresSlug] = useState(false);
   const [imageKey, setImageKey] = useState(0);
+
+  const MySwal = withReactContent(Swal);
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
   const { slug } = useParams();
@@ -138,11 +139,7 @@ export const ProductDetail = () => {
                     <div className="swiper-container single-product-slider">
                       <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                          <Link
-                            to="#"
-                            // to={productDetail.image[0].imageOne}
-                            className="single-img gallery-popup"
-                          >
+                          <Link to="#" className="single-img gallery-popup">
                             {productDetail.image && !isNaN(parseInt(imageKey)) ? (
                               <img
                                 className="img-full"
@@ -347,7 +344,7 @@ export const ProductDetail = () => {
                       draggable
                       pauseOnHover
                     />
-                    {/* Same as */}
+
                     <ToastContainer />
                     <div className="product-category">
                       <span className="title">SKU:</span>

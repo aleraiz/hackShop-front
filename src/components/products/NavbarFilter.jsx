@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { useState, useEffect } from "react";
-import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 export const NavbarFilter = () => {
   const [products, setProducts] = useState([]);
