@@ -83,6 +83,7 @@ export const NavbarPrincipal = () => {
                           <ul id="navbarMenuBtns">
                             <li
                               className="drop-holder navbarMenuLi"
+                              id="navbar-btn-1"
                               onClick={() => {
                                 setShowCanvasNavbar(false);
                               }}
@@ -90,6 +91,7 @@ export const NavbarPrincipal = () => {
                               <Link to="/">Home</Link>
                             </li>
                             <li
+                              id="navbar-btn-2"
                               className="megamenu-holder navbarMenuLi"
                               onClick={() => {
                                 setShowCanvasNavbar(false);
@@ -98,6 +100,7 @@ export const NavbarPrincipal = () => {
                               <Link to="/products">Shop</Link>
                             </li>
                             <li
+                              id="navbar-btn-3"
                               className="navbarMenuLi"
                               onClick={() => {
                                 setShowCanvasNavbar(false);
@@ -106,6 +109,7 @@ export const NavbarPrincipal = () => {
                               <Link to="/aboutus">About Us</Link>
                             </li>
                             <li
+                              id="navbar-btn-4"
                               className="contactUs navbarMenuLi"
                               onClick={() => {
                                 handlerMsgErr();
@@ -113,7 +117,7 @@ export const NavbarPrincipal = () => {
                             >
                               Contact Us
                             </li>
-                            <li className="navbarMenuLi">
+                            <li className="navbarMenuLi" id="navbar-btn-5">
                               <Link to="/account">
                                 {user && <p className="userNav">{user.firstname}</p>}
                               </Link>

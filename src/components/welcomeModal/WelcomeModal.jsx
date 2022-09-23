@@ -35,7 +35,7 @@ export const WelcomeModal = () => {
           </p>
           <Reset />
         </div>
-        <div className="d-flex justify-content-space-between">
+        <div className="d-flex link-welcome-modal">
           <Link to="/login">login</Link>
           <a href="https://hackshop-admin.vercel.app/">login admin</a>
           <button onClick={() => handleClose()} className="btnCloseModal">

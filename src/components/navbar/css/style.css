@@ -690,7 +690,19 @@
 }
 
 @media (max-width: 991px) {
-  .main-na #navbarMenuBtns .navbarMenuLi {
+  .main-nav #navbarMenuBtns #navbar-btn-1 {
+    font-size: 12px !important;
+  }
+  .main-nav #navbarMenuBtns #navbar-btn-2 {
+    font-size: 12px !important;
+  }
+  .main-nav #navbarMenuBtns #navbar-btn-3 {
+    font-size: 12px !important;
+  }
+  .main-nav #navbarMenuBtns #navbar-btn-4 {
+    font-size: 12px !important;
+  }
+  .main-nav #navbarMenuBtns #navbar-btn-5 {
     font-size: 12px !important;
   }
 }

@@ -6478,3 +6478,18 @@ a:hover {
   border: #000;
   border-radius: 9999px;
 }
+
+.link-welcome-modal {
+  justify-content: space-between;
+}
+.link-welcome-modal a {
+  background-color: #000;
+  border: #000;
+  border-radius: 9999px;
+  padding: 20px;
+  height: 30px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
