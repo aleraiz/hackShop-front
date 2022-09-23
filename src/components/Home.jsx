@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Carousel } from "./carousel/Carousel";
+import { CarouselHome } from "./carousel/Carousel";
 import { ShippingArea } from "./shippingArea/ShippingArea";
 import { OurProducts } from "./ourProducts/OurProducts";
 import { Collection } from "./collection/Collection";
@@ -15,7 +15,7 @@ export const Home = () => {
 
   return (
     <div className="main-wrapper">
-      <Carousel />
+      <CarouselHome />
       <ShippingArea />
       <OurProducts />
       <Collection />

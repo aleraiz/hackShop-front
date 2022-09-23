@@ -14,9 +14,6 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
   function handlerDeleteProductFromCart(productId) {
     dispatch(deleteProductCart(productId));
   }
-  function refreshPage() {
-    window.location.reload(false);
-  }
 
   const priceFormat = new Intl.NumberFormat("en", {
     style: "currency",

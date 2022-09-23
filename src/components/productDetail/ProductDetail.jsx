@@ -18,6 +18,7 @@ export const ProductDetail = () => {
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [isReadMore, setIsReadMore] = useState(true);
   const [refreshSlug, setRefresSlug] = useState(false);
+  const [imageKey, setImageKey] = useState(0);
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
   const { slug } = useParams();
@@ -38,16 +39,16 @@ export const ProductDetail = () => {
   }, [refreshSlug, slug]);
 
   function handleAddCart() {
-    dispatch(addProductCart({ productDetail, quantityProduct }));
+    const futureCart = cart.find((el) => el.id === productDetail.id);
+    if (futureCart?.quantity + quantityProduct >= productDetail.stock) {
+      notify();
+    } else {
+      handleMsgAdded();
+    }
 
-    cart.map((product) => {
-      if (product.quantity >= productDetail.stock) {
-        notify();
-      } else {
-        handleMsgAdded();
-      }
-    });
+    dispatch(addProductCart({ productDetail, quantityProduct }));
     setQuantityProduct(1);
+    console.log(cart, productDetail.stock);
   }
 
   function handlerIncrementProduct(productId) {
@@ -142,10 +143,10 @@ export const ProductDetail = () => {
                             // to={productDetail.image[0].imageOne}
                             className="single-img gallery-popup"
                           >
-                            {productDetail.image ? (
+                            {productDetail.image && !isNaN(parseInt(imageKey)) ? (
                               <img
                                 className="img-full"
-                                src={productDetail?.image[0]}
+                                src={productDetail?.image[imageKey]}
                                 alt="Product Image"
                               />
                             ) : (
@@ -200,14 +201,8 @@ export const ProductDetail = () => {
                           <div className="swiper-slide">
                             <img
                               className="img-full"
-                              src={productDetail.image[0]}
-                              alt="Product Thumnail"
-                            />
-                          </div>
-                          <div className="swiper-slide">
-                            <img
-                              className="img-full"
                               src={productDetail.image[1]}
+                              onClick={() => setImageKey(1)}
                               alt="Product Thumnail"
                             />
                           </div>
@@ -215,6 +210,8 @@ export const ProductDetail = () => {
                             <img
                               className="img-full"
                               src={productDetail.image[2]}
+                              onClick={() => setImageKey(2)}
+                              value={1}
                               alt="Product Thumnail"
                             />
                           </div>
@@ -222,6 +219,7 @@ export const ProductDetail = () => {
                             <img
                               className="img-full"
                               src={productDetail.image[3]}
+                              onClick={() => setImageKey(3)}
                               alt="Product Thumnail"
                             />
                           </div>
@@ -229,6 +227,15 @@ export const ProductDetail = () => {
                             <img
                               className="img-full"
                               src={productDetail.image[4]}
+                              onClick={() => setImageKey(4)}
+                              alt="Product Thumnail"
+                            />
+                          </div>
+                          <div className="swiper-slide">
+                            <img
+                              className="img-full"
+                              src={productDetail.image[5]}
+                              onClick={() => setImageKey(5)}
                               alt="Product Thumnail"
                             />
                           </div>
@@ -317,7 +324,7 @@ export const ProductDetail = () => {
                           id="btnAddToCart"
                           onClick={(e) => {
                             e.preventDefault();
-                            handleAddCart();
+                            handleAddCart(cart);
                           }}
                         >
                           ADD TO CART

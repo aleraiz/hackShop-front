@@ -8,8 +8,8 @@ export const LatestBlog = () => {
         <div className="section-title-wrap">
           <h2 className="section-title mb-7">Latest Blog</h2>
           <p className="section-desc">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-            piece of classNameical Latin literature
+            Relevant news for the care of your plants, having them in our home is an art, and
+            deserves your all care!
           </p>
         </div>
         <div className="row">
