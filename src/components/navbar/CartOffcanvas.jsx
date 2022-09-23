@@ -64,7 +64,7 @@ export const CartOffCanvas = ({ setOpenOffcanvas }) => {
                           </Link>
                           {product.quantity <= product.stock ? (
                             <span className="product-item_quantity">
-                              {product.quantity}x${product.price}
+                              {product.quantity} x${product.price}
                             </span>
                           ) : (
                             <span className="product-item_quantity">
