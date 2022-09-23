@@ -150,7 +150,7 @@ export const ProductDetail = () => {
                                 alt="Product Image"
                               />
                             ) : (
-                              <h1>No hay imagen</h1>
+                              <div className="loading">Loading&#8230;</div>
                             )}
                           </Link>
                         </div>
@@ -246,7 +246,7 @@ export const ProductDetail = () => {
                           </div>
                         </Carousel>
                       ) : (
-                        <h2>Cargando...</h2>
+                        <div className="loading">Loading&#8230;</div>
                       )}
                     </div>
                   </div>

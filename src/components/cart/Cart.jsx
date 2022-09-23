@@ -13,18 +13,26 @@ export const Cart = () => {
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [removeProduct, setRemoveProduct] = useState(quantityProduct);
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  console.log(cart.quantity);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-
-  function handlerIncrementProduct(productId) {
-    setQuantityProduct(quantityProduct + 1);
+  function handlerIncrementProduct(productId, productStock) {
+    if (quantityProduct < productStock) {
+      setQuantityProduct(quantityProduct + 1);
+    }
+    if (quantityProduct >= productStock) {
+      setQuantityProduct(productStock);
+    }
     dispatch(incrementQuantity({ productId }));
   }
 
   function handlerDecrementProduct(productId) {
-    setRemoveProduct(quantityProduct - 1);
+    if (quantityProduct > 1) {
+      setRemoveProduct(quantityProduct - 1);
+    }
+
     dispatch(decrementQuantity({ productId }));
   }
 
@@ -80,6 +88,7 @@ export const Cart = () => {
                         <tbody>
                           <>
                             {cart.map((product) => {
+                              console.log(product);
                               return (
                                 <tr key={product.id}>
                                   <td className="product_remove">
@@ -125,14 +134,18 @@ export const Cart = () => {
                                           </div>
                                         </button>
                                       </div>
-                                      <span className="quantityNumber"> {product.quantity}</span>
+                                      {product.quantity <= product.stock ? (
+                                        <span className="quantityNumber"> {product.quantity}</span>
+                                      ) : (
+                                        <span className="quantityNumber"> {product.stock}</span>
+                                      )}
                                       <div className="cart-plus-minus">
                                         <button
                                           className="cart-plus-minus-box"
                                           type="submit"
                                           id="quantityIncrement"
                                           onClick={() => {
-                                            handlerIncrementProduct(product.id);
+                                            handlerIncrementProduct(product.id, product.stock);
                                           }}
                                         >
                                           <div className="inc qtybutton">
@@ -143,9 +156,15 @@ export const Cart = () => {
                                     </div>
                                   </td>
                                   <td className="product-subtotal">
-                                    <span className="amount">
-                                      {priceFormat.format(product.price * product.quantity)}
-                                    </span>
+                                    {product.quantity <= product.stock ? (
+                                      <span className="amount">
+                                        {priceFormat.format(product.price * product.quantity)}
+                                      </span>
+                                    ) : (
+                                      <span className="amount">
+                                        {priceFormat.format(product.price * product.stock)}
+                                      </span>
+                                    )}
                                   </td>
                                 </tr>
                               );
