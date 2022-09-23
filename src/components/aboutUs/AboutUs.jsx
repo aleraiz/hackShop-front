@@ -43,10 +43,9 @@ export const AboutUs = () => {
   return (
     <>
       <div className="about-area aboutContainer">
-        <div className="containerImageAboutUs"></div>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
+        <div className="containerImageAboutUs">
+          <div className="container">
+            <div className="d-flex">
               <div className="about-content">
                 <div>
                   <h2 className="about-title hackshopTitle">
@@ -70,8 +69,8 @@ export const AboutUs = () => {
       </div>
       <div className="about-area">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-12 containerPlanning">
+          <div className="d-flex">
+            <div className="containerPlanning">
               <div className="divContainerHackshop">
                 <div>
                   <h2 className="about-title hackshopTitle">
@@ -99,7 +98,7 @@ export const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="divPlanningHackshopPoint columnReverseMinWidth">
+              <div className="divPlanningHackshopPoint columnReverseMinWidth mb-5">
                 <div className="titlesAndDescriptionStepTwo">
                   <div>
                     <h3>2 - Diseño e Inspiración</h3>

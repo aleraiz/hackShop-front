@@ -675,6 +675,20 @@
   margin: 0;
 }
 
+.noResultSearch {
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+}
+
+.svgNoResult {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+  display: flex;
+  align-self: center;
+}
+
 @media (max-width: 991px) {
   .main-na #navbarMenuBtns .navbarMenuLi {
     font-size: 12px !important;

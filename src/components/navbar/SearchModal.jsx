@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { useDebounce } from "use-debounce";
+import { BsPencilSquare } from "react-icons/bs";
 
 import "./css/searchModal.css";
 
@@ -71,7 +72,8 @@ export const SearchModal = ({ setOpenModalSearch }) => {
             <form className="hm-searchbox" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="text"
-                name="Search..."
+                name="search"
+                autoComplete="off"
                 onChange={(e) => setSearchPlants(e.target.value)}
               />
               <button className="search-btn" type="submit" aria-label="searchbtn">
@@ -82,19 +84,21 @@ export const SearchModal = ({ setOpenModalSearch }) => {
           <div className="modal-search">
             <div className="container">
               <div className="row">
-                {plantFilter.map((product) => {
-                  return (
-                    <>
+                {plantFilter.length > 0
+                  ? plantFilter.map((product) => (
                       <div className="col-sm-12 col-md-3 col-lg-3 productSearch" key={product.id}>
                         <Link to={`/product/${product.slug}`} onClick={() => handleClose()}>
                           <img src={product.image[1]} />
                           <p>{product.productName}</p>
                         </Link>
                       </div>
-                      {plantFilter === [] && <p style={{ color: "#fff" }}>hola</p>}
-                    </>
-                  );
-                })}
+                    ))
+                  : searchPlants && (
+                      <div className="d-flex justify-content-center">
+                        <BsPencilSquare className="svgNoResult" />
+                        <p className="noResultSearch">There is no result for your search</p>
+                      </div>
+                    )}
               </div>
             </div>
           </div>
