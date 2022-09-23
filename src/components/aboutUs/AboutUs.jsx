@@ -13,32 +13,12 @@ import { SiBootstrap } from "react-icons/si";
 import { SiSequelize } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import Carousel from "react-multi-carousel";
-
 import "./styles.css";
 
 export const AboutUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-      slidesToSlide: 2,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 3,
-      slidesToSlide: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-  };
 
   return (
     <>

@@ -142,7 +142,7 @@ export const Products = () => {
                       aria-labelledby="grid-view-tab"
                     >
                       <div className="product-grid-view row g-y-20">
-                        {products.map((product, index) => {
+                        {products.map((product) => {
                           return (
                             <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
                               <div className="product-item">

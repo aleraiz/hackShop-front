@@ -4,6 +4,7 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     user: {},
+    welcomeModalVisibility: true,
   },
   reducers: {
     loginUser: (state, action) => {
@@ -13,15 +14,16 @@ const userSlice = createSlice({
       state.user = action.payload;
     },
     logoutUser: (state, action) => {
-      return {
-        loading: false,
-        user: null,
-      };
+      state.loading = false;
+      state.user = null;
+    },
+    toggleWelcomeModal: (state, action) => {
+      state.welcomeModalVisibility = action.payload;
     },
   },
 });
 
 const { actions, reducer } = userSlice;
 
-export const { loginUser, registerUser, logoutUser } = actions;
+export const { loginUser, registerUser, logoutUser, toggleWelcomeModal } = actions;
 export default reducer;

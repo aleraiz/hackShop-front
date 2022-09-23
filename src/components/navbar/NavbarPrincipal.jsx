@@ -1,42 +1,36 @@
+import "./css/style.css";
 import React from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { Link } from "react-router-dom";
-import { SearchModal } from "./SearchModal";
-import { useState, useRef } from "react";
-import { CartOffCanvas } from "./CartOffcanvas";
-import { logoutUser } from "../../redux/slices/userSlice";
-import { emptyCart } from "../../redux/slices/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
-import axios from "axios";
-import "./css/style.css";
+import { Link } from "react-router-dom";
+import { SearchModal } from "./SearchModal";
+import { useState } from "react";
+import { CartOffCanvas } from "./CartOffcanvas";
+import { logoutUser } from "../../redux/slices/userSlice";
+import { emptyCart } from "../../redux/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { OverlayTrigger } from "react-bootstrap";
 
 export const NavbarPrincipal = () => {
-  const dispatch = useDispatch();
-  const ref = useRef(null);
-  const user = useSelector((state) => state.user.user);
-  const cart = useSelector((state) => state.cart.cart);
   const [openModalSearch, setOpenModalSearch] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
-  const [show, setShow] = useState(false);
   const [showCanvasNavbar, setShowCanvasNavbar] = useState(false);
-  const [target, setTarget] = useState(null);
-  const [userError, setUserError] = useState("");
-  const MySwal = withReactContent(Swal);
-  let total = 0;
+  const user = useSelector((state) => state.user.user);
+  const cart = useSelector((state) => state.cart.cart);
+  const dispatch = useDispatch();
 
+  let total = 0;
   cart.map((item) => {
     total += item.quantity;
   });
 
+  const MySwal = withReactContent(Swal);
   function handlerMsgErr() {
     MySwal.fire({
       title: "Warning!",
@@ -46,11 +40,6 @@ export const NavbarPrincipal = () => {
       confirmButtonColor: "#f8bb86",
     });
   }
-
-  const handleClick = (event) => {
-    setShow(!show);
-    setTarget(event.target);
-  };
 
   async function handlerLogout() {
     dispatch(logoutUser());
