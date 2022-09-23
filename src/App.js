@@ -24,11 +24,13 @@ import PrivateRoutes from "./components/privateRoutes/PrivateRoutes.jsx";
 import { CheckoutPage } from "./components/checkout/CheckoutPage";
 import LoginExist from "./components/loginExist/LoginExist";
 import RegisterExist from "./components/registerExist/RegisterExist";
+import { WelcomeModal } from "./components/welcomeModal/WelcomeModal";
 
 function App() {
   return (
     <div className="app">
       <NavbarPrincipal />
+      <WelcomeModal />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
