@@ -11,7 +11,7 @@
 * npm start
 
 ## Descripción: 
-Este es el proyecto final propuesto por [Hack Academy](https://ha.dev/) en el marco del Bootcamp de programacion full stack.
+Este es el proyecto <b>FINAL</b> propuesto por [Hack Academy](https://ha.dev/) en el marco del Bootcamp de programacion <b>full stack</b>.
 Para ese sitio se utilizaron las siguientes tecnologias :
 * Javascript
 * React.js
