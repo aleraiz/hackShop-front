@@ -214,7 +214,7 @@ export const Footer = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="copyright">
-                <span className="copyright-text">© 2022 Hack academy -Equipo 5</span>
+                <span className="copyright-text">© 2022 Hack academy - Equipo 5</span>
               </div>
             </div>
           </div>

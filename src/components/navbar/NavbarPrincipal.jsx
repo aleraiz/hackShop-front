@@ -148,7 +148,7 @@ export const NavbarPrincipal = () => {
                                 rootClose
                                 overlay={
                                   <Popover id={`popover-positioned-bottom`}>
-                                    {!user ? (
+                                    {!user || Object.keys(user).length === 0 ? (
                                       <>
                                         <Link
                                           className="dropdown-item"

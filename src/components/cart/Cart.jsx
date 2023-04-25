@@ -30,7 +30,7 @@ export const Cart = () => {
                   <h2 className="breadcrumb-heading">Cart Page</h2>
                   <ul>
                     <li>
-                      <Link to="index.html">Home</Link>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>Cart Page</li>
                   </ul>
