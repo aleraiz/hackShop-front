@@ -10,8 +10,8 @@ export const CarouselHome = () => {
               <div className="col-lg-6 order-2 order-lg-1 align-self-center">
                 <div className=" text-black">
                   <span className="offer animate__bounce">25% OFF</span>
-                  <h2 className="title">New plant</h2>
-                  <p className="short-desc">Hackshop, with 100% natural, organic & plant shop.</p>
+                  <h2 className="title">New plants</h2>
+                  <p className="short-desc">Hackshop, With 100% Natural, Organic & Plant Shop.</p>
                   <div className="btn-wrap">
                     <Link
                       className="btn btn-custom-size xl-size btn-pronia-primary btn-collection rounded-pill"
