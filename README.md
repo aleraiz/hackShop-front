@@ -22,9 +22,9 @@ Para ese sitio se utilizaron las siguientes tecnologias :
 - Trello
 - Figma
 
-Puede navegar por el sitio usted mismo [ver](https://hackshop-plants.vercel.app/)
+Puede navegar por el sitio usted mismo [ver](https://hack-shop.vercel.app/)
 
-Este sitio se creo a lo largo de 2 semanas, junto a la pagina del [administrador](https://hackshop-admin.vercel.app/) (CRUD) que tambien forma parte del proyecto final.
+Este sitio se creo a lo largo de 2 semanas, junto a la pagina del [administrador](https://hack-shop-admin.vercel.app) (CRUD) que tambien forma parte del proyecto final.
 
 Se consume una API propia, creada con <b>Node/Express, MySql, Sequalize , Superbase</b>.
 Puede conocer mas acerca del desarrollo de la API REST, haciendo click [aqui](https://github.com/aleraiz/hackShop-Back).
